@@ -202,3 +202,6 @@ damping_relaxation = 2.0
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_i6fp8")
 skeleton = NodePath("")
+
+[node name="Camera3D" type="Camera3D" parent="car"]
+transform = Transform3D(-1, 1.10422e-14, -8.74228e-08, -6.5082e-08, 0.667677, 0.744451, 5.83701e-08, 0.744451, -0.667677, 0, 5.02158, -2.17488)

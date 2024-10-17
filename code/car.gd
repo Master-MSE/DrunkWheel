@@ -1,5 +1,6 @@
 extends VehicleBody3D
 
+const MAX_SPEED = 25.0
 const MAX_ENGINE_FORCE = 500.0
 const MAX_BRAKE_FORCE = 10.0
 const MAX_STEERING_ANGLE = 0.6
@@ -44,9 +45,13 @@ func _physics_process(delta):
 	
 	$"wheel-front-left".steering = lerp(steering_angle, steering_input * MAX_STEERING_ANGLE, 0.3)
 	$"wheel-front-right".steering = lerp(steering_angle, steering_input * MAX_STEERING_ANGLE, 0.3)
-	$"wheel-back-left".engine_force = engine_input * MAX_ENGINE_FORCE
-	$"wheel-back-right".engine_force = engine_input * MAX_ENGINE_FORCE
-	
+	print(linear_velocity.length())
+	if(linear_velocity.length() < MAX_SPEED):
+		$"wheel-back-left".engine_force = engine_input * MAX_ENGINE_FORCE
+		$"wheel-back-right".engine_force = engine_input * MAX_ENGINE_FORCE
+	else:
+		$"wheel-back-left".engine_force = 0
+		$"wheel-back-right".engine_force = 0
 	if (engine_input == -1):
 		brake = MAX_BRAKE_FORCE 
 	else:
