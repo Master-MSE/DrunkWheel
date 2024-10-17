@@ -125,7 +125,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0239234, 0, 0.0928687)
 axis_lock_angular_x = true
 axis_lock_angular_z = true
 mass = 100.0
-gravity_scale = 1.1
 script = ExtResource("1_3623i")
 
 [node name="body" type="MeshInstance3D" parent="car"]
@@ -144,9 +143,9 @@ shape = SubResource("BoxShape3D_w0qxb")
 
 [node name="wheel-front-left" type="VehicleWheel3D" parent="car"]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0.467236, 0.32689, 0.661738)
-use_as_traction = true
 use_as_steering = true
 wheel_radius = 0.3
+wheel_rest_length = 0.05
 suspension_travel = 0.5
 suspension_stiffness = 50.0
 damping_compression = 2.0
@@ -158,7 +157,9 @@ skeleton = NodePath("")
 
 [node name="wheel-back-left" type="VehicleWheel3D" parent="car"]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0.466848, 0.326907, -0.658893)
+use_as_traction = true
 wheel_radius = 0.3
+wheel_rest_length = 0.05
 suspension_travel = 0.5
 suspension_stiffness = 50.0
 damping_compression = 2.0
@@ -170,9 +171,9 @@ skeleton = NodePath("")
 
 [node name="wheel-front-right" type="VehicleWheel3D" parent="car"]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.464675, 0.326357, 0.657731)
-use_as_traction = true
 use_as_steering = true
 wheel_radius = 0.3
+wheel_rest_length = 0.05
 suspension_travel = 0.5
 suspension_stiffness = 50.0
 damping_compression = 2.0
@@ -185,7 +186,9 @@ skeleton = NodePath("")
 
 [node name="wheel-back-right" type="VehicleWheel3D" parent="car"]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.465024, 0.327899, -0.659767)
+use_as_traction = true
 wheel_radius = 0.3
+wheel_rest_length = 0.05
 suspension_travel = 0.5
 suspension_stiffness = 50.0
 damping_compression = 2.0

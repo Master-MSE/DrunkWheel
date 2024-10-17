@@ -1,52 +1,33 @@
 extends VehicleBody3D
 
-############################################################
-# behaviour values
+const MAX_ENGINE_FORCE = 200.0
+const MAX_BRAKE_FORCE = 10.0
+const MAX_STEERING_ANGLE = 0.3
 
-var MAX_ENGINE_FORCE = 1000.0
-var MAX_BRAKE_FORCE = 5.0
-var MAX_STEER_ANGLE = 0.4
-
-var steer_speed = 5.0
-
-var steer_target = 0.0
-var steer_angle = 0.0
-
-############################################################
-# Input
-var steering_mult = -1.0
-var throttle_mult = 1.0
-var brake_mult = 1.0
-
-func _ready():
-	pass
+var steering_angle = 0.0
+var engine
 
 func _physics_process(delta):
-	var steer_val = steering_mult * Input.get_axis("right", "left")
-	var throttle_val = throttle_mult * Input.get_axis("reverse", "forward")
-	var brake_val = brake_mult * Input.get_axis("reverse", "forward")
+	var steering_input = 0.0
+	var engine_input = 0.0
+
+	if Input.is_action_pressed("right"):
+		steering_input -= 1
+	if Input.is_action_pressed("left"):
+		steering_input += 1
 	
 	if Input.is_action_pressed("forward"):
-		throttle_val = 1.0
+		engine_input += 1
 	if Input.is_action_pressed("reverse"):
-		throttle_val = -1.0
-	if Input.is_action_pressed("reverse"):
-		brake_val = 1.0
-	if Input.is_action_pressed("left"):
-		steer_val = 1.0
-	if Input.is_action_pressed("right"):
-		steer_val = -1.0
+		engine_input -= 1
+
+	$"wheel-front-left".steering = lerp(steering_angle, steering_input * MAX_STEERING_ANGLE, 0.3)
+	$"wheel-front-right".steering = lerp(steering_angle, steering_input * MAX_STEERING_ANGLE, 0.3)
+	$"wheel-back-left".engine_force = engine_input * MAX_ENGINE_FORCE
+	$"wheel-back-right".engine_force = engine_input * MAX_ENGINE_FORCE
 	
-	engine_force = throttle_val * MAX_ENGINE_FORCE
-	brake = brake_val * MAX_BRAKE_FORCE
+	if (engine_input == -1):
+		brake = MAX_BRAKE_FORCE 
+	else:
+		brake = 0	
 	
-	steer_target = steer_val * MAX_STEER_ANGLE
-	if (steer_target < steer_angle):
-		steer_angle -= steer_speed * delta
-		if (steer_target > steer_angle):
-			steer_angle = steer_target
-	elif (steer_target > steer_angle):
-		steer_angle += steer_speed * delta
-		if (steer_target < steer_angle):
-			steer_angle = steer_target
-	steering = steer_angle
