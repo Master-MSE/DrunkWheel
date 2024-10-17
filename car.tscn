@@ -124,7 +124,8 @@ shadow_mesh = SubResource("ArrayMesh_lp57k")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0239234, 0, 0.0928687)
 axis_lock_angular_x = true
 axis_lock_angular_z = true
-mass = 100.0
+mass = 200.0
+can_sleep = false
 script = ExtResource("1_3623i")
 
 [node name="body" type="MeshInstance3D" parent="car"]
@@ -147,10 +148,10 @@ use_as_steering = true
 wheel_radius = 0.3
 wheel_rest_length = 0.05
 wheel_friction_slip = 1.0
-suspension_travel = 0.5
-suspension_stiffness = 50.0
-damping_compression = 2.0
-damping_relaxation = 2.0
+suspension_stiffness = 75.0
+suspension_max_force = 500.0
+damping_compression = 0.8
+damping_relaxation = 0.8
 
 [node name="wheel-dark" type="MeshInstance3D" parent="car/wheel-front-left"]
 mesh = SubResource("ArrayMesh_i6fp8")
@@ -162,10 +163,10 @@ use_as_traction = true
 wheel_radius = 0.3
 wheel_rest_length = 0.05
 wheel_friction_slip = 1.0
-suspension_travel = 0.5
-suspension_stiffness = 50.0
-damping_compression = 2.0
-damping_relaxation = 2.0
+suspension_stiffness = 75.0
+suspension_max_force = 500.0
+damping_compression = 0.8
+damping_relaxation = 0.8
 
 [node name="wheel-dark" type="MeshInstance3D" parent="car/wheel-back-left"]
 mesh = SubResource("ArrayMesh_i6fp8")
@@ -177,10 +178,10 @@ use_as_steering = true
 wheel_radius = 0.3
 wheel_rest_length = 0.05
 wheel_friction_slip = 1.0
-suspension_travel = 0.5
-suspension_stiffness = 50.0
-damping_compression = 2.0
-damping_relaxation = 2.0
+suspension_stiffness = 75.0
+suspension_max_force = 500.0
+damping_compression = 0.8
+damping_relaxation = 0.8
 
 [node name="wheel-dark" type="MeshInstance3D" parent="car/wheel-front-right"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
@@ -193,10 +194,10 @@ use_as_traction = true
 wheel_radius = 0.3
 wheel_rest_length = 0.05
 wheel_friction_slip = 1.0
-suspension_travel = 0.5
-suspension_stiffness = 50.0
-damping_compression = 2.0
-damping_relaxation = 2.0
+suspension_stiffness = 75.0
+suspension_max_force = 500.0
+damping_compression = 0.8
+damping_relaxation = 0.8
 
 [node name="wheel-dark" type="MeshInstance3D" parent="car/wheel-back-right"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)

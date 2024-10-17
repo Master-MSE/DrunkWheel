@@ -45,7 +45,7 @@ func _physics_process(delta):
 	
 	$"wheel-front-left".steering = lerp(steering_angle, steering_input * MAX_STEERING_ANGLE, 0.3)
 	$"wheel-front-right".steering = lerp(steering_angle, steering_input * MAX_STEERING_ANGLE, 0.3)
-	print(linear_velocity.length())
+
 	if(linear_velocity.length() < MAX_SPEED):
 		$"wheel-back-left".engine_force = engine_input * MAX_ENGINE_FORCE
 		$"wheel-back-right".engine_force = engine_input * MAX_ENGINE_FORCE
