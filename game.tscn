@@ -35,7 +35,7 @@ shape = SubResource("ConvexPolygonShape3D_d86bk")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.59005, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.104209, 65.4155, 0)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.104209, 60.2189, 0)
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.982297, 0.18733, 0, -0.18733, 0.982297, 0, 0.869172, 33.6376)
