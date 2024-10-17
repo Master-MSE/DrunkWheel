@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b0u7mt0l7cjhl"
+path="res://.godot/imported/wheel-racing.obj-a6ea2f9ec9e4a8c21e53ebde18b35470.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wheel-racing.obj-a6ea2f9ec9e4a8c21e53ebde18b35470.mesh"]
+
+source_file="res://models/vehicules/OBJ format/wheel-racing.obj"
+dest_files=["res://.godot/imported/wheel-racing.obj-a6ea2f9ec9e4a8c21e53ebde18b35470.mesh", "res://.godot/imported/wheel-racing.obj-a6ea2f9ec9e4a8c21e53ebde18b35470.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
