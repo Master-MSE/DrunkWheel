@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cn4ysaifqhumu"]
+
+[ext_resource type="PackedScene" uid="uid://dxv2nentvgogp" path="res://ground.tscn" id="1_3llig"]
+[ext_resource type="PackedScene" uid="uid://d2egyqevjse0p" path="res://car.tscn" id="2_0mu8a"]
+
+[node name="main" type="Node"]
+
+[node name="Ground1" parent="." instance=ExtResource("1_3llig")]
+
+[node name="Player" parent="." instance=ExtResource("2_0mu8a")]
+
+[node name="CameraPivot" type="Marker3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 0.766044, 0.642788, 0, -0.642788, 0.766044, 0, 10, 5)
+
+[node name="Camera3D" type="Camera3D" parent="Player/CameraPivot"]

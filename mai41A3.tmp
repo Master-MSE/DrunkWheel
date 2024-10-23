@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cn4ysaifqhumu"]
+
+[ext_resource type="PackedScene" uid="uid://dxv2nentvgogp" path="res://ground.tscn" id="1_3llig"]
+[ext_resource type="Script" path="res://main.gd" id="1_u81di"]
+[ext_resource type="PackedScene" uid="uid://d2egyqevjse0p" path="res://car.tscn" id="2_0mu8a"]
+
+[node name="main" type="Node"]
+script = ExtResource("1_u81di")
+platform_scene = ExtResource("1_3llig")
+
+[node name="Ground1" parent="." instance=ExtResource("1_3llig")]
+
+[node name="Player" parent="." instance=ExtResource("2_0mu8a")]
+
+[node name="CameraPivot" type="Marker3D" parent="Player"]
+transform = Transform3D(-1, 5.61943e-08, -6.69697e-08, 0, 0.766044, 0.642788, 8.74228e-08, 0.642788, -0.766044, 0.00552177, 10, -5)
+
+[node name="Camera3D" type="Camera3D" parent="Player/CameraPivot"]
