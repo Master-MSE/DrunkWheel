@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://bgrdu1b4g4nal"]
+[gd_scene load_steps=14 format=4 uid="uid://bgrdu1b4g4nal"]
 
 [ext_resource type="Texture2D" uid="uid://b0ahsnh0h5gai" path="res://models/vehicules/GLB format/Textures/colormap.png" id="1_2ae4i"]
 [ext_resource type="Script" path="res://code/car.gd" id="1_3623i"]
@@ -118,6 +118,15 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_lp57k")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_64ire"]
+emission_enabled = true
+emission = Color(1, 1, 0.498039, 1)
+emission_energy_multiplier = 2.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_72tb6"]
+material = SubResource("StandardMaterial3D_64ire")
+size = Vector3(0.275, 0, 0.145)
+
 [node name="car" type="Node3D"]
 
 [node name="car" type="VehicleBody3D" parent="."]
@@ -210,15 +219,24 @@ transform = Transform3D(-1, 1.10422e-14, -8.74228e-08, -6.5082e-08, 0.667677, 0.
 [node name="front-left-light" type="SpotLight3D" parent="car"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.413497, 0.433993, 1.12282)
 light_color = Color(1, 1, 0.498039, 1)
-light_energy = 3.0
+light_energy = 10.0
 light_volumetric_fog_energy = 10.0
-spot_range = 10.0
-spot_angle = 15.0
+spot_range = 15.0
+spot_angle = 18.0
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="car/front-left-light"]
+transform = Transform3D(1, 4.49763e-08, 1.2457e-08, -4.49763e-08, 0.857509, 0.514469, 1.2457e-08, -0.514469, 0.857509, 0.00223926, 0.20396, 0.0357481)
+mesh = SubResource("BoxMesh_72tb6")
 
 [node name="front-right-light" type="SpotLight3D" parent="car"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.417614, 0.433993, 1.12282)
 light_color = Color(1, 1, 0.498039, 1)
-light_energy = 3.0
+light_energy = 10.0
 light_volumetric_fog_energy = 10.0
-spot_range = 10.0
-spot_angle = 15.0
+spot_range = 15.0
+spot_angle = 18.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="car/front-right-light"]
+transform = Transform3D(1, 4.49763e-08, 1.2457e-08, -4.49763e-08, 0.857509, 0.514469, 1.2457e-08, -0.514469, 0.857509, -0.00514457, 0.20396, 0.0357481)
+mesh = SubResource("BoxMesh_72tb6")
+skeleton = NodePath("../../front-left-light")
