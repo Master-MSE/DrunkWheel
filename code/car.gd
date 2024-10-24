@@ -55,7 +55,13 @@ func engine(engine_input):
 		brake = MAX_BRAKE_FORCE 
 	else:
 		brake = 0	
-		
+
+func align_y(xform, new_y):
+	xform.basis.y = new_y
+	xform.basis.x = -xform.basis.z.cross(new_y)
+	xform.basis = xform.basis.orthonormalized()
+	return xform
+	
 func _physics_process(delta):
 	var steering_input = 0.0
 	var engine_input = 0.0
@@ -74,8 +80,15 @@ func _physics_process(delta):
 	else:
 		$"light-back-left".visible = false
 		$"light-back-right".visible = false
-		
-	#sdrift()
+	
+	if ($"raycast-front".is_colliding() || $"raycast-back".is_colliding()):
+		var nf = $"raycast-front".get_collision_normal() if $"raycast-front".is_colliding() else Vector3.UP
+		var nr = $"raycast-back".get_collision_normal() if $"raycast-back".is_colliding() else Vector3.UP
+		var n = ((nr + nf) / 2.0).normalized()
+		var xform = align_y(global_transform, n)
+		global_transform = global_transform.interpolate_with(xform, 0.1)
+	
+	#drift()
 	steering(steering_input)
 	engine(engine_input)
 		

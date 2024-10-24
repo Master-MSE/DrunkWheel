@@ -225,7 +225,7 @@ mesh = SubResource("ArrayMesh_i6fp8")
 skeleton = NodePath("")
 
 [node name="Camera3D" type="Camera3D" parent="car"]
-transform = Transform3D(-1, -7.42229e-14, -8.74227e-08, -6.5082e-08, 0.667677, 0.744451, 5.83701e-08, 0.744451, -0.667677, 0, 5.02158, -2.17488)
+transform = Transform3D(-1, 1.49337e-08, -1.00816e-07, -6.5082e-08, 0.667677, 0.744451, 7.84302e-08, 0.744451, -0.667677, 0, 5.02158, -2.17488)
 
 [node name="light-front-left" type="SpotLight3D" parent="car"]
 transform = Transform3D(-0.996195, 9.27779e-10, -0.0871556, -0.0290171, 0.94295, 0.331668, 0.0821834, 0.332935, -0.939362, 0.413497, 0.862965, 0.939101)
@@ -275,3 +275,9 @@ spot_angle = 12.0
 transform = Transform3D(1, 0, 0, 0, 0.881049, -0.473028, 0, 0.473028, 0.881049, 0.00724924, -0.554678, -1.71774)
 mesh = SubResource("PlaneMesh_35re2")
 skeleton = NodePath("../..")
+
+[node name="raycast-front" type="RayCast3D" parent="car"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.46865, 0.0571612, 0.65844)
+
+[node name="raycast-back" type="RayCast3D" parent="car"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.46865, 0.0571612, -0.660878)
