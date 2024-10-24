@@ -1,13 +1,29 @@
-[gd_scene load_steps=5 format=3 uid="uid://cn4ysaifqhumu"]
+[gd_scene load_steps=13 format=3 uid="uid://cn4ysaifqhumu"]
 
-[ext_resource type="PackedScene" uid="uid://dxv2nentvgogp" path="res://ground.tscn" id="1_3llig"]
+[ext_resource type="PackedScene" uid="uid://dxv2nentvgogp" path="res://plateform/plateformCC.tscn" id="1_3llig"]
 [ext_resource type="Script" path="res://main.gd" id="1_u81di"]
 [ext_resource type="PackedScene" uid="uid://d2egyqevjse0p" path="res://car.tscn" id="2_0mu8a"]
-[ext_resource type="PackedScene" uid="uid://bxnh1uf8qdyau" path="res://alcool.tscn" id="3_7ccff"]
+[ext_resource type="PackedScene" uid="uid://d0ql13kdfasmy" path="res://plateform/plateformDD.tscn" id="2_1ikko"]
+[ext_resource type="PackedScene" uid="uid://bxnh1uf8qdyau" path="res://alcool/alcool.tscn" id="3_7ccff"]
+[ext_resource type="PackedScene" uid="uid://1ga2qthig3u0" path="res://plateform/plateformDC.tscn" id="3_q2fpy"]
+[ext_resource type="PackedScene" uid="uid://djcrffsnvajpc" path="res://plateform/plateformDG.tscn" id="4_hhs0n"]
+[ext_resource type="PackedScene" uid="uid://cywanftu85cej" path="res://plateform/plateformCD.tscn" id="5_e31pw"]
+[ext_resource type="PackedScene" uid="uid://dok6836hosqe4" path="res://plateform/plateformCG.tscn" id="7_otfry"]
+[ext_resource type="PackedScene" uid="uid://dhbeq6m5kckdb" path="res://plateform/plateformGD.tscn" id="8_4gyoy"]
+[ext_resource type="PackedScene" uid="uid://bn87liv28pah4" path="res://plateform/plateformGC.tscn" id="9_hjbgw"]
+[ext_resource type="PackedScene" uid="uid://opfa0usbl277" path="res://plateform/plateformGG.tscn" id="10_hupsd"]
 
 [node name="main" type="Node"]
 script = ExtResource("1_u81di")
-platform_scene = ExtResource("1_3llig")
+platform_sceneDD = ExtResource("2_1ikko")
+platform_sceneDC = ExtResource("3_q2fpy")
+platform_sceneDG = ExtResource("4_hhs0n")
+platform_sceneCD = ExtResource("5_e31pw")
+platform_sceneCC = ExtResource("1_3llig")
+platform_sceneCG = ExtResource("7_otfry")
+platform_sceneGD = ExtResource("8_4gyoy")
+platform_sceneGC = ExtResource("9_hjbgw")
+platform_sceneGG = ExtResource("10_hupsd")
 alcohol_scene = ExtResource("3_7ccff")
 
 [node name="Player" parent="." instance=ExtResource("2_0mu8a")]

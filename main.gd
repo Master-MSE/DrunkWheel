@@ -2,7 +2,15 @@ extends Node
 
 
 # Déclare la scène de plateforme que l'on va instancier
-@export var platform_scene:PackedScene
+@export var platform_sceneDD:PackedScene
+@export var platform_sceneDC:PackedScene
+@export var platform_sceneDG:PackedScene
+@export var platform_sceneCD:PackedScene
+@export var platform_sceneCC:PackedScene
+@export var platform_sceneCG:PackedScene
+@export var platform_sceneGD:PackedScene
+@export var platform_sceneGC:PackedScene
+@export var platform_sceneGG:PackedScene
 
 @export var alcohol_scene:PackedScene
 
@@ -17,9 +25,11 @@ var score := 0
 var score_label: Label
 var player
 
+
 func _ready():
 	# Crée la première plateforme au démarrage du jeu
-	_add_new_platform()
+	var nb_of_plateform = randi() % 9 + 1
+	_add_new_platform(nb_of_plateform)
 	score_label = $CanvasLayer/Label
 	 # Récupère la référence au joueur
 	player = $Player  # Assurez-vous que le chemin correspond à votre joueur
@@ -30,11 +40,31 @@ func _ready():
 	_update_score_display()
 
 # Fonction appelée pour ajouter une nouvelle plateforme
-func _add_new_platform():
+func _add_new_platform(nb_of_plateform):
 	# Instancie une nouvelle plateforme à partir de la scène
-	print("Plateforme")
-	var new_platform = platform_scene.instantiate()
-	
+	var new_platform
+	match nb_of_plateform:
+		1:
+			new_platform = platform_sceneDD.instantiate()
+		2:
+			new_platform = platform_sceneDC.instantiate()
+		3:
+			new_platform = platform_sceneDG.instantiate()
+		4:
+			new_platform = platform_sceneCD.instantiate()
+		5:
+			new_platform = platform_sceneCC.instantiate()
+		6:
+			new_platform = platform_sceneCG.instantiate()
+		7:
+			new_platform = platform_sceneGD.instantiate()
+		8:
+			new_platform = platform_sceneGC.instantiate()
+		9:
+			new_platform = platform_sceneGG.instantiate()
+		_:
+			new_platform = platform_sceneDD.instantiate()
+			print("Error: Entre invalide")
 	# Positionne la nouvelle plateforme juste après la dernière
 	new_platform.position = last_platform_position + platform_spacing
 	# Ajoute la plateforme à la scène
@@ -43,12 +73,8 @@ func _add_new_platform():
 	# Met à jour la position de la dernière plateforme
 	last_platform_position = new_platform.position
 	
-	# Connecte le signal "body_entered" du Area3D de la nouvelle plateforme
-	# Vérifie si le nœud 'trap_gen' existe sous 'Ground'
-	if new_platform.has_node("trap_gen"):
-		new_platform.get_node("trap_gen").connect("body_entered", Callable(self, "_on_platform_zone_entered"))
-	else:
-		print("Error: 'trap_gen' node not found under 'Ground'!")
+	new_platform.connect("generation", Callable(self, "_on_platform_zone_entered"))
+
 		
 	 # Ajoute entre 1 et 3 objets "Alcool" sur la plateforme
 	var number_of_alcohol = randi() % 3 + 1  # Choisit un nombre aléatoire entre 1 et 3
@@ -72,10 +98,10 @@ func _update_score_display():
 	score_label.text = "Score: " + str(score)
 	
 # Fonction appelée lorsqu'un corps entre dans la zone de la plateforme
-func _on_platform_zone_entered(body):
-	
-	if body.name == "Player":  # Vérifie si c'est le joueur qui entre dans la zone
-		_add_new_platform()  # Ajoute une nouvelle plateforme
+func _on_platform_zone_entered(case):
+	# Vérifie si c'est le joueur qui entre dans la zone
+	var nb_of_plateform = randi() % 3 + case*3+1
+	_add_new_platform(nb_of_plateform)  # Ajoute une nouvelle plateforme
 		
 func _on_alcohol_body_entered():
 		score += 1  # Augmente le score
