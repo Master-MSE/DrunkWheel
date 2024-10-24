@@ -40,6 +40,15 @@ func _physics_process(delta):
 		engine_input += 1
 	if Input.is_action_pressed("reverse"):
 		engine_input -= 1
+		#$"light-back-left".get_active_material(0).emission_enabled = true
+		$"light-back-left".visible = true
+		$"light-back-right".visible = true
+	else:
+		$"light-back-left".visible = false
+		$"light-back-right".visible = false
+		
+
+		
 
 	drift()
 	

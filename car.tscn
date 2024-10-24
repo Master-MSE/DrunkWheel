@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://bgrdu1b4g4nal"]
+[gd_scene load_steps=16 format=4 uid="uid://bgrdu1b4g4nal"]
 
 [ext_resource type="Texture2D" uid="uid://b0ahsnh0h5gai" path="res://models/vehicules/GLB format/Textures/colormap.png" id="1_2ae4i"]
 [ext_resource type="Script" path="res://code/car.gd" id="1_3623i"]
@@ -119,6 +119,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_lp57k")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_64ire"]
+albedo_color = Color(1, 1, 0.498039, 1)
 emission_enabled = true
 emission = Color(1, 1, 0.498039, 1)
 emission_energy_multiplier = 2.0
@@ -126,6 +127,16 @@ emission_energy_multiplier = 2.0
 [sub_resource type="BoxMesh" id="BoxMesh_72tb6"]
 material = SubResource("StandardMaterial3D_64ire")
 size = Vector3(0.275, 0, 0.145)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_60mtu"]
+albedo_color = Color(1, 0.121569, 0, 1)
+emission_enabled = true
+emission = Color(1, 0.121569, 0, 1)
+emission_energy_multiplier = 3.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_35re2"]
+material = SubResource("StandardMaterial3D_60mtu")
+size = Vector2(0.15, 0.12)
 
 [node name="car" type="Node3D"]
 
@@ -214,29 +225,53 @@ mesh = SubResource("ArrayMesh_i6fp8")
 skeleton = NodePath("")
 
 [node name="Camera3D" type="Camera3D" parent="car"]
-transform = Transform3D(-1, 1.10422e-14, -8.74228e-08, -6.5082e-08, 0.667677, 0.744451, 5.83701e-08, 0.744451, -0.667677, 0, 5.02158, -2.17488)
+transform = Transform3D(-1, -7.42229e-14, -8.74227e-08, -6.5082e-08, 0.667677, 0.744451, 5.83701e-08, 0.744451, -0.667677, 0, 5.02158, -2.17488)
 
-[node name="front-left-light" type="SpotLight3D" parent="car"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.413497, 0.433993, 1.12282)
+[node name="light-front-left" type="SpotLight3D" parent="car"]
+transform = Transform3D(-0.996195, 0, -0.0871556, 0, 1, 0, 0.0871556, 0, -0.996195, 0.413497, 0.433993, 1.12282)
 light_color = Color(1, 1, 0.498039, 1)
-light_energy = 10.0
+light_energy = 15.0
 light_volumetric_fog_energy = 10.0
-spot_range = 15.0
+spot_range = 20.0
 spot_angle = 18.0
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="car/front-left-light"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="car/light-front-left"]
 transform = Transform3D(1, 4.49763e-08, 1.2457e-08, -4.49763e-08, 0.857509, 0.514469, 1.2457e-08, -0.514469, 0.857509, 0.00223926, 0.20396, 0.0357481)
 mesh = SubResource("BoxMesh_72tb6")
 
-[node name="front-right-light" type="SpotLight3D" parent="car"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.417614, 0.433993, 1.12282)
+[node name="light-front-right" type="SpotLight3D" parent="car"]
+transform = Transform3D(-0.996195, 0, 0.0871558, 0, 1, 0, -0.0871558, 0, -0.996195, -0.417614, 0.433993, 1.12282)
 light_color = Color(1, 1, 0.498039, 1)
-light_energy = 10.0
+light_energy = 15.0
 light_volumetric_fog_energy = 10.0
-spot_range = 15.0
+spot_range = 20.0
 spot_angle = 18.0
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="car/front-right-light"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="car/light-front-right"]
 transform = Transform3D(1, 4.49763e-08, 1.2457e-08, -4.49763e-08, 0.857509, 0.514469, 1.2457e-08, -0.514469, 0.857509, -0.00514457, 0.20396, 0.0357481)
 mesh = SubResource("BoxMesh_72tb6")
-skeleton = NodePath("../../front-left-light")
+skeleton = NodePath("../../light-front-left")
+
+[node name="light-back-left" type="SpotLight3D" parent="car"]
+transform = Transform3D(1, 0, 0, 0, 0.57186, 0.820352, 0, -0.820352, 0.57186, 0.478647, 2.35391, -0.669028)
+light_color = Color(1, 0.121569, 0, 1)
+light_energy = 5.0
+spot_range = 4.0
+spot_angle = 12.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="car/light-back-left"]
+transform = Transform3D(1, 0, 0, 0, 0.881049, -0.473028, 0, 0.473028, 0.881049, -0.00336194, -0.554678, -1.71773)
+mesh = SubResource("PlaneMesh_35re2")
+skeleton = NodePath("../..")
+
+[node name="light-back-right" type="SpotLight3D" parent="car"]
+transform = Transform3D(1, 0, 0, 0, 0.57186, 0.820352, 0, -0.820352, 0.57186, -0.48174, 2.35391, -0.669028)
+light_color = Color(1, 0.121569, 0, 1)
+light_energy = 5.0
+spot_range = 4.0
+spot_angle = 12.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="car/light-back-right"]
+transform = Transform3D(1, 0, 0, 0, 0.881049, -0.473028, 0, 0.473028, 0.881049, 0.00724924, -0.554678, -1.71774)
+mesh = SubResource("PlaneMesh_35re2")
+skeleton = NodePath("../..")
