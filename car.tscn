@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://bgrdu1b4g4nal"]
+[gd_scene load_steps=16 format=4 uid="uid://ciag4gvc86bnl"]
 
 [ext_resource type="Texture2D" uid="uid://b0ahsnh0h5gai" path="res://models/vehicules/GLB format/Textures/colormap.png" id="1_2ae4i"]
 [ext_resource type="Script" path="res://code/car.gd" id="1_3623i"]
@@ -227,7 +227,7 @@ mesh = SubResource("ArrayMesh_i6fp8")
 skeleton = NodePath("")
 
 [node name="Camera3D" type="Camera3D" parent="car"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.11361, 0.557487, -0.159676)
+transform = Transform3D(-1, 8.74228e-08, -1.04251e-15, 0, 1.19249e-08, 1, 8.74228e-08, 1, -1.19249e-08, 0, 10, 0)
 
 [node name="light-front-left" type="SpotLight3D" parent="car"]
 transform = Transform3D(-0.996195, 9.27779e-10, -0.0871556, -0.0290171, 0.94295, 0.331668, 0.0821834, 0.332935, -0.939362, 0.413497, 0.862965, 0.939101)

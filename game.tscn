@@ -1,6 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://wex8acli8tqk"]
+[gd_scene load_steps=8 format=3 uid="uid://d0rcie7hun16"]
 
-[ext_resource type="PackedScene" uid="uid://bgrdu1b4g4nal" path="res://car.tscn" id="1_0m6t5"]
+[ext_resource type="PackedScene" uid="uid://ciag4gvc86bnl" path="res://car.tscn" id="1_0m6t5"]
 [ext_resource type="Texture2D" uid="uid://lci55caugej1" path="res://icon.svg" id="1_hotw8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7r5uh"]
