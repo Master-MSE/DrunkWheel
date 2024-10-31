@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://wex8acli8tqk"]
+
+[ext_resource type="PackedScene" uid="uid://bgrdu1b4g4nal" path="res://car.tscn" id="1_0m6t5"]
+[ext_resource type="Texture2D" uid="uid://lci55caugej1" path="res://icon.svg" id="1_hotw8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7r5uh"]
+albedo_color = Color(0.307153, 0.283207, 0.266098, 1)
+albedo_texture = ExtResource("1_hotw8")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_c2gsn"]
+material = SubResource("StandardMaterial3D_7r5uh")
+size = Vector3(200, 0.1, 200)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_d86bk"]
+points = PackedVector3Array(-100, -0.05, -100, -100, 0.05, -100, 100, -0.05, -100, -100, -0.05, 100, -100, 0.05, 100, 100, 0.05, -100, 100, -0.05, 100, 100, 0.05, 100)
+
+[sub_resource type="BoxMesh" id="BoxMesh_y0evb"]
+size = Vector3(10, 0.2, 10)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_b1p4g"]
+points = PackedVector3Array(-5, -0.1, -5, -5, 0.1, -5, 5, -0.1, -5, -5, -0.1, 5, -5, 0.1, 5, 5, 0.1, -5, 5, -0.1, 5, 5, 0.1, 5)
+
+[node name="Game" type="Node3D"]
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_c2gsn")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Ground"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/StaticBody3D2"]
+shape = SubResource("ConvexPolygonShape3D_d86bk")
+
+[node name="car" parent="." instance=ExtResource("1_0m6t5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.59005, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.37862, 1.70796, 0)
+
+[node name="Ramp" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.982297, 0.18733, 0, -0.18733, 0.982297, 0, 0.869172, 33.6376)
+mesh = SubResource("BoxMesh_y0evb")
+skeleton = NodePath("../Ground")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Ramp"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ramp/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_b1p4g")

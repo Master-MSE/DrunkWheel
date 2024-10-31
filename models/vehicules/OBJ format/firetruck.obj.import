@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://blfkkc4eqaf13"
+path="res://.godot/imported/firetruck.obj-48d30d568cdeb7c5648f4210bd0ca91f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/firetruck.obj-48d30d568cdeb7c5648f4210bd0ca91f.mesh"]
+
+source_file="res://models/vehicules/OBJ format/firetruck.obj"
+dest_files=["res://.godot/imported/firetruck.obj-48d30d568cdeb7c5648f4210bd0ca91f.mesh", "res://.godot/imported/firetruck.obj-48d30d568cdeb7c5648f4210bd0ca91f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
