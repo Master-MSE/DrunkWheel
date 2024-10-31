@@ -32,7 +32,7 @@ mesh = SubResource("BoxMesh_c2gsn")
 shape = SubResource("ConvexPolygonShape3D_d86bk")
 
 [node name="car" parent="." instance=ExtResource("1_0m6t5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19558, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.353496, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.37862, 1.70796, 0)
