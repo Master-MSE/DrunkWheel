@@ -13,6 +13,7 @@ extends Node
 @export var platform_sceneGG:PackedScene
 
 @export var alcohol_scene:PackedScene
+@onready var world_env = $WorldEnvironment
 
 # Distance horizontale entre les plateformes
 @export var platform_spacing := Vector3(0, 0,80)
@@ -105,5 +106,9 @@ func _on_platform_zone_entered(case):
 		
 func _on_alcohol_body_entered():
 		score += 1  # Augmente le score
+		RenderingServer.global_shader_parameter_set("tauxalcool",score)
+		if world_env and world_env.environment:
+			var env = world_env.environment
+			env.fog_depth_curve = pow(10,-score*0.2)
 		_update_score_display()  # Met à jour l'affichage du score
 		print("Le joueur a collecté de l'alcool. Score actuel: " + str(score))
