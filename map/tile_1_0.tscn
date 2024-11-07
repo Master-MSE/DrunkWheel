@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgu22l6qc7cr4"]
+
+[ext_resource type="PackedScene" uid="uid://bl6fs166m2fr5" path="res://models/vehicules/GLB format/ambulance.glb" id="1_8qefi"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_s1lky"]
+size = Vector2(30, 20)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_c5lwh"]
+data = PackedVector3Array(15, 0, 10, -15, 0, 10, 15, 0, -10, -15, 0, 10, -15, 0, -10, 15, 0, -10)
+
+[node name="Tile10" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("PlaneMesh_s1lky")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_c5lwh")
+
+[node name="ambulance" parent="." instance=ExtResource("1_8qefi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.37, 0, -6.60519)
+
+[node name="ambulance2" parent="." instance=ExtResource("1_8qefi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.2211, -3.8147e-06, 6.50685)
+
+[node name="ambulance3" parent="." instance=ExtResource("1_8qefi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.8945, 0, -0.143918)
+
+[node name="ambulance4" parent="." instance=ExtResource("1_8qefi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.0197, -1.90735e-06, 6.68571)
