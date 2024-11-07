@@ -1,16 +1,18 @@
 extends Node3D
 
-@export var tile_0_0:PackedScene = preload("res://map/tile_0_0.tscn")
-@export var tile_0_1:PackedScene = preload("res://map/tile_0_1.tscn")
-@export var tile_0_2:PackedScene = preload("res://map/tile_0_2.tscn")
-@export var tile_1_0:PackedScene = preload("res://map/tile_1_0.tscn")
-@export var tile_1_1:PackedScene = preload("res://map/tile_1_1.tscn")
-@export var tile_1_2:PackedScene = preload("res://map/tile_1_2.tscn")
-@export var tile_2_0:PackedScene = preload("res://map/tile_2_0.tscn")
-@export var tile_2_1:PackedScene = preload("res://map/tile_2_1.tscn")
-@export var tile_2_2:PackedScene = preload("res://map/tile_2_2.tscn")
+var start_tile:PackedScene = preload("res://map/start_tile.tscn")
+var end_tile:PackedScene = preload("res://map/end_tile.tscn")
+var tile_0_0:PackedScene = preload("res://map/tile_0_0.tscn")
+var tile_0_1:PackedScene = preload("res://map/tile_0_1.tscn")
+var tile_0_2:PackedScene = preload("res://map/tile_0_2.tscn")
+var tile_1_0:PackedScene = preload("res://map/tile_1_0.tscn")
+var tile_1_1:PackedScene = preload("res://map/tile_1_1.tscn")
+var tile_1_2:PackedScene = preload("res://map/tile_1_2.tscn")
+var tile_2_0:PackedScene = preload("res://map/tile_2_0.tscn")
+var tile_2_1:PackedScene = preload("res://map/tile_2_1.tscn")
+var tile_2_2:PackedScene = preload("res://map/tile_2_2.tscn")
 
-var tiles = [
+var tiles := [
 	[tile_0_0, tile_0_1, tile_0_2],
 	[tile_1_0, tile_1_1, tile_1_2],
 	[tile_2_0, tile_2_1, tile_2_2]
@@ -36,12 +38,13 @@ func _create_tile(tile: PackedScene) -> void:
 func _ready() -> void:
 	
 	# initial tile
-	_create_tile(tile_1_1)
+	_create_tile(start_tile)
 	
 	for i in map_length:
 		current_tile_ends = choose_next_tile(current_tile_ends)
 		_create_tile(tiles[current_tile_ends.x][current_tile_ends.y])
-
+	
+	_create_tile(end_tile)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

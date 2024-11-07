@@ -25,6 +25,8 @@ shape = SubResource("ConcavePolygonShape3D_qvtji")
 
 [node name="Cone1" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.25839, 0, 2.90559)
+mass = 0.564
+gravity_scale = 0.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Cone1"]
 mesh = ExtResource("1_gi60n")

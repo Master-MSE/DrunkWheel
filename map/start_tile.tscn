@@ -1,0 +1,91 @@
+[gd_scene load_steps=11 format=3 uid="uid://cw7njndechwey"]
+
+[ext_resource type="ArrayMesh" uid="uid://cnb0f1g3ge82j" path="res://models/vehicules/OBJ format/suv-luxury.obj" id="1_2wfxw"]
+[ext_resource type="ArrayMesh" uid="uid://d0x3qgyomv7sw" path="res://models/vehicules/OBJ format/suv.obj" id="2_ha1nr"]
+[ext_resource type="ArrayMesh" uid="uid://b2a0y4dti2ev" path="res://models/vehicules/OBJ format/sedan-sports.obj" id="3_g77e0"]
+[ext_resource type="ArrayMesh" uid="uid://h48nr4xwqsk6" path="res://models/vehicules/OBJ format/race.obj" id="4_pvs7k"]
+[ext_resource type="ArrayMesh" uid="uid://dckx1o7br16o1" path="res://models/vehicules/OBJ format/race-future.obj" id="5_6r6ea"]
+[ext_resource type="ArrayMesh" uid="uid://b8tm67bqca53t" path="res://models/vehicules/OBJ format/police.obj" id="6_c7ced"]
+[ext_resource type="ArrayMesh" uid="uid://6qnw4efmqkrc" path="res://models/vehicules/OBJ format/hatchback-sports.obj" id="7_v2ivw"]
+[ext_resource type="ArrayMesh" uid="uid://blfkkc4eqaf13" path="res://models/vehicules/OBJ format/firetruck.obj" id="8_2pgdc"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_w1bn2"]
+size = Vector2(30, 20)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_mv8nq"]
+data = PackedVector3Array(15, 0, 10, -15, 0, 10, 15, 0, -10, -15, 0, 10, -15, 0, -10, 15, 0, -10)
+
+[node name="StartTile" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("PlaneMesh_w1bn2")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_mv8nq")
+
+[node name="Suv-luxury" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.41988, -9.53674e-07, -7.31523)
+mesh = ExtResource("1_2wfxw")
+
+[node name="Suv" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.58517, 0, -7.15351)
+mesh = ExtResource("2_ha1nr")
+
+[node name="Sedan-sports" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.651, 0, -7.15972)
+mesh = ExtResource("3_g77e0")
+
+[node name="Race" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.318651, -9.53674e-07, -6.79223)
+mesh = ExtResource("4_pvs7k")
+
+[node name="Race-future" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2177, 0, -6.70581)
+mesh = ExtResource("5_6r6ea")
+
+[node name="Police" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.54418, 0, -7.95689)
+mesh = ExtResource("6_c7ced")
+
+[node name="Hatchback-sports" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.37481, -1.90735e-06, -8.08433)
+mesh = ExtResource("7_v2ivw")
+
+[node name="Suv-luxury" type="MeshInstance3D" parent="Hatchback-sports"]
+transform = Transform3D(-0.999975, 0, 0.00713834, 0, 1, 0, -0.00713834, 0, -0.999975, 4.5661, -9.53674e-07, 14.5358)
+mesh = ExtResource("1_2wfxw")
+
+[node name="Suv" type="MeshInstance3D" parent="Hatchback-sports"]
+transform = Transform3D(-0.999975, 0, 0.00713834, 0, 1, 0, -0.00713834, 0, -0.999975, 2.73258, 0, 14.361)
+mesh = ExtResource("2_ha1nr")
+
+[node name="Sedan-sports" type="MeshInstance3D" parent="Hatchback-sports"]
+transform = Transform3D(-0.999975, 0, 0.00713834, 0, 1, 0, -0.00713834, 0, -0.999975, 0.798417, 0, 14.3534)
+mesh = ExtResource("3_g77e0")
+
+[node name="Race" type="MeshInstance3D" parent="Hatchback-sports"]
+transform = Transform3D(-0.999975, 0, 0.00713834, 0, 1, 0, -0.00713834, 0, -0.999975, -1.16856, -9.53674e-07, 13.9719)
+mesh = ExtResource("4_pvs7k")
+
+[node name="Race-future" type="MeshInstance3D" parent="Hatchback-sports"]
+transform = Transform3D(-0.999975, 0, 0.00713834, 0, 1, 0, -0.00713834, 0, -0.999975, -3.06694, 0, 13.8719)
+mesh = ExtResource("5_6r6ea")
+
+[node name="Police" type="MeshInstance3D" parent="Hatchback-sports"]
+transform = Transform3D(-0.999975, 0, 0.00713834, 0, 1, 0, -0.00713834, 0, -0.999975, -5.40229, 0, 15.1064)
+mesh = ExtResource("6_c7ced")
+
+[node name="Hatchback-sports" type="MeshInstance3D" parent="Hatchback-sports"]
+transform = Transform3D(-0.999975, 0, 0.00713834, 0, 1, 0, -0.00713834, 0, -0.999975, -9.23373, -1.90735e-06, 15.2065)
+mesh = ExtResource("7_v2ivw")
+
+[node name="Firetruck" type="MeshInstance3D" parent="Hatchback-sports"]
+transform = Transform3D(-0.999975, 0, 0.00713834, 0, 1, 0, -0.00713834, 0, -0.999975, -13.1212, 0, 15.1212)
+mesh = ExtResource("8_2pgdc")
+
+[node name="Firetruck" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2628, 0, -8.02687)
+mesh = ExtResource("8_2pgdc")

@@ -227,7 +227,7 @@ mesh = SubResource("ArrayMesh_i6fp8")
 skeleton = NodePath("")
 
 [node name="Camera3D" type="Camera3D" parent="car"]
-transform = Transform3D(-1, 8.74228e-08, -1.04251e-15, 0, 1.19249e-08, 1, 8.74228e-08, 1, -1.19249e-08, 0, 10, 0)
+transform = Transform3D(-1, 8.74228e-08, 2.51021e-15, 6.74197e-08, 0.771191, 0.636603, 5.56536e-08, 0.636603, -0.771191, 0, 8.03239, -2.4323)
 
 [node name="light-front-left" type="SpotLight3D" parent="car"]
 transform = Transform3D(-0.996195, 9.27779e-10, -0.0871556, -0.0290171, 0.94295, 0.331668, 0.0821834, 0.332935, -0.939362, 0.413497, 0.862965, 0.939101)
