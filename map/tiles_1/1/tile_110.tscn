@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=3 uid="uid://dk3f8q44ca06d"]
+
+[ext_resource type="ArrayMesh" uid="uid://b6ivck7q7gr4q" path="res://models/vehicules/OBJ format/box.obj" id="1_1rnpx"]
+[ext_resource type="PackedScene" uid="uid://bl6fs166m2fr5" path="res://models/vehicules/GLB format/ambulance.glb" id="2_ejkf3"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_jd51m"]
+size = Vector2(30, 20)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_hao70"]
+data = PackedVector3Array(15, 0, 10, -15, 0, 10, 15, 0, -10, -15, 0, 10, -15, 0, -10, 15, 0, -10)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_mfvrt"]
+points = PackedVector3Array(0.321736, 0.715, 0.321736, 0.321736, 0.679236, 0.3575, 0.35743, 0.679236, 0.321736, 0.321736, 0.715, -0.321806, -0.321806, 0.715, 0.321736, 0.321736, 0.035694, 0.3575, -0.321806, 0.679236, 0.3575, 0.35743, 0.679236, -0.321806, 0.35743, 0.035694, 0.321736, 0.321736, 0.679236, -0.3575, -0.321806, 0.715, -0.321806, -0.3575, 0.679236, 0.321736, 0.321736, 0, 0.321736, -0.321806, 0.035694, 0.3575, 0.35743, 0.035694, -0.321806, 0.321736, 0.035694, -0.3575, -0.321806, 0.679236, -0.3575, -0.3575, 0.679236, -0.321806, -0.3575, 0.035694, 0.321736, 0.321736, 0, -0.321806, -0.321806, 0, 0.321736, -0.321806, 0.035694, -0.3575, -0.3575, 0.035694, -0.321806, -0.321806, 0, -0.321806)
+
+[node name="Tile110" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("PlaneMesh_jd51m")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_hao70")
+
+[node name="Box 1" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.25726, 0, 6.13633)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Box 1"]
+mesh = ExtResource("1_1rnpx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box 1"]
+shape = SubResource("ConvexPolygonShape3D_mfvrt")
+
+[node name="Box 2" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.16852, 0, 3.37662)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Box 2"]
+mesh = ExtResource("1_1rnpx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box 2"]
+shape = SubResource("ConvexPolygonShape3D_mfvrt")
+
+[node name="Box 3" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.25726, 0, -6.38178)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Box 3"]
+mesh = ExtResource("1_1rnpx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box 3"]
+shape = SubResource("ConvexPolygonShape3D_mfvrt")
+
+[node name="ambulance" parent="." instance=ExtResource("2_ejkf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8451, 0, -5.75646)
+
+[node name="ambulance2" parent="." instance=ExtResource("2_ejkf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9368, 4.76837e-07, 4.77847)
+
+[node name="ambulance3" parent="." instance=ExtResource("2_ejkf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.6563, -4.76837e-07, -4.7739)
+
+[node name="ambulance4" parent="." instance=ExtResource("2_ejkf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.7636, 0, 5.02724)
