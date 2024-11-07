@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://bgrdu1b4g4nal"]
+[gd_scene load_steps=16 format=4 uid="uid://ciag4gvc86bnl"]
 
 [ext_resource type="Texture2D" uid="uid://b0ahsnh0h5gai" path="res://models/vehicules/GLB format/Textures/colormap.png" id="1_2ae4i"]
 [ext_resource type="Script" path="res://code/car.gd" id="1_3623i"]
