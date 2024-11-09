@@ -1,5 +1,7 @@
 extends Node3D
 
+@onready var map_generator: MapGenerator = %MapGenerator
+
 var start_tile:PackedScene = preload("res://map/start_tile.tscn")
 var end_tile:PackedScene = preload("res://map/end_tile.tscn")
 var tile_0_0:PackedScene = preload("res://map/tile_0_0.tscn")
@@ -39,12 +41,12 @@ func _ready() -> void:
 	
 	# initial tile
 	_create_tile(start_tile)
-	
-	for i in map_length:
-		current_tile_ends = choose_next_tile(current_tile_ends)
-		_create_tile(tiles[current_tile_ends.x][current_tile_ends.y])
-	
-	_create_tile(end_tile)
+	map_generator.generate_map(20)
+	#for i in map_length:
+		#current_tile_ends = choose_next_tile(current_tile_ends)
+		#_create_tile(tiles[current_tile_ends.x][current_tile_ends.y])
+	#
+	#_create_tile(end_tile)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

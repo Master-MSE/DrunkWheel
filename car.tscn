@@ -147,6 +147,7 @@ axis_lock_angular_z = true
 mass = 200.0
 can_sleep = false
 script = ExtResource("1_3623i")
+vertical_obstacle_collision_impulse_strength = 5.0
 
 [node name="body" type="MeshInstance3D" parent="car"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, -0.025)
@@ -283,3 +284,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.556672, 0.0103203, 0.65844)
 
 [node name="raycast-back" type="RayCast3D" parent="car"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.556672, 0.0103203, -0.660878)
+
+[connection signal="body_entered" from="car" to="car" method="_on_body_entered"]
