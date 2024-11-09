@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dcr2v65xf8jry"
+path="res://.godot/imported/railroad-damaged-straight-skew-left.obj-367175c1a71a5eba1f14ef8a1b7e650a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/railroad-damaged-straight-skew-left.obj-367175c1a71a5eba1f14ef8a1b7e650a.mesh"]
+
+source_file="res://models/kenney_train-kit/Models/OBJ format/railroad-damaged-straight-skew-left.obj"
+dest_files=["res://.godot/imported/railroad-damaged-straight-skew-left.obj-367175c1a71a5eba1f14ef8a1b7e650a.mesh", "res://.godot/imported/railroad-damaged-straight-skew-left.obj-367175c1a71a5eba1f14ef8a1b7e650a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

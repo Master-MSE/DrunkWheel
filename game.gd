@@ -3,22 +3,7 @@ extends Node3D
 @onready var map_generator: MapGenerator = %MapGenerator
 
 var start_tile:PackedScene = preload("res://map/start_tile.tscn")
-var end_tile:PackedScene = preload("res://map/end_tile.tscn")
-var tile_0_0:PackedScene = preload("res://map/tile_0_0.tscn")
-var tile_0_1:PackedScene = preload("res://map/tile_0_1.tscn")
-var tile_0_2:PackedScene = preload("res://map/tile_0_2.tscn")
-var tile_1_0:PackedScene = preload("res://map/tile_1_0.tscn")
-var tile_1_1:PackedScene = preload("res://map/tile_1_1.tscn")
-var tile_1_2:PackedScene = preload("res://map/tile_1_2.tscn")
-var tile_2_0:PackedScene = preload("res://map/tile_2_0.tscn")
-var tile_2_1:PackedScene = preload("res://map/tile_2_1.tscn")
-var tile_2_2:PackedScene = preload("res://map/tile_2_2.tscn")
 
-var tiles := [
-	[tile_0_0, tile_0_1, tile_0_2],
-	[tile_1_0, tile_1_1, tile_1_2],
-	[tile_2_0, tile_2_1, tile_2_2]
-]
 
 var current_tile_ends = Vector2(1,1)
 var current_tile_pos = Vector3(0,0,0)
@@ -38,15 +23,7 @@ func _create_tile(tile: PackedScene) -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
-	# initial tile
-	_create_tile(start_tile)
 	map_generator.generate_map(20)
-	#for i in map_length:
-		#current_tile_ends = choose_next_tile(current_tile_ends)
-		#_create_tile(tiles[current_tile_ends.x][current_tile_ends.y])
-	#
-	#_create_tile(end_tile)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cnu142pph0vc8"
+path="res://.godot/imported/road.obj-06f0f05df95b8bb1445ee7109eee57de.mesh"
+
+[deps]
+
+files=["res://.godot/imported/road.obj-06f0f05df95b8bb1445ee7109eee57de.mesh"]
+
+source_file="res://models/kenney_fantasy-town-kit/Models/OBJ format/road.obj"
+dest_files=["res://.godot/imported/road.obj-06f0f05df95b8bb1445ee7109eee57de.mesh", "res://.godot/imported/road.obj-06f0f05df95b8bb1445ee7109eee57de.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

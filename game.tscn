@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://d0rcie7hun16"]
+[gd_scene load_steps=12 format=3 uid="uid://d0rcie7hun16"]
 
 [ext_resource type="PackedScene" uid="uid://ciag4gvc86bnl" path="res://car.tscn" id="1_0m6t5"]
 [ext_resource type="Script" path="res://game.gd" id="1_ka53t"]
+[ext_resource type="Environment" uid="uid://b788umq5ypwa3" path="res://resources/envrionment.tres" id="3_3t6gg"]
 [ext_resource type="Script" path="res://code/map_generator.gd" id="3_xpbjs"]
 [ext_resource type="Script" path="res://code/maptiledata.gd" id="4_602tr"]
 [ext_resource type="Resource" uid="uid://cmju8ysmarlgv" path="res://resources/Game Data/Map Tile Data/tile_LL01.tres" id="5_hgli0"]
@@ -9,21 +10,25 @@
 [ext_resource type="Resource" uid="uid://kxxs6mafqkbu" path="res://resources/Game Data/Map Tile Data/tile_LR01.tres" id="7_w0xi5"]
 [ext_resource type="Resource" uid="uid://bi43dnwoulkru" path="res://resources/Game Data/Map Tile Data/tile_CL01.tres" id="8_1pa3x"]
 [ext_resource type="Resource" uid="uid://cup1gtp3qg561" path="res://resources/Game Data/Map Tile Data/tile_RL01.tres" id="9_5xd8u"]
+[ext_resource type="Resource" uid="uid://wym5meyekvl4" path="res://resources/Game Data/Map Tile Data/tile_start.tres" id="10_lof5k"]
 
 [node name="Game" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 21.4664, 0)
 script = ExtResource("1_ka53t")
 
 [node name="car" parent="." instance=ExtResource("1_0m6t5")]
-transform = Transform3D(1.19249e-08, 0, 1, 0, 1, 0, -1, 0, 1.19249e-08, 0, 0.353496, 0)
+transform = Transform3D(1.19249e-08, 0, 1, 0, 1, 0, -1, 0, 1.19249e-08, 0, -20.5567, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.37862, 1.70796, 0)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.37862, -19.2023, 0)
+environment = ExtResource("3_3t6gg")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.203027, 0.979173, 0, -0.979173, -0.203027, 0, 251.473, 0)
+transform = Transform3D(0.77533, 0.128223, -0.618402, 0.631556, -0.157413, 0.759183, 0, -0.979173, -0.203027, 0, 251.473, 0)
+shadow_enabled = true
 
 [node name="MapGenerator" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("3_xpbjs")
 map_tile_datas = Array[ExtResource("4_602tr")]([ExtResource("5_hgli0"), ExtResource("6_2ipsn"), ExtResource("7_w0xi5"), ExtResource("8_1pa3x"), ExtResource("9_5xd8u")])
+tile_start = ExtResource("10_lof5k")

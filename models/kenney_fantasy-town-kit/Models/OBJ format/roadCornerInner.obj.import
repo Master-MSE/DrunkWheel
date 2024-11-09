@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bc0c3hr6a7mck"
+path="res://.godot/imported/roadCornerInner.obj-4bbb71c6b74495551bbd044bf61461ed.mesh"
+
+[deps]
+
+files=["res://.godot/imported/roadCornerInner.obj-4bbb71c6b74495551bbd044bf61461ed.mesh"]
+
+source_file="res://models/kenney_fantasy-town-kit/Models/OBJ format/roadCornerInner.obj"
+dest_files=["res://.godot/imported/roadCornerInner.obj-4bbb71c6b74495551bbd044bf61461ed.mesh", "res://.godot/imported/roadCornerInner.obj-4bbb71c6b74495551bbd044bf61461ed.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

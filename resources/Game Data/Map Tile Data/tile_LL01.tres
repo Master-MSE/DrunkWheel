@@ -8,3 +8,4 @@ script = ExtResource("1_i4kyu")
 entrance_type = 0
 exit_type = 0
 tile_scene = ExtResource("2_3bleu")
+tile_start = 1
