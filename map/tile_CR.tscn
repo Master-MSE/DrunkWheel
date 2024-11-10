@@ -4794,24 +4794,6 @@ skeleton = NodePath("../../..")
 transform = Transform3D(4, 0, 0, 0, 10, 0, 0, 0, 10, -3, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_bxjom")
 
-[node name="LightCurved" type="MeshInstance3D" parent="Road/RoadTile18"]
-transform = Transform3D(-6, 0, 9.05975e-07, 0, 6, 0, -9.05975e-07, 0, -6, 0, -0.037, -4)
-mesh = ExtResource("3_71bof")
-skeleton = NodePath("../../..")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Road/RoadTile18"]
-transform = Transform3D(-6, 0, 9.05975e-07, 0, 6, 0, -9.05975e-07, 0, -6, 0, -0.037, -4)
-shape = SubResource("ConcavePolygonShape3D_24dk0")
-
-[node name="SpotLight3D" type="SpotLight3D" parent="Road/RoadTile18"]
-transform = Transform3D(1, 8.74228e-08, 8.74228e-08, -8.74228e-08, -4.37114e-08, 1, 8.74228e-08, -1, -4.37114e-08, 0, 4, -3)
-light_color = Color(1, 1, 0.392157, 1)
-light_energy = 8.947
-light_indirect_energy = 1.318
-light_volumetric_fog_energy = 1.212
-light_size = 0.212
-spot_angle = 31.9252
-
 [node name="LightCurved2" type="MeshInstance3D" parent="Road/RoadTile18"]
 transform = Transform3D(6, 0, -3.81438e-07, 0, 6, 0, 3.81438e-07, 0, 6, 0, -0.0369999, 3.99694)
 mesh = ExtResource("3_71bof")
