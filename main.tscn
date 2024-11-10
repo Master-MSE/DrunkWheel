@@ -16,6 +16,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qrs71"]
 shader = ExtResource("13_e5auj")
+shader_parameter/index = 0
 
 [sub_resource type="Environment" id="Environment_ae5du"]
 background_mode = 2

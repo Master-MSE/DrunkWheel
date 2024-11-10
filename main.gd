@@ -26,7 +26,6 @@ var score := 0
 var score_label: Label
 var player
 
-
 func _ready():
 	# Crée la première plateforme au démarrage du jeu
 	var nb_of_plateform = randi() % 9 + 1
@@ -39,7 +38,17 @@ func _ready():
 		player.connect("alcohol_collected", Callable(self, "_on_alcohol_body_entered"))
 	
 	_update_score_display()
-
+func _physics_process(delta):
+	if Input.is_action_just_pressed("alcool_up"):
+		score += 1
+		RenderingServer.global_shader_parameter_set("tauxalcool",score)
+		_update_frog()
+		_update_score_display()
+	if Input.is_action_just_pressed("alcool_down"):
+		score -= 1
+		RenderingServer.global_shader_parameter_set("tauxalcool",score)
+		_update_frog()
+		_update_score_display()
 # Fonction appelée pour ajouter une nouvelle plateforme
 func _add_new_platform(nb_of_plateform):
 	# Instancie une nouvelle plateforme à partir de la scène
@@ -107,8 +116,10 @@ func _on_platform_zone_entered(case):
 func _on_alcohol_body_entered():
 		score += 1  # Augmente le score
 		RenderingServer.global_shader_parameter_set("tauxalcool",score)
-		if world_env and world_env.environment:
-			var env = world_env.environment
-			env.fog_depth_curve = pow(10,-score*0.2)
+		_update_frog()
 		_update_score_display()  # Met à jour l'affichage du score
 		print("Le joueur a collecté de l'alcool. Score actuel: " + str(score))
+func _update_frog():
+	if world_env and world_env.environment:
+			var env = world_env.environment
+			env.fog_depth_curve = pow(10,-score*0.01)

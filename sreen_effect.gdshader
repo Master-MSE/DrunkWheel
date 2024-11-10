@@ -1,17 +1,26 @@
 shader_type canvas_item;
 uniform sampler2D SCREEN_TEXTURE:hint_screen_texture;
+uniform int index;
 global uniform float tauxalcool;
 void vertex() {
 	// Called for every vertex the material is visible on.
 }
 
 void fragment() {
+	
 	float time = TIME;
 	float offset = sin(time)*tauxalcool*3.0;
-	vec4 green_chanel = texture(SCREEN_TEXTURE,SCREEN_UV);
-	vec4 red_chanel = texture(SCREEN_TEXTURE,vec2(SCREEN_UV.x+(offset*SCREEN_PIXEL_SIZE.x),SCREEN_UV.y));
-	vec4 blue_chanel = texture(SCREEN_TEXTURE,vec2(SCREEN_UV.x-(offset*SCREEN_PIXEL_SIZE.x),SCREEN_UV.y));
-	COLOR = vec4(green_chanel.r,red_chanel.g,blue_chanel.b,1.0);
+	switch (index){
+		case 1:
+			vec4 first_chanel = texture(SCREEN_TEXTURE,vec2(SCREEN_UV.x+sin(SCREEN_UV.y*2.0*PI+TIME)*SCREEN_PIXEL_SIZE.x*10.0,SCREEN_UV.y));
+			COLOR = vec4(first_chanel.r,first_chanel.g,first_chanel.b,0.5);
+			break;
+		default:
+			COLOR = vec4(0,0,0,0);
+			break;
+	}
+	//vec4 first_chanel = texture(SCREEN_TEXTURE,vec2(SCREEN_UV.x+(offset*SCREEN_PIXEL_SIZE.x),SCREEN_UV.y));
+	
 	// Called for every pixel the material is visible on.
 }
 
