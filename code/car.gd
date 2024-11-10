@@ -3,8 +3,8 @@ extends VehicleBody3D
 @export var vertical_obstacle_collision_impulse_strength: float = 1.0
 @export var relative_obstacle_collision_impulse_strength: float = 1.0
 
-const MAX_SPEED = 25.0
-const MAX_ENGINE_FORCE = 800.0
+const MAX_SPEED = 15.0
+const MAX_ENGINE_FORCE = 1500.0
 const MAX_BRAKE_FORCE = 10.0
 const MAX_STEERING_ANGLE = 0.6
 const STEERING_SPEED = 0.05
@@ -14,21 +14,6 @@ const DRIFT_FRICTION_REDUCTION_FRONT = 0.1
 const DRIFT_SPEED_THRESHOLD = 20.0
 
 var steering_angle = 0.0
-
-func drift():
-	var speed = linear_velocity.length()
-	var is_drifting = speed > DRIFT_SPEED_THRESHOLD
-	if is_drifting:
-		$"wheel-back-left".wheel_friction_slip = NORMAL_FRICTION * DRIFT_FRICTION_REDUCTION_BACK
-		$"wheel-back-right".wheel_friction_slip = NORMAL_FRICTION * DRIFT_FRICTION_REDUCTION_BACK
-		$"wheel-front-left".wheel_friction_slip = NORMAL_FRICTION * DRIFT_FRICTION_REDUCTION_FRONT
-		$"wheel-front-right".wheel_friction_slip = NORMAL_FRICTION * DRIFT_FRICTION_REDUCTION_FRONT
-	else:
-		pass
-		$"wheel-back-left".wheel_friction_slip = NORMAL_FRICTION
-		$"wheel-back-right".wheel_friction_slip = NORMAL_FRICTION
-		$"wheel-front-left".wheel_friction_slip = NORMAL_FRICTION
-		$"wheel-front-right".wheel_friction_slip = NORMAL_FRICTION
 		
 func steering(steering_input):
 	if(steering_input != 0):
@@ -48,7 +33,8 @@ func steering(steering_input):
 		$"wheel-front-right".steering = steering_angle
 		
 func engine(engine_input):
-	if(linear_velocity.length() < MAX_SPEED && engine_input != -1):
+	print(linear_velocity.length())
+	if(linear_velocity.length() < MAX_SPEED):
 		$"wheel-back-left".engine_force = engine_input * MAX_ENGINE_FORCE
 		$"wheel-back-right".engine_force = engine_input * MAX_ENGINE_FORCE
 	else:
@@ -59,11 +45,6 @@ func engine(engine_input):
 	else:
 		brake = 0	
 
-func align_y(xform, new_y):
-	xform.basis.y = new_y
-	xform.basis.x = -xform.basis.z.cross(new_y)
-	xform.basis = xform.basis.orthonormalized()
-	return xform
 	
 func _physics_process(delta):
 	var steering_input = 0.0
@@ -84,14 +65,6 @@ func _physics_process(delta):
 		$"light-back-left".visible = false
 		$"light-back-right".visible = false
 	
-	if ($"raycast-front".is_colliding() || $"raycast-back".is_colliding()):
-		var nf = $"raycast-front".get_collision_normal() if $"raycast-front".is_colliding() else Vector3.UP
-		var nr = $"raycast-back".get_collision_normal() if $"raycast-back".is_colliding() else Vector3.UP
-		var n = ((nr + nf) / 2.0).normalized()
-		var xform = align_y(global_transform, n)
-		global_transform = global_transform.interpolate_with(xform, 0.1)
-	
-	#drift()
 	steering(steering_input)
 	engine(engine_input)
 		

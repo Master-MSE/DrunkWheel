@@ -142,10 +142,13 @@ size = Vector2(0.15, 0.12)
 
 [node name="car" type="VehicleBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0239234, 0, 0.0928687)
-axis_lock_angular_x = true
-axis_lock_angular_z = true
-mass = 200.0
+mass = 1000.0
+gravity_scale = 1.2
+center_of_mass_mode = 1
+center_of_mass = Vector3(0, -0.1, 0)
 can_sleep = false
+linear_damp = 0.05
+angular_damp = 1.0
 script = ExtResource("1_3623i")
 vertical_obstacle_collision_impulse_strength = 5.0
 
@@ -165,15 +168,15 @@ shape = SubResource("BoxShape3D_w0qxb")
 
 [node name="wheel-front-left" type="VehicleWheel3D" parent="car"]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0.555258, 0.277403, 0.661738)
-use_as_traction = true
 use_as_steering = true
 wheel_radius = 0.3
 wheel_rest_length = 0.05
 wheel_friction_slip = 1.0
-suspension_stiffness = 75.0
-suspension_max_force = 750.0
-damping_compression = 0.8
-damping_relaxation = 0.8
+suspension_travel = 0.3
+suspension_stiffness = 30.0
+suspension_max_force = 4000.0
+damping_compression = 1.0
+damping_relaxation = 2.0
 
 [node name="wheel-dark" type="MeshInstance3D" parent="car/wheel-front-left"]
 mesh = SubResource("ArrayMesh_i6fp8")
@@ -185,10 +188,11 @@ use_as_traction = true
 wheel_radius = 0.3
 wheel_rest_length = 0.05
 wheel_friction_slip = 1.0
-suspension_stiffness = 75.0
-suspension_max_force = 750.0
-damping_compression = 0.8
-damping_relaxation = 0.8
+suspension_travel = 0.3
+suspension_stiffness = 30.0
+suspension_max_force = 4000.0
+damping_compression = 1.0
+damping_relaxation = 2.0
 
 [node name="wheel-dark" type="MeshInstance3D" parent="car/wheel-back-left"]
 mesh = SubResource("ArrayMesh_i6fp8")
@@ -196,15 +200,15 @@ skeleton = NodePath("")
 
 [node name="wheel-front-right" type="VehicleWheel3D" parent="car"]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.559738, 0.27687, 0.657731)
-use_as_traction = true
 use_as_steering = true
 wheel_radius = 0.3
 wheel_rest_length = 0.05
 wheel_friction_slip = 1.0
-suspension_stiffness = 75.0
-suspension_max_force = 750.0
-damping_compression = 0.8
-damping_relaxation = 0.8
+suspension_travel = 0.3
+suspension_stiffness = 30.0
+suspension_max_force = 4000.0
+damping_compression = 1.0
+damping_relaxation = 2.0
 
 [node name="wheel-dark" type="MeshInstance3D" parent="car/wheel-front-right"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
@@ -217,10 +221,11 @@ use_as_traction = true
 wheel_radius = 0.3
 wheel_rest_length = 0.05
 wheel_friction_slip = 1.0
-suspension_stiffness = 75.0
-suspension_max_force = 750.0
-damping_compression = 0.8
-damping_relaxation = 0.8
+suspension_travel = 0.3
+suspension_stiffness = 30.0
+suspension_max_force = 4000.0
+damping_compression = 1.0
+damping_relaxation = 2.0
 
 [node name="wheel-dark" type="MeshInstance3D" parent="car/wheel-back-right"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
@@ -228,7 +233,7 @@ mesh = SubResource("ArrayMesh_i6fp8")
 skeleton = NodePath("")
 
 [node name="Camera3D" type="Camera3D" parent="car"]
-transform = Transform3D(-1, 8.74228e-08, 2.51021e-15, 6.74197e-08, 0.771191, 0.636603, 5.56536e-08, 0.636603, -0.771191, 0, 8.03239, -2.4323)
+transform = Transform3D(-1, 2.89852e-09, -8.73747e-08, -4.87786e-08, 0.810911, 0.58517, 7.25492e-08, 0.58517, -0.810911, 0, 5.30136, -2.67054)
 
 [node name="light-front-left" type="SpotLight3D" parent="car"]
 transform = Transform3D(-0.996195, 9.27779e-10, -0.0871556, -0.0290171, 0.94295, 0.331668, 0.0821834, 0.332935, -0.939362, 0.413497, 0.862965, 0.939101)
@@ -278,11 +283,5 @@ spot_angle = 12.0
 transform = Transform3D(1, 0, 0, 0, 0.881049, -0.473028, 0, 0.473028, 0.881049, 0.00724924, -0.554678, -1.71774)
 mesh = SubResource("PlaneMesh_35re2")
 skeleton = NodePath("../..")
-
-[node name="raycast-front" type="RayCast3D" parent="car"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.556672, 0.0103203, 0.65844)
-
-[node name="raycast-back" type="RayCast3D" parent="car"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.556672, 0.0103203, -0.660878)
 
 [connection signal="body_entered" from="car" to="car" method="_on_body_entered"]
