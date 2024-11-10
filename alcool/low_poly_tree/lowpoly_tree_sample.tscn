@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvftlln62x0tf"]
+
+[ext_resource type="PackedScene" uid="uid://dau8dmm21nq8" path="res://alcool/low_poly_tree/Lowpoly_tree_sample.fbx" id="1_pesij"]
+
+[node name="Lowpoly_tree_sample" instance=ExtResource("1_pesij")]

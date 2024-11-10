@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ckjvjsttmfv5c"
+path="res://.godot/imported/Lowpoly_tree_sample2.obj-97c7eda2783e8aefc6c28c2dcde9a99e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Lowpoly_tree_sample2.obj-97c7eda2783e8aefc6c28c2dcde9a99e.mesh"]
+
+source_file="res://alcool/low_poly_tree/Lowpoly_tree_sample2.obj"
+dest_files=["res://.godot/imported/Lowpoly_tree_sample2.obj-97c7eda2783e8aefc6c28c2dcde9a99e.mesh", "res://.godot/imported/Lowpoly_tree_sample2.obj-97c7eda2783e8aefc6c28c2dcde9a99e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

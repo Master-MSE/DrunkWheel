@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://t5n5h5xx48nl"]
+
+[ext_resource type="Script" path="res://alcool/arbre.gd" id="1_5oky6"]
+
+[node name="Arbre" type="Node3D"]
+script = ExtResource("1_5oky6")

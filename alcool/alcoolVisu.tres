@@ -1,4 +1,4 @@
-[gd_resource type="VisualShader" load_steps=24 format=3 uid="uid://d0fynwfgmrd0u"]
+[gd_resource type="VisualShader" load_steps=24 format=3 uid="uid://djubutyrhwtah"]
 
 [sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_krt2q"]
 parameter_name = "Alpha"
@@ -37,6 +37,7 @@ input_name = "vertex"
 [sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_qb3xa"]
 parameter_name = "seed"
 qualifier = 2
+default_value_enabled = true
 
 [sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_mhpqo"]
 parameter_name = "tauxalcool"
@@ -85,8 +86,7 @@ render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_s
 // Varyings
 varying vec3 var_test;
 
-global uniform float tauxalcool;
-instance uniform float seed;
+instance uniform float seed = 0;
 instance uniform float Alpha = 1;
 
 
@@ -123,13 +123,13 @@ void vertex() {
 	float n_out16p0 = n_out12p0 * n_out28p0;
 
 
-// FloatParameter:21
-	float n_out21p0 = tauxalcool;
+// FloatConstant:30
+	float n_out30p0 = 1.000000;
 
 
 // FloatOp:29
 	float n_in29p1 = 0.50000;
-	float n_out29p0 = n_out21p0 * n_in29p1;
+	float n_out29p0 = n_out30p0 * n_in29p1;
 
 
 // FloatOp:15
@@ -142,7 +142,7 @@ void vertex() {
 
 // FloatOp:24
 	float n_in24p1 = 0.50000;
-	float n_out24p0 = n_out21p0 * n_in24p1;
+	float n_out24p0 = n_out30p0 * n_in24p1;
 
 
 // Input:19
@@ -199,6 +199,7 @@ void fragment() {
 
 }
 "
+graph_offset = Vector2(-427.56, -229.632)
 varyings/test = "0,4"
 nodes/vertex/0/position = Vector2(2260, 520)
 nodes/vertex/2/node = SubResource("VisualShaderNodeInput_ji3dd")
@@ -245,7 +246,7 @@ nodes/vertex/29/node = SubResource("VisualShaderNodeFloatOp_7tekc")
 nodes/vertex/29/position = Vector2(-1140, 580)
 nodes/vertex/30/node = SubResource("VisualShaderNodeFloatConstant_j8e12")
 nodes/vertex/30/position = Vector2(-1820, 940)
-nodes/vertex/connections = PackedInt32Array(3, 0, 4, 0, 6, 0, 0, 0, 2, 2, 6, 1, 2, 1, 13, 1, 12, 0, 16, 0, 17, 0, 6, 0, 22, 0, 17, 1, 2, 3, 6, 2, 23, 0, 18, 0, 19, 0, 23, 0, 27, 0, 25, 1, 25, 0, 23, 1, 20, 0, 25, 0, 13, 0, 17, 0, 2, 2, 14, 1, 28, 0, 16, 1, 18, 0, 22, 1, 24, 0, 22, 0, 29, 0, 15, 1, 4, 0, 14, 0, 16, 0, 15, 0, 15, 0, 13, 0, 14, 0, 12, 0, 14, 0, 28, 0, 21, 0, 24, 0, 21, 0, 29, 0)
+nodes/vertex/connections = PackedInt32Array(3, 0, 4, 0, 6, 0, 0, 0, 2, 2, 6, 1, 2, 1, 13, 1, 12, 0, 16, 0, 17, 0, 6, 0, 22, 0, 17, 1, 2, 3, 6, 2, 23, 0, 18, 0, 19, 0, 23, 0, 27, 0, 25, 1, 25, 0, 23, 1, 20, 0, 25, 0, 13, 0, 17, 0, 2, 2, 14, 1, 28, 0, 16, 1, 18, 0, 22, 1, 24, 0, 22, 0, 29, 0, 15, 1, 4, 0, 14, 0, 16, 0, 15, 0, 15, 0, 13, 0, 14, 0, 12, 0, 14, 0, 28, 0, 30, 0, 24, 0, 30, 0, 29, 0)
 nodes/fragment/0/position = Vector2(640, -560)
 nodes/fragment/3/node = SubResource("VisualShaderNodeFloatParameter_krt2q")
 nodes/fragment/3/position = Vector2(-1100, 300)

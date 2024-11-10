@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cn4ysaifqhumu"]
+[gd_scene load_steps=16 format=3 uid="uid://cn4ysaifqhumu"]
 
 [ext_resource type="PackedScene" uid="uid://dxv2nentvgogp" path="res://plateform/plateformCC.tscn" id="1_3llig"]
 [ext_resource type="Script" path="res://main.gd" id="1_u81di"]
@@ -12,6 +12,10 @@
 [ext_resource type="PackedScene" uid="uid://dhbeq6m5kckdb" path="res://plateform/plateformGD.tscn" id="8_4gyoy"]
 [ext_resource type="PackedScene" uid="uid://bn87liv28pah4" path="res://plateform/plateformGC.tscn" id="9_hjbgw"]
 [ext_resource type="PackedScene" uid="uid://opfa0usbl277" path="res://plateform/plateformGG.tscn" id="10_hupsd"]
+[ext_resource type="Shader" path="res://sreen_effect.gdshader" id="13_e5auj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qrs71"]
+shader = ExtResource("13_e5auj")
 
 [sub_resource type="Environment" id="Environment_ae5du"]
 background_mode = 2
@@ -44,6 +48,18 @@ alcohol_scene = ExtResource("3_7ccff")
 transform = Transform3D(-1, 5.61943e-08, -6.69697e-08, 0, 0.766044, 0.642788, 8.74228e-08, 0.642788, -0.766044, 0.00552177, 10, -5)
 
 [node name="Camera3D" type="Camera3D" parent="Player/CameraPivot"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Player/CameraPivot/Camera3D"]
+
+[node name="ColorRect" type="ColorRect" parent="Player/CameraPivot/Camera3D/CanvasLayer"]
+material = SubResource("ShaderMaterial_qrs71")
+custom_minimum_size = Vector2(300, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 4
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 8.47873, 0)

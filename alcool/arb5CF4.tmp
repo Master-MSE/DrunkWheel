@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://t5n5h5xx48nl"]
+
+[ext_resource type="Script" path="res://alcool/arbre.gd" id="1_5oky6"]
+[ext_resource type="ArrayMesh" uid="uid://rheshhkmd5pn" path="res://alcool/low_poly_tree/mesh_tree.tres" id="1_vhcil"]
+[ext_resource type="Shader" path="res://alcool/alcool.gdshader" id="2_eh3s7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_txinn"]
+render_priority = 0
+shader = ExtResource("2_eh3s7")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_76035"]
+render_priority = 0
+shader = ExtResource("2_eh3s7")
+
+[node name="Arbre" type="Node3D"]
+script = ExtResource("1_5oky6")
+
+[node name="Tree3" type="MeshInstance3D" parent="."]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+instance_shader_parameters/Alpha = 1.0
+instance_shader_parameters/Scale = 100.0
+instance_shader_parameters/seed = 0.5
+mesh = ExtResource("1_vhcil")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("ShaderMaterial_txinn")
+surface_material_override/1 = SubResource("ShaderMaterial_76035")
+
+[node name="Tree" type="MeshInstance3D" parent="."]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+instance_shader_parameters/Alpha = 1.0
+instance_shader_parameters/Scale = 100.0
+mesh = ExtResource("1_vhcil")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("ShaderMaterial_txinn")
+surface_material_override/1 = SubResource("ShaderMaterial_76035")
+
+[node name="Tree2" type="MeshInstance3D" parent="."]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+instance_shader_parameters/Alpha = 1.0
+instance_shader_parameters/Scale = 100.0
+instance_shader_parameters/seed = 0.3
+mesh = ExtResource("1_vhcil")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("ShaderMaterial_txinn")
+surface_material_override/1 = SubResource("ShaderMaterial_76035")
