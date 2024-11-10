@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://d0rcie7hun16"]
+[gd_scene load_steps=16 format=3 uid="uid://d0rcie7hun16"]
 
 [ext_resource type="PackedScene" uid="uid://ciag4gvc86bnl" path="res://car.tscn" id="1_0m6t5"]
 [ext_resource type="Script" path="res://game.gd" id="1_ka53t"]
@@ -10,7 +10,11 @@
 [ext_resource type="Resource" uid="uid://kxxs6mafqkbu" path="res://resources/Game Data/Map Tile Data/tile_LR01.tres" id="7_w0xi5"]
 [ext_resource type="Resource" uid="uid://bi43dnwoulkru" path="res://resources/Game Data/Map Tile Data/tile_CL01.tres" id="8_1pa3x"]
 [ext_resource type="Resource" uid="uid://cup1gtp3qg561" path="res://resources/Game Data/Map Tile Data/tile_RL01.tres" id="9_5xd8u"]
+[ext_resource type="Resource" uid="uid://c7vu33f4khgh0" path="res://resources/Game Data/Map Tile Data/tile_CC01.tres" id="10_b15y0"]
 [ext_resource type="Resource" uid="uid://wym5meyekvl4" path="res://resources/Game Data/Map Tile Data/tile_start.tres" id="10_lof5k"]
+[ext_resource type="Resource" uid="uid://4nt5wlt0g1ur" path="res://resources/Game Data/Map Tile Data/tile_CR01.tres" id="11_2nb05"]
+[ext_resource type="Resource" uid="uid://damxv4pommgsa" path="res://resources/Game Data/Map Tile Data/tile_RC01.tres" id="13_8ya6f"]
+[ext_resource type="Resource" uid="uid://vtmawvnrmqfn" path="res://resources/Game Data/Map Tile Data/tile_RR01.tres" id="14_22ysf"]
 
 [node name="Game" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 21.4664, 0)
@@ -24,11 +28,11 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.378
 environment = ExtResource("3_3t6gg")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.77533, 0.128223, -0.618402, 0.631556, -0.157413, 0.759183, 0, -0.979173, -0.203027, 0, 251.473, 0)
+transform = Transform3D(-0.222682, -0.967679, -0.118369, 0.693309, -0.242551, 0.678596, -0.685373, 0.0690451, 0.724912, 0, 251.473, 0)
 shadow_enabled = true
 
 [node name="MapGenerator" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("3_xpbjs")
-map_tile_datas = Array[ExtResource("4_602tr")]([ExtResource("5_hgli0"), ExtResource("6_2ipsn"), ExtResource("7_w0xi5"), ExtResource("8_1pa3x"), ExtResource("9_5xd8u")])
+map_tile_datas = Array[ExtResource("4_602tr")]([ExtResource("5_hgli0"), ExtResource("6_2ipsn"), ExtResource("7_w0xi5"), ExtResource("8_1pa3x"), ExtResource("10_b15y0"), ExtResource("11_2nb05"), ExtResource("9_5xd8u"), ExtResource("13_8ya6f"), ExtResource("14_22ysf")])
 tile_start = ExtResource("10_lof5k")

@@ -4814,6 +4814,7 @@ transform = Transform3D(-7, 0, 1.05697e-06, 0, 7, 0, -1.05697e-06, 0, -7, -11, 1
 shape = SubResource("ConcavePolygonShape3D_bbb0m")
 
 [node name="field" type="Node3D" parent="."]
+visible = false
 
 [node name="FieldOfWheat(1)" type="MeshInstance3D" parent="field"]
 transform = Transform3D(-0.1, 0, 1.50996e-08, 0, 0.1, 0, -1.50996e-08, 0, -0.1, 33, 0, -8)
@@ -5617,6 +5618,7 @@ skeleton = NodePath("../../Forest")
 
 [node name="field2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 1.31134e-06)
+visible = false
 
 [node name="FieldOfWheat(1)" type="MeshInstance3D" parent="field2"]
 transform = Transform3D(-0.1, 0, 1.50996e-08, 0, 0.1, 0, -1.50996e-08, 0, -0.1, 33, 0, -8)
@@ -6420,6 +6422,7 @@ skeleton = NodePath("../../Forest")
 
 [node name="field3" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.39876e-06, 0, -16)
+visible = false
 
 [node name="FieldOfWheat(1)" type="MeshInstance3D" parent="field3"]
 transform = Transform3D(-0.1, 0, 1.50996e-08, 0, 0.1, 0, -1.50996e-08, 0, -0.1, 33, 0, -8)
@@ -7223,6 +7226,7 @@ skeleton = NodePath("../../Forest")
 
 [node name="field4" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -16)
+visible = false
 
 [node name="FieldOfWheat(1)" type="MeshInstance3D" parent="field4"]
 transform = Transform3D(-0.1, 0, 1.50996e-08, 0, 0.1, 0, -1.50996e-08, 0, -0.1, 33, 0, -8)

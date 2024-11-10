@@ -1,7 +1,9 @@
-[gd_scene load_steps=49 format=3 uid="uid://dhv3bgjbfjh8t"]
+[gd_scene load_steps=53 format=3 uid="uid://dhv3bgjbfjh8t"]
 
 [ext_resource type="ArrayMesh" uid="uid://cqox0ojrnm2ue" path="res://models/kenney_train-kit/Models/OBJ format/railroad-straight.obj" id="1_ug5re"]
 [ext_resource type="ArrayMesh" uid="uid://cvaprf6sd2fim" path="res://models/kenney_city-kit-roads/Models/OBJ format/road_straight.obj" id="2_qpayd"]
+[ext_resource type="ArrayMesh" uid="uid://cdyj5363xl03u" path="res://models/kenney_city-kit-roads/Models/OBJ format/light_curved.obj" id="3_xjpw6"]
+[ext_resource type="ArrayMesh" uid="uid://b7h7m6coubn7j" path="res://models/kenney_city-kit-roads/Models/OBJ format/road_crossing.obj" id="4_u3hkc"]
 
 [sub_resource type="MeshTexture" id="MeshTexture_xwajk"]
 
@@ -143,6 +145,12 @@ albedo_color = Color(0.621524, 0.621524, 0.621524, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_eb13o"]
 material = SubResource("StandardMaterial3D_yo10r")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_hytbc"]
+data = PackedVector3Array(-0.5, 0.01, -0.4, 0.5, 0.02, -0.4, 0.5, 0.01, -0.4, 0.5, 0.02, -0.4, -0.5, 0.01, -0.4, -0.5, 0.02, -0.4, 0.5, 0, -0.5, -0.5, 0.02, -0.5, -0.5, 0, -0.5, -0.5, 0.02, -0.5, 0.5, 0, -0.5, 0.5, 0.02, -0.5, 0.5, 0.01, 0.4, -0.5, 0.02, 0.4, -0.5, 0.01, 0.4, -0.5, 0.02, 0.4, 0.5, 0.01, 0.4, 0.5, 0.02, 0.4, 0.5, 0, -0.5, -0.5, 0, 0.5, 0.5, 0, 0.5, -0.5, 0, 0.5, 0.5, 0, -0.5, -0.5, 0, -0.5, 0.5, 0.02, -0.4, -0.5, 0.02, -0.5, 0.5, 0.02, -0.5, -0.5, 0.02, -0.5, 0.5, 0.02, -0.4, -0.5, 0.02, -0.4, -0.5, 0, 0.5, 0.5, 0.02, 0.5, 0.5, 0, 0.5, 0.5, 0.02, 0.5, -0.5, 0, 0.5, -0.5, 0.02, 0.5, 0.5, 0.02, 0.5, -0.5, 0.02, 0.4, 0.5, 0.02, 0.4, -0.5, 0.02, 0.4, 0.5, 0.02, 0.5, -0.5, 0.02, 0.5, 0.5, 0.01, 0.4, 0.5, 0.02, 0.5, 0.5, 0.02, 0.4, 0.5, 0.01, 0.4, 0.5, 0, 0.5, 0.5, 0.02, 0.5, 0.5, 0.01, 0.3, 0.5, 0, 0.5, 0.5, 0.01, 0.4, 0.5, 0.01, 0.01, 0.5, 0, 0.5, 0.5, 0.01, 0.3, 0.5, 0.01, -0.01, 0.5, 0, 0.5, 0.5, 0.01, 0.01, 0.5, 0.01, -0.3, 0.5, 0, 0.5, 0.5, 0.01, -0.01, 0.5, 0.01, -0.4, 0.5, 0, 0.5, 0.5, 0.01, -0.3, 0.5, 0.01, -0.4, 0.5, 0, -0.5, 0.5, 0, 0.5, 0.5, 0.02, -0.4, 0.5, 0, -0.5, 0.5, 0.01, -0.4, 0.5, 0, -0.5, 0.5, 0.02, -0.4, 0.5, 0.02, -0.5, -0.5, 0.01, -0.4, -0.5, 0, -0.5, -0.5, 0.02, -0.5, -0.5, 0, -0.5, -0.5, 0.01, -0.4, -0.5, 0, 0.5, -0.5, 0, 0.5, -0.5, 0.01, -0.4, -0.5, 0.01, -0.3, -0.5, 0, 0.5, -0.5, 0.01, -0.3, -0.5, 0.01, -0.01, -0.5, 0, 0.5, -0.5, 0.01, -0.01, -0.5, 0.01, 0.01, -0.5, 0, 0.5, -0.5, 0.01, 0.01, -0.5, 0.01, 0.3, -0.5, 0, 0.5, -0.5, 0.01, 0.3, -0.5, 0.01, 0.4, -0.5, 0, 0.5, -0.5, 0.01, 0.4, -0.5, 0.02, 0.4, -0.5, 0, 0.5, -0.5, 0.02, 0.4, -0.5, 0.02, 0.5, -0.5, 0.02, -0.5, -0.5, 0.02, -0.4, -0.5, 0.01, -0.4, -0.5, 0.01, 0.3, 0.5, 0.01, 0.01, 0.5, 0.01, 0.3, 0.5, 0.01, 0.01, -0.5, 0.01, 0.3, -0.5, 0.01, 0.01, 0.5, 0.01, -0.01, -0.5, 0.01, -0.3, 0.5, 0.01, -0.3, -0.5, 0.01, -0.3, 0.5, 0.01, -0.01, -0.5, 0.01, -0.01, 0.5, 0.01, -0.3, -0.5, 0.01, -0.4, 0.5, 0.01, -0.4, -0.5, 0.01, -0.4, 0.5, 0.01, -0.3, -0.5, 0.01, -0.3, 0.5, 0.01, 0.4, -0.5, 0.01, 0.3, 0.5, 0.01, 0.3, -0.5, 0.01, 0.3, 0.5, 0.01, 0.4, -0.5, 0.01, 0.4, 0.5, 0.01, 0.01, -0.5, 0.01, -0.01, 0.5, 0.01, -0.01, -0.5, 0.01, -0.01, 0.5, 0.01, 0.01, -0.5, 0.01, 0.01)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_dr2rp"]
+data = PackedVector3Array(0.025, 0.6528, -0.15, 0.0125, 0.675, -0.1, 0.025, 0.675, -0.15, 0.0125, 0.675, -0.1, 0.025, 0.6528, -0.15, 0.0125, 0.6528, -0.1, -0.025, 0, 0.025, 0.025, 0.1, 0.025, 0.025, 0, 0.025, 0.025, 0.1, 0.025, -0.025, 0, 0.025, -0.025, 0.1, 0.025, 0.0125, 0.6502, -0.0789, 0.0125, 0.675, -0.1, 0.0125, 0.6528, -0.1, 0.0125, 0.675, -0.1, 0.0125, 0.6502, -0.0789, 0.0125, 0.6717, -0.0728, 0.0125, 0.6717, -0.0728, 0.0125, 0.6502, -0.0789, 0.0125, 0.6426, -0.059, 0.0125, 0.6717, -0.0728, 0.0125, 0.6426, -0.059, 0.0125, 0.662, -0.0472, 0.0125, 0.662, -0.0472, 0.0125, 0.6426, -0.059, 0.0125, 0.6305, -0.0415, 0.0125, 0.662, -0.0472, 0.0125, 0.6305, -0.0415, 0.0125, 0.6464, -0.0247, 0.0125, 0.6464, -0.0247, 0.0125, 0.6305, -0.0415, 0.0125, 0.6146, -0.0274, 0.0125, 0.6464, -0.0247, 0.0125, 0.6146, -0.0274, 0.0125, 0.5957, -0.0175, 0.0125, 0.6464, -0.0247, 0.0125, 0.5957, -0.0175, 0.0125, 0.6259, -0.0066, 0.0125, 0.6259, -0.0066, 0.0125, 0.5957, -0.0175, 0.0125, 0.575, -0.0125, 0.0125, 0.6259, -0.0066, 0.0125, 0.575, -0.0125, 0.0125, 0.15, -0.0125, 0.0125, 0.6259, -0.0066, 0.0125, 0.15, -0.0125, 0.0125, 0.15, 0.0125, 0.0125, 0.6259, -0.0066, 0.0125, 0.15, 0.0125, 0.0125, 0.6016, 0.006, 0.0125, 0.6016, 0.006, 0.0125, 0.15, 0.0125, 0.0125, 0.575, 0.0125, 0.0125, 0.6426, -0.059, -0.0125, 0.6305, -0.0415, 0.0125, 0.6305, -0.0415, -0.0125, 0.6305, -0.0415, 0.0125, 0.6426, -0.059, -0.0125, 0.6426, -0.059, -0.0125, 0.6259, -0.0066, 0.0125, 0.6464, -0.0247, 0.0125, 0.6259, -0.0066, 0.0125, 0.6464, -0.0247, -0.0125, 0.6259, -0.0066, -0.0125, 0.6464, -0.0247, 0.025, 0, -0.025, 0.025, 0.1, 0.025, 0.025, 0.1, -0.025, 0.025, 0.1, 0.025, 0.025, 0, -0.025, 0.025, 0, 0.025, -0.0125, 0.15, -0.0125, -0.025, 0.1, 0.025, -0.025, 0.1, -0.025, -0.025, 0.1, 0.025, -0.0125, 0.15, -0.0125, -0.0125, 0.15, 0.0125, 0.025, 0.6528, -0.2, -0.025, 0.675, -0.2, -0.025, 0.6528, -0.2, -0.025, 0.675, -0.2, 0.025, 0.6528, -0.2, 0.025, 0.675, -0.2, 0.0125, 0.15, -0.0125, -0.0125, 0.575, -0.0125, -0.0125, 0.15, -0.0125, -0.0125, 0.575, -0.0125, 0.0125, 0.15, -0.0125, 0.0125, 0.575, -0.0125, 0.0125, 0.6528, -0.1, -0.0125, 0.6502, -0.0789, 0.0125, 0.6502, -0.0789, -0.0125, 0.6502, -0.0789, 0.0125, 0.6528, -0.1, -0.0125, 0.6528, -0.1, 0.025, 0.6528, -0.2, 0.025, 0.675, -0.15, 0.025, 0.675, -0.2, 0.025, 0.675, -0.15, 0.025, 0.6528, -0.2, 0.025, 0.6528, -0.15, -0.025, 0.1, 0.025, 0.0125, 0.15, 0.0125, 0.025, 0.1, 0.025, 0.0125, 0.15, 0.0125, -0.025, 0.1, 0.025, -0.0125, 0.15, 0.0125, -0.0125, 0.15, 0.0125, 0.0125, 0.575, 0.0125, 0.0125, 0.15, 0.0125, 0.0125, 0.575, 0.0125, -0.0125, 0.15, 0.0125, -0.0125, 0.575, 0.0125, 0.0125, 0.662, -0.0472, -0.0125, 0.6717, -0.0728, 0.0125, 0.6717, -0.0728, -0.0125, 0.6717, -0.0728, 0.0125, 0.662, -0.0472, -0.0125, 0.662, -0.0472, -0.0125, 0.575, 0.0125, 0.0125, 0.6016, 0.006, 0.0125, 0.575, 0.0125, 0.0125, 0.6016, 0.006, -0.0125, 0.575, 0.0125, -0.0125, 0.6016, 0.006, 0.025, 0, -0.025, -0.025, 0.1, -0.025, -0.025, 0, -0.025, -0.025, 0.1, -0.025, 0.025, 0, -0.025, 0.025, 0.1, -0.025, 0.0125, 0.575, -0.0125, -0.0125, 0.5957, -0.0175, -0.0125, 0.575, -0.0125, -0.0125, 0.5957, -0.0175, 0.0125, 0.575, -0.0125, 0.0125, 0.5957, -0.0175, -0.025, 0.675, -0.15, -0.0125, 0.6528, -0.1, -0.025, 0.6528, -0.15, -0.0125, 0.6528, -0.1, -0.025, 0.675, -0.15, -0.0125, 0.675, -0.1, 0.0125, 0.6464, -0.0247, -0.0125, 0.662, -0.0472, 0.0125, 0.662, -0.0472, -0.0125, 0.662, -0.0472, 0.0125, 0.6464, -0.0247, -0.0125, 0.6464, -0.0247, 0.025, 0.1, -0.025, -0.0125, 0.15, -0.0125, -0.025, 0.1, -0.025, -0.0125, 0.15, -0.0125, 0.025, 0.1, -0.025, 0.0125, 0.15, -0.0125, -0.025, 0.1, -0.025, -0.025, 0, 0.025, -0.025, 0, -0.025, -0.025, 0, 0.025, -0.025, 0.1, -0.025, -0.025, 0.1, 0.025, -0.025, 0.675, -0.2, -0.025, 0.6528, -0.15, -0.025, 0.6528, -0.2, -0.025, 0.6528, -0.15, -0.025, 0.675, -0.2, -0.025, 0.675, -0.15, 0.0125, 0.6502, -0.0789, -0.0125, 0.6426, -0.059, 0.0125, 0.6426, -0.059, -0.0125, 0.6426, -0.059, 0.0125, 0.6502, -0.0789, -0.0125, 0.6502, -0.0789, 0.025, 0.675, -0.15, -0.025, 0.675, -0.2, 0.025, 0.675, -0.2, -0.025, 0.675, -0.2, 0.025, 0.675, -0.15, 0.0125, 0.675, -0.1, -0.025, 0.675, -0.2, 0.0125, 0.675, -0.1, -0.0125, 0.675, -0.1, -0.025, 0.675, -0.2, -0.0125, 0.675, -0.1, -0.025, 0.675, -0.15, 0.0125, 0.5957, -0.0175, -0.0125, 0.6146, -0.0274, -0.0125, 0.5957, -0.0175, -0.0125, 0.6146, -0.0274, 0.0125, 0.5957, -0.0175, 0.0125, 0.6146, -0.0274, -0.0125, 0.6016, 0.006, 0.0125, 0.6259, -0.0066, 0.0125, 0.6016, 0.006, 0.0125, 0.6259, -0.0066, -0.0125, 0.6016, 0.006, -0.0125, 0.6259, -0.0066, 0.025, 0.1, 0.025, 0.0125, 0.15, -0.0125, 0.025, 0.1, -0.025, 0.0125, 0.15, -0.0125, 0.025, 0.1, 0.025, 0.0125, 0.15, 0.0125, 0.0125, 0.6146, -0.0274, -0.0125, 0.6305, -0.0415, -0.0125, 0.6146, -0.0274, -0.0125, 0.6305, -0.0415, 0.0125, 0.6146, -0.0274, 0.0125, 0.6305, -0.0415, -0.0125, 0.6717, -0.0728, 0.0125, 0.675, -0.1, 0.0125, 0.6717, -0.0728, 0.0125, 0.675, -0.1, -0.0125, 0.6717, -0.0728, -0.0125, 0.675, -0.1, -0.0125, 0.575, -0.0125, -0.0125, 0.15, 0.0125, -0.0125, 0.15, -0.0125, -0.0125, 0.15, 0.0125, -0.0125, 0.575, -0.0125, -0.0125, 0.6259, -0.0066, -0.0125, 0.15, 0.0125, -0.0125, 0.6259, -0.0066, -0.0125, 0.6016, 0.006, -0.0125, 0.15, 0.0125, -0.0125, 0.6016, 0.006, -0.0125, 0.575, 0.0125, -0.0125, 0.5957, -0.0175, -0.0125, 0.6259, -0.0066, -0.0125, 0.575, -0.0125, -0.0125, 0.5957, -0.0175, -0.0125, 0.6464, -0.0247, -0.0125, 0.6259, -0.0066, -0.0125, 0.6146, -0.0274, -0.0125, 0.6464, -0.0247, -0.0125, 0.5957, -0.0175, -0.0125, 0.6305, -0.0415, -0.0125, 0.6464, -0.0247, -0.0125, 0.6146, -0.0274, -0.0125, 0.6305, -0.0415, -0.0125, 0.662, -0.0472, -0.0125, 0.6464, -0.0247, -0.0125, 0.6426, -0.059, -0.0125, 0.662, -0.0472, -0.0125, 0.6305, -0.0415, -0.0125, 0.6426, -0.059, -0.0125, 0.6717, -0.0728, -0.0125, 0.662, -0.0472, -0.0125, 0.6502, -0.0789, -0.0125, 0.6717, -0.0728, -0.0125, 0.6426, -0.059, -0.0125, 0.6502, -0.0789, -0.0125, 0.675, -0.1, -0.0125, 0.6717, -0.0728, -0.0125, 0.675, -0.1, -0.0125, 0.6502, -0.0789, -0.0125, 0.6528, -0.1, 0.025, 0.6528, -0.2, 0.0125, 0.6528, -0.1, 0.025, 0.6528, -0.15, 0.0125, 0.6528, -0.1, 0.025, 0.6528, -0.2, -0.025, 0.6528, -0.2, 0.0125, 0.6528, -0.1, -0.025, 0.6528, -0.2, -0.0125, 0.6528, -0.1, -0.0125, 0.6528, -0.1, -0.025, 0.6528, -0.2, -0.025, 0.6528, -0.15, 0.025, 0, -0.025, -0.025, 0, 0.025, 0.025, 0, 0.025, -0.025, 0, 0.025, 0.025, 0, -0.025, -0.025, 0, -0.025)
 
 [node name="Tile22" type="Node3D"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
@@ -331,14 +339,6 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D19" type="CollisionShape3D" parent="Rail"]
 transform = Transform3D(-2, 0, 1.74846e-07, 0, 2, 0, -1.74846e-07, 0, -2, -3.99999, 0, -130.007)
 shape = SubResource("ConcavePolygonShape3D_e3ek3")
-
-[node name="RoadStraight3" type="MeshInstance3D" parent="."]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 70, 0, -24)
-mesh = ExtResource("2_qpayd")
-
-[node name="RoadStraight6" type="MeshInstance3D" parent="."]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -70, 0, -24)
-mesh = ExtResource("2_qpayd")
 
 [node name="Cliff" type="Node3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
@@ -3759,3 +3759,726 @@ skeleton = NodePath("../../../..")
 transform = Transform3D(1, 0, 0, 0, 6.49247, 0, 0, 0, 1, -4.69558, 2.66148, 0.380112)
 mesh = SubResource("BoxMesh_pplm5")
 skeleton = NodePath("../../../..")
+
+[node name="Road" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -48)
+
+[node name="RoadTile" type="StaticBody3D" parent="Road"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, 24)
+
+[node name="RoadStraight" type="MeshInstance3D" parent="Road/RoadTile"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+mesh = ExtResource("2_qpayd")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Road/RoadTile"]
+transform = Transform3D(10, 0, 5.68434e-14, 0, 10, 0, -5.68434e-14, 0, 10, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_hytbc")
+
+[node name="LightCurved" type="MeshInstance3D" parent="Road/RoadTile"]
+transform = Transform3D(-6, 0, 9.05975e-07, 0, 6, 0, -9.05975e-07, 0, -6, 0, -0.037, -4)
+mesh = ExtResource("3_xjpw6")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Road/RoadTile"]
+transform = Transform3D(-6, 0, 9.05975e-07, 0, 6, 0, -9.05975e-07, 0, -6, 0, -0.037, -4)
+shape = SubResource("ConcavePolygonShape3D_dr2rp")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Road/RoadTile"]
+transform = Transform3D(1, 8.74228e-08, 8.74228e-08, -8.74228e-08, -4.37114e-08, 1, 8.74228e-08, -1, -4.37114e-08, 0, 4, -3)
+light_color = Color(1, 1, 0.392157, 1)
+light_energy = 8.947
+light_indirect_energy = 1.318
+light_volumetric_fog_energy = 1.212
+light_size = 0.212
+spot_angle = 31.9252
+
+[node name="LightCurved2" type="MeshInstance3D" parent="Road/RoadTile"]
+transform = Transform3D(6, 0, -3.81438e-07, 0, 6, 0, 3.81438e-07, 0, 6, 0, -0.0369999, 3.99694)
+mesh = ExtResource("3_xjpw6")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Road/RoadTile"]
+transform = Transform3D(6, 0, -3.81438e-07, 0, 6, 0, 3.81438e-07, 0, 6, 0, -0.0369999, 3.99694)
+shape = SubResource("ConcavePolygonShape3D_dr2rp")
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Road/RoadTile"]
+transform = Transform3D(1, 8.74228e-08, 8.74228e-08, -8.74228e-08, -4.37114e-08, 1, 8.74228e-08, -1, -4.37114e-08, 0, 4, 3)
+light_color = Color(1, 1, 0.392157, 1)
+light_energy = 8.947
+light_indirect_energy = 1.318
+light_volumetric_fog_energy = 1.212
+light_size = 0.212
+spot_angle = 31.9252
+
+[node name="RoadTile2" type="StaticBody3D" parent="Road"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 24)
+
+[node name="RoadStraight" type="MeshInstance3D" parent="Road/RoadTile2"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+mesh = ExtResource("2_qpayd")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Road/RoadTile2"]
+transform = Transform3D(10, 0, 5.68434e-14, 0, 10, 0, -5.68434e-14, 0, 10, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_hytbc")
+
+[node name="LightCurved" type="MeshInstance3D" parent="Road/RoadTile2"]
+transform = Transform3D(-6, 0, 9.05975e-07, 0, 6, 0, -9.05975e-07, 0, -6, 0, -0.037, -4)
+mesh = ExtResource("3_xjpw6")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Road/RoadTile2"]
+transform = Transform3D(-6, 0, 9.05975e-07, 0, 6, 0, -9.05975e-07, 0, -6, 0, -0.037, -4)
+shape = SubResource("ConcavePolygonShape3D_dr2rp")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Road/RoadTile2"]
+transform = Transform3D(1, 8.74228e-08, 8.74228e-08, -8.74228e-08, -4.37114e-08, 1, 8.74228e-08, -1, -4.37114e-08, 0, 4, -3)
+light_color = Color(1, 1, 0.392157, 1)
+light_energy = 8.947
+light_indirect_energy = 1.318
+light_volumetric_fog_energy = 1.212
+light_size = 0.212
+spot_angle = 31.9252
+
+[node name="LightCurved2" type="MeshInstance3D" parent="Road/RoadTile2"]
+transform = Transform3D(6, 0, -3.81438e-07, 0, 6, 0, 3.81438e-07, 0, 6, 0, -0.0369999, 3.99694)
+mesh = ExtResource("3_xjpw6")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Road/RoadTile2"]
+transform = Transform3D(6, 0, -3.81438e-07, 0, 6, 0, 3.81438e-07, 0, 6, 0, -0.0369999, 3.99694)
+shape = SubResource("ConcavePolygonShape3D_dr2rp")
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Road/RoadTile2"]
+transform = Transform3D(1, 8.74228e-08, 8.74228e-08, -8.74228e-08, -4.37114e-08, 1, 8.74228e-08, -1, -4.37114e-08, 0, 4, 3)
+light_color = Color(1, 1, 0.392157, 1)
+light_energy = 8.947
+light_indirect_energy = 1.318
+light_volumetric_fog_energy = 1.212
+light_size = 0.212
+spot_angle = 31.9252
+
+[node name="RoadTile3" type="StaticBody3D" parent="Road"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 24)
+
+[node name="RoadStraight" type="MeshInstance3D" parent="Road/RoadTile3"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+mesh = ExtResource("4_u3hkc")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Road/RoadTile3"]
+transform = Transform3D(10, 0, 5.68434e-14, 0, 10, 0, -5.68434e-14, 0, 10, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_hytbc")
+
+[node name="LightCurved" type="MeshInstance3D" parent="Road/RoadTile3"]
+transform = Transform3D(-6, 0, 9.05975e-07, 0, 6, 0, -9.05975e-07, 0, -6, -2, -0.037, -4)
+mesh = ExtResource("3_xjpw6")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Road/RoadTile3"]
+transform = Transform3D(-6, 0, 9.05975e-07, 0, 6, 0, -9.05975e-07, 0, -6, -2, -0.037, -4)
+shape = SubResource("ConcavePolygonShape3D_dr2rp")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Road/RoadTile3"]
+transform = Transform3D(1, 8.74228e-08, 8.74228e-08, -8.74228e-08, -4.37114e-08, 1, 8.74228e-08, -1, -4.37114e-08, -2, 4, -3)
+light_color = Color(1, 1, 0.392157, 1)
+light_energy = 8.947
+light_indirect_energy = 1.318
+light_volumetric_fog_energy = 1.212
+light_size = 0.212
+spot_angle = 31.9252
+
+[node name="LightCurved2" type="MeshInstance3D" parent="Road/RoadTile3"]
+transform = Transform3D(6, 0, -3.81438e-07, 0, 6, 0, 3.81438e-07, 0, 6, -2, -0.0369999, 3.99694)
+mesh = ExtResource("3_xjpw6")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Road/RoadTile3"]
+transform = Transform3D(6, 0, -3.81438e-07, 0, 6, 0, 3.81438e-07, 0, 6, -2, -0.0369999, 3.99694)
+shape = SubResource("ConcavePolygonShape3D_dr2rp")
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Road/RoadTile3"]
+transform = Transform3D(1, 8.74228e-08, 8.74228e-08, -8.74228e-08, -4.37114e-08, 1, 8.74228e-08, -1, -4.37114e-08, -2, 4, 3)
+light_color = Color(1, 1, 0.392157, 1)
+light_energy = 8.947
+light_indirect_energy = 1.318
+light_volumetric_fog_energy = 1.212
+light_size = 0.212
+spot_angle = 31.9252
+
+[node name="RoadTile5" type="StaticBody3D" parent="Road"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 24)
+
+[node name="RoadStraight" type="MeshInstance3D" parent="Road/RoadTile5"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+mesh = ExtResource("2_qpayd")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Road/RoadTile5"]
+transform = Transform3D(10, 0, 5.68434e-14, 0, 10, 0, -5.68434e-14, 0, 10, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_hytbc")
+
+[node name="LightCurved" type="MeshInstance3D" parent="Road/RoadTile5"]
+transform = Transform3D(-6, 0, 9.05975e-07, 0, 6, 0, -9.05975e-07, 0, -6, 0, -0.037, -4)
+mesh = ExtResource("3_xjpw6")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Road/RoadTile5"]
+transform = Transform3D(-6, 0, 9.05975e-07, 0, 6, 0, -9.05975e-07, 0, -6, 0, -0.037, -4)
+shape = SubResource("ConcavePolygonShape3D_dr2rp")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Road/RoadTile5"]
+transform = Transform3D(1, 8.74228e-08, 8.74228e-08, -8.74228e-08, -4.37114e-08, 1, 8.74228e-08, -1, -4.37114e-08, 0, 4, -3)
+light_color = Color(1, 1, 0.392157, 1)
+light_energy = 8.947
+light_indirect_energy = 1.318
+light_volumetric_fog_energy = 1.212
+light_size = 0.212
+spot_angle = 31.9252
+
+[node name="LightCurved2" type="MeshInstance3D" parent="Road/RoadTile5"]
+transform = Transform3D(6, 0, -3.81438e-07, 0, 6, 0, 3.81438e-07, 0, 6, 0, -0.0369999, 3.99694)
+mesh = ExtResource("3_xjpw6")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Road/RoadTile5"]
+transform = Transform3D(6, 0, -3.81438e-07, 0, 6, 0, 3.81438e-07, 0, 6, 0, -0.0369999, 3.99694)
+shape = SubResource("ConcavePolygonShape3D_dr2rp")
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Road/RoadTile5"]
+transform = Transform3D(1, 8.74228e-08, 8.74228e-08, -8.74228e-08, -4.37114e-08, 1, 8.74228e-08, -1, -4.37114e-08, 0, 4, 3)
+light_color = Color(1, 1, 0.392157, 1)
+light_energy = 8.947
+light_indirect_energy = 1.318
+light_volumetric_fog_energy = 1.212
+light_size = 0.212
+spot_angle = 31.9252
+
+[node name="RoadTile6" type="StaticBody3D" parent="Road"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 24)
+
+[node name="RoadStraight" type="MeshInstance3D" parent="Road/RoadTile6"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+mesh = ExtResource("2_qpayd")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Road/RoadTile6"]
+transform = Transform3D(10, 0, 5.68434e-14, 0, 10, 0, -5.68434e-14, 0, 10, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_hytbc")
+
+[node name="LightCurved" type="MeshInstance3D" parent="Road/RoadTile6"]
+transform = Transform3D(-6, 0, 9.05975e-07, 0, 6, 0, -9.05975e-07, 0, -6, 0, -0.037, -4)
+mesh = ExtResource("3_xjpw6")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Road/RoadTile6"]
+transform = Transform3D(-6, 0, 9.05975e-07, 0, 6, 0, -9.05975e-07, 0, -6, 0, -0.037, -4)
+shape = SubResource("ConcavePolygonShape3D_dr2rp")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Road/RoadTile6"]
+transform = Transform3D(1, 8.74228e-08, 8.74228e-08, -8.74228e-08, -4.37114e-08, 1, 8.74228e-08, -1, -4.37114e-08, 0, 4, -3)
+light_color = Color(1, 1, 0.392157, 1)
+light_energy = 8.947
+light_indirect_energy = 1.318
+light_volumetric_fog_energy = 1.212
+light_size = 0.212
+spot_angle = 31.9252
+
+[node name="LightCurved2" type="MeshInstance3D" parent="Road/RoadTile6"]
+transform = Transform3D(6, 0, -3.81438e-07, 0, 6, 0, 3.81438e-07, 0, 6, 0, -0.0369999, 3.99694)
+mesh = ExtResource("3_xjpw6")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Road/RoadTile6"]
+transform = Transform3D(6, 0, -3.81438e-07, 0, 6, 0, 3.81438e-07, 0, 6, 0, -0.0369999, 3.99694)
+shape = SubResource("ConcavePolygonShape3D_dr2rp")
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Road/RoadTile6"]
+transform = Transform3D(1, 8.74228e-08, 8.74228e-08, -8.74228e-08, -4.37114e-08, 1, 8.74228e-08, -1, -4.37114e-08, 0, 4, 3)
+light_color = Color(1, 1, 0.392157, 1)
+light_energy = 8.947
+light_indirect_energy = 1.318
+light_volumetric_fog_energy = 1.212
+light_size = 0.212
+spot_angle = 31.9252
+
+[node name="RoadTile7" type="StaticBody3D" parent="Road"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 24)
+
+[node name="RoadStraight" type="MeshInstance3D" parent="Road/RoadTile7"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+mesh = ExtResource("2_qpayd")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Road/RoadTile7"]
+transform = Transform3D(10, 0, 5.68434e-14, 0, 10, 0, -5.68434e-14, 0, 10, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_hytbc")
+
+[node name="LightCurved" type="MeshInstance3D" parent="Road/RoadTile7"]
+transform = Transform3D(-6, 0, 9.05975e-07, 0, 6, 0, -9.05975e-07, 0, -6, 0, -0.037, -4)
+mesh = ExtResource("3_xjpw6")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Road/RoadTile7"]
+transform = Transform3D(-6, 0, 9.05975e-07, 0, 6, 0, -9.05975e-07, 0, -6, 0, -0.037, -4)
+shape = SubResource("ConcavePolygonShape3D_dr2rp")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Road/RoadTile7"]
+transform = Transform3D(1, 8.74228e-08, 8.74228e-08, -8.74228e-08, -4.37114e-08, 1, 8.74228e-08, -1, -4.37114e-08, 0, 4, -3)
+light_color = Color(1, 1, 0.392157, 1)
+light_energy = 8.947
+light_indirect_energy = 1.318
+light_volumetric_fog_energy = 1.212
+light_size = 0.212
+spot_angle = 31.9252
+
+[node name="LightCurved2" type="MeshInstance3D" parent="Road/RoadTile7"]
+transform = Transform3D(6, 0, -3.81438e-07, 0, 6, 0, 3.81438e-07, 0, 6, 0, -0.0369999, 3.99694)
+mesh = ExtResource("3_xjpw6")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Road/RoadTile7"]
+transform = Transform3D(6, 0, -3.81438e-07, 0, 6, 0, 3.81438e-07, 0, 6, 0, -0.0369999, 3.99694)
+shape = SubResource("ConcavePolygonShape3D_dr2rp")
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Road/RoadTile7"]
+transform = Transform3D(1, 8.74228e-08, 8.74228e-08, -8.74228e-08, -4.37114e-08, 1, 8.74228e-08, -1, -4.37114e-08, 0, 4, 3)
+light_color = Color(1, 1, 0.392157, 1)
+light_energy = 8.947
+light_indirect_energy = 1.318
+light_volumetric_fog_energy = 1.212
+light_size = 0.212
+spot_angle = 31.9252
+
+[node name="RoadTile8" type="StaticBody3D" parent="Road"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.09815e-06, 0, 24)
+
+[node name="RoadStraight" type="MeshInstance3D" parent="Road/RoadTile8"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+mesh = ExtResource("2_qpayd")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Road/RoadTile8"]
+transform = Transform3D(10, 0, 5.68434e-14, 0, 10, 0, -5.68434e-14, 0, 10, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_hytbc")
+
+[node name="LightCurved" type="MeshInstance3D" parent="Road/RoadTile8"]
+transform = Transform3D(-6, 0, 9.05975e-07, 0, 6, 0, -9.05975e-07, 0, -6, 0, -0.037, -4)
+mesh = ExtResource("3_xjpw6")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Road/RoadTile8"]
+transform = Transform3D(-6, 0, 9.05975e-07, 0, 6, 0, -9.05975e-07, 0, -6, 0, -0.037, -4)
+shape = SubResource("ConcavePolygonShape3D_dr2rp")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Road/RoadTile8"]
+transform = Transform3D(1, 8.74228e-08, 8.74228e-08, -8.74228e-08, -4.37114e-08, 1, 8.74228e-08, -1, -4.37114e-08, 0, 4, -3)
+light_color = Color(1, 1, 0.392157, 1)
+light_energy = 8.947
+light_indirect_energy = 1.318
+light_volumetric_fog_energy = 1.212
+light_size = 0.212
+spot_angle = 31.9252
+
+[node name="LightCurved2" type="MeshInstance3D" parent="Road/RoadTile8"]
+transform = Transform3D(6, 0, -3.81438e-07, 0, 6, 0, 3.81438e-07, 0, 6, 0, -0.0369999, 3.99694)
+mesh = ExtResource("3_xjpw6")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Road/RoadTile8"]
+transform = Transform3D(6, 0, -3.81438e-07, 0, 6, 0, 3.81438e-07, 0, 6, 0, -0.0369999, 3.99694)
+shape = SubResource("ConcavePolygonShape3D_dr2rp")
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Road/RoadTile8"]
+transform = Transform3D(1, 8.74228e-08, 8.74228e-08, -8.74228e-08, -4.37114e-08, 1, 8.74228e-08, -1, -4.37114e-08, 0, 4, 3)
+light_color = Color(1, 1, 0.392157, 1)
+light_energy = 8.947
+light_indirect_energy = 1.318
+light_volumetric_fog_energy = 1.212
+light_size = 0.212
+spot_angle = 31.9252
+
+[node name="RoadTile9" type="StaticBody3D" parent="Road"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 24)
+
+[node name="RoadStraight" type="MeshInstance3D" parent="Road/RoadTile9"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+mesh = ExtResource("2_qpayd")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Road/RoadTile9"]
+transform = Transform3D(10, 0, 5.68434e-14, 0, 10, 0, -5.68434e-14, 0, 10, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_hytbc")
+
+[node name="LightCurved" type="MeshInstance3D" parent="Road/RoadTile9"]
+transform = Transform3D(-6, 0, 9.05975e-07, 0, 6, 0, -9.05975e-07, 0, -6, 0, -0.037, -4)
+mesh = ExtResource("3_xjpw6")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Road/RoadTile9"]
+transform = Transform3D(-6, 0, 9.05975e-07, 0, 6, 0, -9.05975e-07, 0, -6, 0, -0.037, -4)
+shape = SubResource("ConcavePolygonShape3D_dr2rp")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Road/RoadTile9"]
+transform = Transform3D(1, 8.74228e-08, 8.74228e-08, -8.74228e-08, -4.37114e-08, 1, 8.74228e-08, -1, -4.37114e-08, 0, 4, -3)
+light_color = Color(1, 1, 0.392157, 1)
+light_energy = 8.947
+light_indirect_energy = 1.318
+light_volumetric_fog_energy = 1.212
+light_size = 0.212
+spot_angle = 31.9252
+
+[node name="LightCurved2" type="MeshInstance3D" parent="Road/RoadTile9"]
+transform = Transform3D(6, 0, -3.81438e-07, 0, 6, 0, 3.81438e-07, 0, 6, 0, -0.0369999, 3.99694)
+mesh = ExtResource("3_xjpw6")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Road/RoadTile9"]
+transform = Transform3D(6, 0, -3.81438e-07, 0, 6, 0, 3.81438e-07, 0, 6, 0, -0.0369999, 3.99694)
+shape = SubResource("ConcavePolygonShape3D_dr2rp")
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Road/RoadTile9"]
+transform = Transform3D(1, 8.74228e-08, 8.74228e-08, -8.74228e-08, -4.37114e-08, 1, 8.74228e-08, -1, -4.37114e-08, 0, 4, 3)
+light_color = Color(1, 1, 0.392157, 1)
+light_energy = 8.947
+light_indirect_energy = 1.318
+light_volumetric_fog_energy = 1.212
+light_size = 0.212
+spot_angle = 31.9252
+
+[node name="RoadTile10" type="StaticBody3D" parent="Road"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 24)
+
+[node name="RoadStraight" type="MeshInstance3D" parent="Road/RoadTile10"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+mesh = ExtResource("2_qpayd")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Road/RoadTile10"]
+transform = Transform3D(10, 0, 5.68434e-14, 0, 10, 0, -5.68434e-14, 0, 10, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_hytbc")
+
+[node name="LightCurved" type="MeshInstance3D" parent="Road/RoadTile10"]
+transform = Transform3D(-6, 0, 9.05975e-07, 0, 6, 0, -9.05975e-07, 0, -6, 0, -0.037, -4)
+mesh = ExtResource("3_xjpw6")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Road/RoadTile10"]
+transform = Transform3D(-6, 0, 9.05975e-07, 0, 6, 0, -9.05975e-07, 0, -6, 0, -0.037, -4)
+shape = SubResource("ConcavePolygonShape3D_dr2rp")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Road/RoadTile10"]
+transform = Transform3D(1, 8.74228e-08, 8.74228e-08, -8.74228e-08, -4.37114e-08, 1, 8.74228e-08, -1, -4.37114e-08, 0, 4, -3)
+light_color = Color(1, 1, 0.392157, 1)
+light_energy = 8.947
+light_indirect_energy = 1.318
+light_volumetric_fog_energy = 1.212
+light_size = 0.212
+spot_angle = 31.9252
+
+[node name="LightCurved2" type="MeshInstance3D" parent="Road/RoadTile10"]
+transform = Transform3D(6, 0, -3.81438e-07, 0, 6, 0, 3.81438e-07, 0, 6, 0, -0.0369999, 3.99694)
+mesh = ExtResource("3_xjpw6")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Road/RoadTile10"]
+transform = Transform3D(6, 0, -3.81438e-07, 0, 6, 0, 3.81438e-07, 0, 6, 0, -0.0369999, 3.99694)
+shape = SubResource("ConcavePolygonShape3D_dr2rp")
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Road/RoadTile10"]
+transform = Transform3D(1, 8.74228e-08, 8.74228e-08, -8.74228e-08, -4.37114e-08, 1, 8.74228e-08, -1, -4.37114e-08, 0, 4, 3)
+light_color = Color(1, 1, 0.392157, 1)
+light_energy = 8.947
+light_indirect_energy = 1.318
+light_volumetric_fog_energy = 1.212
+light_size = 0.212
+spot_angle = 31.9252
+
+[node name="RoadTile11" type="StaticBody3D" parent="Road"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 24)
+
+[node name="RoadStraight" type="MeshInstance3D" parent="Road/RoadTile11"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+mesh = ExtResource("2_qpayd")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Road/RoadTile11"]
+transform = Transform3D(10, 0, 5.68434e-14, 0, 10, 0, -5.68434e-14, 0, 10, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_hytbc")
+
+[node name="LightCurved" type="MeshInstance3D" parent="Road/RoadTile11"]
+transform = Transform3D(-6, 0, 9.05975e-07, 0, 6, 0, -9.05975e-07, 0, -6, 0, -0.037, -4)
+mesh = ExtResource("3_xjpw6")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Road/RoadTile11"]
+transform = Transform3D(-6, 0, 9.05975e-07, 0, 6, 0, -9.05975e-07, 0, -6, 0, -0.037, -4)
+shape = SubResource("ConcavePolygonShape3D_dr2rp")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Road/RoadTile11"]
+transform = Transform3D(1, 8.74228e-08, 8.74228e-08, -8.74228e-08, -4.37114e-08, 1, 8.74228e-08, -1, -4.37114e-08, 0, 4, -3)
+light_color = Color(1, 1, 0.392157, 1)
+light_energy = 8.947
+light_indirect_energy = 1.318
+light_volumetric_fog_energy = 1.212
+light_size = 0.212
+spot_angle = 31.9252
+
+[node name="LightCurved2" type="MeshInstance3D" parent="Road/RoadTile11"]
+transform = Transform3D(6, 0, -3.81438e-07, 0, 6, 0, 3.81438e-07, 0, 6, 0, -0.0369999, 3.99694)
+mesh = ExtResource("3_xjpw6")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Road/RoadTile11"]
+transform = Transform3D(6, 0, -3.81438e-07, 0, 6, 0, 3.81438e-07, 0, 6, 0, -0.0369999, 3.99694)
+shape = SubResource("ConcavePolygonShape3D_dr2rp")
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Road/RoadTile11"]
+transform = Transform3D(1, 8.74228e-08, 8.74228e-08, -8.74228e-08, -4.37114e-08, 1, 8.74228e-08, -1, -4.37114e-08, 0, 4, 3)
+light_color = Color(1, 1, 0.392157, 1)
+light_energy = 8.947
+light_indirect_energy = 1.318
+light_volumetric_fog_energy = 1.212
+light_size = 0.212
+spot_angle = 31.9252
+
+[node name="RoadTile12" type="StaticBody3D" parent="Road"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, 24)
+
+[node name="RoadStraight" type="MeshInstance3D" parent="Road/RoadTile12"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+mesh = ExtResource("2_qpayd")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Road/RoadTile12"]
+transform = Transform3D(10, 0, 5.68434e-14, 0, 10, 0, -5.68434e-14, 0, 10, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_hytbc")
+
+[node name="LightCurved" type="MeshInstance3D" parent="Road/RoadTile12"]
+transform = Transform3D(-6, 0, 9.05975e-07, 0, 6, 0, -9.05975e-07, 0, -6, 0, -0.037, -4)
+mesh = ExtResource("3_xjpw6")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Road/RoadTile12"]
+transform = Transform3D(-6, 0, 9.05975e-07, 0, 6, 0, -9.05975e-07, 0, -6, 0, -0.037, -4)
+shape = SubResource("ConcavePolygonShape3D_dr2rp")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Road/RoadTile12"]
+transform = Transform3D(1, 8.74228e-08, 8.74228e-08, -8.74228e-08, -4.37114e-08, 1, 8.74228e-08, -1, -4.37114e-08, 0, 4, -3)
+light_color = Color(1, 1, 0.392157, 1)
+light_energy = 8.947
+light_indirect_energy = 1.318
+light_volumetric_fog_energy = 1.212
+light_size = 0.212
+spot_angle = 31.9252
+
+[node name="LightCurved2" type="MeshInstance3D" parent="Road/RoadTile12"]
+transform = Transform3D(6, 0, -3.81438e-07, 0, 6, 0, 3.81438e-07, 0, 6, 0, -0.0369999, 3.99694)
+mesh = ExtResource("3_xjpw6")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Road/RoadTile12"]
+transform = Transform3D(6, 0, -3.81438e-07, 0, 6, 0, 3.81438e-07, 0, 6, 0, -0.0369999, 3.99694)
+shape = SubResource("ConcavePolygonShape3D_dr2rp")
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Road/RoadTile12"]
+transform = Transform3D(1, 8.74228e-08, 8.74228e-08, -8.74228e-08, -4.37114e-08, 1, 8.74228e-08, -1, -4.37114e-08, 0, 4, 3)
+light_color = Color(1, 1, 0.392157, 1)
+light_energy = 8.947
+light_indirect_energy = 1.318
+light_volumetric_fog_energy = 1.212
+light_size = 0.212
+spot_angle = 31.9252
+
+[node name="RoadTile13" type="StaticBody3D" parent="Road"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 0, 24)
+
+[node name="RoadStraight" type="MeshInstance3D" parent="Road/RoadTile13"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+mesh = ExtResource("2_qpayd")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Road/RoadTile13"]
+transform = Transform3D(10, 0, 5.68434e-14, 0, 10, 0, -5.68434e-14, 0, 10, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_hytbc")
+
+[node name="LightCurved" type="MeshInstance3D" parent="Road/RoadTile13"]
+transform = Transform3D(-6, 0, 9.05975e-07, 0, 6, 0, -9.05975e-07, 0, -6, 0, -0.037, -4)
+mesh = ExtResource("3_xjpw6")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Road/RoadTile13"]
+transform = Transform3D(-6, 0, 9.05975e-07, 0, 6, 0, -9.05975e-07, 0, -6, 0, -0.037, -4)
+shape = SubResource("ConcavePolygonShape3D_dr2rp")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Road/RoadTile13"]
+transform = Transform3D(1, 8.74228e-08, 8.74228e-08, -8.74228e-08, -4.37114e-08, 1, 8.74228e-08, -1, -4.37114e-08, 0, 4, -3)
+light_color = Color(1, 1, 0.392157, 1)
+light_energy = 8.947
+light_indirect_energy = 1.318
+light_volumetric_fog_energy = 1.212
+light_size = 0.212
+spot_angle = 31.9252
+
+[node name="LightCurved2" type="MeshInstance3D" parent="Road/RoadTile13"]
+transform = Transform3D(6, 0, -3.81438e-07, 0, 6, 0, 3.81438e-07, 0, 6, 0, -0.0369999, 3.99694)
+mesh = ExtResource("3_xjpw6")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Road/RoadTile13"]
+transform = Transform3D(6, 0, -3.81438e-07, 0, 6, 0, 3.81438e-07, 0, 6, 0, -0.0369999, 3.99694)
+shape = SubResource("ConcavePolygonShape3D_dr2rp")
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Road/RoadTile13"]
+transform = Transform3D(1, 8.74228e-08, 8.74228e-08, -8.74228e-08, -4.37114e-08, 1, 8.74228e-08, -1, -4.37114e-08, 0, 4, 3)
+light_color = Color(1, 1, 0.392157, 1)
+light_energy = 8.947
+light_indirect_energy = 1.318
+light_volumetric_fog_energy = 1.212
+light_size = 0.212
+spot_angle = 31.9252
+
+[node name="RoadTile14" type="StaticBody3D" parent="Road"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, 24)
+
+[node name="RoadStraight" type="MeshInstance3D" parent="Road/RoadTile14"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+mesh = ExtResource("2_qpayd")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Road/RoadTile14"]
+transform = Transform3D(10, 0, 5.68434e-14, 0, 10, 0, -5.68434e-14, 0, 10, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_hytbc")
+
+[node name="LightCurved" type="MeshInstance3D" parent="Road/RoadTile14"]
+transform = Transform3D(-6, 0, 9.05975e-07, 0, 6, 0, -9.05975e-07, 0, -6, 0, -0.037, -4)
+mesh = ExtResource("3_xjpw6")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Road/RoadTile14"]
+transform = Transform3D(-6, 0, 9.05975e-07, 0, 6, 0, -9.05975e-07, 0, -6, 0, -0.037, -4)
+shape = SubResource("ConcavePolygonShape3D_dr2rp")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Road/RoadTile14"]
+transform = Transform3D(1, 8.74228e-08, 8.74228e-08, -8.74228e-08, -4.37114e-08, 1, 8.74228e-08, -1, -4.37114e-08, 0, 4, -3)
+light_color = Color(1, 1, 0.392157, 1)
+light_energy = 8.947
+light_indirect_energy = 1.318
+light_volumetric_fog_energy = 1.212
+light_size = 0.212
+spot_angle = 31.9252
+
+[node name="LightCurved2" type="MeshInstance3D" parent="Road/RoadTile14"]
+transform = Transform3D(6, 0, -3.81438e-07, 0, 6, 0, 3.81438e-07, 0, 6, 0, -0.0369999, 3.99694)
+mesh = ExtResource("3_xjpw6")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Road/RoadTile14"]
+transform = Transform3D(6, 0, -3.81438e-07, 0, 6, 0, 3.81438e-07, 0, 6, 0, -0.0369999, 3.99694)
+shape = SubResource("ConcavePolygonShape3D_dr2rp")
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Road/RoadTile14"]
+transform = Transform3D(1, 8.74228e-08, 8.74228e-08, -8.74228e-08, -4.37114e-08, 1, 8.74228e-08, -1, -4.37114e-08, 0, 4, 3)
+light_color = Color(1, 1, 0.392157, 1)
+light_energy = 8.947
+light_indirect_energy = 1.318
+light_volumetric_fog_energy = 1.212
+light_size = 0.212
+spot_angle = 31.9252
+
+[node name="RoadTile15" type="StaticBody3D" parent="Road"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70, 0, 24)
+
+[node name="RoadStraight" type="MeshInstance3D" parent="Road/RoadTile15"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+mesh = ExtResource("2_qpayd")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Road/RoadTile15"]
+transform = Transform3D(10, 0, 5.68434e-14, 0, 10, 0, -5.68434e-14, 0, 10, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_hytbc")
+
+[node name="LightCurved" type="MeshInstance3D" parent="Road/RoadTile15"]
+transform = Transform3D(-6, 0, 9.05975e-07, 0, 6, 0, -9.05975e-07, 0, -6, 0, -0.037, -4)
+mesh = ExtResource("3_xjpw6")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Road/RoadTile15"]
+transform = Transform3D(-6, 0, 9.05975e-07, 0, 6, 0, -9.05975e-07, 0, -6, 0, -0.037, -4)
+shape = SubResource("ConcavePolygonShape3D_dr2rp")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Road/RoadTile15"]
+transform = Transform3D(1, 8.74228e-08, 8.74228e-08, -8.74228e-08, -4.37114e-08, 1, 8.74228e-08, -1, -4.37114e-08, 0, 4, -3)
+light_color = Color(1, 1, 0.392157, 1)
+light_energy = 8.947
+light_indirect_energy = 1.318
+light_volumetric_fog_energy = 1.212
+light_size = 0.212
+spot_angle = 31.9252
+
+[node name="LightCurved2" type="MeshInstance3D" parent="Road/RoadTile15"]
+transform = Transform3D(6, 0, -3.81438e-07, 0, 6, 0, 3.81438e-07, 0, 6, 0, -0.0369999, 3.99694)
+mesh = ExtResource("3_xjpw6")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Road/RoadTile15"]
+transform = Transform3D(6, 0, -3.81438e-07, 0, 6, 0, 3.81438e-07, 0, 6, 0, -0.0369999, 3.99694)
+shape = SubResource("ConcavePolygonShape3D_dr2rp")
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Road/RoadTile15"]
+transform = Transform3D(1, 8.74228e-08, 8.74228e-08, -8.74228e-08, -4.37114e-08, 1, 8.74228e-08, -1, -4.37114e-08, 0, 4, 3)
+light_color = Color(1, 1, 0.392157, 1)
+light_energy = 8.947
+light_indirect_energy = 1.318
+light_volumetric_fog_energy = 1.212
+light_size = 0.212
+spot_angle = 31.9252
+
+[node name="RoadTile16" type="StaticBody3D" parent="Road"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 24)
+
+[node name="RoadStraight" type="MeshInstance3D" parent="Road/RoadTile16"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+mesh = ExtResource("2_qpayd")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Road/RoadTile16"]
+transform = Transform3D(10, 0, 5.68434e-14, 0, 10, 0, -5.68434e-14, 0, 10, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_hytbc")
+
+[node name="LightCurved" type="MeshInstance3D" parent="Road/RoadTile16"]
+transform = Transform3D(-6, 0, 9.05975e-07, 0, 6, 0, -9.05975e-07, 0, -6, 0, -0.037, -4)
+mesh = ExtResource("3_xjpw6")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Road/RoadTile16"]
+transform = Transform3D(-6, 0, 9.05975e-07, 0, 6, 0, -9.05975e-07, 0, -6, 0, -0.037, -4)
+shape = SubResource("ConcavePolygonShape3D_dr2rp")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Road/RoadTile16"]
+transform = Transform3D(1, 8.74228e-08, 8.74228e-08, -8.74228e-08, -4.37114e-08, 1, 8.74228e-08, -1, -4.37114e-08, 0, 4, -3)
+light_color = Color(1, 1, 0.392157, 1)
+light_energy = 8.947
+light_indirect_energy = 1.318
+light_volumetric_fog_energy = 1.212
+light_size = 0.212
+spot_angle = 31.9252
+
+[node name="LightCurved2" type="MeshInstance3D" parent="Road/RoadTile16"]
+transform = Transform3D(6, 0, -3.81438e-07, 0, 6, 0, 3.81438e-07, 0, 6, 0, -0.0369999, 3.99694)
+mesh = ExtResource("3_xjpw6")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Road/RoadTile16"]
+transform = Transform3D(6, 0, -3.81438e-07, 0, 6, 0, 3.81438e-07, 0, 6, 0, -0.0369999, 3.99694)
+shape = SubResource("ConcavePolygonShape3D_dr2rp")
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Road/RoadTile16"]
+transform = Transform3D(1, 8.74228e-08, 8.74228e-08, -8.74228e-08, -4.37114e-08, 1, 8.74228e-08, -1, -4.37114e-08, 0, 4, 3)
+light_color = Color(1, 1, 0.392157, 1)
+light_energy = 8.947
+light_indirect_energy = 1.318
+light_volumetric_fog_energy = 1.212
+light_size = 0.212
+spot_angle = 31.9252
