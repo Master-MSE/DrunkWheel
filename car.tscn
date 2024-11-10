@@ -147,7 +147,6 @@ gravity_scale = 1.2
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, -0.1, 0)
 can_sleep = false
-linear_damp = 0.05
 angular_damp = 1.0
 script = ExtResource("1_3623i")
 vertical_obstacle_collision_impulse_strength = 5.0
@@ -173,10 +172,10 @@ wheel_radius = 0.3
 wheel_rest_length = 0.05
 wheel_friction_slip = 1.0
 suspension_travel = 0.3
-suspension_stiffness = 30.0
+suspension_stiffness = 70.0
 suspension_max_force = 4000.0
-damping_compression = 1.0
-damping_relaxation = 2.0
+damping_compression = 2.0
+damping_relaxation = 3.0
 
 [node name="wheel-dark" type="MeshInstance3D" parent="car/wheel-front-left"]
 mesh = SubResource("ArrayMesh_i6fp8")
@@ -189,10 +188,10 @@ wheel_radius = 0.3
 wheel_rest_length = 0.05
 wheel_friction_slip = 1.0
 suspension_travel = 0.3
-suspension_stiffness = 30.0
+suspension_stiffness = 70.0
 suspension_max_force = 4000.0
-damping_compression = 1.0
-damping_relaxation = 2.0
+damping_compression = 2.0
+damping_relaxation = 3.0
 
 [node name="wheel-dark" type="MeshInstance3D" parent="car/wheel-back-left"]
 mesh = SubResource("ArrayMesh_i6fp8")
@@ -205,10 +204,10 @@ wheel_radius = 0.3
 wheel_rest_length = 0.05
 wheel_friction_slip = 1.0
 suspension_travel = 0.3
-suspension_stiffness = 30.0
+suspension_stiffness = 70.0
 suspension_max_force = 4000.0
-damping_compression = 1.0
-damping_relaxation = 2.0
+damping_compression = 2.0
+damping_relaxation = 3.0
 
 [node name="wheel-dark" type="MeshInstance3D" parent="car/wheel-front-right"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
@@ -222,10 +221,10 @@ wheel_radius = 0.3
 wheel_rest_length = 0.05
 wheel_friction_slip = 1.0
 suspension_travel = 0.3
-suspension_stiffness = 30.0
+suspension_stiffness = 70.0
 suspension_max_force = 4000.0
-damping_compression = 1.0
-damping_relaxation = 2.0
+damping_compression = 2.0
+damping_relaxation = 3.0
 
 [node name="wheel-dark" type="MeshInstance3D" parent="car/wheel-back-right"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)

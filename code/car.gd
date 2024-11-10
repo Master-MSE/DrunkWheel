@@ -4,14 +4,10 @@ extends VehicleBody3D
 @export var relative_obstacle_collision_impulse_strength: float = 1.0
 
 const MAX_SPEED = 15.0
-const MAX_ENGINE_FORCE = 1500.0
+const MAX_ENGINE_FORCE = 1700.0
 const MAX_BRAKE_FORCE = 10.0
-const MAX_STEERING_ANGLE = 0.6
+const MAX_STEERING_ANGLE = 0.7
 const STEERING_SPEED = 0.05
-const NORMAL_FRICTION = 5.0
-const DRIFT_FRICTION_REDUCTION_BACK = 0.08
-const DRIFT_FRICTION_REDUCTION_FRONT = 0.1
-const DRIFT_SPEED_THRESHOLD = 20.0
 
 var steering_angle = 0.0
 		
@@ -33,7 +29,6 @@ func steering(steering_input):
 		$"wheel-front-right".steering = steering_angle
 		
 func engine(engine_input):
-	print(linear_velocity.length())
 	if(linear_velocity.length() < MAX_SPEED):
 		$"wheel-back-left".engine_force = engine_input * MAX_ENGINE_FORCE
 		$"wheel-back-right".engine_force = engine_input * MAX_ENGINE_FORCE
