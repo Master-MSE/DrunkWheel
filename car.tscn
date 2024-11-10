@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b0ahsnh0h5gai" path="res://models/vehicules/GLB format/Textures/colormap.png" id="1_2ae4i"]
 [ext_resource type="Script" path="res://code/car.gd" id="1_3623i"]
+[ext_resource type="Material" uid="uid://co5up3xnsi777" path="res://resources/Game Data/Misc/light_material.tres" id="3_hcf53"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5xlc1"]
 resource_name = "colormap"
@@ -118,14 +119,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_lp57k")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_64ire"]
-albedo_color = Color(1, 1, 0.498039, 1)
-emission_enabled = true
-emission = Color(1, 1, 0.498039, 1)
-emission_energy_multiplier = 2.0
-
 [sub_resource type="BoxMesh" id="BoxMesh_72tb6"]
-material = SubResource("StandardMaterial3D_64ire")
+material = ExtResource("3_hcf53")
 size = Vector3(0.275, 0, 0.145)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_60mtu"]
