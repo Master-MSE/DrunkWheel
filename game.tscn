@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://d0rcie7hun16"]
+[gd_scene load_steps=19 format=3 uid="uid://d0rcie7hun16"]
 
 [ext_resource type="PackedScene" uid="uid://ciag4gvc86bnl" path="res://car.tscn" id="1_0m6t5"]
 [ext_resource type="Script" path="res://game.gd" id="1_ka53t"]
@@ -15,6 +15,9 @@
 [ext_resource type="Resource" uid="uid://4nt5wlt0g1ur" path="res://resources/Game Data/Map Tile Data/tile_CR01.tres" id="11_2nb05"]
 [ext_resource type="Resource" uid="uid://damxv4pommgsa" path="res://resources/Game Data/Map Tile Data/tile_RC01.tres" id="13_8ya6f"]
 [ext_resource type="Resource" uid="uid://vtmawvnrmqfn" path="res://resources/Game Data/Map Tile Data/tile_RR01.tres" id="14_22ysf"]
+[ext_resource type="Resource" uid="uid://djtseu28pfgw3" path="res://resources/Game Data/Map Tile Data/tile_endC.tres" id="16_f77hu"]
+[ext_resource type="Resource" uid="uid://kq7yik6d0i5i" path="res://resources/Game Data/Map Tile Data/tile_endL.tres" id="16_v4c0n"]
+[ext_resource type="Resource" uid="uid://bm2nys6lxppjt" path="res://resources/Game Data/Map Tile Data/tile_endR.tres" id="18_4jp8p"]
 
 [node name="Game" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 21.4664, 0)
@@ -36,3 +39,4 @@ unique_name_in_owner = true
 script = ExtResource("3_xpbjs")
 map_tile_datas = Array[ExtResource("4_602tr")]([ExtResource("5_hgli0"), ExtResource("6_2ipsn"), ExtResource("7_w0xi5"), ExtResource("8_1pa3x"), ExtResource("10_b15y0"), ExtResource("11_2nb05"), ExtResource("9_5xd8u"), ExtResource("13_8ya6f"), ExtResource("14_22ysf")])
 tile_start = ExtResource("10_lof5k")
+tile_end_datas = Array[ExtResource("4_602tr")]([ExtResource("16_v4c0n"), ExtResource("16_f77hu"), ExtResource("18_4jp8p")])

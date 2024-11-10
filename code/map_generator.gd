@@ -3,6 +3,7 @@ class_name MapGenerator
 
 @export var map_tile_datas: Array[MapTileData]
 @export var tile_start: MapTileData
+@export var tile_end_datas: Array[MapTileData]
 var current_tile_ends = Vector2(1,1)
 var current_tile_pos = Vector3(0,0,0)
 
@@ -22,9 +23,12 @@ func place_tile(tile: MapTileData) -> void:
 func generate_map(map_length: int) -> void:
 	
 	var current_exit_type: MapTileData.LayoutTypes = MapTileData.LayoutTypes.OPEN_MIDDLE
-	#place_tile(tile_start)
 	
+	place_tile(tile_start)
 	for i in map_length:
 		var tile := pick_tile(current_exit_type)
 		current_exit_type = tile.exit_type
 		place_tile(tile)
+		
+	var tile_end = tile_end_datas.filter(func(t: MapTileData) : return t.entrance_type == current_exit_type).pick_random()
+	place_tile(tile_end)
