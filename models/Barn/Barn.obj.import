@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bkeuw7bc15m5q"
+path="res://.godot/imported/Barn.obj-03759776a3330ed0d4c93416b3f77b5c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Barn.obj-03759776a3330ed0d4c93416b3f77b5c.mesh"]
+
+source_file="res://models/Barn/Barn.obj"
+dest_files=["res://.godot/imported/Barn.obj-03759776a3330ed0d4c93416b3f77b5c.mesh", "res://.godot/imported/Barn.obj-03759776a3330ed0d4c93416b3f77b5c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

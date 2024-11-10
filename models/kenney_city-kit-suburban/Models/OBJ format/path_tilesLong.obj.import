@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dfp3y3enble7h"
+path="res://.godot/imported/path_tilesLong.obj-6b138e39b9ff054339eb252365579abd.mesh"
+
+[deps]
+
+files=["res://.godot/imported/path_tilesLong.obj-6b138e39b9ff054339eb252365579abd.mesh"]
+
+source_file="res://models/kenney_city-kit-suburban/Models/OBJ format/path_tilesLong.obj"
+dest_files=["res://.godot/imported/path_tilesLong.obj-6b138e39b9ff054339eb252365579abd.mesh", "res://.godot/imported/path_tilesLong.obj-6b138e39b9ff054339eb252365579abd.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,5 +1,8 @@
 extends VehicleBody3D
 
+@export var vertical_obstacle_collision_impulse_strength: float = 1.0
+@export var relative_obstacle_collision_impulse_strength: float = 1.0
+
 const MAX_SPEED = 25.0
 const MAX_ENGINE_FORCE = 800.0
 const MAX_BRAKE_FORCE = 10.0
@@ -93,3 +96,14 @@ func _physics_process(delta):
 	engine(engine_input)
 		
 	
+
+
+func _on_body_entered(body: Node) -> void:
+	print("Body Entered")
+	if body is RigidBody3D:
+		if body.collision_layer == 2:
+			body.apply_impulse(linear_velocity + 
+			(Vector3.UP * vertical_obstacle_collision_impulse_strength) + 
+			((body.position - position) * relative_obstacle_collision_impulse_strength))
+			
+			print(str(linear_velocity))

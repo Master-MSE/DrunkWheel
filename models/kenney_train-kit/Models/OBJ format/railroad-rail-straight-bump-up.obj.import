@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c7ii2ligg65qt"
+path="res://.godot/imported/railroad-rail-straight-bump-up.obj-84feb6511841726fcf0c0d5c8d893868.mesh"
+
+[deps]
+
+files=["res://.godot/imported/railroad-rail-straight-bump-up.obj-84feb6511841726fcf0c0d5c8d893868.mesh"]
+
+source_file="res://models/kenney_train-kit/Models/OBJ format/railroad-rail-straight-bump-up.obj"
+dest_files=["res://.godot/imported/railroad-rail-straight-bump-up.obj-84feb6511841726fcf0c0d5c8d893868.mesh", "res://.godot/imported/railroad-rail-straight-bump-up.obj-84feb6511841726fcf0c0d5c8d893868.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

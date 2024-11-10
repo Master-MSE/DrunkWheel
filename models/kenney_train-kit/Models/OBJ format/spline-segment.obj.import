@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cbrolgteh7ig0"
+path="res://.godot/imported/spline-segment.obj-a1856c347cbfbe89fb2f6fd97700851c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/spline-segment.obj-a1856c347cbfbe89fb2f6fd97700851c.mesh"]
+
+source_file="res://models/kenney_train-kit/Models/OBJ format/spline-segment.obj"
+dest_files=["res://.godot/imported/spline-segment.obj-a1856c347cbfbe89fb2f6fd97700851c.mesh", "res://.godot/imported/spline-segment.obj-a1856c347cbfbe89fb2f6fd97700851c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

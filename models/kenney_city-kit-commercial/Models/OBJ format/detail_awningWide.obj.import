@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cak4moaq2m6xv"
+path="res://.godot/imported/detail_awningWide.obj-1e27a70e7005b645b643124cf10e62b3.mesh"
+
+[deps]
+
+files=["res://.godot/imported/detail_awningWide.obj-1e27a70e7005b645b643124cf10e62b3.mesh"]
+
+source_file="res://models/kenney_city-kit-commercial/Models/OBJ format/detail_awningWide.obj"
+dest_files=["res://.godot/imported/detail_awningWide.obj-1e27a70e7005b645b643124cf10e62b3.mesh", "res://.godot/imported/detail_awningWide.obj-1e27a70e7005b645b643124cf10e62b3.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

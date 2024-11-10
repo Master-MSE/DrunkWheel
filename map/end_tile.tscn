@@ -1,0 +1,80 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5y4ymgygscii"]
+
+[ext_resource type="ArrayMesh" uid="uid://417u8q4d4p8c" path="res://models/vehicules/OBJ format/cone-flat.obj" id="1_xuvd6"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_3acu4"]
+size = Vector2(30, 20)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_fdqkh"]
+data = PackedVector3Array(15, 0, 10, -15, 0, 10, 15, 0, -10, -15, 0, 10, -15, 0, -10, 15, 0, -10)
+
+[node name="EndTile" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("PlaneMesh_3acu4")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_fdqkh")
+
+[node name="Cone-flat" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2936, -1.90735e-06, -8.8417)
+mesh = ExtResource("1_xuvd6")
+
+[node name="Cone-flat2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.332, 2.38419e-07, -7.65744)
+mesh = ExtResource("1_xuvd6")
+
+[node name="Cone-flat3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.3471, 0, -6.31057)
+mesh = ExtResource("1_xuvd6")
+
+[node name="Cone-flat4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2989, 0, -4.91485)
+mesh = ExtResource("1_xuvd6")
+
+[node name="Cone-flat5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.3568, 0, -3.31093)
+mesh = ExtResource("1_xuvd6")
+
+[node name="Cone-flat6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.3005, 0, -1.92538)
+mesh = ExtResource("1_xuvd6")
+
+[node name="Cone-flat7" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.4059, 0, -0.754677)
+mesh = ExtResource("1_xuvd6")
+
+[node name="Cone-flat8" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.424, -4.76837e-07, 0.430966)
+mesh = ExtResource("1_xuvd6")
+
+[node name="Cone-flat9" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.4157, 0, 1.58487)
+mesh = ExtResource("1_xuvd6")
+
+[node name="Cone-flat10" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.4564, 0, 2.82318)
+mesh = ExtResource("1_xuvd6")
+
+[node name="Cone-flat11" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.3294, -9.53674e-07, 4.14681)
+mesh = ExtResource("1_xuvd6")
+
+[node name="Cone-flat12" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.4825, -9.53674e-07, 5.26273)
+mesh = ExtResource("1_xuvd6")
+
+[node name="Cone-flat13" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.4261, -4.76837e-07, 6.76762)
+mesh = ExtResource("1_xuvd6")
+
+[node name="Cone-flat14" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.4425, 4.76837e-07, 7.89608)
+mesh = ExtResource("1_xuvd6")
+
+[node name="Cone-flat15" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.4875, 0, 8.95615)
+mesh = ExtResource("1_xuvd6")

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b6r8w5vpuoyps"
+path="res://.godot/imported/roofHigh.obj-3c70e7136346bbd0a1367c7588124f3f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/roofHigh.obj-3c70e7136346bbd0a1367c7588124f3f.mesh"]
+
+source_file="res://models/kenney_fantasy-town-kit/Models/OBJ format/roofHigh.obj"
+dest_files=["res://.godot/imported/roofHigh.obj-3c70e7136346bbd0a1367c7588124f3f.mesh", "res://.godot/imported/roofHigh.obj-3c70e7136346bbd0a1367c7588124f3f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

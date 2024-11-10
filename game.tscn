@@ -1,48 +1,38 @@
-[gd_scene load_steps=8 format=3 uid="uid://d0rcie7hun16"]
+[gd_scene load_steps=16 format=3 uid="uid://d0rcie7hun16"]
 
 [ext_resource type="PackedScene" uid="uid://ciag4gvc86bnl" path="res://car.tscn" id="1_0m6t5"]
-[ext_resource type="Texture2D" uid="uid://lci55caugej1" path="res://icon.svg" id="1_hotw8"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7r5uh"]
-albedo_color = Color(0.307153, 0.283207, 0.266098, 1)
-albedo_texture = ExtResource("1_hotw8")
-uv1_triplanar = true
-
-[sub_resource type="BoxMesh" id="BoxMesh_c2gsn"]
-material = SubResource("StandardMaterial3D_7r5uh")
-size = Vector3(200, 0.1, 200)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_d86bk"]
-points = PackedVector3Array(-100, -0.05, -100, -100, 0.05, -100, 100, -0.05, -100, -100, -0.05, 100, -100, 0.05, 100, 100, 0.05, -100, 100, -0.05, 100, 100, 0.05, 100)
-
-[sub_resource type="BoxMesh" id="BoxMesh_y0evb"]
-size = Vector3(10, 0.2, 10)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_b1p4g"]
-points = PackedVector3Array(-5, -0.1, -5, -5, 0.1, -5, 5, -0.1, -5, -5, -0.1, 5, -5, 0.1, 5, 5, 0.1, -5, 5, -0.1, 5, 5, 0.1, 5)
+[ext_resource type="Script" path="res://game.gd" id="1_ka53t"]
+[ext_resource type="Environment" uid="uid://b788umq5ypwa3" path="res://resources/envrionment.tres" id="3_3t6gg"]
+[ext_resource type="Script" path="res://code/map_generator.gd" id="3_xpbjs"]
+[ext_resource type="Script" path="res://code/maptiledata.gd" id="4_602tr"]
+[ext_resource type="Resource" uid="uid://cmju8ysmarlgv" path="res://resources/Game Data/Map Tile Data/tile_LL01.tres" id="5_hgli0"]
+[ext_resource type="Resource" uid="uid://cpx6qs0xs3igv" path="res://resources/Game Data/Map Tile Data/tile_LC01.tres" id="6_2ipsn"]
+[ext_resource type="Resource" uid="uid://kxxs6mafqkbu" path="res://resources/Game Data/Map Tile Data/tile_LR01.tres" id="7_w0xi5"]
+[ext_resource type="Resource" uid="uid://bi43dnwoulkru" path="res://resources/Game Data/Map Tile Data/tile_CL01.tres" id="8_1pa3x"]
+[ext_resource type="Resource" uid="uid://cup1gtp3qg561" path="res://resources/Game Data/Map Tile Data/tile_RL01.tres" id="9_5xd8u"]
+[ext_resource type="Resource" uid="uid://c7vu33f4khgh0" path="res://resources/Game Data/Map Tile Data/tile_CC01.tres" id="10_b15y0"]
+[ext_resource type="Resource" uid="uid://wym5meyekvl4" path="res://resources/Game Data/Map Tile Data/tile_start.tres" id="10_lof5k"]
+[ext_resource type="Resource" uid="uid://4nt5wlt0g1ur" path="res://resources/Game Data/Map Tile Data/tile_CR01.tres" id="11_2nb05"]
+[ext_resource type="Resource" uid="uid://damxv4pommgsa" path="res://resources/Game Data/Map Tile Data/tile_RC01.tres" id="13_8ya6f"]
+[ext_resource type="Resource" uid="uid://vtmawvnrmqfn" path="res://resources/Game Data/Map Tile Data/tile_RR01.tres" id="14_22ysf"]
 
 [node name="Game" type="Node3D"]
-
-[node name="Ground" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_c2gsn")
-
-[node name="StaticBody3D2" type="StaticBody3D" parent="Ground"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/StaticBody3D2"]
-shape = SubResource("ConvexPolygonShape3D_d86bk")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 21.4664, 0)
+script = ExtResource("1_ka53t")
 
 [node name="car" parent="." instance=ExtResource("1_0m6t5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.59005, 0)
+transform = Transform3D(1.19249e-08, 0, 1, 0, 1, 0, -1, 0, 1.19249e-08, 0, -20.5567, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.37862, 1.70796, 0)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.37862, -19.2023, 0)
+environment = ExtResource("3_3t6gg")
 
-[node name="Ramp" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.982297, 0.18733, 0, -0.18733, 0.982297, 0, 0.869172, 33.6376)
-mesh = SubResource("BoxMesh_y0evb")
-skeleton = NodePath("../Ground")
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.222682, -0.967679, -0.118369, 0.693309, -0.242551, 0.678596, -0.685373, 0.0690451, 0.724912, 0, 251.473, 0)
+shadow_enabled = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Ramp"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ramp/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_b1p4g")
+[node name="MapGenerator" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_xpbjs")
+map_tile_datas = Array[ExtResource("4_602tr")]([ExtResource("5_hgli0"), ExtResource("6_2ipsn"), ExtResource("7_w0xi5"), ExtResource("8_1pa3x"), ExtResource("10_b15y0"), ExtResource("11_2nb05"), ExtResource("9_5xd8u"), ExtResource("13_8ya6f"), ExtResource("14_22ysf")])
+tile_start = ExtResource("10_lof5k")
