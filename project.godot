@@ -63,3 +63,7 @@ left={
 
 3d_physics/layer_1="Car"
 3d_physics/layer_2="MovableObstacle"
+
+[rendering]
+
+environment/defaults/default_environment="res://resources/envrionment.tres"
