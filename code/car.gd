@@ -8,6 +8,7 @@ const BRAKE_STRENGTH = 2.0
 
 var previous_speed := linear_velocity.length()
 var _steer_target := 0.0
+var score :=0.0
 
 #@onready var desired_engine_pitch: float = $EngineSound.pitch_scale
 
@@ -55,7 +56,17 @@ func _physics_process(delta: float):
 
 		# Apply analog brake factor for more subtle braking if not fully holding down the trigger.
 		engine_force *= Input.get_action_strength(&"reverse")
-
+	
+	
+	if Input.is_action_just_pressed(&"alcool_up"):
+		score += 1.0;
+		RenderingServer.global_shader_parameter_set("tauxalcool",score);
+	if Input.is_action_just_pressed(&"alcool_down"):
+		score -= 1.0;
+		RenderingServer.global_shader_parameter_set("tauxalcool",score);
+	
+	
+	
 	steering = move_toward(steering, _steer_target, STEER_SPEED * delta)
 
 	previous_speed = linear_velocity.length()
