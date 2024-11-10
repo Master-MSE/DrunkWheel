@@ -41,6 +41,8 @@ far = 0.01
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.222682, -0.967679, -0.118369, 0.693309, -0.242551, 0.678596, -0.685373, 0.0690451, 0.724912, 0, 251.473, 0)
+light_color = Color(0.456374, 0.564924, 1, 1)
+light_energy = 0.277
 shadow_enabled = true
 
 [node name="MapGenerator" type="Node" parent="."]
