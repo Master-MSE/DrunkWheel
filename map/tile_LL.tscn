@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=3 uid="uid://xcevil5106yq"]
+[gd_scene load_steps=85 format=3 uid="uid://xcevil5106yq"]
 
 [ext_resource type="ArrayMesh" uid="uid://cqox0ojrnm2ue" path="res://models/kenney_train-kit/Models/OBJ format/railroad-straight.obj" id="1_hh41e"]
 [ext_resource type="ArrayMesh" uid="uid://cvaprf6sd2fim" path="res://models/kenney_city-kit-roads/Models/OBJ format/road_straight.obj" id="2_in5ug"]
@@ -17,6 +17,7 @@
 [ext_resource type="ArrayMesh" uid="uid://bkeuw7bc15m5q" path="res://models/Barn/Barn.obj" id="15_cmjdy"]
 [ext_resource type="ArrayMesh" uid="uid://c75kj8x1mgo1u" path="res://models/Forest/PUSHILIN_forest.obj" id="16_6g6tn"]
 [ext_resource type="ArrayMesh" uid="uid://bw8sof7dsq3i0" path="res://models/Field of wheat/FieldOfWheat(1).obj" id="17_adn5b"]
+[ext_resource type="PackedScene" uid="uid://bjpvataopch70" path="res://Props/Pickup.tscn" id="18_nqmes"]
 
 [sub_resource type="MeshTexture" id="MeshTexture_l6ark"]
 
@@ -8027,3 +8028,21 @@ skeleton = NodePath("../../Forest")
 transform = Transform3D(-0.1, 0, 1.50996e-08, 0, 0.1, 0, -1.50996e-08, 0, -0.1, 46.5401, 0, -23)
 mesh = ExtResource("17_adn5b")
 skeleton = NodePath("../../Forest")
+
+[node name="Pickup" parent="." instance=ExtResource("18_nqmes")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 66.2992, 1.14027, 22.0805)
+
+[node name="Pickup2" parent="." instance=ExtResource("18_nqmes")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 53.4973, 1.14027, 26.3355)
+
+[node name="Pickup3" parent="." instance=ExtResource("18_nqmes")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 32.2034, 1.14027, 26.1944)
+
+[node name="Pickup4" parent="." instance=ExtResource("18_nqmes")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 9.72583, 1.14027, 22.8102)
+
+[node name="Pickup5" parent="." instance=ExtResource("18_nqmes")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -6.30441, 1.14027, 23.1798)
+
+[node name="Pickup6" parent="." instance=ExtResource("18_nqmes")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -36.0804, 1.14027, 26.647)

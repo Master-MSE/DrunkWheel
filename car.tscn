@@ -137,6 +137,7 @@ size = Vector2(0.15, 0.12)
 
 [node name="car" type="VehicleBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0239234, 0, 0.0928687)
+collision_layer = 5
 axis_lock_angular_x = true
 axis_lock_angular_z = true
 mass = 200.0

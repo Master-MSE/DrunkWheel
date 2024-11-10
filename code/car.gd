@@ -97,6 +97,9 @@ func _physics_process(delta):
 		
 	
 
+func _ready() -> void:
+	contact_monitor = true
+	set_max_contacts_reported(20)
 
 func _on_body_entered(body: Node) -> void:
 	print("Body Entered")
@@ -107,3 +110,6 @@ func _on_body_entered(body: Node) -> void:
 			((body.position - position) * relative_obstacle_collision_impulse_strength))
 			
 			print(str(linear_velocity))
+	print(body.collision_layer)
+	if body.collision_layer == 4:
+		body.queue_free()
