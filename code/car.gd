@@ -4,7 +4,7 @@ extends VehicleBody3D
 @export var relative_obstacle_collision_impulse_strength: float = 1.0
 
 const MAX_SPEED = 15.0
-const MAX_ENGINE_FORCE = 1700.0
+const MAX_ENGINE_FORCE = 2000.0
 const MAX_BRAKE_FORCE = 10.0
 const MAX_STEERING_ANGLE = 0.7
 const STEERING_SPEED = 0.05
