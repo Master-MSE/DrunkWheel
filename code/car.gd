@@ -59,12 +59,13 @@ func _physics_process(delta: float):
 	
 	
 	if Input.is_action_just_pressed(&"alcool_up"):
-		score += 1.0;
+		score += 1;
 		RenderingServer.global_shader_parameter_set("tauxalcool",score);
+		prints(score);
 	if Input.is_action_just_pressed(&"alcool_down"):
-		score -= 1.0;
+		score -= 1;
 		RenderingServer.global_shader_parameter_set("tauxalcool",score);
-	
+		prints(score);
 	
 	
 	steering = move_toward(steering, _steer_target, STEER_SPEED * delta)

@@ -84,3 +84,7 @@ tauxalcool={
 "type": "float",
 "value": 0.0
 }
+alcool={
+"type": "float",
+"value": 0.0
+}

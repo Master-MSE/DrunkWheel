@@ -166,7 +166,6 @@ axis_lock_angular_z = true
 mass = 200.0
 can_sleep = false
 script = ExtResource("1_3623i")
-vertical_obstacle_collision_impulse_strength = 5.0
 
 [node name="body" type="MeshInstance3D" parent="car"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, -0.025)
