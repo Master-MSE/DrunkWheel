@@ -9,17 +9,22 @@ void vertex() {
 void fragment() {
 	//float time = TIME;
 	//float offset = sin(time)*tauxalcool*3.0;
-	float offset = 20.0;
+	float offset =200.0;
 	switch (index){
+		case 1:
+			vec4 first_chanel = texture(SCREEN_TEXTURE,vec2(SCREEN_UV.x+sin(SCREEN_UV.y*5.0*PI+TIME*3.0)*SCREEN_PIXEL_SIZE.x*20.0+(offset*SCREEN_PIXEL_SIZE.x)*sin(TIME/4.0),SCREEN_UV.y));
+			COLOR = vec4(first_chanel.r,first_chanel.g,first_chanel.b,0.3);
+			break;
+		case 2:
+			vec4 first_chanel = texture(SCREEN_TEXTURE,vec2(SCREEN_UV.x+sin(SCREEN_UV.y*5.0*PI+TIME*3.0)*SCREEN_PIXEL_SIZE.x*20.0-(offset*SCREEN_PIXEL_SIZE.x)*sin(TIME/4.0),SCREEN_UV.y));
+			COLOR = vec4(first_chanel.r,first_chanel.g,first_chanel.b,0.3);
+			break;
 		default:
-			vec4 first_chanel = texture(SCREEN_TEXTURE,vec2(SCREEN_UV.x+sin(SCREEN_UV.y*2.0*PI+TIME)*SCREEN_PIXEL_SIZE.x*10.0,SCREEN_UV.y));
-			//COLOR = vec4(first_chanel.r,first_chanel.g,first_chanel.b,1);
+			vec4 first_chanel = texture(SCREEN_TEXTURE,vec2(SCREEN_UV.x+sin(SCREEN_UV.y*5.0*PI+TIME*3.0)*SCREEN_PIXEL_SIZE.x*20.0,SCREEN_UV.y));
+			COLOR = vec4(first_chanel.r,first_chanel.g,first_chanel.b,1);
 			break;
 	}
-	vec4 r_chanel = texture(SCREEN_TEXTURE,vec2(SCREEN_UV.x,SCREEN_UV.y));
-	vec4 g_chanel = texture(SCREEN_TEXTURE,vec2(SCREEN_UV.x+(offset*SCREEN_PIXEL_SIZE.x),SCREEN_UV.y));
-	vec4 b_chanel = texture(SCREEN_TEXTURE,vec2(SCREEN_UV.x-(offset*SCREEN_PIXEL_SIZE.x),SCREEN_UV.y));
-	COLOR= vec4(0,0,0,1);
+
 	// Called for every pixel the material is visible on.
 }
 

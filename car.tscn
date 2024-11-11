@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://ciag4gvc86bnl"]
+[gd_scene load_steps=21 format=4 uid="uid://ciag4gvc86bnl"]
 
 [ext_resource type="Texture2D" uid="uid://b0ahsnh0h5gai" path="res://models/vehicules/GLB format/Textures/colormap.png" id="1_2ae4i"]
 [ext_resource type="Script" path="res://code/car.gd" id="1_3623i"]
@@ -133,7 +133,15 @@ auto_exposure_max_sensitivity = 47846.4
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7f8ql"]
 shader = ExtResource("3_juobj")
+shader_parameter/index = 0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ydq6v"]
+shader = ExtResource("3_juobj")
 shader_parameter/index = 1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qbrxb"]
+shader = ExtResource("3_juobj")
+shader_parameter/index = 2
 
 [sub_resource type="BoxMesh" id="BoxMesh_72tb6"]
 material = ExtResource("3_hcf53")
@@ -243,11 +251,28 @@ transform = Transform3D(-1, 8.74228e-08, 2.51021e-15, 6.74197e-08, 0.771191, 0.6
 attributes = SubResource("CameraAttributesPractical_j678x")
 current = true
 
-[node name="SubViewport" type="SubViewport" parent="car/Camera3D"]
-handle_input_locally = false
+[node name="CanvasLayer" type="CanvasLayer" parent="car/Camera3D"]
 
-[node name="ColorRect" type="ColorRect" parent="car/Camera3D/SubViewport"]
+[node name="ColorRect" type="ColorRect" parent="car/Camera3D/CanvasLayer"]
 material = SubResource("ShaderMaterial_7f8ql")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect2" type="ColorRect" parent="car/Camera3D/CanvasLayer/ColorRect"]
+material = SubResource("ShaderMaterial_ydq6v")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect3" type="ColorRect" parent="car/Camera3D/CanvasLayer/ColorRect/ColorRect2"]
+material = SubResource("ShaderMaterial_qbrxb")
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
