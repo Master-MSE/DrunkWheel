@@ -23,8 +23,6 @@ func _create_tile(tile: PackedScene) -> void:
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	map_generator.generate_map(map_length)
-	var global_shader_uniforms =  RenderingServer.global_shader_parameter_get_list();
-	print("Uniforme globale existante : ", global_shader_uniforms)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

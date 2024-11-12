@@ -333,4 +333,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.556672, 0.0103203, 0.65844)
 [node name="raycast-back" type="RayCast3D" parent="car"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.556672, 0.0103203, -0.660878)
 
+[node name="AlcoolTimer" type="Timer" parent="car"]
+autostart = true
+
 [connection signal="body_entered" from="car" to="car" method="_on_body_entered"]
+[connection signal="timeout" from="car/AlcoolTimer" to="car" method="_on_alcool_timer_timeout"]

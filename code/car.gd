@@ -8,7 +8,10 @@ const BRAKE_STRENGTH = 2.0
 
 var previous_speed := linear_velocity.length()
 var _steer_target := 0.0
-var score :=0.0
+var cons_alcool=		[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+var cons_aclcool_fac=	[0.0,0.1,0.3,0.4,0.4,0.4,0.2,0.1]
+var alcool_absorbtion :=0.2
+var tauxalcool := 0.0
 
 #@onready var desired_engine_pitch: float = $EngineSound.pitch_scale
 
@@ -59,15 +62,28 @@ func _physics_process(delta: float):
 	
 	
 	if Input.is_action_just_pressed(&"alcool_up"):
-		score += 1;
-		RenderingServer.global_shader_parameter_set("tauxalcool",score);
-		prints(score);
+		cons_alcool[0]+=1.0;
 	if Input.is_action_just_pressed(&"alcool_down"):
-		score -= 1;
-		RenderingServer.global_shader_parameter_set("tauxalcool",score);
-		prints(score);
+		cons_alcool[0]-=1.0;
+
 	
 	
 	steering = move_toward(steering, _steer_target, STEER_SPEED * delta)
 
 	previous_speed = linear_velocity.length()
+
+
+func _on_alcool_timer_timeout() -> void:
+	var time_now = Time.get_ticks_msec() / 1000.0  # Temps actuel en secondes
+	var phase_offset = (PI - fmod(time_now, TAU))
+	RenderingServer.global_shader_parameter_set("phase_time",phase_offset);
+	tauxalcool-=alcool_absorbtion
+	if tauxalcool<0.0:
+		tauxalcool=0.0
+	for i in range(cons_alcool.size()):
+		tauxalcool += cons_alcool[i] * cons_aclcool_fac[i]
+	for i in range(cons_alcool.size()-1,0,-1):
+		cons_alcool[i] = cons_alcool[i-1]
+	cons_alcool[0]=0.0
+	prints(time_now)
+	RenderingServer.global_shader_parameter_set("tauxalcool",tauxalcool);
