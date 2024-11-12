@@ -1,7 +1,10 @@
 extends VehicleBody3D
+class_name Car
 
-@export var vertical_obstacle_collision_impulse_strength: float = 1.0
-@export var relative_obstacle_collision_impulse_strength: float = 1.0
+signal alcohol_collected
+
+@export var vertical_obstacle_collision_impulse_strength: float = 1
+@export var relative_obstacle_collision_impulse_strength: float = 1
 
 const MAX_SPEED = 25.0
 const MAX_ENGINE_FORCE = 800.0
@@ -94,22 +97,12 @@ func _physics_process(delta):
 	#drift()
 	steering(steering_input)
 	engine(engine_input)
-		
-	
 
 func _ready() -> void:
 	contact_monitor = true
 	set_max_contacts_reported(20)
 
 func _on_body_entered(body: Node) -> void:
-	print("Body Entered")
-	if body is RigidBody3D:
-		if body.collision_layer == 2:
-			body.apply_impulse(linear_velocity + 
-			(Vector3.UP * vertical_obstacle_collision_impulse_strength) + 
-			((body.position - position) * relative_obstacle_collision_impulse_strength))
-			
-			print(str(linear_velocity))
-	print(body.collision_layer)
 	if body.collision_layer == 4:
 		body.queue_free()
+		alcohol_collected.emit()
