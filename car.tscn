@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://ciag4gvc86bnl"]
+[gd_scene load_steps=17 format=4 uid="uid://ciag4gvc86bnl"]
 
 [ext_resource type="Texture2D" uid="uid://b0ahsnh0h5gai" path="res://models/vehicules/GLB format/Textures/colormap.png" id="1_2ae4i"]
 [ext_resource type="Script" path="res://code/car.gd" id="1_3623i"]
@@ -119,6 +119,17 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_lp57k")
 
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_j678x"]
+auto_exposure_scale = 0.01
+auto_exposure_speed = 29.32
+dof_blur_far_enabled = true
+dof_blur_far_distance = 67.39
+dof_blur_far_transition = 20.0
+dof_blur_near_distance = 4.11
+dof_blur_amount = 0.05
+auto_exposure_min_sensitivity = 95.36
+auto_exposure_max_sensitivity = 47846.4
+
 [sub_resource type="BoxMesh" id="BoxMesh_72tb6"]
 material = ExtResource("3_hcf53")
 size = Vector3(0.275, 0, 0.145)
@@ -225,6 +236,8 @@ skeleton = NodePath("")
 
 [node name="Camera3D" type="Camera3D" parent="car"]
 transform = Transform3D(-1, 8.74228e-08, 2.51021e-15, 6.74197e-08, 0.771191, 0.636603, 5.56536e-08, 0.636603, -0.771191, 0, 8.03239, -2.4323)
+attributes = SubResource("CameraAttributesPractical_j678x")
+current = true
 
 [node name="light-front-left" type="SpotLight3D" parent="car"]
 transform = Transform3D(-0.996195, 9.27779e-10, -0.0871556, -0.0290171, 0.94295, 0.331668, 0.0821834, 0.332935, -0.939362, 0.413497, 0.862965, 0.939101)
