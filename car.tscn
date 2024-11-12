@@ -1,8 +1,9 @@
-[gd_scene load_steps=17 format=4 uid="uid://ciag4gvc86bnl"]
+[gd_scene load_steps=21 format=4 uid="uid://ciag4gvc86bnl"]
 
 [ext_resource type="Texture2D" uid="uid://b0ahsnh0h5gai" path="res://models/vehicules/GLB format/Textures/colormap.png" id="1_2ae4i"]
 [ext_resource type="Script" path="res://code/car.gd" id="1_3623i"]
 [ext_resource type="Material" uid="uid://co5up3xnsi777" path="res://resources/Game Data/Misc/light_material.tres" id="3_hcf53"]
+[ext_resource type="Shader" path="res://shader/sreen_effect.gdshader" id="3_uns8o"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5xlc1"]
 resource_name = "colormap"
@@ -130,6 +131,18 @@ dof_blur_amount = 0.05
 auto_exposure_min_sensitivity = 95.36
 auto_exposure_max_sensitivity = 47846.4
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vg3d1"]
+shader = ExtResource("3_uns8o")
+shader_parameter/index = null
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5mn6o"]
+shader = ExtResource("3_uns8o")
+shader_parameter/index = 1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tx0pl"]
+shader = ExtResource("3_uns8o")
+shader_parameter/index = 2
+
 [sub_resource type="BoxMesh" id="BoxMesh_72tb6"]
 material = ExtResource("3_hcf53")
 size = Vector3(0.275, 0, 0.145)
@@ -238,6 +251,34 @@ skeleton = NodePath("")
 transform = Transform3D(-1, 8.74228e-08, 2.51021e-15, 6.74197e-08, 0.771191, 0.636603, 5.56536e-08, 0.636603, -0.771191, 0, 8.03239, -2.4323)
 attributes = SubResource("CameraAttributesPractical_j678x")
 current = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="car/Camera3D"]
+
+[node name="ColorRect" type="ColorRect" parent="car/Camera3D/CanvasLayer"]
+material = SubResource("ShaderMaterial_vg3d1")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="car/Camera3D/CanvasLayer/ColorRect"]
+material = SubResource("ShaderMaterial_5mn6o")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect2" type="ColorRect" parent="car/Camera3D/CanvasLayer/ColorRect"]
+material = SubResource("ShaderMaterial_tx0pl")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="light-front-left" type="SpotLight3D" parent="car"]
 transform = Transform3D(-0.996195, 9.27779e-10, -0.0871556, -0.0290171, 0.94295, 0.331668, 0.0821834, 0.332935, -0.939362, 0.413497, 0.862965, 0.939101)
