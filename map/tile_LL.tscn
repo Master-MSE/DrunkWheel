@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=3 uid="uid://xcevil5106yq"]
+[gd_scene load_steps=85 format=3 uid="uid://xcevil5106yq"]
 
 [ext_resource type="ArrayMesh" uid="uid://cqox0ojrnm2ue" path="res://models/kenney_train-kit/Models/OBJ format/railroad-straight.obj" id="1_hh41e"]
 [ext_resource type="ArrayMesh" uid="uid://cvaprf6sd2fim" path="res://models/kenney_city-kit-roads/Models/OBJ format/road_straight.obj" id="2_in5ug"]
@@ -17,6 +17,7 @@
 [ext_resource type="ArrayMesh" uid="uid://bkeuw7bc15m5q" path="res://models/Barn/Barn.obj" id="15_cmjdy"]
 [ext_resource type="ArrayMesh" uid="uid://c75kj8x1mgo1u" path="res://models/Forest/PUSHILIN_forest.obj" id="16_6g6tn"]
 [ext_resource type="PackedScene" uid="uid://bjpvataopch70" path="res://Props/Pickup.tscn" id="18_nqmes"]
+[ext_resource type="PackedScene" uid="uid://cbstps4ewcmxf" path="res://Props/Wind Tubine.tscn" id="18_v5dts"]
 
 [sub_resource type="MeshTexture" id="MeshTexture_l6ark"]
 
@@ -4711,6 +4712,21 @@ skeleton = NodePath("../../StaticBody3D")
 [node name="CollisionShape3D20" type="CollisionShape3D" parent="Decorative"]
 transform = Transform3D(0.866026, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866026, 14, 0, -18)
 shape = SubResource("ConcavePolygonShape3D_aa22f")
+
+[node name="WindTubine" parent="Decorative" instance=ExtResource("18_v5dts")]
+transform = Transform3D(0.1, 0, 0.173205, 0, 0.2, 0, -0.173205, 0, 0.1, 47.6883, 0, -8.60782)
+
+[node name="WindTubine2" parent="Decorative" instance=ExtResource("18_v5dts")]
+transform = Transform3D(0.1, 0, 0.173205, 0, 0.2, 0, -0.173205, 0, 0.1, 52.6751, 0, -13.2659)
+
+[node name="WindTubine3" parent="Decorative" instance=ExtResource("18_v5dts")]
+transform = Transform3D(0.1, 0, 0.173205, 0, 0.2, 0, -0.173205, 0, 0.1, 47.6883, 0, -13.3099)
+
+[node name="WindTubine4" parent="Decorative" instance=ExtResource("18_v5dts")]
+transform = Transform3D(0.1, 0, 0.173205, 0, 0.2, 0, -0.173205, 0, 0.1, 54.8824, 0, -18.0354)
+
+[node name="WindTubine5" parent="Decorative" instance=ExtResource("18_v5dts")]
+transform = Transform3D(0.1, 0, 0.173205, 0, 0.2, 0, -0.173205, 0, 0.1, 50.2265, 0, -18.7499)
 
 [node name="Forest" type="StaticBody3D" parent="."]
 
