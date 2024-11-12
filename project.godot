@@ -68,3 +68,14 @@ left={
 [rendering]
 
 environment/defaults/default_environment="res://resources/envrionment.tres"
+
+[shader_globals]
+
+tauxalcool={
+"type": "float",
+"value": 0.0
+}
+time={
+"type": "float",
+"value": 0.0
+}
