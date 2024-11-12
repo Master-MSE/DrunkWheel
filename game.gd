@@ -7,6 +7,11 @@ extends Node3D
 var current_tile_ends = Vector2(1,1)
 var current_tile_pos = Vector3(0,0,0)
 var alcohol_collected := 0
+var cons_alcool=		[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+var cons_aclcool_fac=	[0.0,0.1,0.3,0.4,0.4,0.4,0.2,0.1]
+var alcool_absorbtion :=0.2
+var tauxalcool := 0.0
+var time :=0.0
 
 const tile_length = 30
 const map_length = 5
@@ -23,6 +28,7 @@ func _create_tile(tile: PackedScene) -> void:
 
 func _on_alcohol_collected() -> void:
 	alcohol_collected+=1
+	cons_alcool[0]+=1
 	hud.update_alcohol(alcohol_collected)
 
 # Called when the node enters the scene tree for the first time.
@@ -32,4 +38,21 @@ func _ready() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	time+=delta
+	if time>1.0:
+		time=fmod(time,1.0)
+		RenderingServer.global_shader_parameter_set("tauxalcool",tauxalcool);
+	RenderingServer.global_shader_parameter_set("time",time);
+
+
+
+func _on_aclool_timer_timeout() -> void:
+	tauxalcool-=alcool_absorbtion
+	if tauxalcool<0.0:
+		tauxalcool=0.0
+	for i in range(cons_alcool.size()):
+		tauxalcool += cons_alcool[i] * cons_aclcool_fac[i]
+	for i in range(cons_alcool.size()-1,0,-1):
+		cons_alcool[i] = cons_alcool[i-1]
+	cons_alcool[0]=0.0
+	

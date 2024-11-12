@@ -52,3 +52,8 @@ tile_start = ExtResource("10_lof5k")
 tile_end_datas = Array[ExtResource("4_602tr")]([ExtResource("16_v4c0n"), ExtResource("16_f77hu"), ExtResource("18_4jp8p")])
 
 [node name="Hud" parent="." instance=ExtResource("19_b1126")]
+
+[node name="aclool_timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="aclool_timer" to="." method="_on_aclool_timer_timeout"]
