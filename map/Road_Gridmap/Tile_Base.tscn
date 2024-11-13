@@ -1,6 +1,5 @@
-[gd_scene load_steps=49 format=3 uid="uid://cggalvt8r3aoy"]
+[gd_scene load_steps=48 format=3 uid="uid://cggalvt8r3aoy"]
 
-[ext_resource type="ArrayMesh" uid="uid://cvaprf6sd2fim" path="res://models/kenney_city-kit-roads/Models/OBJ format/road_straight.obj" id="2_7wihx"]
 [ext_resource type="ArrayMesh" uid="uid://cqox0ojrnm2ue" path="res://models/kenney_train-kit/Models/OBJ format/railroad-straight.obj" id="3_hntwk"]
 
 [sub_resource type="MeshTexture" id="MeshTexture_gbh50"]
@@ -156,14 +155,6 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_tt77t")
-
-[node name="RoadStraight" type="MeshInstance3D" parent="."]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 70, 0, 24)
-mesh = ExtResource("2_7wihx")
-
-[node name="RoadStraight2" type="MeshInstance3D" parent="."]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 70, 0, 0)
-mesh = ExtResource("2_7wihx")
 
 [node name="Rail" type="StaticBody3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 63, 0, 38)
@@ -339,22 +330,6 @@ skeleton = NodePath("../..")
 transform = Transform3D(-2, 0, 1.74846e-07, 0, 2, 0, -1.74846e-07, 0, -2, -3.99999, 0, -130.007)
 shape = SubResource("ConcavePolygonShape3D_mvv6e")
 
-[node name="RoadStraight3" type="MeshInstance3D" parent="."]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 70, 0, -24)
-mesh = ExtResource("2_7wihx")
-
-[node name="RoadStraight4" type="MeshInstance3D" parent="."]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -70, 0, 24)
-mesh = ExtResource("2_7wihx")
-
-[node name="RoadStraight5" type="MeshInstance3D" parent="."]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -70, 0, 0)
-mesh = ExtResource("2_7wihx")
-
-[node name="RoadStraight6" type="MeshInstance3D" parent="."]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -70, 0, -24)
-mesh = ExtResource("2_7wihx")
-
 [node name="Cliff" type="Node3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 
@@ -452,7 +427,7 @@ mesh = SubResource("BoxMesh_7n7nb")
 skeleton = NodePath("../../../..")
 
 [node name="MeshInstance3D16" type="MeshInstance3D" parent="Cliff/CliffLeft/CliffMesh"]
-transform = Transform3D(1, 0, 0, 0, 6.49247, 0, 0, 0, 1, -7.26398, 3.36594, 0.0501251)
+transform = Transform3D(1, 0, 0, 0, 6.49247, 0, 0, 0, 1, -7.26398, 2.36594, 0.0501251)
 mesh = SubResource("BoxMesh_odb4u")
 skeleton = NodePath("../../../..")
 
@@ -650,7 +625,7 @@ mesh = SubResource("BoxMesh_7n7nb")
 skeleton = NodePath("../../../..")
 
 [node name="MeshInstance3D16" type="MeshInstance3D" parent="Cliff/CliffLeft/CliffMesh2"]
-transform = Transform3D(1, 0, 0, 0, 6.49247, 0, 0, 0, 1, -7.26398, 3.36594, 0.0501251)
+transform = Transform3D(1, 0, 0, 0, 6.49247, 0, 0, 0, 1, -7.26398, 2.36594, 0.0501251)
 mesh = SubResource("BoxMesh_odb4u")
 skeleton = NodePath("../../../..")
 
@@ -1046,7 +1021,7 @@ mesh = SubResource("BoxMesh_7n7nb")
 skeleton = NodePath("../../../..")
 
 [node name="MeshInstance3D16" type="MeshInstance3D" parent="Cliff/CliffLeft/CliffMesh4"]
-transform = Transform3D(1, 0, 0, 0, 6.49247, 0, 0, 0, 1, -7.26398, 3.36594, 0.0501251)
+transform = Transform3D(1, 0, 0, 0, 6.49247, 0, 0, 0, 1, -7.26398, 2.36594, 0.0501251)
 mesh = SubResource("BoxMesh_odb4u")
 skeleton = NodePath("../../../..")
 
@@ -1302,7 +1277,7 @@ mesh = SubResource("BoxMesh_7n7nb")
 skeleton = NodePath("../../../..")
 
 [node name="MeshInstance3D16" type="MeshInstance3D" parent="Cliff/CliffLeft/CliffMesh6"]
-transform = Transform3D(1, 0, 0, 0, 6.49247, 0, 0, 0, 1, -7.26398, 3.36594, 0.0501251)
+transform = Transform3D(1, 0, 0, 0, 6.49247, 0, 0, 0, 1, -7.26398, 2.36594, 0.0501251)
 mesh = SubResource("BoxMesh_odb4u")
 skeleton = NodePath("../../../..")
 
@@ -1500,7 +1475,7 @@ mesh = SubResource("BoxMesh_7n7nb")
 skeleton = NodePath("../../../..")
 
 [node name="MeshInstance3D16" type="MeshInstance3D" parent="Cliff/CliffLeft/CliffMesh7"]
-transform = Transform3D(1, 0, 0, 0, 6.49247, 0, 0, 0, 1, -7.26398, 3.36594, 0.0501251)
+transform = Transform3D(1, 0, 0, 0, 6.49247, 0, 0, 0, 1, -7.26398, 2.36594, 0.0501251)
 mesh = SubResource("BoxMesh_odb4u")
 skeleton = NodePath("../../../..")
 
@@ -1896,7 +1871,7 @@ mesh = SubResource("BoxMesh_7n7nb")
 skeleton = NodePath("../../../..")
 
 [node name="MeshInstance3D16" type="MeshInstance3D" parent="Cliff/CliffLeft/CliffMesh9"]
-transform = Transform3D(1, 0, 0, 0, 6.49247, 0, 0, 0, 1, -7.26398, 3.36594, 0.0501251)
+transform = Transform3D(1, 0, 0, 0, 6.49247, 0, 0, 0, 1, -7.26398, 2.36594, 0.0501251)
 mesh = SubResource("BoxMesh_odb4u")
 skeleton = NodePath("../../../..")
 
@@ -2074,6 +2049,7 @@ mesh = SubResource("BoxMesh_u6y54")
 skeleton = NodePath("../../../..")
 
 [node name="CliffRight" type="Node3D" parent="Cliff"]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 0, 0, 0)
 
 [node name="CliffMesh" type="Node3D" parent="Cliff/CliffRight"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0.483373, 50)
@@ -2154,7 +2130,7 @@ mesh = SubResource("BoxMesh_7n7nb")
 skeleton = NodePath("../../../..")
 
 [node name="MeshInstance3D16" type="MeshInstance3D" parent="Cliff/CliffRight/CliffMesh"]
-transform = Transform3D(1, 0, 0, 0, 6.49247, 0, 0, 0, 1, -7.26398, 3.36594, 0.0501251)
+transform = Transform3D(1, 0, 0, 0, 6.49247, 0, 0, 0, 1, -7.26398, 2.36594, 0.0501251)
 mesh = SubResource("BoxMesh_odb4u")
 skeleton = NodePath("../../../..")
 
@@ -2352,7 +2328,7 @@ mesh = SubResource("BoxMesh_7n7nb")
 skeleton = NodePath("../../../..")
 
 [node name="MeshInstance3D16" type="MeshInstance3D" parent="Cliff/CliffRight/CliffMesh2"]
-transform = Transform3D(1, 0, 0, 0, 6.49247, 0, 0, 0, 1, -7.26398, 3.36594, 0.0501251)
+transform = Transform3D(1, 0, 0, 0, 6.49247, 0, 0, 0, 1, -7.26398, 2.36594, 0.0501251)
 mesh = SubResource("BoxMesh_odb4u")
 skeleton = NodePath("../../../..")
 
@@ -2748,7 +2724,7 @@ mesh = SubResource("BoxMesh_7n7nb")
 skeleton = NodePath("../../../..")
 
 [node name="MeshInstance3D16" type="MeshInstance3D" parent="Cliff/CliffRight/CliffMesh4"]
-transform = Transform3D(1, 0, 0, 0, 6.49247, 0, 0, 0, 1, -7.26398, 3.36594, 0.0501251)
+transform = Transform3D(1, 0, 0, 0, 6.49247, 0, 0, 0, 1, -7.26398, 2.36594, 0.0501251)
 mesh = SubResource("BoxMesh_odb4u")
 skeleton = NodePath("../../../..")
 
@@ -3004,7 +2980,7 @@ mesh = SubResource("BoxMesh_7n7nb")
 skeleton = NodePath("../../../..")
 
 [node name="MeshInstance3D16" type="MeshInstance3D" parent="Cliff/CliffRight/CliffMesh6"]
-transform = Transform3D(1, 0, 0, 0, 6.49247, 0, 0, 0, 1, -7.26398, 3.36594, 0.0501251)
+transform = Transform3D(1, 0, 0, 0, 6.49247, 0, 0, 0, 1, -7.26398, 2.36594, 0.0501251)
 mesh = SubResource("BoxMesh_odb4u")
 skeleton = NodePath("../../../..")
 
@@ -3202,7 +3178,7 @@ mesh = SubResource("BoxMesh_7n7nb")
 skeleton = NodePath("../../../..")
 
 [node name="MeshInstance3D16" type="MeshInstance3D" parent="Cliff/CliffRight/CliffMesh7"]
-transform = Transform3D(1, 0, 0, 0, 6.49247, 0, 0, 0, 1, -7.26398, 3.36594, 0.0501251)
+transform = Transform3D(1, 0, 0, 0, 6.49247, 0, 0, 0, 1, -7.26398, 2.36594, 0.0501251)
 mesh = SubResource("BoxMesh_odb4u")
 skeleton = NodePath("../../../..")
 
@@ -3598,7 +3574,7 @@ mesh = SubResource("BoxMesh_7n7nb")
 skeleton = NodePath("../../../..")
 
 [node name="MeshInstance3D16" type="MeshInstance3D" parent="Cliff/CliffRight/CliffMesh9"]
-transform = Transform3D(1, 0, 0, 0, 6.49247, 0, 0, 0, 1, -7.26398, 3.36594, 0.0501251)
+transform = Transform3D(1, 0, 0, 0, 6.49247, 0, 0, 0, 1, -7.26398, 2.36594, 0.0501251)
 mesh = SubResource("BoxMesh_odb4u")
 skeleton = NodePath("../../../..")
 
