@@ -1,9 +1,10 @@
-[gd_scene load_steps=54 format=3 uid="uid://cw7njndechwey"]
+[gd_scene load_steps=55 format=3 uid="uid://cw7njndechwey"]
 
 [ext_resource type="ArrayMesh" uid="uid://cqox0ojrnm2ue" path="res://models/kenney_train-kit/Models/OBJ format/railroad-straight.obj" id="1_m8pl4"]
 [ext_resource type="ArrayMesh" uid="uid://rlb0f12letl0" path="res://models/kenney_city-kit-roads/Models/OBJ format/road_endRound.obj" id="2_8kjip"]
 [ext_resource type="ArrayMesh" uid="uid://cvaprf6sd2fim" path="res://models/kenney_city-kit-roads/Models/OBJ format/road_straight.obj" id="3_this8"]
 [ext_resource type="ArrayMesh" uid="uid://cdyj5363xl03u" path="res://models/kenney_city-kit-roads/Models/OBJ format/light_curved.obj" id="4_gcqaj"]
+[ext_resource type="PackedScene" uid="uid://bjpvataopch70" path="res://Props/Pickup.tscn" id="5_d1w6h"]
 
 [sub_resource type="MeshTexture" id="MeshTexture_d51s3"]
 
@@ -4113,3 +4114,18 @@ light_indirect_energy = 1.318
 light_volumetric_fog_energy = 1.212
 light_size = 0.212
 spot_angle = 31.9252
+
+[node name="Pickup" parent="." instance=ExtResource("5_d1w6h")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -5.65573, 1.14027, -0.285187)
+
+[node name="Pickup2" parent="." instance=ExtResource("5_d1w6h")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -9.84175, 1.14027, 1.45263)
+
+[node name="Pickup3" parent="." instance=ExtResource("5_d1w6h")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -12.0988, 1.14027, -0.504762)
+
+[node name="Pickup4" parent="." instance=ExtResource("5_d1w6h")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -17.873, 1.14027, 2.95384)
+
+[node name="Pickup5" parent="." instance=ExtResource("5_d1w6h")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -21.6984, 1.14027, -0.371951)
