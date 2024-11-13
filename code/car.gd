@@ -106,3 +106,6 @@ func _on_body_entered(body: Node) -> void:
 	if body.collision_layer == 4:
 		body.queue_free()
 		alcohol_collected.emit()
+	
+	if body.collision_layer == 8:
+		print("The End !")

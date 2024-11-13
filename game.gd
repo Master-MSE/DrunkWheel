@@ -15,7 +15,7 @@ var time :=0.0
 
 const fac_time =1
 const tile_length = 30
-const map_length = 5
+const map_length = 1
 
 func choose_next_tile(current: Vector2) -> Vector2:
 	var next_end = randi()%3
