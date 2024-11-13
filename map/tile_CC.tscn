@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://dk3f8q44ca06d"]
 
 [ext_resource type="PackedScene" uid="uid://tr7stq5c0sgo" path="res://map/Road_Gridmap/RoadStraight.tscn" id="2_j35vp"]
+[ext_resource type="PackedScene" uid="uid://bjpvataopch70" path="res://Props/Pickup.tscn" id="3_m8e6x"]
 [ext_resource type="PackedScene" uid="uid://cggalvt8r3aoy" path="res://map/Road_Gridmap/Tile_Base.tscn" id="3_p40bd"]
-[ext_resource type="MeshLibrary" uid="uid://bk04av110v730" path="res://resources/test.tres" id="5_ns100"]
 
 [node name="Tile11" type="Node3D"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
@@ -53,7 +53,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 1.74846e-06)
 [node name="RoadStraight15" parent="Road" instance=ExtResource("2_j35vp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 8.74228e-07)
 
-[node name="GridMap" type="GridMap" parent="."]
-mesh_library = ExtResource("5_ns100")
-
 [node name="TileBase" parent="." instance=ExtResource("3_p40bd")]
+
+[node name="Pickup" parent="." instance=ExtResource("3_m8e6x")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 50, 1.04027, -2)
+
+[node name="Pickup2" parent="." instance=ExtResource("3_m8e6x")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 23, 1.04027, 1)
+
+[node name="Pickup3" parent="." instance=ExtResource("3_m8e6x")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -29, 1.04027, -2)

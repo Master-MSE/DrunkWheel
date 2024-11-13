@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cgu22l6qc7cr4"]
+[gd_scene load_steps=6 format=3 uid="uid://cgu22l6qc7cr4"]
 
 [ext_resource type="PackedScene" uid="uid://bokirc1m3bxlt" path="res://map/Road_Gridmap/Road_Straight_Short.tscn" id="3_0i4kg"]
 [ext_resource type="PackedScene" uid="uid://tr7stq5c0sgo" path="res://map/Road_Gridmap/RoadStraight.tscn" id="3_026ya"]
 [ext_resource type="PackedScene" uid="uid://cjg6oce1vm54g" path="res://map/Road_Gridmap/RoadCurved.tscn" id="4_06nar"]
+[ext_resource type="PackedScene" uid="uid://bjpvataopch70" path="res://Props/Pickup.tscn" id="5_2kgf7"]
 [ext_resource type="PackedScene" uid="uid://cggalvt8r3aoy" path="res://map/Road_Gridmap/Tile_Base.tscn" id="5_llm7r"]
 
 [node name="Tile10" type="Node3D"]
@@ -65,3 +66,12 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -70, 0
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -20, 0, 17)
 
 [node name="TileBase" parent="." instance=ExtResource("5_llm7r")]
+
+[node name="Pickup" parent="." instance=ExtResource("5_2kgf7")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 60, 1.04027, -1.99999)
+
+[node name="Pickup2" parent="." instance=ExtResource("5_2kgf7")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 33, 1.04027, 3)
+
+[node name="Pickup3" parent="." instance=ExtResource("5_2kgf7")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -1, 1.04027, 12)
