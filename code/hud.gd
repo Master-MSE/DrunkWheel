@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-func update_alcool(alcohol: int) -> void:
+func update_alcohol(alcohol: int) -> void:
 	var alcohol_label = "Alcohol collected = {alcohol}"
 	$Alcool.text = alcohol_label.format({"alcohol": str(alcohol)})
 
