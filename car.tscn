@@ -76,7 +76,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_n5yql")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w0qxb"]
-size = Vector3(1.29968, 0.89801, 2.54541)
+size = Vector3(1.29968, 0.777237, 2.54541)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vo5cv"]
 resource_name = "colormap"
@@ -162,7 +162,7 @@ mesh = SubResource("ArrayMesh_v5o1u")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="car"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000548007, 0.692108, -0.0217285)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000548007, 0.752495, -0.0217285)
 shape = SubResource("BoxShape3D_w0qxb")
 
 [node name="wheel-front-left" type="VehicleWheel3D" parent="car"]
@@ -170,9 +170,8 @@ transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0.555258, 0.277403, 0.6
 use_as_steering = true
 wheel_radius = 0.3
 wheel_rest_length = 0.05
-wheel_friction_slip = 1.0
-suspension_travel = 0.3
-suspension_stiffness = 70.0
+wheel_friction_slip = 3.0
+suspension_stiffness = 50.0
 suspension_max_force = 4000.0
 damping_compression = 2.0
 damping_relaxation = 3.0
@@ -186,9 +185,8 @@ transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0.55487, 0.27742, -0.65
 use_as_traction = true
 wheel_radius = 0.3
 wheel_rest_length = 0.05
-wheel_friction_slip = 1.0
-suspension_travel = 0.3
-suspension_stiffness = 70.0
+wheel_friction_slip = 3.0
+suspension_stiffness = 50.0
 suspension_max_force = 4000.0
 damping_compression = 2.0
 damping_relaxation = 3.0
@@ -202,9 +200,8 @@ transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.559738, 0.27687, 0.6
 use_as_steering = true
 wheel_radius = 0.3
 wheel_rest_length = 0.05
-wheel_friction_slip = 1.0
-suspension_travel = 0.3
-suspension_stiffness = 70.0
+wheel_friction_slip = 3.0
+suspension_stiffness = 50.0
 suspension_max_force = 4000.0
 damping_compression = 2.0
 damping_relaxation = 3.0
@@ -219,9 +216,8 @@ transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.560087, 0.278412, -0
 use_as_traction = true
 wheel_radius = 0.3
 wheel_rest_length = 0.05
-wheel_friction_slip = 1.0
-suspension_travel = 0.3
-suspension_stiffness = 70.0
+wheel_friction_slip = 3.0
+suspension_stiffness = 50.0
 suspension_max_force = 4000.0
 damping_compression = 2.0
 damping_relaxation = 3.0
