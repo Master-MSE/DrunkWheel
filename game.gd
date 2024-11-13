@@ -7,12 +7,13 @@ extends Node3D
 var current_tile_ends = Vector2(1,1)
 var current_tile_pos = Vector3(0,0,0)
 var alcohol_collected := 0
-var cons_alcool=		[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
-var cons_aclcool_fac=	[0.0,0.1,0.3,0.4,0.4,0.4,0.2,0.1]
-var alcool_absorbtion :=0.2
+var cons_alcool=		[0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00]
+var cons_aclcool_fac=	[0.00,0.00,0.10,0.10,0.15,0.15,0.15,0.15,0.15,0.15,0.15,0.15,0.10,0.10]
+var alcool_absorbtion :=0.05
 var tauxalcool := 0.0
 var time :=0.0
 
+const fac_time =1
 const tile_length = 30
 const map_length = 5
 
@@ -38,7 +39,7 @@ func _ready() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	time+=delta
+	time+=delta*fac_time;
 	if time>1.0:
 		time=fmod(time,1.0)
 		RenderingServer.global_shader_parameter_set("tauxalcool",tauxalcool);

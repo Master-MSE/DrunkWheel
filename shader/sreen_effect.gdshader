@@ -9,18 +9,22 @@ void vertex() {
 
 void fragment() {
 	float time_s = (time*2.0*PI);
-	float offset = tauxalcool*3.0;//*sin(time*PI);
+	float amp_vague=tauxalcool*3.0;
+	float fre_vague=15.0;
+	float vague = sin(SCREEN_UV.y*fre_vague+time_s)*SCREEN_PIXEL_SIZE.x*amp_vague;
+	float amp_diffraction=tauxalcool*10.0;
+	float diffraction=amp_diffraction*SCREEN_PIXEL_SIZE.x*sin(time_s);
 	switch (index){
 		case 1:
-			vec4 first_chanel = texture(SCREEN_TEXTURE,vec2(SCREEN_UV.x+sin(SCREEN_UV.y*15.0+time_s)*SCREEN_PIXEL_SIZE.x*tauxalcool*3.0+(offset*SCREEN_PIXEL_SIZE.x)*sin(time_s),SCREEN_UV.y));
+			vec4 first_chanel = texture(SCREEN_TEXTURE,vec2(SCREEN_UV.x+vague+diffraction,SCREEN_UV.y));
 			COLOR = vec4(first_chanel.r,first_chanel.g,first_chanel.b,0.5);
 			break;
 		case 2:
-			vec4 first_chanel = texture(SCREEN_TEXTURE,vec2(SCREEN_UV.x+sin(SCREEN_UV.y*15.0+time_s)*SCREEN_PIXEL_SIZE.x*tauxalcool*3.0-(offset*SCREEN_PIXEL_SIZE.x)*sin(time_s),SCREEN_UV.y));
+			vec4 first_chanel = texture(SCREEN_TEXTURE,vec2(SCREEN_UV.x+vague-diffraction,SCREEN_UV.y));
 			COLOR = vec4(first_chanel.r,first_chanel.g,first_chanel.b,0.5);
 			break;
 		default:
-			vec4 first_chanel = texture(SCREEN_TEXTURE,vec2(SCREEN_UV.x+sin(SCREEN_UV.y*15.0+time_s)*SCREEN_PIXEL_SIZE.x*tauxalcool*3.0,SCREEN_UV.y));
+			vec4 first_chanel = texture(SCREEN_TEXTURE,vec2(SCREEN_UV.x+vague,SCREEN_UV.y));
 			COLOR = vec4(first_chanel.r,first_chanel.g,first_chanel.b,1);
 			break;
 	}
