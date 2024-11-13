@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://d0rcie7hun16"]
+[gd_scene load_steps=22 format=3 uid="uid://d0rcie7hun16"]
 
 [ext_resource type="PackedScene" uid="uid://ciag4gvc86bnl" path="res://car.tscn" id="1_0m6t5"]
 [ext_resource type="Script" path="res://game.gd" id="1_ka53t"]
@@ -19,6 +19,7 @@
 [ext_resource type="Resource" uid="uid://kq7yik6d0i5i" path="res://resources/Game Data/Map Tile Data/tile_endL.tres" id="16_v4c0n"]
 [ext_resource type="Resource" uid="uid://bm2nys6lxppjt" path="res://resources/Game Data/Map Tile Data/tile_endR.tres" id="18_4jp8p"]
 [ext_resource type="PackedScene" uid="uid://cqqhrkwrqgrvj" path="res://HUD.tscn" id="19_b1126"]
+[ext_resource type="PackedScene" uid="uid://c12tnsyl5thh8" path="res://EndScreen.tscn" id="20_0j0ts"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_sxjkq"]
 dof_blur_far_enabled = true
@@ -28,6 +29,7 @@ dof_blur_far_transition = -1.0
 [node name="Game" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 21.4664, 0)
 script = ExtResource("1_ka53t")
+endScreenScene = ExtResource("20_0j0ts")
 
 [node name="car" parent="." instance=ExtResource("1_0m6t5")]
 transform = Transform3D(1.19249e-08, 0, 1, 0, 1, 0, -1, 0, 1.19249e-08, 0, -20.5567, 0)

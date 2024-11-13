@@ -9,6 +9,7 @@ data = PackedVector3Array(-0.5, 0.01, -0.4, 0.5, 0.02, -0.4, 0.5, 0.01, -0.4, 0.
 [node name="RoadStraight" type="Node3D"]
 
 [node name="Road" type="StaticBody3D" parent="."]
+collision_mask = 15
 
 [node name="RoadStraight" type="MeshInstance3D" parent="Road"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)

@@ -2,6 +2,7 @@ extends VehicleBody3D
 class_name Car
 
 signal alcohol_collected
+signal end_reached
 
 @export var vertical_obstacle_collision_impulse_strength: float = 1
 @export var relative_obstacle_collision_impulse_strength: float = 1
@@ -69,6 +70,9 @@ func align_y(xform, new_y):
 	return xform
 	
 func _physics_process(delta):
+	if Game.game_state == 1:
+		pass
+	
 	var steering_input = 0.0
 	var engine_input = 0.0
 
@@ -103,9 +107,16 @@ func _ready() -> void:
 	set_max_contacts_reported(20)
 
 func _on_body_entered(body: Node) -> void:
+	if body.collision_layer == 2:
+		if body is RigidBody3D:
+			body.freeze = false
+			print("iajfn")
+			body.apply_impulse((linear_velocity*relative_obstacle_collision_impulse_strength) + (Vector3.UP * vertical_obstacle_collision_impulse_strength))
+	
 	if body.collision_layer == 4:
 		body.queue_free()
 		alcohol_collected.emit()
 	
 	if body.collision_layer == 8:
+		end_reached.emit()
 		print("The End !")

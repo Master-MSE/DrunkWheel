@@ -78,7 +78,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_n5yql")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w0qxb"]
-size = Vector3(1.29443, 0.953247, 2.54541)
+size = Vector3(1.29443, 0.776917, 2.54541)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vo5cv"]
 resource_name = "colormap"
@@ -168,6 +168,7 @@ mass = 200.0
 can_sleep = false
 script = ExtResource("1_3623i")
 vertical_obstacle_collision_impulse_strength = 5.0
+relative_obstacle_collision_impulse_strength = 2.0
 
 [node name="body" type="MeshInstance3D" parent="car"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, -0.025)
@@ -180,7 +181,7 @@ mesh = SubResource("ArrayMesh_v5o1u")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="car"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00317383, 0.623552, -0.0217285)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00317383, 0.711717, -0.0217285)
 shape = SubResource("BoxShape3D_w0qxb")
 
 [node name="wheel-front-left" type="VehicleWheel3D" parent="car"]
