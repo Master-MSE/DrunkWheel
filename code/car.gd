@@ -5,7 +5,7 @@ extends VehicleBody3D
 
 const MAX_SPEED = 15.0
 const MAX_ENGINE_FORCE = 2000.0
-const MAX_BRAKE_FORCE = 10.0
+const MAX_BRAKE_FORCE = 30.0
 const MAX_STEERING_ANGLE = 0.7
 const STEERING_SPEED = 0.05
 
