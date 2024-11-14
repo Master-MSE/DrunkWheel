@@ -430,7 +430,6 @@ collision_layer = 2
 mass = 500.0
 
 [node name="Barn" type="MeshInstance3D" parent="Barn"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = ExtResource("15_cmjdy")
 skeleton = NodePath("")
 
