@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2ynmejj1wwb2"]
+
+[ext_resource type="ArrayMesh" uid="uid://bm5nlwhthpb8p" path="res://models/kenney_city-kit-commercial/Models/OBJ format/skyscraperF.obj" id="1_cuii7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3ylln"]
+size = Vector3(6.1, 20.3, 6)
+
+[node name="SkyscraperF" type="RigidBody3D"]
+collision_layer = 2
+collision_mask = 3
+mass = 500.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+mesh = ExtResource("1_cuii7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0499998, 10.15, -1.19209e-07)
+shape = SubResource("BoxShape3D_3ylln")

@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://5wdph5dstvsv"]
+
+[ext_resource type="ArrayMesh" uid="uid://cddxdu8loysvc" path="res://models/kenney_city-kit-suburban/Models/OBJ format/house_type02.obj" id="1_1sxt0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6celw"]
+size = Vector3(0.800323, 0.782776, 1.29929)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2atsm"]
+size = Vector3(0.556046, 0.78418, 0.902588)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rigy5"]
+size = Vector3(0.537537, 1.78619, 4.34772)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_302x3"]
+size = Vector3(4.53955, 1.54248, 0.444305)
+
+[node name="House1" type="RigidBody3D"]
+collision_layer = 2
+collision_mask = 3
+mass = 500.0
+
+[node name="HouseType02" type="MeshInstance3D" parent="."]
+transform = Transform3D(5, 0, -8.74228e-07, 0, 5, 0, 8.74228e-07, 0, 5, 0, 0, 0)
+mesh = ExtResource("1_1sxt0")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0.98466, 1.97936, -0.0143981)
+shape = SubResource("BoxShape3D_6celw")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -1.63208, 1.93899, 0.960295)
+shape = SubResource("BoxShape3D_2atsm")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.964808, 4.77011, -0.908051)
+shape = SubResource("BoxShape3D_rigy5")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.954102, 4.72876, 1.17209)
+shape = SubResource("BoxShape3D_302x3")

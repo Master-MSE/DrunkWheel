@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dfg8cp6cb1mdf"]
 
 [ext_resource type="ArrayMesh" uid="uid://b5rqi175f0la1" path="res://models/kenney_city-kit-roads/Models/OBJ format/road_intersection.obj" id="1_4ijqc"]
-[ext_resource type="PackedScene" uid="uid://dmqwngcxc6b3i" path="res://map/Road_Gridmap/Light.tscn" id="2_nybk1"]
+[ext_resource type="PackedScene" uid="uid://dmqwngcxc6b3i" path="res://Props/Light.tscn" id="2_nybk1"]
 
 [node name="RoadStraight" type="Node3D"]
 

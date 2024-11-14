@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3mlxlqv18koo"]
+
+[ext_resource type="ArrayMesh" uid="uid://bkeuw7bc15m5q" path="res://models/Barn/Barn.obj" id="1_q1l0r"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bk6m4"]
+size = Vector3(7.09174, 3.32532, 8.06842)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bk4gg"]
+size = Vector3(1, 3.53613, 8.0033)
+
+[node name="Barn" type="RigidBody3D"]
+collision_layer = 2
+mass = 500.0
+
+[node name="Barn" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_q1l0r")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0536194, 1.66339, 0.0264573)
+shape = SubResource("BoxShape3D_bk6m4")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 4.26807, 0.0665908)
+shape = SubResource("BoxShape3D_bk4gg")

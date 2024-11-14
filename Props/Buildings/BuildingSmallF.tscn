@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4wloas5hn8nr"]
+
+[ext_resource type="ArrayMesh" uid="uid://bsyu7xilx6n48" path="res://models/kenney_city-kit-commercial/Models/OBJ format/small_buildingF.obj" id="1_l5c8a"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3ylln"]
+size = Vector3(4, 4.4, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h0n3b"]
+size = Vector3(2, 2, 2)
+
+[node name="BuildingSmallF" type="RigidBody3D"]
+collision_layer = 2
+collision_mask = 3
+mass = 500.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+mesh = ExtResource("1_l5c8a")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.78814e-07, 2.2, 0)
+shape = SubResource("BoxShape3D_3ylln")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 5.4, 1)
+shape = SubResource("BoxShape3D_h0n3b")
