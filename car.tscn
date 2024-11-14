@@ -319,4 +319,7 @@ transform = Transform3D(1, 0, 0, 0, 0.881049, -0.473028, 0, 0.473028, 0.881049, 
 mesh = SubResource("PlaneMesh_35re2")
 skeleton = NodePath("../..")
 
+[node name="AudioListener3D" type="AudioListener3D" parent="car"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0239234, 0, -0.0928687)
+
 [connection signal="body_entered" from="car" to="car" method="_on_body_entered"]

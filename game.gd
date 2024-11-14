@@ -9,6 +9,10 @@ enum GameStates {
 @onready var map_generator: MapGenerator = %MapGenerator
 @onready var Car: Node3D = $car
 @onready var hud: CanvasLayer = $Hud
+@onready var sound_alcool0: AudioStreamPlayer = $sound_alcool
+@onready var sound_alcool1: AudioStreamPlayer = $sound_alcool2
+@onready var sound_alcool2: AudioStreamPlayer = $sound_alcool3
+@onready var sound_alcool3: AudioStreamPlayer = $sound_alcool4
 
 @export var endScreenScene: PackedScene
 
@@ -17,7 +21,7 @@ var current_tile_pos = Vector3(0,0,0)
 static var alcohol_collected := 0
 var cons_alcool=		[0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00]
 var cons_aclcool_fac=	[0.00,0.00,0.10,0.10,0.15,0.15,0.15,0.15,0.15,0.15,0.15,0.15,0.10,0.10]
-var alcool_absorbtion :=0.05
+var alcool_absorbtion :=0.1
 var tauxalcool := 0.0
 var time :=0.0
 static var game_state: GameStates
@@ -41,6 +45,12 @@ func _on_alcohol_collected() -> void:
 	alcohol_collected+=1
 	cons_alcool[0]+=1
 	hud.update_alcohol(alcohol_collected)
+	match(randi()%4):
+		0:sound_alcool0.play()
+		1:sound_alcool1.play()
+		2:sound_alcool2.play()
+		3:sound_alcool3.play()
+			
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

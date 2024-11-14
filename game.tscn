@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://d0rcie7hun16"]
+[gd_scene load_steps=28 format=3 uid="uid://d0rcie7hun16"]
 
 [ext_resource type="PackedScene" uid="uid://ciag4gvc86bnl" path="res://car.tscn" id="1_0m6t5"]
 [ext_resource type="Script" path="res://game.gd" id="1_ka53t"]
@@ -20,11 +20,22 @@
 [ext_resource type="Resource" uid="uid://bm2nys6lxppjt" path="res://resources/Game Data/Map Tile Data/tile_endR.tres" id="18_4jp8p"]
 [ext_resource type="PackedScene" uid="uid://cqqhrkwrqgrvj" path="res://HUD.tscn" id="19_b1126"]
 [ext_resource type="PackedScene" uid="uid://c12tnsyl5thh8" path="res://EndScreen.tscn" id="20_0j0ts"]
+[ext_resource type="AudioStream" uid="uid://c7vtd0e5unmho" path="res://sound/Les_Chanteurs_-_Patisseries_[_YouConvert.net_].mp3" id="21_5reyd"]
+[ext_resource type="AudioStream" uid="uid://ndqfy8n72ein" path="res://sound/ice-water-shift-tall-glass-4-185138.mp3" id="22_1i56y"]
+[ext_resource type="AudioStream" uid="uid://byptj15f8dxgu" path="res://sound/drinking-sound.mp3" id="22_utmx1"]
+[ext_resource type="AudioStream" uid="uid://dpuqnfugxyxsv" path="res://sound/drinking.mp3" id="23_faupj"]
+[ext_resource type="AudioStream" uid="uid://dqi6mlrlyxf3j" path="res://sound/minecraft-drinking-sound-effect.mp3" id="25_knkds"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_sxjkq"]
 dof_blur_far_enabled = true
 dof_blur_far_distance = 0.11
 dof_blur_far_transition = -1.0
+
+[sub_resource type="Environment" id="Environment_xnnsf"]
+fog_enabled = true
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 0.2
+fog_height = 1.0
 
 [node name="Game" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 21.4664, 0)
@@ -57,5 +68,30 @@ tile_end_datas = Array[ExtResource("4_602tr")]([ExtResource("16_v4c0n"), ExtReso
 
 [node name="aclool_timer" type="Timer" parent="."]
 autostart = true
+
+[node name="General_musique" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_5reyd")
+volume_db = 1.0
+pitch_scale = 0.1
+autoplay = true
+
+[node name="sound_alcool" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_utmx1")
+max_polyphony = 7
+
+[node name="sound_alcool2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("23_faupj")
+max_polyphony = 7
+
+[node name="sound_alcool3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_1i56y")
+max_polyphony = 7
+
+[node name="sound_alcool4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("25_knkds")
+max_polyphony = 7
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_xnnsf")
 
 [connection signal="timeout" from="aclool_timer" to="." method="_on_aclool_timer_timeout"]

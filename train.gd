@@ -12,5 +12,5 @@ func initialize():
 	velocity = Vector3.FORWARD * speed
 	velocity = velocity.rotated(Vector3.UP, rotation.y)
 
-func _on_visible_on_screen_notifier_3d_screen_exited() -> void:
-	queue_free()
+#func _on_visible_on_screen_notifier_3d_screen_exited() -> void:
+	#queue_free()
