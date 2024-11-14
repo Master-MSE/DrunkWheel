@@ -2,6 +2,7 @@ extends Node3D
 class_name Game
 
 enum GameStates {
+	WAITING,
 	PLAYING,
 	FINISHED
 }
@@ -20,8 +21,7 @@ var cons_aclcool_fac=	[0.00,0.00,0.10,0.10,0.15,0.15,0.15,0.15,0.15,0.15,0.15,0.
 var alcool_absorbtion :=0.05
 var tauxalcool := 0.0
 var time :=0.0
-static var game_state: GameStates
-
+static var game_state: GameStates = GameStates.WAITING
 
 const fac_time =1
 const tile_length = 30
@@ -48,9 +48,13 @@ func _ready() -> void:
 	Car.get_child(0).alcohol_collected.connect(_on_alcohol_collected)
 	Car.get_child(0).end_reached.connect(_on_end_reached)
 	Engine.time_scale = 1
+	game_state = GameStates.WAITING 
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if game_state != GameStates.PLAYING:
+		return 
+
 	time+=delta*fac_time;
 	if time>1.0:
 		time=fmod(time,1.0)
@@ -71,6 +75,7 @@ func _on_aclool_timer_timeout() -> void:
 	for i in range(cons_alcool.size()-1,0,-1):
 		cons_alcool[i] = cons_alcool[i-1]
 	cons_alcool[0]=0.0
-	
+
+		
 func free() -> void:
 	Engine.time_scale = 1

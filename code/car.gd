@@ -77,8 +77,9 @@ func engine():
 		engine_force = 0
 
 func _physics_process(delta):
-	if Game.game_state == 1:
-		pass
+	if Game.game_state != Game.GameStates.PLAYING:
+		brake = MAX_BRAKE_FORCE
+		return
 	
 	var steering_input = 0.0
 
