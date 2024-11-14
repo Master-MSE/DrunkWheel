@@ -1,9 +1,8 @@
-[gd_scene load_steps=21 format=4 uid="uid://ciag4gvc86bnl"]
+[gd_scene load_steps=16 format=4 uid="uid://ciag4gvc86bnl"]
 
 [ext_resource type="Texture2D" uid="uid://b0ahsnh0h5gai" path="res://models/vehicules/GLB format/Textures/colormap.png" id="1_2ae4i"]
 [ext_resource type="Script" path="res://code/car.gd" id="1_3623i"]
 [ext_resource type="Material" uid="uid://co5up3xnsi777" path="res://resources/Game Data/Misc/light_material.tres" id="3_hcf53"]
-[ext_resource type="Shader" path="res://shader/sreen_effect.gdshader" id="3_uns8o"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5xlc1"]
 resource_name = "colormap"
@@ -78,7 +77,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_n5yql")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w0qxb"]
-size = Vector3(1.29443, 0.776917, 2.54541)
+size = Vector3(1.29968, 0.777237, 2.54541)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vo5cv"]
 resource_name = "colormap"
@@ -120,29 +119,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_lp57k")
 
-[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_j678x"]
-auto_exposure_scale = 0.01
-auto_exposure_speed = 29.32
-dof_blur_far_enabled = true
-dof_blur_far_distance = 67.39
-dof_blur_far_transition = 20.0
-dof_blur_near_distance = 4.11
-dof_blur_amount = 0.05
-auto_exposure_min_sensitivity = 95.36
-auto_exposure_max_sensitivity = 47846.4
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_vg3d1"]
-shader = ExtResource("3_uns8o")
-shader_parameter/index = null
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_5mn6o"]
-shader = ExtResource("3_uns8o")
-shader_parameter/index = 1
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_tx0pl"]
-shader = ExtResource("3_uns8o")
-shader_parameter/index = 2
-
 [sub_resource type="BoxMesh" id="BoxMesh_72tb6"]
 material = ExtResource("3_hcf53")
 size = Vector3(0.275, 0, 0.145)
@@ -164,14 +140,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0239234, 0, 0.0928687)
 collision_layer = 5
 axis_lock_angular_x = true
 axis_lock_angular_z = true
-mass = 200.0
+mass = 1000.0
+gravity_scale = 1.2
+center_of_mass_mode = 1
+center_of_mass = Vector3(0, -0.1, 0)
 can_sleep = false
+angular_damp = 1.0
 script = ExtResource("1_3623i")
 vertical_obstacle_collision_impulse_strength = 5.0
 relative_obstacle_collision_impulse_strength = 2.0
 
 [node name="body" type="MeshInstance3D" parent="car"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, -0.025)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.190937, -0.025)
 mesh = SubResource("ArrayMesh_3t10y")
 skeleton = NodePath("")
 
@@ -181,20 +161,19 @@ mesh = SubResource("ArrayMesh_v5o1u")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="car"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00317383, 0.711717, -0.0217285)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000548007, 0.752495, -0.0217285)
 shape = SubResource("BoxShape3D_w0qxb")
 
 [node name="wheel-front-left" type="VehicleWheel3D" parent="car"]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0.555258, 0.277403, 0.661738)
-use_as_traction = true
 use_as_steering = true
 wheel_radius = 0.3
 wheel_rest_length = 0.05
-wheel_friction_slip = 1.0
-suspension_stiffness = 75.0
-suspension_max_force = 750.0
-damping_compression = 0.8
-damping_relaxation = 0.8
+wheel_friction_slip = 3.0
+suspension_stiffness = 50.0
+suspension_max_force = 4000.0
+damping_compression = 2.0
+damping_relaxation = 3.0
 
 [node name="wheel-dark" type="MeshInstance3D" parent="car/wheel-front-left"]
 mesh = SubResource("ArrayMesh_i6fp8")
@@ -205,11 +184,11 @@ transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0.55487, 0.27742, -0.65
 use_as_traction = true
 wheel_radius = 0.3
 wheel_rest_length = 0.05
-wheel_friction_slip = 1.0
-suspension_stiffness = 75.0
-suspension_max_force = 750.0
-damping_compression = 0.8
-damping_relaxation = 0.8
+wheel_friction_slip = 3.0
+suspension_stiffness = 50.0
+suspension_max_force = 4000.0
+damping_compression = 2.0
+damping_relaxation = 3.0
 
 [node name="wheel-dark" type="MeshInstance3D" parent="car/wheel-back-left"]
 mesh = SubResource("ArrayMesh_i6fp8")
@@ -217,15 +196,14 @@ skeleton = NodePath("")
 
 [node name="wheel-front-right" type="VehicleWheel3D" parent="car"]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.559738, 0.27687, 0.657731)
-use_as_traction = true
 use_as_steering = true
 wheel_radius = 0.3
 wheel_rest_length = 0.05
-wheel_friction_slip = 1.0
-suspension_stiffness = 75.0
-suspension_max_force = 750.0
-damping_compression = 0.8
-damping_relaxation = 0.8
+wheel_friction_slip = 3.0
+suspension_stiffness = 50.0
+suspension_max_force = 4000.0
+damping_compression = 2.0
+damping_relaxation = 3.0
 
 [node name="wheel-dark" type="MeshInstance3D" parent="car/wheel-front-right"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
@@ -237,52 +215,19 @@ transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, -0.560087, 0.278412, -0
 use_as_traction = true
 wheel_radius = 0.3
 wheel_rest_length = 0.05
-wheel_friction_slip = 1.0
-suspension_stiffness = 75.0
-suspension_max_force = 750.0
-damping_compression = 0.8
-damping_relaxation = 0.8
+wheel_friction_slip = 3.0
+suspension_stiffness = 50.0
+suspension_max_force = 4000.0
+damping_compression = 2.0
+damping_relaxation = 3.0
 
 [node name="wheel-dark" type="MeshInstance3D" parent="car/wheel-back-right"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_i6fp8")
 skeleton = NodePath("")
 
-[node name="Camera3D" type="Camera3D" parent="car"]
-transform = Transform3D(-1, 8.74228e-08, 2.51021e-15, 6.74197e-08, 0.771191, 0.636603, 5.56536e-08, 0.636603, -0.771191, 0, 8.03239, -2.4323)
-attributes = SubResource("CameraAttributesPractical_j678x")
-current = true
-
-[node name="CanvasLayer" type="CanvasLayer" parent="car/Camera3D"]
-
-[node name="ColorRect" type="ColorRect" parent="car/Camera3D/CanvasLayer"]
-material = SubResource("ShaderMaterial_vg3d1")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="car/Camera3D/CanvasLayer/ColorRect"]
-material = SubResource("ShaderMaterial_5mn6o")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect2" type="ColorRect" parent="car/Camera3D/CanvasLayer/ColorRect"]
-material = SubResource("ShaderMaterial_tx0pl")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
 [node name="light-front-left" type="SpotLight3D" parent="car"]
-transform = Transform3D(-0.996195, 9.27779e-10, -0.0871556, -0.0290171, 0.94295, 0.331668, 0.0821834, 0.332935, -0.939362, 0.413497, 0.862965, 0.939101)
+transform = Transform3D(-0.996195, 5.47389e-08, -0.0871556, -0.0290171, 0.94295, 0.331668, 0.0821834, 0.332935, -0.939362, 0.413497, 0.903902, 0.939101)
 light_color = Color(1, 1, 0.498039, 1)
 light_energy = 15.0
 light_volumetric_fog_energy = 10.0
@@ -293,8 +238,11 @@ spot_angle = 25.0
 transform = Transform3D(0.996195, 0.0174551, -0.0853899, -3.45242e-08, 0.97974, 0.200274, 0.0871557, -0.199512, 0.976012, 0.0240433, -0.1628, -0.213472)
 mesh = SubResource("BoxMesh_72tb6")
 
+[node name="Camera3D" type="Camera3D" parent="car"]
+transform = Transform3D(-1, 2.73466e-08, -1.17988e-07, -5.22595e-08, 0.781401, 0.62403, 1.09261e-07, 0.62403, -0.781401, 0, 6.41569, -3.22571)
+
 [node name="light-front-right" type="SpotLight3D" parent="car"]
-transform = Transform3D(-0.996195, -5.67208e-09, 0.0871558, 0.0290172, 0.94295, 0.331668, -0.0821836, 0.332935, -0.939362, -0.417614, 0.862965, 0.939101)
+transform = Transform3D(-0.996195, -2.60832e-08, 0.0871558, 0.0290172, 0.94295, 0.331668, -0.0821836, 0.332935, -0.939362, -0.417614, 0.903902, 0.939101)
 light_color = Color(1, 1, 0.498039, 1)
 light_energy = 15.0
 light_volumetric_fog_energy = 10.0
@@ -307,7 +255,7 @@ mesh = SubResource("BoxMesh_72tb6")
 skeleton = NodePath("../../light-front-left")
 
 [node name="light-back-left" type="SpotLight3D" parent="car"]
-transform = Transform3D(1, 0, 0, 0, 0.57186, 0.820352, 0, -0.820352, 0.57186, 0.478647, 2.35391, -0.669028)
+transform = Transform3D(1, 0, 0, 0, 0.57186, 0.820352, 0, -0.820352, 0.57186, 0.478647, 2.39485, -0.669028)
 light_color = Color(1, 0.121569, 0, 1)
 light_energy = 10.0
 spot_range = 4.0
@@ -319,7 +267,7 @@ mesh = SubResource("PlaneMesh_35re2")
 skeleton = NodePath("../..")
 
 [node name="light-back-right" type="SpotLight3D" parent="car"]
-transform = Transform3D(1, 0, 0, 0, 0.57186, 0.820352, 0, -0.820352, 0.57186, -0.48174, 2.35391, -0.669028)
+transform = Transform3D(1, 0, 0, 0, 0.57186, 0.820352, 0, -0.820352, 0.57186, -0.48174, 2.39485, -0.669028)
 light_color = Color(1, 0.121569, 0, 1)
 light_energy = 10.0
 spot_range = 4.0
@@ -329,11 +277,5 @@ spot_angle = 12.0
 transform = Transform3D(1, 0, 0, 0, 0.881049, -0.473028, 0, 0.473028, 0.881049, 0.00724924, -0.554678, -1.71774)
 mesh = SubResource("PlaneMesh_35re2")
 skeleton = NodePath("../..")
-
-[node name="raycast-front" type="RayCast3D" parent="car"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.556672, 0.0103203, 0.65844)
-
-[node name="raycast-back" type="RayCast3D" parent="car"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.556672, 0.0103203, -0.660878)
 
 [connection signal="body_entered" from="car" to="car" method="_on_body_entered"]
