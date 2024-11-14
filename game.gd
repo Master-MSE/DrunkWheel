@@ -16,6 +16,7 @@ enum GameStates {
 var current_tile_ends = Vector2(1,1)
 var current_tile_pos = Vector3(0,0,0)
 static var alcohol_collected := 0
+static var objects_hit := 0
 var cons_alcool=		[0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00]
 var cons_aclcool_fac=	[0.00,0.00,0.10,0.10,0.15,0.15,0.15,0.15,0.15,0.15,0.15,0.15,0.10,0.10]
 var alcool_absorbtion :=0.05
@@ -25,7 +26,7 @@ static var game_state: GameStates = GameStates.WAITING
 
 const fac_time =1
 const tile_length = 30
-const map_length = 5
+const map_length = 1
 
 func choose_next_tile(current: Vector2) -> Vector2:
 	var next_end = randi()%3
@@ -42,11 +43,16 @@ func _on_alcohol_collected() -> void:
 	cons_alcool[0]+=1
 	hud.update_alcohol(alcohol_collected)
 
+func _on_object_hit() -> void:
+	objects_hit+=1
+	hud.update_obects(objects_hit)
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	map_generator.generate_map(map_length)
 	Car.get_child(0).alcohol_collected.connect(_on_alcohol_collected)
 	Car.get_child(0).end_reached.connect(_on_end_reached)
+	Car.get_child(0).object_hit.connect(_on_object_hit)
 	Engine.time_scale = 1
 	game_state = GameStates.WAITING 
 	
@@ -76,6 +82,5 @@ func _on_aclool_timer_timeout() -> void:
 		cons_alcool[i] = cons_alcool[i-1]
 	cons_alcool[0]=0.0
 
-		
 func free() -> void:
 	Engine.time_scale = 1

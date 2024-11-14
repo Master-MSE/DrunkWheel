@@ -19,7 +19,7 @@
 [ext_resource type="Resource" uid="uid://djtseu28pfgw3" path="res://resources/Game Data/Map Tile Data/tile_endC.tres" id="16_f77hu"]
 [ext_resource type="Resource" uid="uid://kq7yik6d0i5i" path="res://resources/Game Data/Map Tile Data/tile_endL.tres" id="16_v4c0n"]
 [ext_resource type="Resource" uid="uid://bm2nys6lxppjt" path="res://resources/Game Data/Map Tile Data/tile_endR.tres" id="18_4jp8p"]
-[ext_resource type="PackedScene" path="res://HUD.tscn" id="19_b1126"]
+[ext_resource type="PackedScene" uid="uid://2tuxb3m61ix7" path="res://HUD.tscn" id="19_b1126"]
 [ext_resource type="PackedScene" path="res://EndScreen.tscn" id="20_0j0ts"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_sxjkq"]
@@ -31,8 +31,6 @@ dof_blur_far_transition = -1.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 21.4664, 0)
 script = ExtResource("1_ka53t")
 endScreenScene = ExtResource("20_0j0ts")
-
-[node name="StartMenu" parent="." instance=ExtResource("3_1y03o")]
 
 [node name="car" parent="." instance=ExtResource("1_0m6t5")]
 transform = Transform3D(1.19249e-08, 0, 1, 0, 1, 0, -1, 0, 1.19249e-08, 0, -20.5567, 0)
@@ -60,5 +58,7 @@ tile_end_datas = Array[ExtResource("4_602tr")]([ExtResource("16_v4c0n"), ExtReso
 
 [node name="aclool_timer" type="Timer" parent="."]
 autostart = true
+
+[node name="StartMenu" parent="." instance=ExtResource("3_1y03o")]
 
 [connection signal="timeout" from="aclool_timer" to="." method="_on_aclool_timer_timeout"]

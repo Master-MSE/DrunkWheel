@@ -2,6 +2,7 @@ extends VehicleBody3D
 class_name Car
 
 signal alcohol_collected
+signal object_hit
 signal end_reached
 
 @export var vertical_obstacle_collision_impulse_strength: float = 1
@@ -105,9 +106,11 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node) -> void:
 	if body.collision_layer == 2:
-		if body is RigidBody3D:
+		if body is RigidBody3D and body.freeze == true:
+			object_hit.emit()
 			body.freeze = false
 			body.apply_impulse((linear_velocity*relative_obstacle_collision_impulse_strength) + (Vector3.UP * vertical_obstacle_collision_impulse_strength))
+	
 	
 	if body.collision_layer == 4:
 		body.queue_free()
