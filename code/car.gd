@@ -2,7 +2,9 @@ extends VehicleBody3D
 class_name Car
 
 signal alcohol_collected
+signal object_hit
 signal end_reached
+static var hitted_objects: Array = []
 
 @export var vertical_obstacle_collision_impulse_strength: float = 1
 @export var relative_obstacle_collision_impulse_strength: float = 1
@@ -77,8 +79,9 @@ func engine():
 		engine_force = 0
 
 func _physics_process(delta):
-	if Game.game_state == 1:
-		pass
+	if Game.game_state != Game.GameStates.PLAYING:
+		brake = MAX_BRAKE_FORCE
+		return
 	
 	var steering_input = 0.0
 
@@ -104,7 +107,9 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node) -> void:
 	if body.collision_layer == 2:
-		if body is RigidBody3D:
+		if body is RigidBody3D and body.freeze == true:
+			hitted_objects.append(body.name)
+			object_hit.emit()
 			body.freeze = false
 			body.apply_impulse((linear_velocity*relative_obstacle_collision_impulse_strength) + (Vector3.UP * vertical_obstacle_collision_impulse_strength))
 	

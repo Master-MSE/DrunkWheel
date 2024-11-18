@@ -5,6 +5,9 @@ extends CharacterBody3D
 @export var speed = 25
 
 func _physics_process(delta: float) -> void:
+	if Game.game_state != Game.GameStates.PLAYING:
+		return 
+	
 	move_and_slide()
 
 # This function will be called from the Main scene.

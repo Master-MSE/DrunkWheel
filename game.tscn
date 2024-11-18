@@ -1,7 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://d0rcie7hun16"]
+[gd_scene load_steps=23 format=3 uid="uid://d0rcie7hun16"]
 
 [ext_resource type="PackedScene" uid="uid://ciag4gvc86bnl" path="res://car.tscn" id="1_0m6t5"]
 [ext_resource type="Script" path="res://game.gd" id="1_ka53t"]
+[ext_resource type="PackedScene" uid="uid://dlljxceqtufq3" path="res://start_menu.tscn" id="3_1y03o"]
 [ext_resource type="Environment" uid="uid://b788umq5ypwa3" path="res://resources/envrionment.tres" id="3_3t6gg"]
 [ext_resource type="Script" path="res://code/map_generator.gd" id="3_xpbjs"]
 [ext_resource type="Script" path="res://code/maptiledata.gd" id="4_602tr"]
@@ -18,8 +19,8 @@
 [ext_resource type="Resource" uid="uid://djtseu28pfgw3" path="res://resources/Game Data/Map Tile Data/tile_endC.tres" id="16_f77hu"]
 [ext_resource type="Resource" uid="uid://kq7yik6d0i5i" path="res://resources/Game Data/Map Tile Data/tile_endL.tres" id="16_v4c0n"]
 [ext_resource type="Resource" uid="uid://bm2nys6lxppjt" path="res://resources/Game Data/Map Tile Data/tile_endR.tres" id="18_4jp8p"]
-[ext_resource type="PackedScene" uid="uid://cqqhrkwrqgrvj" path="res://HUD.tscn" id="19_b1126"]
-[ext_resource type="PackedScene" uid="uid://c12tnsyl5thh8" path="res://EndScreen.tscn" id="20_0j0ts"]
+[ext_resource type="PackedScene" uid="uid://2tuxb3m61ix7" path="res://HUD.tscn" id="19_b1126"]
+[ext_resource type="PackedScene" uid="uid://bcfw5sy5t2e63" path="res://EndScreen.tscn" id="20_0j0ts"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_sxjkq"]
 dof_blur_far_enabled = true
@@ -57,5 +58,7 @@ tile_end_datas = Array[ExtResource("4_602tr")]([ExtResource("16_v4c0n"), ExtReso
 
 [node name="aclool_timer" type="Timer" parent="."]
 autostart = true
+
+[node name="StartMenu" parent="." instance=ExtResource("3_1y03o")]
 
 [connection signal="timeout" from="aclool_timer" to="." method="_on_aclool_timer_timeout"]

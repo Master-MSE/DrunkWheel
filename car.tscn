@@ -130,11 +130,11 @@ shader_parameter/index = null
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_eqaav"]
 shader = ExtResource("4_m1pfr")
-shader_parameter/index = 1
+shader_parameter/index = null
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_it6w3"]
 shader = ExtResource("4_m1pfr")
-shader_parameter/index = 2
+shader_parameter/index = null
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_60mtu"]
 albedo_color = Color(1, 0.121569, 0, 1)
@@ -320,3 +320,4 @@ mesh = SubResource("PlaneMesh_35re2")
 skeleton = NodePath("../..")
 
 [connection signal="body_entered" from="car" to="car" method="_on_body_entered"]
+[connection signal="object_hit" from="car" to="car" method="_on_object_hit"]
