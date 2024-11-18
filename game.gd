@@ -69,7 +69,9 @@ func _process(delta: float) -> void:
 
 func _on_end_reached() -> void:
 	game_state = GameStates.FINISHED
+	RenderingServer.global_shader_parameter_set("tauxalcool",0);
 	Engine.time_scale = 0
+	hud.visible = false
 	add_child(endScreenScene.instantiate())
 
 func _on_aclool_timer_timeout() -> void:

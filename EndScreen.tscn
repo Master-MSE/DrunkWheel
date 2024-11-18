@@ -1,15 +1,257 @@
-[gd_scene load_steps=2 format=3 uid="uid://c12tnsyl5thh8"]
+[gd_scene load_steps=4 format=3 uid="uid://bcfw5sy5t2e63"]
 
-[ext_resource type="Script" path="res://code/score.gd" id="1_bl7n3"]
+[ext_resource type="Script" path="res://end_screen.gd" id="1_jryw4"]
+[ext_resource type="Script" path="res://ticket.gd" id="2_i7y6o"]
 
-[node name="EndScreen" type="Node2D"]
+[sub_resource type="FontFile" id="FontFile_h4wid"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+cache/0/18/0/ascent = 0.0
+cache/0/18/0/descent = 0.0
+cache/0/18/0/underline_position = 0.0
+cache/0/18/0/underline_thickness = 0.0
+cache/0/18/0/scale = 1.0
+cache/0/22/0/ascent = 0.0
+cache/0/22/0/descent = 0.0
+cache/0/22/0/underline_position = 0.0
+cache/0/22/0/underline_thickness = 0.0
+cache/0/22/0/scale = 1.0
+cache/0/24/0/ascent = 0.0
+cache/0/24/0/descent = 0.0
+cache/0/24/0/underline_position = 0.0
+cache/0/24/0/underline_thickness = 0.0
+cache/0/24/0/scale = 1.0
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="EndScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jryw4")
 
-[node name="Score" type="Label" parent="CanvasLayer"]
-offset_left = 424.0
-offset_top = 324.0
-offset_right = 507.0
-offset_bottom = 347.0
-text = "Final score"
-script = ExtResource("1_bl7n3")
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -286.0
+offset_right = 286.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 80
+text = "DRUNK WHEEL"
+
+[node name="Subtitle" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "You made it home..."
+
+[node name="Creator" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -461.0
+offset_top = -40.0
+offset_right = -15.0
+offset_bottom = -12.0
+grow_horizontal = 0
+grow_vertical = 0
+pivot_offset = Vector2(-84, -335)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Adrien Rey, Alec Schmidt, Mathieu Schupbach "
+
+[node name="Context" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 13.0
+offset_top = -35.0
+offset_right = 287.0
+offset_bottom = -12.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "MSE -  MA_GT 2024/2025"
+
+[node name="Ticket" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(503, -29)
+script = ExtResource("2_i7y6o")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Ticket"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -158.5
+offset_right = 150.0
+offset_bottom = 158.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Header" type="Label" parent="Ticket/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontFile_h4wid")
+theme_override_font_sizes/font_size = 24
+text = "SCORE"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Ticket/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Text_container" type="VBoxContainer" parent="Ticket/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+
+[node name="Line2" type="Label" parent="Ticket/VBoxContainer2/HBoxContainer/Text_container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontFile_h4wid")
+text = "--------------------------------"
+
+[node name="Total_points" type="Label" parent="Ticket/VBoxContainer2/HBoxContainer/Text_container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontFile_h4wid")
+theme_override_font_sizes/font_size = 20
+text = "Total points earned :     "
+
+[node name="Damage" type="Label" parent="Ticket/VBoxContainer2/HBoxContainer/Text_container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontFile_h4wid")
+theme_override_font_sizes/font_size = 20
+text = "
+Damage costs :"
+
+[node name="Damage_costs" type="Label" parent="Ticket/VBoxContainer2/HBoxContainer/Text_container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontFile_h4wid")
+theme_override_font_sizes/font_size = 20
+
+[node name="Line" type="Label" parent="Ticket/VBoxContainer2/HBoxContainer/Text_container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontFile_h4wid")
+text = "--------------------------------"
+
+[node name="Final_score" type="Label" parent="Ticket/VBoxContainer2/HBoxContainer/Text_container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontFile_h4wid")
+theme_override_font_sizes/font_size = 20
+text = "Final score : "
+
+[node name="Best_score" type="Label" parent="Ticket/VBoxContainer2/HBoxContainer/Text_container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontFile_h4wid")
+theme_override_font_sizes/font_size = 20
+text = "Best score :"
+
+[node name="Line3" type="Label" parent="Ticket/VBoxContainer2/HBoxContainer/Text_container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontFile_h4wid")
+text = "--------------------------------"
+
+[node name="Score_container" type="VBoxContainer" parent="Ticket/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+
+[node name="Line2" type="Label" parent="Ticket/VBoxContainer2/HBoxContainer/Score_container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontFile_h4wid")
+text = "--------------
+"
+
+[node name="Total_points" type="Label" parent="Ticket/VBoxContainer2/HBoxContainer/Score_container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontFile_h4wid")
+theme_override_font_sizes/font_size = 20
+text = " "
+
+[node name="Damage" type="Label" parent="Ticket/VBoxContainer2/HBoxContainer/Score_container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontFile_h4wid")
+theme_override_font_sizes/font_size = 20
+text = "
+ "
+
+[node name="Damage_costs" type="Label" parent="Ticket/VBoxContainer2/HBoxContainer/Score_container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontFile_h4wid")
+theme_override_font_sizes/font_size = 20
+
+[node name="Line" type="Label" parent="Ticket/VBoxContainer2/HBoxContainer/Score_container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontFile_h4wid")
+text = "--------------"
+
+[node name="Final_score" type="Label" parent="Ticket/VBoxContainer2/HBoxContainer/Score_container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontFile_h4wid")
+theme_override_font_sizes/font_size = 20
+text = " "
+
+[node name="Best_score" type="Label" parent="Ticket/VBoxContainer2/HBoxContainer/Score_container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontFile_h4wid")
+theme_override_font_sizes/font_size = 20
+text = " "
+
+[node name="Line3" type="Label" parent="Ticket/VBoxContainer2/HBoxContainer/Score_container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontFile_h4wid")
+text = "--------------"
+
+[node name="Header" type="Label" parent="Ticket/VBoxContainer2/HBoxContainer/Score_container"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontFile_h4wid")
+theme_override_font_sizes/font_size = 24
+text = " "

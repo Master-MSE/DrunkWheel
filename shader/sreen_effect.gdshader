@@ -3,11 +3,14 @@ uniform sampler2D SCREEN_TEXTURE:hint_screen_texture;
 uniform int index;
 global uniform float tauxalcool;
 global uniform float time;
+
+
 void vertex() {
 	// Called for every vertex the material is visible on.
 }
 
 void fragment() {
+		
 	float time_s = (time*2.0*PI);
 	float amp_vague=tauxalcool*3.0;
 	float fre_vague=15.0;
