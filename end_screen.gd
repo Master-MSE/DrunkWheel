@@ -53,7 +53,7 @@ func _on_end_reached():
 		var cost_per_item = damage_values[key]
 		var total_for_item = count * cost_per_item
 		damage_costs_text += "- %s : %d x %d\n" % [key, count, cost_per_item]
-		damage_costs_value += "%6d\n" % [total_for_item]
+		damage_costs_value += "%6d\n" % total_for_item
 
 	damage_costs_text_label.text = damage_costs_text.strip_edges() 
 	damage_costs_label.text = damage_costs_value.strip_edges() 
