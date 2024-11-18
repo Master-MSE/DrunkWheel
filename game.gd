@@ -72,7 +72,10 @@ func _on_end_reached() -> void:
 	RenderingServer.global_shader_parameter_set("tauxalcool",0);
 	Engine.time_scale = 0
 	hud.visible = false
-	add_child(endScreenScene.instantiate())
+	var new_child = endScreenScene.instantiate()
+	add_child(new_child)
+	new_child.restart_game.connect(_on_restart_game)
+	
 
 func _on_aclool_timer_timeout() -> void:
 	tauxalcool-=alcool_absorbtion
@@ -86,3 +89,15 @@ func _on_aclool_timer_timeout() -> void:
 
 func free() -> void:
 	Engine.time_scale = 1
+
+func _on_restart_game() -> void:
+	game_state = GameStates.WAITING
+	alcohol_collected = 0
+	objects_hit = 0
+	cons_alcool =		[0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00]
+	cons_aclcool_fac =	[0.00,0.00,0.10,0.10,0.15,0.15,0.15,0.15,0.15,0.15,0.15,0.15,0.10,0.10]
+	alcool_absorbtion =0.05
+	tauxalcool = 0.0
+	time =0.0
+	Car.get_child(0).hitted_objects.clear()
+	get_tree().reload_current_scene()

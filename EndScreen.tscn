@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bcfw5sy5t2e63"]
+[gd_scene load_steps=9 format=3 uid="uid://bcfw5sy5t2e63"]
 
 [ext_resource type="Script" path="res://end_screen.gd" id="1_jryw4"]
 [ext_resource type="Script" path="res://ticket.gd" id="2_i7y6o"]
@@ -32,6 +32,26 @@ cache/0/24/0/descent = 0.0
 cache/0/24/0/underline_position = 0.0
 cache/0/24/0/underline_thickness = 0.0
 cache/0/24/0/scale = 1.0
+
+[sub_resource type="InputEventKey" id="InputEventKey_x4x38"]
+device = -1
+keycode = 87
+unicode = 119
+
+[sub_resource type="InputEventKey" id="InputEventKey_ym0l5"]
+device = -1
+keycode = 4194320
+
+[sub_resource type="Shortcut" id="Shortcut_u07c5"]
+events = [SubResource("InputEventKey_x4x38"), SubResource("InputEventKey_ym0l5")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_5ugo4"]
+device = -1
+keycode = 81
+unicode = 113
+
+[sub_resource type="Shortcut" id="Shortcut_kh60b"]
+events = [SubResource("InputEventKey_5ugo4")]
 
 [node name="EndScreen" type="Control"]
 layout_mode = 3
@@ -99,12 +119,11 @@ text = "MSE -  MA_GT 2024/2025"
 
 [node name="Ticket" type="Control" parent="."]
 layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
+anchor_left = 0.839
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_bottom = 99.0
-grow_horizontal = 2
+anchor_bottom = 1.0
+offset_left = -205.528
+grow_horizontal = 0
 grow_vertical = 2
 pivot_offset = Vector2(503, -29)
 script = ExtResource("2_i7y6o")
@@ -193,6 +212,8 @@ text = "--------------------------------"
 
 [node name="Score_container" type="VBoxContainer" parent="Ticket/VBoxContainer2/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
 
 [node name="Line2" type="Label" parent="Ticket/VBoxContainer2/HBoxContainer/Score_container"]
 layout_mode = 2
@@ -256,3 +277,34 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("FontFile_h4wid")
 theme_override_font_sizes/font_size = 24
 text = " "
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -176.5
+offset_top = -65.0
+offset_right = 176.5
+offset_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Start" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 40
+shortcut = SubResource("Shortcut_u07c5")
+text = " Press W to restart "
+
+[node name="Quit" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 40
+shortcut = SubResource("Shortcut_kh60b")
+text = "    Press Q to quit    "
+
+[connection signal="pressed" from="VBoxContainer2/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer2/Quit" to="." method="_on_quit_pressed"]

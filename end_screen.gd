@@ -6,8 +6,8 @@ extends Control
 @onready var final_score_label = $Ticket/VBoxContainer2/HBoxContainer/Score_container/Final_score
 @onready var best_score_label = $Ticket/VBoxContainer2/HBoxContainer/Score_container/Best_score
 
-var best_score = 0
-var signal_connected = false
+signal restart_game
+static var best_score = -INF
 
 var damage_values = {
 	"Light": -100, 
@@ -42,7 +42,7 @@ func _on_end_reached():
 
 	var total_points = Game.alcohol_collected * 100
 	var final_score = total_points + damage_costs
-	total_points_label.text = "%6d" % total_points
+	total_points_label.text = "%d" % total_points
 
 	# Prepare detailed damage costs
 	var damage_costs_text = ""
@@ -53,17 +53,26 @@ func _on_end_reached():
 		var cost_per_item = damage_values[key]
 		var total_for_item = count * cost_per_item
 		damage_costs_text += "- %s : %d x %d\n" % [key, count, cost_per_item]
-		damage_costs_value += "%6d\n" % total_for_item
+		damage_costs_value += "%d\n" % total_for_item
 
 	damage_costs_text_label.text = damage_costs_text.strip_edges() 
 	damage_costs_label.text = damage_costs_value.strip_edges() 
 	
-	final_score_label.text = "%6d" % final_score
-	best_score_label.text = "%6d" % best_score
-
+	final_score_label.text = "%d" % final_score
+	
 	# Update best score if necessary
 	if final_score > best_score:
 		best_score = final_score
 	
+	best_score_label.text = "%d" % best_score
+	
 	$Ticket._draw()
+	
+	
 	self.visible = true
+
+func _on_start_pressed() -> void:
+	restart_game.emit()
+
+func _on_quit_pressed() -> void:
+	get_tree().quit()
