@@ -16,11 +16,13 @@ enum GameStates {
 var current_tile_ends = Vector2(1,1)
 var current_tile_pos = Vector3(0,0,0)
 static var alcohol_collected := 0
-static var objects_hit := 0
-var cons_alcool=		[0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00]
-var cons_aclcool_fac=	[0.00,0.00,0.10,0.10,0.15,0.15,0.15,0.15,0.15,0.15,0.15,0.15,0.10,0.10]
-var alcool_absorbtion :=0.05
+var drinks = []
+class drink:
+	var alcool=0.0
+	var time_cons=0.0
+var alcool_absorbtion :=0.4
 var tauxalcool := 0.0
+var pik_time_alcool=5.0
 var time :=0.0
 static var game_state: GameStates = GameStates.WAITING
 
@@ -40,7 +42,11 @@ func _create_tile(tile: PackedScene) -> void:
 
 func _on_alcohol_collected() -> void:
 	alcohol_collected+=1
-	cons_alcool[0]+=1
+	#cons_alcool[0]+=1
+	var drink_o = drink.new()
+	drink_o.alcool=1.0
+	drink_o.time_cons=time
+	drinks.append(drink_o)
 	hud.update_alcohol(alcohol_collected)
 
 func _on_object_hit() -> void:
@@ -58,13 +64,11 @@ func _ready() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	time+=delta
+	cal_taux_alcool()
 	if game_state != GameStates.PLAYING:
 		return 
 
-	time+=delta*fac_time;
-	if time>1.0:
-		time=fmod(time,1.0)
-		RenderingServer.global_shader_parameter_set("tauxalcool",tauxalcool);
 	RenderingServer.global_shader_parameter_set("time",time);
 
 func _on_end_reached() -> void:
@@ -75,18 +79,26 @@ func _on_end_reached() -> void:
 	var new_child = endScreenScene.instantiate()
 	add_child(new_child)
 	new_child.restart_game.connect(_on_restart_game)
+func cal_taux_alcool():
+	tauxalcool=0.0
+	var new_drinks=[]
+	for drink_o in drinks:
+		var one_drink_taux=0.0
+		var time_diff=time-drink_o.time_cons
+		if (time_diff<pik_time_alcool):
+			one_drink_taux=drink_o.alcool * (time_diff / pik_time_alcool)
+			tauxalcool+=one_drink_taux
+			new_drinks.append(drink_o)
+		else:
+			one_drink_taux=drink_o.alcool -alcool_absorbtion*((time_diff / pik_time_alcool)-1.0)
+			if (one_drink_taux>0):
+				tauxalcool+=one_drink_taux
+				new_drinks.append(drink_o)
+	drinks=new_drinks		
+	RenderingServer.global_shader_parameter_set("tauxalcool",tauxalcool);
 	
-
-func _on_aclool_timer_timeout() -> void:
-	tauxalcool-=alcool_absorbtion
-	if tauxalcool<0.0:
-		tauxalcool=0.0
-	for i in range(cons_alcool.size()):
-		tauxalcool += cons_alcool[i] * cons_aclcool_fac[i]
-	for i in range(cons_alcool.size()-1,0,-1):
-		cons_alcool[i] = cons_alcool[i-1]
-	cons_alcool[0]=0.0
-
+	
+	
 func free() -> void:
 	Engine.time_scale = 1
 
