@@ -30,7 +30,13 @@ void fragment() {
 		case 3:
 			vec2 point_position = car_position * vec2(SCREEN_PIXEL_SIZE.y, SCREEN_PIXEL_SIZE.x);
 			vec2 current_position = SCREEN_UV * vec2(SCREEN_PIXEL_SIZE.y, SCREEN_PIXEL_SIZE.x);
-			
+			float distance_to_point = distance(current_position, point_position);
+			float alpha = 1.0-clamp(11.0-tauxalcool-distance_to_point*10000.0, 0.0, 1.0);
+			COLOR = vec4(0,0,0,alpha);
+			break;
+		case 4:
+			vec2 point_position = car_position * vec2(SCREEN_PIXEL_SIZE.y, SCREEN_PIXEL_SIZE.x);
+			vec2 current_position = SCREEN_UV * vec2(SCREEN_PIXEL_SIZE.y, SCREEN_PIXEL_SIZE.x);
 			float distance_to_point = distance(current_position, point_position);
 			float alpha = clamp(distance_to_point*fade_radius, 0.0, 1.0);
 			COLOR = vec4(0,0,0,alpha);
