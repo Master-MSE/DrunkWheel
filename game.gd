@@ -16,6 +16,7 @@ enum GameStates {
 var current_tile_ends = Vector2(1,1)
 var current_tile_pos = Vector3(0,0,0)
 static var alcohol_collected := 0
+static var objects_hit := 0
 var drinks = []
 class drink:
 	var alcool=0.0
@@ -106,8 +107,6 @@ func _on_restart_game() -> void:
 	game_state = GameStates.WAITING
 	alcohol_collected = 0
 	objects_hit = 0
-	cons_alcool =		[0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00]
-	cons_aclcool_fac =	[0.00,0.00,0.10,0.10,0.15,0.15,0.15,0.15,0.15,0.15,0.15,0.15,0.10,0.10]
 	alcool_absorbtion =0.05
 	tauxalcool = 0.0
 	time =0.0
