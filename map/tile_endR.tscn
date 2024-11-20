@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://code/train_start.gd" id="1_m281f"]
 [ext_resource type="ArrayMesh" uid="uid://rlb0f12letl0" path="res://models/kenney_city-kit-roads/Models/OBJ format/road_endRound.obj" id="2_ydhv7"]
 [ext_resource type="PackedScene" uid="uid://tr7stq5c0sgo" path="res://map/Road_Gridmap/RoadStraight.tscn" id="5_kwotc"]
-[ext_resource type="PackedScene" uid="uid://cdmi2q4hw56qa" path="res://Train.tscn" id="5_vxpeo"]
+[ext_resource type="PackedScene" uid="uid://bw3bepaapgq23" path="res://Train.tscn" id="5_vxpeo"]
 [ext_resource type="PackedScene" uid="uid://cggalvt8r3aoy" path="res://map/Road_Gridmap/Tile_Base.tscn" id="6_8kwyn"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_tybrv"]
