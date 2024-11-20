@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://d0rcie7hun16"]
+[gd_scene load_steps=24 format=3 uid="uid://d0rcie7hun16"]
 
 [ext_resource type="PackedScene" uid="uid://ciag4gvc86bnl" path="res://car.tscn" id="1_0m6t5"]
 [ext_resource type="Script" path="res://game.gd" id="1_ka53t"]
@@ -26,6 +26,9 @@
 dof_blur_far_enabled = true
 dof_blur_far_distance = 0.11
 dof_blur_far_transition = -1.0
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_f1ujw"]
+stream_count = 2
 
 [node name="Game" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 21.4664, 0)
@@ -60,5 +63,16 @@ tile_end_datas = Array[ExtResource("4_602tr")]([ExtResource("16_v4c0n"), ExtReso
 autostart = true
 
 [node name="StartMenu" parent="." instance=ExtResource("3_1y03o")]
+
+[node name="game_sound" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamPlaylist_f1ujw")
+
+[node name="drink_sound" type="AudioStreamPlayer" parent="."]
+
+[node name="bup_sound" type="AudioStreamPlayer" parent="."]
+
+[node name="menu_sound" type="AudioStreamPlayer" parent="."]
+
+[node name="end_sound" type="AudioStreamPlayer" parent="."]
 
 [connection signal="timeout" from="aclool_timer" to="." method="_on_aclool_timer_timeout"]
