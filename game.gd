@@ -11,6 +11,12 @@ enum GameStates {
 @onready var Car: Node3D = $car
 @onready var hud: CanvasLayer = $Hud
 
+@onready var sd_game:AudioStreamPlayer = $sound/game_sound
+@onready var sd_drink:AudioStreamPlayer = $sound/drink_sound
+@onready var sd_bump:AudioStreamPlayer = $sound/bump_sound
+@onready var sd_menu:AudioStreamPlayer = $sound/menu_sound
+@onready var sd_end:AudioStreamPlayer = $sound/end_sound
+
 @export var endScreenScene: PackedScene
 
 var current_tile_ends = Vector2(1,1)
@@ -49,10 +55,12 @@ func _on_alcohol_collected() -> void:
 	drink_o.time_cons=time
 	drinks.append(drink_o)
 	hud.update_alcohol(alcohol_collected)
+	sd_drink.play()
 
 func _on_object_hit() -> void:
 	objects_hit+=1
 	hud.update_obects(objects_hit)
+	sd_bump.play()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -65,12 +73,24 @@ func _ready() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	time+=delta
-	cal_taux_alcool()
-	if game_state != GameStates.PLAYING:
-		return 
-
-	RenderingServer.global_shader_parameter_set("time",time);
+	match (game_state):
+		GameStates.WAITING:
+			if !sd_menu.playing:
+				sd_menu.play()
+				sd_game.stop()
+				sd_end.stop()
+		GameStates.PLAYING:
+			time+=delta
+			cal_taux_alcool()
+			if !sd_game.playing:
+				sd_menu.stop()
+				sd_game.play()
+				sd_end.stop()
+		GameStates.FINISHED:
+			if !sd_end.playing:
+				sd_menu.stop()
+				sd_game.stop()
+				sd_end.play()
 
 func _on_end_reached() -> void:
 	game_state = GameStates.FINISHED
@@ -80,6 +100,7 @@ func _on_end_reached() -> void:
 	var new_child = endScreenScene.instantiate()
 	add_child(new_child)
 	new_child.restart_game.connect(_on_restart_game)
+	
 func cal_taux_alcool():
 	tauxalcool=0.0
 	var new_drinks=[]
@@ -97,8 +118,17 @@ func cal_taux_alcool():
 				new_drinks.append(drink_o)
 	drinks=new_drinks		
 	RenderingServer.global_shader_parameter_set("tauxalcool",tauxalcool);
+	update_game_sound(tauxalcool)
 	
-	
+func update_game_sound(tauxalcool):
+	var audio_game=AudioServer.get_bus_index("game_sound")
+	var phaser_effect  =AudioServer.get_bus_effect(audio_game,0)
+	var feedback_val=clamp(tauxalcool*2.0, 0.0, 0.9);
+	if feedback_val <= 0.1 :
+		AudioServer.set_bus_effect_enabled(audio_game,0,false)
+	else :
+		AudioServer.set_bus_effect_enabled(audio_game,0,true)
+	phaser_effect.feedback = feedback_val
 	
 func free() -> void:
 	Engine.time_scale = 1

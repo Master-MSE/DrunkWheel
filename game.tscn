@@ -1,8 +1,8 @@
-[gd_scene load_steps=24 format=3 uid="uid://d0rcie7hun16"]
+[gd_scene load_steps=28 format=3 uid="uid://d0rcie7hun16"]
 
 [ext_resource type="PackedScene" uid="uid://ciag4gvc86bnl" path="res://car.tscn" id="1_0m6t5"]
 [ext_resource type="Script" path="res://game.gd" id="1_ka53t"]
-[ext_resource type="PackedScene" uid="uid://dlljxceqtufq3" path="res://start_menu.tscn" id="3_1y03o"]
+[ext_resource type="PackedScene" path="res://start_menu.tscn" id="3_1y03o"]
 [ext_resource type="Environment" uid="uid://b788umq5ypwa3" path="res://resources/envrionment.tres" id="3_3t6gg"]
 [ext_resource type="Script" path="res://code/map_generator.gd" id="3_xpbjs"]
 [ext_resource type="Script" path="res://code/maptiledata.gd" id="4_602tr"]
@@ -21,22 +21,21 @@
 [ext_resource type="Resource" uid="uid://bm2nys6lxppjt" path="res://resources/Game Data/Map Tile Data/tile_endR.tres" id="18_4jp8p"]
 [ext_resource type="PackedScene" uid="uid://2tuxb3m61ix7" path="res://HUD.tscn" id="19_b1126"]
 [ext_resource type="PackedScene" uid="uid://bcfw5sy5t2e63" path="res://EndScreen.tscn" id="20_0j0ts"]
+[ext_resource type="AudioStream" uid="uid://ckmnmptk45shr" path="res://sound/ice-water-shift-tall-glass-4-185138.mp3" id="22_gnmqi"]
+[ext_resource type="AudioStream" uid="uid://cnanfkykpxl22" path="res://sound/bumpintowall_X5CNQPB.mp3" id="23_c4fa7"]
+[ext_resource type="AudioStream" uid="uid://boehi668eh17h" path="res://sound/Syth-Vibe.wav" id="24_g80vi"]
+[ext_resource type="AudioStream" uid="uid://dcw50kq2ye8fq" path="res://sound/victoryff.swf.mp3" id="25_f2s7y"]
+[ext_resource type="AudioStream" uid="uid://b5dnrlgfbwh8d" path="res://sound/brawl-stars-menu-start-sounds-sound-effect-brawl-stars-hd-sound-effects_01web.mp3" id="25_fmdfj"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_sxjkq"]
 dof_blur_far_enabled = true
 dof_blur_far_distance = 0.11
 dof_blur_far_transition = -1.0
 
-[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_f1ujw"]
-stream_count = 2
-
 [node name="Game" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 21.4664, 0)
 script = ExtResource("1_ka53t")
 endScreenScene = ExtResource("20_0j0ts")
-
-[node name="car" parent="." instance=ExtResource("1_0m6t5")]
-transform = Transform3D(1.19249e-08, 0, 1, 0, 1, 0, -1, 0, 1.19249e-08, 0, -20.5567, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.37862, -19.2023, 0)
@@ -45,6 +44,9 @@ attributes = SubResource("CameraAttributesPractical_sxjkq")
 fov = 21.8291
 near = 0.001
 far = 0.01
+
+[node name="car" parent="." instance=ExtResource("1_0m6t5")]
+transform = Transform3D(1.19249e-08, 0, 1, 0, 1, 0, -1, 0, 1.19249e-08, 0, -20.5567, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.222682, -0.967679, -0.118369, 0.693309, -0.242551, 0.678596, -0.685373, 0.0690451, 0.724912, 0, 251.473, 0)
@@ -64,15 +66,22 @@ autostart = true
 
 [node name="StartMenu" parent="." instance=ExtResource("3_1y03o")]
 
-[node name="game_sound" type="AudioStreamPlayer" parent="."]
-stream = SubResource("AudioStreamPlaylist_f1ujw")
+[node name="sound" type="Node" parent="."]
 
-[node name="drink_sound" type="AudioStreamPlayer" parent="."]
+[node name="game_sound" type="AudioStreamPlayer" parent="sound"]
+stream = ExtResource("24_g80vi")
+bus = &"game_sound"
 
-[node name="bup_sound" type="AudioStreamPlayer" parent="."]
+[node name="drink_sound" type="AudioStreamPlayer" parent="sound"]
+stream = ExtResource("22_gnmqi")
 
-[node name="menu_sound" type="AudioStreamPlayer" parent="."]
+[node name="bump_sound" type="AudioStreamPlayer" parent="sound"]
+stream = ExtResource("23_c4fa7")
 
-[node name="end_sound" type="AudioStreamPlayer" parent="."]
+[node name="menu_sound" type="AudioStreamPlayer" parent="sound"]
+stream = ExtResource("25_fmdfj")
+
+[node name="end_sound" type="AudioStreamPlayer" parent="sound"]
+stream = ExtResource("25_f2s7y")
 
 [connection signal="timeout" from="aclool_timer" to="." method="_on_aclool_timer_timeout"]
