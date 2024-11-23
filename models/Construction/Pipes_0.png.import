@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3uyul1e4dvot"
-path.s3tc="res://.godot/imported/road_straightBarrier.png-6d28dc0049bc67c6fc5005e2afe9ca12.s3tc.ctex"
+uid="uid://dfyjt3lyrcvdc"
+path.s3tc="res://.godot/imported/Pipes_0.png-4e2ba3ab07ef69cfb976a1822927955e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "ae8ba728fcf7e919305cebabeacf184e"
+}
 
 [deps]
 
-source_file="res://models/kenney_city-kit-roads/Side/road_straightBarrier.png"
-dest_files=["res://.godot/imported/road_straightBarrier.png-6d28dc0049bc67c6fc5005e2afe9ca12.s3tc.ctex"]
+source_file="res://models/Construction/Pipes_0.png"
+dest_files=["res://.godot/imported/Pipes_0.png-4e2ba3ab07ef69cfb976a1822927955e.s3tc.ctex"]
 
 [params]
 
