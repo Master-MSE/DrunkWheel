@@ -917,7 +917,7 @@ transform = Transform3D(3.0686, 0, 6.29156, 0, 7, 0, -6.29156, 0, 3.0686, -62.71
 shape = SubResource("ConcavePolygonShape3D_t581s")
 
 [node name="Cabin" type="Node3D" parent="Decorative"]
-transform = Transform3D(-14.4889, 0, -3.88229, 0, 15, 0, 3.88229, 0, -14.4889, -49.2657, 0.0606689, 17.9034)
+transform = Transform3D(-14.4889, 0, -3.88229, 0, 15, 0, 3.88229, 0, -14.4889, -49.2657, -0.08284, 17.9034)
 
 [node name="RootNode" type="Node3D" parent="Decorative/Cabin"]
 
