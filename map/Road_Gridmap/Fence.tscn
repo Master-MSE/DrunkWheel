@@ -7,6 +7,7 @@ points = PackedVector3Array(2.39676, 1.16403, 0.0309109, 2.94506, 1.08766, 0.082
 
 [node name="Fence" type="RigidBody3D"]
 collision_layer = 2
+sleeping = true
 
 [node name="Fence2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 0, 0, 0)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=120 format=4 uid="uid://r30ww36lcv0m"]
+[gd_scene load_steps=119 format=4 uid="uid://r30ww36lcv0m"]
 
 [ext_resource type="Script" path="res://code/train_start.gd" id="1_bwrrx"]
 [ext_resource type="ArrayMesh" uid="uid://rlb0f12letl0" path="res://models/kenney_city-kit-roads/Models/OBJ format/road_endRound.obj" id="2_7tj6x"]
@@ -21,7 +21,6 @@
 [ext_resource type="ArrayMesh" uid="uid://bl11qeeypyalu" path="res://models/Tree/model.obj" id="17_478eg"]
 [ext_resource type="ArrayMesh" uid="uid://dpwni2fgw7vws" path="res://models/kenney_fantasy-town-kit/Models/OBJ format/tree.obj" id="18_7o8ch"]
 [ext_resource type="Material" uid="uid://co5up3xnsi777" path="res://resources/Game Data/Misc/light_material.tres" id="21_n5ak3"]
-[ext_resource type="PackedScene" uid="uid://ciag4gvc86bnl" path="res://car.tscn" id="21_whuft"]
 [ext_resource type="Script" path="res://map/mesh_instance_3d_2.gd" id="22_qxdi8"]
 
 [sub_resource type="MeshTexture" id="MeshTexture_gbh50"]
@@ -5792,9 +5791,6 @@ script = ExtResource("22_qxdi8")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
 autostart = true
-
-[node name="car" parent="." instance=ExtResource("21_whuft")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.342, 0, 1.9532e-06)
 
 [connection signal="body_entered" from="Decorative/tractor/tractor" to="Decorative/tractor/tractor" method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="EndTrigger/MeshInstance3D2" method="_on_timer_timeout"]

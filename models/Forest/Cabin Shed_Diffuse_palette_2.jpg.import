@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpllwiy8n22u3"
-path.s3tc="res://.godot/imported/tree_large_NE.png-da4e3de904ddd37afc1db49bb079239f.s3tc.ctex"
+uid="uid://dfflu8cpjsmtd"
+path.s3tc="res://.godot/imported/Cabin Shed_Diffuse_palette_2.jpg-9babe80cc49febe4ba5f3dbc75df3b01.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "4f5c1a764fc9801ab8cb5731c984d383"
+}
 
 [deps]
 
-source_file="res://models/kenney_city-kit-suburban/Isometric/tree_large_NE.png"
-dest_files=["res://.godot/imported/tree_large_NE.png-da4e3de904ddd37afc1db49bb079239f.s3tc.ctex"]
+source_file="res://models/Forest/Cabin Shed_Diffuse_palette_2.jpg"
+dest_files=["res://.godot/imported/Cabin Shed_Diffuse_palette_2.jpg-9babe80cc49febe4ba5f3dbc75df3b01.s3tc.ctex"]
 
 [params]
 

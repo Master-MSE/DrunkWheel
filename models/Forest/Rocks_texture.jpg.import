@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpllwiy8n22u3"
-path.s3tc="res://.godot/imported/tree_large_NE.png-da4e3de904ddd37afc1db49bb079239f.s3tc.ctex"
+uid="uid://bbwlb3njsxmgb"
+path.s3tc="res://.godot/imported/Rocks_texture.jpg-dd5953c9c7dd706e1bd4d681bea31d6b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "e226562d677cc7e0bc294c919547b8bd"
+}
 
 [deps]
 
-source_file="res://models/kenney_city-kit-suburban/Isometric/tree_large_NE.png"
-dest_files=["res://.godot/imported/tree_large_NE.png-da4e3de904ddd37afc1db49bb079239f.s3tc.ctex"]
+source_file="res://models/Forest/Rocks_texture.jpg"
+dest_files=["res://.godot/imported/Rocks_texture.jpg-dd5953c9c7dd706e1bd4d681bea31d6b.s3tc.ctex"]
 
 [params]
 
