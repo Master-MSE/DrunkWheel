@@ -130,7 +130,7 @@ shader_parameter/index = null
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_eqaav"]
 shader = ExtResource("4_m1pfr")
-shader_parameter/index = null
+shader_parameter/index = 2
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gdevn"]
 shader = ExtResource("4_m1pfr")
@@ -138,7 +138,7 @@ shader_parameter/index = 3
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_it6w3"]
 shader = ExtResource("4_m1pfr")
-shader_parameter/index = null
+shader_parameter/index = 1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_60mtu"]
 albedo_color = Color(1, 0.121569, 0, 1)

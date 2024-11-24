@@ -1,9 +1,8 @@
-[gd_scene load_steps=28 format=3 uid="uid://d0rcie7hun16"]
+[gd_scene load_steps=26 format=3 uid="uid://d0rcie7hun16"]
 
 [ext_resource type="PackedScene" uid="uid://ciag4gvc86bnl" path="res://car.tscn" id="1_0m6t5"]
 [ext_resource type="Script" path="res://game.gd" id="1_ka53t"]
 [ext_resource type="PackedScene" path="res://start_menu.tscn" id="3_1y03o"]
-[ext_resource type="Environment" uid="uid://b788umq5ypwa3" path="res://resources/envrionment.tres" id="3_3t6gg"]
 [ext_resource type="Script" path="res://code/map_generator.gd" id="3_xpbjs"]
 [ext_resource type="Script" path="res://code/maptiledata.gd" id="4_602tr"]
 [ext_resource type="Resource" uid="uid://cmju8ysmarlgv" path="res://resources/Game Data/Map Tile Data/tile_LL01.tres" id="5_hgli0"]
@@ -27,23 +26,10 @@
 [ext_resource type="AudioStream" uid="uid://dcw50kq2ye8fq" path="res://sound/victoryff.swf.mp3" id="25_f2s7y"]
 [ext_resource type="AudioStream" uid="uid://b5dnrlgfbwh8d" path="res://sound/brawl-stars-menu-start-sounds-sound-effect-brawl-stars-hd-sound-effects_01web.mp3" id="25_fmdfj"]
 
-[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_sxjkq"]
-dof_blur_far_enabled = true
-dof_blur_far_distance = 0.11
-dof_blur_far_transition = -1.0
-
 [node name="Game" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 21.4664, 0)
 script = ExtResource("1_ka53t")
 endScreenScene = ExtResource("20_0j0ts")
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.37862, -19.2023, 0)
-environment = ExtResource("3_3t6gg")
-attributes = SubResource("CameraAttributesPractical_sxjkq")
-fov = 21.8291
-near = 0.001
-far = 0.01
 
 [node name="car" parent="." instance=ExtResource("1_0m6t5")]
 transform = Transform3D(1.19249e-08, 0, 1, 0, 1, 0, -1, 0, 1.19249e-08, 0, -20.5567, 0)
