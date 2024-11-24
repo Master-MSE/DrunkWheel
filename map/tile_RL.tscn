@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://drssnq2vhiy8n"]
+[gd_scene load_steps=39 format=4 uid="uid://drssnq2vhiy8n"]
 
 [ext_resource type="PackedScene" uid="uid://bokirc1m3bxlt" path="res://map/Road_Gridmap/Road_Straight_Short.tscn" id="2_ic56j"]
 [ext_resource type="PackedScene" uid="uid://tr7stq5c0sgo" path="res://map/Road_Gridmap/RoadStraight.tscn" id="3_d5d8y"]
@@ -19,7 +19,6 @@
 [ext_resource type="ArrayMesh" uid="uid://cxp8kl14coxqm" path="res://models/kenney_city-kit-suburban/Models/OBJ format/house_type08.obj" id="16_m4a1u"]
 [ext_resource type="PackedScene" uid="uid://coqmehllxsk3q" path="res://models/Forest/Rocks.glb" id="17_85hd3"]
 [ext_resource type="ArrayMesh" uid="uid://c75kj8x1mgo1u" path="res://models/Forest/PUSHILIN_forest.obj" id="18_2prf5"]
-[ext_resource type="PackedScene" uid="uid://ciag4gvc86bnl" path="res://car.tscn" id="20_7kw3b"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_65h23"]
 albedo_texture = ExtResource("7_oa10j")
@@ -89,7 +88,6 @@ data = PackedVector3Array(0.3, 0.15, -0.38, 0.28, 0.13, -0.38, 0.52, 0.13, -0.38
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ud7x"]
 resource_name = "citybits_texture"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("15_5e7nq")
 emission_enabled = true
 
@@ -698,6 +696,3 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 62.548
 
 [node name="Fence48" parent="." instance=ExtResource("15_0aeck")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 56.8262, -1.90735e-06, -0.81716)
-
-[node name="car" parent="." instance=ExtResource("20_7kw3b")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -69.7173, 0.0999928, 26.501)
