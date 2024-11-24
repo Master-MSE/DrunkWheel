@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://xcevil5106yq"]
+[gd_scene load_steps=37 format=3 uid="uid://xcevil5106yq"]
 
 [ext_resource type="PackedScene" uid="uid://tr7stq5c0sgo" path="res://map/Road_Gridmap/RoadStraight.tscn" id="2_ne846"]
 [ext_resource type="PackedScene" uid="uid://cekupgr0bxst3" path="res://map/Road_Gridmap/RoadStraightExit.tscn" id="3_e6pb5"]
@@ -15,6 +15,7 @@
 [ext_resource type="ArrayMesh" uid="uid://c75kj8x1mgo1u" path="res://models/Forest/PUSHILIN_forest.obj" id="16_6g6tn"]
 [ext_resource type="PackedScene" uid="uid://c4b2b247121t0" path="res://map/Road_Gridmap/RoadStraightCrosswalk.tscn" id="17_doaok"]
 [ext_resource type="PackedScene" uid="uid://cggalvt8r3aoy" path="res://map/Road_Gridmap/Tile_Base.tscn" id="17_yykr2"]
+[ext_resource type="PackedScene" uid="uid://c66tvpbfxp318" path="res://map/Road_Gridmap/Fence.tscn" id="18_714sl"]
 [ext_resource type="PackedScene" uid="uid://bjpvataopch70" path="res://Props/Pickup.tscn" id="18_nqmes"]
 [ext_resource type="PackedScene" uid="uid://cbstps4ewcmxf" path="res://Props/Wind Tubine.tscn" id="18_v5dts"]
 
@@ -440,3 +441,33 @@ shape = SubResource("BoxShape3D_hdx3a")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Barn"]
 transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 4.26807, 0.0665908)
 shape = SubResource("BoxShape3D_qopq4")
+
+[node name="Fence10" parent="." instance=ExtResource("18_714sl")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 57.1332, 1.43051e-05, -20.4163)
+
+[node name="Fence11" parent="." instance=ExtResource("18_714sl")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 54.2703, 1.43051e-05, -23.2757)
+
+[node name="Fence12" parent="." instance=ExtResource("18_714sl")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 48.5396, 1.43051e-05, -6.09605)
+
+[node name="Fence13" parent="." instance=ExtResource("18_714sl")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 45.6669, 1.43051e-05, -8.96044)
+
+[node name="Fence14" parent="." instance=ExtResource("18_714sl")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 45.6658, 1.43051e-05, -20.4063)
+
+[node name="Fence15" parent="." instance=ExtResource("18_714sl")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 45.6691, 1.43051e-05, -14.685)
+
+[node name="Fence16" parent="." instance=ExtResource("18_714sl")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 57.1332, 1.43051e-05, -8.94682)
+
+[node name="Fence17" parent="." instance=ExtResource("18_714sl")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 57.1332, 1.43051e-05, -14.677)
+
+[node name="Fence18" parent="." instance=ExtResource("18_714sl")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 54.2703, 1.43051e-05, -6.09221)
+
+[node name="Fence19" parent="." instance=ExtResource("18_714sl")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 48.5328, 1.43051e-05, -23.2757)
