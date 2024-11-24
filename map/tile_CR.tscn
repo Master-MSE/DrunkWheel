@@ -614,3 +614,21 @@ mesh = ExtResource("12_yykb6")
 [node name="CollisionShape3D39" type="CollisionShape3D" parent="Decorative"]
 transform = Transform3D(-4.25687, 0, -6.77341, 0, 8, 0, 6.77341, 0, -4.25687, -57.7688, 0, 23.3362)
 shape = SubResource("ConcavePolygonShape3D_eq60r")
+
+[node name="LargeBuildingA7" type="MeshInstance3D" parent="Decorative"]
+transform = Transform3D(-4.37114e-07, 0, 10, 0, 10, 0, -10, 0, -4.37114e-07, 68.5363, 0, 28.7774)
+mesh = ExtResource("6_wortq")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D40" type="CollisionShape3D" parent="Decorative"]
+transform = Transform3D(-4.37114e-07, 0, 10, 0, 10, 0, -10, 0, -4.37114e-07, 68.5363, 0, 28.7774)
+shape = SubResource("ConcavePolygonShape3D_kvfpo")
+
+[node name="LargeBuildingA8" type="MeshInstance3D" parent="Decorative"]
+transform = Transform3D(-4.37114e-07, 0, 10, 0, 10, 0, -10, 0, -4.37114e-07, 68.5363, 0, -28.5723)
+mesh = ExtResource("6_wortq")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D41" type="CollisionShape3D" parent="Decorative"]
+transform = Transform3D(-4.37114e-07, 0, 10, 0, 10, 0, -10, 0, -4.37114e-07, 68.5363, 0, -28.5723)
+shape = SubResource("ConcavePolygonShape3D_kvfpo")
