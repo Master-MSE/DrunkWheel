@@ -135,12 +135,12 @@ transform = Transform3D(-3, 0, 4.52987e-07, 0, 3, 0, -4.52987e-07, 0, -3, 33, 3.
 shape = SubResource("ConcavePolygonShape3D_bkxe7")
 
 [node name="Tree2" type="MeshInstance3D" parent="Decorative"]
-transform = Transform3D(-3, 0, 4.52987e-07, 0, 3, 0, -4.52987e-07, 0, -3, 18, 3.70921, 15)
+transform = Transform3D(-3, 0, 4.52987e-07, 0, 3, 0, -4.52987e-07, 0, -3, 12.0903, 3.70921, 9.05299)
 mesh = ExtResource("6_du8eg")
 skeleton = NodePath("../..")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Decorative"]
-transform = Transform3D(-3, 0, 4.52987e-07, 0, 3, 0, -4.52987e-07, 0, -3, 18, 3.70921, 15)
+transform = Transform3D(-3, 0, 4.52987e-07, 0, 3, 0, -4.52987e-07, 0, -3, 12.0903, 3.70921, 9.05299)
 shape = SubResource("ConcavePolygonShape3D_f6iqq")
 
 [node name="Tree3" type="MeshInstance3D" parent="Decorative"]
@@ -229,7 +229,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 49, 0.
 shape = SubResource("ConcavePolygonShape3D_fvyub")
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="Decorative"]
-transform = Transform3D(2.5, 0, 4.33013, 0, 5, 0, -4.33013, 0, 2.5, 30, 0, 8)
+transform = Transform3D(2.5, 0, 4.33013, 0, 5, 0, -4.33013, 0, 2.5, 30, -1.98391, 8)
 mesh = ExtResource("11_11b5p")
 skeleton = NodePath("../..")
 
@@ -262,11 +262,11 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 50, 0, 6)
 shape = SubResource("ConcavePolygonShape3D_1aong")
 
 [node name="MeshInstance3D11" type="MeshInstance3D" parent="Decorative"]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -15, 0, 6)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -5.95759, 0, 14.3521)
 mesh = ExtResource("13_qce5c")
 
 [node name="CollisionShape3D16" type="CollisionShape3D" parent="Decorative"]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -15, 0, 6)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -5.95759, 0, 14.3521)
 shape = SubResource("ConcavePolygonShape3D_1aong")
 
 [node name="Tree5" type="MeshInstance3D" parent="Decorative"]
@@ -310,7 +310,59 @@ transform = Transform3D(0.1, 0, 0.173205, 0, 0.2, 0, -0.173205, 0, 0.1, 54.8824,
 [node name="WindTubine5" parent="Decorative" instance=ExtResource("18_v5dts")]
 transform = Transform3D(0.1, 0, 0.173205, 0, 0.2, 0, -0.173205, 0, 0.1, 50.2265, 0, -18.7499)
 
+[node name="Tree7" type="MeshInstance3D" parent="Decorative"]
+transform = Transform3D(0.598104, 0, -2.93978, 0, 3, 0, 2.93978, 0, 0.598104, 62.7555, 3.70921, -26.2222)
+mesh = ExtResource("6_du8eg")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D20" type="CollisionShape3D" parent="Decorative"]
+transform = Transform3D(0.598104, 0, -2.93978, 0, 3, 0, 2.93978, 0, 0.598104, 62.7555, 3.70921, -26.2222)
+shape = SubResource("ConcavePolygonShape3D_vh7ak")
+
+[node name="Tree8" type="MeshInstance3D" parent="Decorative"]
+transform = Transform3D(1.5, 0, 2.59808, 0, 3, 0, -2.59808, 0, 1.5, 29.5645, 3.70921, -21.8826)
+mesh = ExtResource("6_du8eg")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D21" type="CollisionShape3D" parent="Decorative"]
+transform = Transform3D(1.5, 0, 2.59808, 0, 3, 0, -2.59808, 0, 1.5, 29.5645, 3.70921, -21.8826)
+shape = SubResource("ConcavePolygonShape3D_vh7ak")
+
+[node name="Tree9" type="MeshInstance3D" parent="Decorative"]
+transform = Transform3D(0.240597, 0, -2.99034, 0, 3, 0, 2.99034, 0, 0.240597, 68.7414, 3.70921, 13.8683)
+mesh = ExtResource("6_du8eg")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D22" type="CollisionShape3D" parent="Decorative"]
+transform = Transform3D(0.240597, 0, -2.99034, 0, 3, 0, 2.99034, 0, 0.240597, 68.7414, 3.70921, 13.8683)
+shape = SubResource("ConcavePolygonShape3D_vh7ak")
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="Decorative"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 8.03785, 0, -8.54454)
+mesh = ExtResource("13_qce5c")
+
+[node name="CollisionShape3D23" type="CollisionShape3D" parent="Decorative"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 8.03785, 0, -8.54454)
+shape = SubResource("ConcavePolygonShape3D_1aong")
+
+[node name="MeshInstance3D14" type="MeshInstance3D" parent="Decorative"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -57.6144, 0, 39.0323)
+mesh = ExtResource("13_qce5c")
+
+[node name="CollisionShape3D24" type="CollisionShape3D" parent="Decorative"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -57.6144, 0, 39.0323)
+shape = SubResource("ConcavePolygonShape3D_1aong")
+
+[node name="MeshInstance3D15" type="MeshInstance3D" parent="Decorative"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 50, 0, -35.5182)
+mesh = ExtResource("13_qce5c")
+
+[node name="CollisionShape3D25" type="CollisionShape3D" parent="Decorative"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 50, 0, -35.5182)
+shape = SubResource("ConcavePolygonShape3D_1aong")
+
 [node name="Forest" type="StaticBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -28.3017, 0, -52.0744)
 
 [node name="PushilinForest" type="MeshInstance3D" parent="Forest"]
 transform = Transform3D(-7, 0, 1.05697e-06, 0, 7, 0, -1.05697e-06, 0, -7, -53, 1.60349, -38)
@@ -411,6 +463,132 @@ skeleton = NodePath("../..")
 transform = Transform3D(-7, 0, 1.05697e-06, 0, 7, 0, -1.05697e-06, 0, -7, -11, 1.60349, -24)
 shape = SubResource("ConcavePolygonShape3D_bbb0m")
 
+[node name="PushilinForest12" type="MeshInstance3D" parent="Forest"]
+transform = Transform3D(-7, 0, 1.05697e-06, 0, 7, 0, -1.05697e-06, 0, -7, -53, 1.60349, -4.09245)
+mesh = ExtResource("16_6g6tn")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D12" type="CollisionShape3D" parent="Forest"]
+transform = Transform3D(-7, 0, 1.05697e-06, 0, 7, 0, -1.05697e-06, 0, -7, -53, 1.60349, -4.09245)
+shape = SubResource("ConcavePolygonShape3D_bbb0m")
+
+[node name="PushilinForest13" type="MeshInstance3D" parent="Forest"]
+transform = Transform3D(6.76148, 0, -1.81173, 0, 7, 0, 1.81173, 0, 6.76148, -45, 1.60349, 9.90755)
+mesh = ExtResource("16_6g6tn")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D13" type="CollisionShape3D" parent="Forest"]
+transform = Transform3D(6.76148, 0, -1.81173, 0, 7, 0, 1.81173, 0, 6.76148, -45, 1.60349, 9.90755)
+shape = SubResource("ConcavePolygonShape3D_bbb0m")
+
+[node name="PushilinForest14" type="MeshInstance3D" parent="Forest"]
+transform = Transform3D(-4.94975, 0, 4.94975, 0, 7, 0, -4.94975, 0, -4.94975, -38, 1.60349, 1.90756)
+mesh = ExtResource("16_6g6tn")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D14" type="CollisionShape3D" parent="Forest"]
+transform = Transform3D(-4.94975, 0, 4.94975, 0, 7, 0, -4.94975, 0, -4.94975, -38, 1.60349, 1.90756)
+shape = SubResource("ConcavePolygonShape3D_bbb0m")
+
+[node name="PushilinForest15" type="MeshInstance3D" parent="Forest"]
+transform = Transform3D(4.94975, 0, -4.94975, 0, 7, 0, 4.94975, 0, 4.94975, -58, 1.60349, 9.90755)
+mesh = ExtResource("16_6g6tn")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D15" type="CollisionShape3D" parent="Forest"]
+transform = Transform3D(4.94975, 0, -4.94975, 0, 7, 0, 4.94975, 0, 4.94975, -58, 1.60349, 9.90755)
+shape = SubResource("ConcavePolygonShape3D_bbb0m")
+
+[node name="PushilinForest16" type="MeshInstance3D" parent="Forest"]
+transform = Transform3D(6.76148, 0, -1.81173, 0, 7, 0, 1.81173, 0, 6.76148, -34, 1.60349, -4.09244)
+mesh = ExtResource("16_6g6tn")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D16" type="CollisionShape3D" parent="Forest"]
+transform = Transform3D(6.76148, 0, -1.81173, 0, 7, 0, 1.81173, 0, 6.76148, -34, 1.60349, -4.09244)
+shape = SubResource("ConcavePolygonShape3D_bbb0m")
+
+[node name="PushilinForest17" type="MeshInstance3D" parent="Forest"]
+transform = Transform3D(6.76148, 0, 1.81173, 0, 7, 0, -1.81173, 0, 6.76148, -17, 1.60349, -4.09244)
+mesh = ExtResource("16_6g6tn")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D17" type="CollisionShape3D" parent="Forest"]
+transform = Transform3D(6.76148, 0, 1.81173, 0, 7, 0, -1.81173, 0, 6.76148, -17, 1.60349, -4.09244)
+shape = SubResource("ConcavePolygonShape3D_bbb0m")
+
+[node name="PushilinForest18" type="MeshInstance3D" parent="Forest"]
+transform = Transform3D(-4.94975, 0, -4.94975, 0, 7, 0, 4.94975, 0, -4.94975, -25, 1.60349, 10.9076)
+mesh = ExtResource("16_6g6tn")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D18" type="CollisionShape3D" parent="Forest"]
+transform = Transform3D(-4.94975, 0, -4.94975, 0, 7, 0, 4.94975, 0, -4.94975, -25, 1.60349, 10.9076)
+shape = SubResource("ConcavePolygonShape3D_bbb0m")
+
+[node name="PushilinForest19" type="MeshInstance3D" parent="Forest"]
+transform = Transform3D(4.94975, 0, 4.94975, 0, 7, 0, -4.94975, 0, 4.94975, -53, 1.60349, 22.9076)
+mesh = ExtResource("16_6g6tn")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D19" type="CollisionShape3D" parent="Forest"]
+transform = Transform3D(4.94975, 0, 4.94975, 0, 7, 0, -4.94975, 0, 4.94975, -53, 1.60349, 22.9076)
+shape = SubResource("ConcavePolygonShape3D_bbb0m")
+
+[node name="PushilinForest20" type="MeshInstance3D" parent="Forest"]
+transform = Transform3D(6.06218, 0, 3.5, 0, 7, 0, -3.5, 0, 6.06218, -35, 1.60349, 20.9076)
+mesh = ExtResource("16_6g6tn")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D20" type="CollisionShape3D" parent="Forest"]
+transform = Transform3D(6.06218, 0, 3.5, 0, 7, 0, -3.5, 0, 6.06218, -35, 1.60349, 20.9076)
+shape = SubResource("ConcavePolygonShape3D_bbb0m")
+
+[node name="PushilinForest21" type="MeshInstance3D" parent="Forest"]
+transform = Transform3D(3.5, 0, 6.06218, 0, 7, 0, -6.06218, 0, 3.5, -17, 1.60349, 22.9076)
+mesh = ExtResource("16_6g6tn")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D21" type="CollisionShape3D" parent="Forest"]
+transform = Transform3D(3.5, 0, 6.06218, 0, 7, 0, -6.06218, 0, 3.5, -17, 1.60349, 22.9076)
+shape = SubResource("ConcavePolygonShape3D_bbb0m")
+
+[node name="PushilinForest22" type="MeshInstance3D" parent="Forest"]
+transform = Transform3D(-7, 0, 1.05697e-06, 0, 7, 0, -1.05697e-06, 0, -7, -11, 1.60349, 9.90755)
+mesh = ExtResource("16_6g6tn")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D22" type="CollisionShape3D" parent="Forest"]
+transform = Transform3D(-7, 0, 1.05697e-06, 0, 7, 0, -1.05697e-06, 0, -7, -11, 1.60349, 9.90755)
+shape = SubResource("ConcavePolygonShape3D_bbb0m")
+
+[node name="PushilinForest23" type="MeshInstance3D" parent="Forest"]
+transform = Transform3D(-7, 0, 1.05697e-06, 0, 7, 0, -1.05697e-06, 0, -7, -15.6156, 1.60349, 38.1273)
+mesh = ExtResource("16_6g6tn")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D23" type="CollisionShape3D" parent="Forest"]
+transform = Transform3D(-7, 0, 1.05697e-06, 0, 7, 0, -1.05697e-06, 0, -7, -15.6156, 1.60349, 38.1273)
+shape = SubResource("ConcavePolygonShape3D_bbb0m")
+
+[node name="PushilinForest24" type="MeshInstance3D" parent="Forest"]
+transform = Transform3D(-7, 0, 1.05697e-06, 0, 7, 0, -1.05697e-06, 0, -7, -15.6156, 1.60349, 52.8164)
+mesh = ExtResource("16_6g6tn")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D24" type="CollisionShape3D" parent="Forest"]
+transform = Transform3D(-7, 0, 1.05697e-06, 0, 7, 0, -1.05697e-06, 0, -7, -15.6156, 1.60349, 52.8164)
+shape = SubResource("ConcavePolygonShape3D_bbb0m")
+
+[node name="PushilinForest25" type="MeshInstance3D" parent="Forest"]
+transform = Transform3D(-6.44353, 0, 2.73512, 0, 7, 0, -2.73512, 0, -6.44353, -28.5203, 1.60349, 30.5261)
+mesh = ExtResource("16_6g6tn")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D25" type="CollisionShape3D" parent="Forest"]
+transform = Transform3D(-6.44353, 0, 2.73512, 0, 7, 0, -2.73512, 0, -6.44353, -28.5203, 1.60349, 30.5261)
+shape = SubResource("ConcavePolygonShape3D_bbb0m")
+
 [node name="Alcohol" type="Node3D" parent="."]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
 
@@ -426,7 +604,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 1.04027, -26)
 [node name="TileBase" parent="." instance=ExtResource("17_yykr2")]
 
 [node name="Barn" type="RigidBody3D" parent="."]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 14, 0, -17)
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 19.0745, 0.184296, -7.8511)
 collision_layer = 2
 mass = 500.0
 
