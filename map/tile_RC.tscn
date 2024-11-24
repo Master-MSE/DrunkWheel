@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=4 uid="uid://4j0juj3yt18n"]
+[gd_scene load_steps=54 format=4 uid="uid://4j0juj3yt18n"]
 
 [ext_resource type="ArrayMesh" uid="uid://cvaprf6sd2fim" path="res://models/kenney_city-kit-roads/Models/OBJ format/road_straight.obj" id="2_cbgj4"]
 [ext_resource type="PackedScene" uid="uid://tr7stq5c0sgo" path="res://map/Road_Gridmap/RoadStraight.tscn" id="6_qkwut"]
@@ -14,7 +14,6 @@
 [ext_resource type="ArrayMesh" uid="uid://beeqxlp3stgnq" path="res://models/Construction/Island01.obj" id="12_4ibfw"]
 [ext_resource type="PackedScene" uid="uid://dkhgbkjgy48n4" path="res://models/Forest/Construction_panel.tscn" id="12_d8o0d"]
 [ext_resource type="ArrayMesh" uid="uid://4pl81usj1ic6" path="res://models/Construction/Crane.obj" id="13_jthys"]
-[ext_resource type="PackedScene" uid="uid://ciag4gvc86bnl" path="res://car.tscn" id="13_v4ojq"]
 [ext_resource type="Texture2D" uid="uid://1evq04w51wm4" path="res://models/Construction/Bulldozer_BaseColor.png" id="14_vckc2"]
 [ext_resource type="ArrayMesh" uid="uid://3dquhve16ukm" path="res://models/Construction/Bulldozer.obj" id="15_nx1kc"]
 [ext_resource type="Texture2D" uid="uid://dfyjt3lyrcvdc" path="res://models/Construction/Pipes_0.png" id="16_ern0e"]
@@ -365,7 +364,6 @@ data = PackedVector3Array(-0.0067, 0.0008, 0.0203, -0.0058, 0.0011, 0.0196, -0.0
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i88dl"]
 resource_name = "Atlas.048"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("16_ern0e")
 emission_enabled = true
 
@@ -906,9 +904,6 @@ skeleton = NodePath("")
 [node name="CollisionShape3D30" type="CollisionShape3D" parent="Decorative"]
 transform = Transform3D(1.64627, -4.96425e-08, -1.13569, 0, 2, -8.74228e-08, 1.13569, 7.19609e-08, 1.64627, -53.7558, 0, -0.835456)
 shape = SubResource("ConcavePolygonShape3D_m6xxv")
-
-[node name="car" parent="." instance=ExtResource("13_v4ojq")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 5.38116, 0, 32.7711)
 
 [node name="Construction panel2" parent="." instance=ExtResource("12_d8o0d")]
 transform = Transform3D(-0.368125, 0, -0.929776, 0, 1, 0, 0.929776, 0, -0.368125, 14.1663, 0.1, 26.0332)

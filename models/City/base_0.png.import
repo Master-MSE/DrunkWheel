@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blq1qwjrx682u"
-path.s3tc="res://.godot/imported/road_bendSidewalk.png-2d32d1e52819df450642edd0d6fe6af7.s3tc.ctex"
+uid="uid://n0s48h4cpjx7"
+path.s3tc="res://.godot/imported/base_0.png-01eea10eb4aba1bccc9e555db19359b4.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "9738ca79d31e4c72699c55c62ca86c6f"
+}
 
 [deps]
 
-source_file="res://models/kenney_city-kit-roads/Side/road_bendSidewalk.png"
-dest_files=["res://.godot/imported/road_bendSidewalk.png-2d32d1e52819df450642edd0d6fe6af7.s3tc.ctex"]
+source_file="res://models/City/base_0.png"
+dest_files=["res://.godot/imported/base_0.png-01eea10eb4aba1bccc9e555db19359b4.s3tc.ctex"]
 
 [params]
 

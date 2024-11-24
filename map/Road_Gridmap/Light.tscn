@@ -23,13 +23,14 @@ mesh = ExtResource("1_r1n74")
 skeleton = NodePath("../../../..")
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 8.74228e-08, 8.74228e-08, -8.74228e-08, -4.37114e-08, 1, 8.74228e-08, -1, -4.37114e-08, 0, 3.8879, -1.00862)
+transform = Transform3D(1, 8.74228e-08, 8.74228e-08, -1.09723e-07, 0.301671, 0.953412, 5.6977e-08, -0.953412, 0.301671, 0, 3.8879, -1.00862)
 light_color = Color(1, 1, 0.392157, 1)
 light_energy = 8.947
 light_indirect_energy = 1.318
 light_volumetric_fog_energy = 1.212
 light_size = 0.212
 shadow_enabled = true
+spot_range = 6.10552
 spot_angle = 31.9252
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
