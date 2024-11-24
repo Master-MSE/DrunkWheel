@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=4 uid="uid://4j0juj3yt18n"]
+[gd_scene load_steps=60 format=4 uid="uid://4j0juj3yt18n"]
 
 [ext_resource type="ArrayMesh" uid="uid://cvaprf6sd2fim" path="res://models/kenney_city-kit-roads/Models/OBJ format/road_straight.obj" id="2_cbgj4"]
 [ext_resource type="PackedScene" uid="uid://tr7stq5c0sgo" path="res://map/Road_Gridmap/RoadStraight.tscn" id="6_qkwut"]
@@ -17,6 +17,12 @@
 [ext_resource type="Texture2D" uid="uid://1evq04w51wm4" path="res://models/Construction/Bulldozer_BaseColor.png" id="14_vckc2"]
 [ext_resource type="ArrayMesh" uid="uid://3dquhve16ukm" path="res://models/Construction/Bulldozer.obj" id="15_nx1kc"]
 [ext_resource type="Texture2D" uid="uid://dfyjt3lyrcvdc" path="res://models/Construction/Pipes_0.png" id="16_ern0e"]
+[ext_resource type="PackedScene" uid="uid://cbhf4jipdp7ww" path="res://firetruck.tscn" id="17_fp1tl"]
+[ext_resource type="PackedScene" uid="uid://fafrqdcw73mr" path="res://garbage-truck.tscn" id="18_m0n0f"]
+[ext_resource type="PackedScene" uid="uid://dihnlxv0im3ip" path="res://sedan.tscn" id="19_pkcs2"]
+[ext_resource type="PackedScene" uid="uid://dvcksdjkomeus" path="res://van.tscn" id="20_ld45d"]
+[ext_resource type="PackedScene" uid="uid://dswdsmhmws1qn" path="res://suv-luxury.tscn" id="21_a4hvq"]
+[ext_resource type="PackedScene" uid="uid://2i1355nqijys" path="res://hatchback-sports.tscn" id="22_a2xfj"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_b0rw0"]
 data = PackedVector3Array(-0.5, 0.01, -0.4, 0.5, 0.02, -0.4, 0.5, 0.01, -0.4, 0.5, 0.02, -0.4, -0.5, 0.01, -0.4, -0.5, 0.02, -0.4, 0.5, 0, -0.5, -0.5, 0.02, -0.5, -0.5, 0, -0.5, -0.5, 0.02, -0.5, 0.5, 0, -0.5, 0.5, 0.02, -0.5, 0.5, 0.01, 0.4, -0.5, 0.02, 0.4, -0.5, 0.01, 0.4, -0.5, 0.02, 0.4, 0.5, 0.01, 0.4, 0.5, 0.02, 0.4, 0.5, 0, -0.5, -0.5, 0, 0.5, 0.5, 0, 0.5, -0.5, 0, 0.5, 0.5, 0, -0.5, -0.5, 0, -0.5, 0.5, 0.02, -0.4, -0.5, 0.02, -0.5, 0.5, 0.02, -0.5, -0.5, 0.02, -0.5, 0.5, 0.02, -0.4, -0.5, 0.02, -0.4, -0.5, 0, 0.5, 0.5, 0.02, 0.5, 0.5, 0, 0.5, 0.5, 0.02, 0.5, -0.5, 0, 0.5, -0.5, 0.02, 0.5, 0.5, 0.02, 0.5, -0.5, 0.02, 0.4, 0.5, 0.02, 0.4, -0.5, 0.02, 0.4, 0.5, 0.02, 0.5, -0.5, 0.02, 0.5, 0.5, 0.01, 0.4, 0.5, 0.02, 0.5, 0.5, 0.02, 0.4, 0.5, 0.01, 0.4, 0.5, 0, 0.5, 0.5, 0.02, 0.5, 0.5, 0.01, 0.3, 0.5, 0, 0.5, 0.5, 0.01, 0.4, 0.5, 0.01, 0.01, 0.5, 0, 0.5, 0.5, 0.01, 0.3, 0.5, 0.01, -0.01, 0.5, 0, 0.5, 0.5, 0.01, 0.01, 0.5, 0.01, -0.3, 0.5, 0, 0.5, 0.5, 0.01, -0.01, 0.5, 0.01, -0.4, 0.5, 0, 0.5, 0.5, 0.01, -0.3, 0.5, 0.01, -0.4, 0.5, 0, -0.5, 0.5, 0, 0.5, 0.5, 0.02, -0.4, 0.5, 0, -0.5, 0.5, 0.01, -0.4, 0.5, 0, -0.5, 0.5, 0.02, -0.4, 0.5, 0.02, -0.5, -0.5, 0.01, -0.4, -0.5, 0, -0.5, -0.5, 0.02, -0.5, -0.5, 0, -0.5, -0.5, 0.01, -0.4, -0.5, 0, 0.5, -0.5, 0, 0.5, -0.5, 0.01, -0.4, -0.5, 0.01, -0.3, -0.5, 0, 0.5, -0.5, 0.01, -0.3, -0.5, 0.01, -0.01, -0.5, 0, 0.5, -0.5, 0.01, -0.01, -0.5, 0.01, 0.01, -0.5, 0, 0.5, -0.5, 0.01, 0.01, -0.5, 0.01, 0.3, -0.5, 0, 0.5, -0.5, 0.01, 0.3, -0.5, 0.01, 0.4, -0.5, 0, 0.5, -0.5, 0.01, 0.4, -0.5, 0.02, 0.4, -0.5, 0, 0.5, -0.5, 0.02, 0.4, -0.5, 0.02, 0.5, -0.5, 0.02, -0.5, -0.5, 0.02, -0.4, -0.5, 0.01, -0.4, -0.5, 0.01, 0.3, 0.5, 0.01, 0.01, 0.5, 0.01, 0.3, 0.5, 0.01, 0.01, -0.5, 0.01, 0.3, -0.5, 0.01, 0.01, 0.5, 0.01, -0.01, -0.5, 0.01, -0.3, 0.5, 0.01, -0.3, -0.5, 0.01, -0.3, 0.5, 0.01, -0.01, -0.5, 0.01, -0.01, 0.5, 0.01, -0.3, -0.5, 0.01, -0.4, 0.5, 0.01, -0.4, -0.5, 0.01, -0.4, 0.5, 0.01, -0.3, -0.5, 0.01, -0.3, 0.5, 0.01, 0.4, -0.5, 0.01, 0.3, 0.5, 0.01, 0.3, -0.5, 0.01, 0.3, 0.5, 0.01, 0.4, -0.5, 0.01, 0.4, 0.5, 0.01, 0.01, -0.5, 0.01, -0.01, 0.5, 0.01, -0.01, -0.5, 0.01, -0.01, 0.5, 0.01, 0.01, -0.5, 0.01, 0.01)
@@ -904,6 +910,30 @@ skeleton = NodePath("")
 [node name="CollisionShape3D30" type="CollisionShape3D" parent="Decorative"]
 transform = Transform3D(1.64627, -4.96425e-08, -1.13569, 0, 2, -8.74228e-08, 1.13569, 7.19609e-08, 1.64627, -53.7558, 0, -0.835456)
 shape = SubResource("ConcavePolygonShape3D_m6xxv")
+
+[node name="firetruck" parent="Decorative" instance=ExtResource("17_fp1tl")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 66.3785, 5.07249, -17.8114)
+
+[node name="garbage-truck" parent="Decorative" instance=ExtResource("18_m0n0f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.462, 5.04988, 23.4551)
+
+[node name="sedan" parent="Decorative" instance=ExtResource("19_pkcs2")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 66.6298, 5.05213, -37.7054)
+
+[node name="sedan2" parent="Decorative" instance=ExtResource("19_pkcs2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.3202, 5.05213, -10.3189)
+
+[node name="van" parent="Decorative" instance=ExtResource("20_ld45d")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 66.7732, 5.08163, 11.2123)
+
+[node name="suv-luxury" parent="Decorative" instance=ExtResource("21_a4hvq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.8748, 5.05376, -28.9409)
+
+[node name="hatchback-sports" parent="Decorative" instance=ExtResource("22_a2xfj")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 66.3545, 5.04851, 43.2991)
+
+[node name="suv-luxury2" parent="Decorative" instance=ExtResource("21_a4hvq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.2302, 5.03943, 36.8363)
 
 [node name="Construction panel2" parent="." instance=ExtResource("12_d8o0d")]
 transform = Transform3D(-0.368125, 0, -0.929776, 0, 1, 0, 0.929776, 0, -0.368125, 14.1663, 0.1, 26.0332)
