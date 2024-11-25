@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://p4ku3y2odn56"]
+
+[ext_resource type="ArrayMesh" uid="uid://cchlxycbjrrr4" path="res://models/City/Bench.obj" id="1_kjmrq"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_5onmh"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_pways"]
+points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
+
+[node name="Bench" type="RigidBody3D"]
+transform = Transform3D(-0.581939, 0, -0.813233, 0, 1, 0, 0.813233, 0, -0.581939, 0, 0, 0)
+collision_layer = 2
+collision_mask = 3
+sleeping = true
+freeze = true
+
+[node name="Bench" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.885349, -0.0852601, -0.457042, 0.0475299, 0.994489, -0.093448, 0.46249, 0.061011, 0.884523, 0, 0.299732, 0)
+mesh = ExtResource("1_kjmrq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.635581, -0.00483112, -0.408072, 0.000869871, 0.649976, -0.00427333, 0.897795, 0.00279036, 0.288893, 0.0495027, 0.309584, -0.0354235)
+visible = false
+mesh = SubResource("BoxMesh_5onmh")
+skeleton = NodePath("../Bench")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.635581, -0.00483112, -0.408072, 0.000869871, 0.649976, -0.00427333, 0.897795, 0.00279036, 0.288893, 0.0495027, 0.309584, -0.0354235)
+shape = SubResource("ConvexPolygonShape3D_pways")
