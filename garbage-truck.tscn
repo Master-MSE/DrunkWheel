@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://q4lh6cm55sxe"]
+[gd_scene load_steps=17 format=4 uid="uid://fafrqdcw73mr"]
 
 [ext_resource type="Texture2D" uid="uid://b0ahsnh0h5gai" path="res://models/vehicules/GLB format/Textures/colormap.png" id="1_2ae4i"]
 [ext_resource type="Material" uid="uid://co5up3xnsi777" path="res://resources/Game Data/Misc/light_material.tres" id="3_hcf53"]
@@ -123,12 +123,15 @@ shadow_mesh = SubResource("ArrayMesh_lp57k")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bg0hp"]
 shader = ExtResource("4_m1pfr")
+shader_parameter/index = null
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_eqaav"]
 shader = ExtResource("4_m1pfr")
+shader_parameter/index = null
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_it6w3"]
 shader = ExtResource("4_m1pfr")
+shader_parameter/index = null
 
 [sub_resource type="BoxMesh" id="BoxMesh_72tb6"]
 material = ExtResource("3_hcf53")
@@ -138,7 +141,8 @@ size = Vector3(0.275, 0, 0.1)
 
 [node name="garbage-truck" type="VehicleBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0239234, 0, 0.0928687)
-collision_layer = 5
+collision_layer = 2
+collision_mask = 3
 axis_lock_angular_x = true
 axis_lock_angular_z = true
 mass = 2000.0

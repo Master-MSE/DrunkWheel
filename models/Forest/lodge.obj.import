@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cb4ch271um6s7"
+path="res://.godot/imported/lodge.obj-4010ed4d5ff046bd7aae4b9cb89edf4a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/lodge.obj-4010ed4d5ff046bd7aae4b9cb89edf4a.mesh"]
+
+source_file="res://models/Forest/lodge.obj"
+dest_files=["res://.godot/imported/lodge.obj-4010ed4d5ff046bd7aae4b9cb89edf4a.mesh", "res://.godot/imported/lodge.obj-4010ed4d5ff046bd7aae4b9cb89edf4a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
