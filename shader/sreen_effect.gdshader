@@ -8,16 +8,20 @@ void vertex() {
 
 void fragment() {
 	float time_s = (TIME*2.0);
-	
-	float amp_vague=tauxalcool*15.0;
+	float delay_taux_vague=max(tauxalcool-0.0,0.0);
+	float amp_vague=delay_taux_vague*15.0;
 	float fre_vague=10.0;
 	float vague = sin(SCREEN_UV.y*fre_vague+time_s+PI/2.0)*SCREEN_PIXEL_SIZE.x*amp_vague;
 	
-	float amp_diffraction=tauxalcool*30.0;
+	float delay_taux_diffraction=max(tauxalcool-0.0,0.0);
+	float amp_diffraction=delay_taux_diffraction*30.0;
 	float diffraction=amp_diffraction*SCREEN_PIXEL_SIZE.x*sin(time_s/2.0);
 	
 	vec2 car_position = vec2(0.5,0.8);
-	float fade_radius =tauxalcool*500.0;
+	float fade_radius =tauxalcool*0.5;
+	float attenuation_shado =  2000.0;
+	float delay_shado = 3.0;//delay_shado is linked to attenuation_shado 
+	
 	switch (index){
 		case 1:
 			vec4 first_chanel = texture(SCREEN_TEXTURE,vec2(SCREEN_UV.x+vague+diffraction,SCREEN_UV.y));
@@ -31,14 +35,7 @@ void fragment() {
 			vec2 point_position = car_position * vec2(SCREEN_PIXEL_SIZE.y, SCREEN_PIXEL_SIZE.x);
 			vec2 current_position = SCREEN_UV * vec2(SCREEN_PIXEL_SIZE.y, SCREEN_PIXEL_SIZE.x);
 			float distance_to_point = distance(current_position, point_position);
-			float alpha = 1.0-clamp(11.0-tauxalcool-distance_to_point*10000.0, 0.0, 1.0);
-			COLOR = vec4(0,0,0,alpha);
-			break;
-		case 4:
-			vec2 point_position = car_position * vec2(SCREEN_PIXEL_SIZE.y, SCREEN_PIXEL_SIZE.x);
-			vec2 current_position = SCREEN_UV * vec2(SCREEN_PIXEL_SIZE.y, SCREEN_PIXEL_SIZE.x);
-			float distance_to_point = distance(current_position, point_position);
-			float alpha = clamp(distance_to_point*fade_radius, 0.0, 1.0);
+			float alpha = 1.0-clamp(delay_shado-fade_radius-distance_to_point*attenuation_shado, 0.0, 1.0);
 			COLOR = vec4(0,0,0,alpha);
 			break;
 		default:

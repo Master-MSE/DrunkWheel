@@ -15,7 +15,8 @@ enum GameStates {
 @onready var sd_drink:AudioStreamPlayer = $sound/drink_sound
 @onready var sd_bump:AudioStreamPlayer = $sound/bump_sound
 @onready var sd_menu:AudioStreamPlayer = $sound/menu_sound
-@onready var sd_end:AudioStreamPlayer = $sound/end_sound
+@onready var sd_end1:AudioStreamPlayer = $sound/end1_sound
+@onready var sd_end2:AudioStreamPlayer = $sound/end2_sound
 
 @export var endScreenScene: PackedScene
 
@@ -35,7 +36,7 @@ static var game_state: GameStates = GameStates.WAITING
 
 const fac_time =1
 const tile_length = 30
-const map_length = 1
+const map_length = 2
 
 func choose_next_tile(current: Vector2) -> Vector2:
 	var next_end = randi()%3
@@ -78,19 +79,22 @@ func _process(delta: float) -> void:
 			if !sd_menu.playing:
 				sd_menu.play()
 				sd_game.stop()
-				sd_end.stop()
+				sd_end1.stop()
+				sd_end2.stop()
 		GameStates.PLAYING:
 			time+=delta
 			cal_taux_alcool()
 			if !sd_game.playing:
 				sd_menu.stop()
 				sd_game.play()
-				sd_end.stop()
+				sd_end1.stop()
+				sd_end2.stop()
 		GameStates.FINISHED:
-			if !sd_end.playing:
-				sd_menu.stop()
-				sd_game.stop()
-				sd_end.play()
+			sd_menu.stop()
+			sd_game.stop()
+			if !sd_end1.playing:
+				if !sd_end2.playing:
+					sd_end2.play()
 
 func _on_end_reached() -> void:
 	game_state = GameStates.FINISHED
@@ -100,6 +104,7 @@ func _on_end_reached() -> void:
 	var new_child = endScreenScene.instantiate()
 	add_child(new_child)
 	new_child.restart_game.connect(_on_restart_game)
+	sd_end1.play()
 	
 func cal_taux_alcool():
 	tauxalcool=0.0
