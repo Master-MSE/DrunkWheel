@@ -109,7 +109,6 @@ func _on_body_entered(body: Node) -> void:
 	if body.collision_layer == 2:
 		if body is RigidBody3D and body.freeze == true:
 			hitted_objects.append(body.name)
-			object_hit.emit()
 			body.freeze = false
 			body.apply_impulse((linear_velocity*relative_obstacle_collision_impulse_strength) + (Vector3.UP * vertical_obstacle_collision_impulse_strength))
 	
