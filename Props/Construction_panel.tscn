@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dkhgbkjgy48n4"]
+[gd_scene load_steps=4 format=3 uid="uid://dkhgbkjgy48n4"]
 
+[ext_resource type="Script" path="res://code/collision_data.gd" id="1_8i6y6"]
 [ext_resource type="ArrayMesh" uid="uid://ctfyfxlajaogg" path="res://models/Construction/model.obj" id="1_lkhf2"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_yqf4r"]
@@ -10,6 +11,9 @@ transform = Transform3D(0.368125, 0, 0.929776, 0, 1, 0, -0.929776, 0, 0.368125, 
 collision_layer = 2
 collision_mask = 3
 sleeping = true
+script = ExtResource("1_8i6y6")
+object_name = "Construction Panel"
+object_value = 50.0
 
 [node name="Model" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 4.65661e-10, 0.505891, 0.01)
@@ -18,3 +22,5 @@ mesh = ExtResource("1_lkhf2")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 4.65661e-10, 0.505891, 0.01)
 shape = SubResource("ConvexPolygonShape3D_yqf4r")
+
+[connection signal="sleeping_state_changed" from="." to="." method="_on_sleeping_state_changed"]

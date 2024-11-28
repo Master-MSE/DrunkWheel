@@ -8,7 +8,6 @@ enum GameStates {
 }
 
 @onready var map_generator: MapGenerator = %MapGenerator
-@onready var collision_handler: CollisionHandler = %CollisionHandler
 @onready var Car: Node3D = $car
 @onready var hud: CanvasLayer = $Hud
 
@@ -59,8 +58,8 @@ func _on_alcohol_collected() -> void:
 	sd_drink.play()
 
 func _on_object_hit() -> void:
-	collision_handler.new_collision()
-	hud.update_obects(collision_handler.get_collision_counter())
+	#collision_handler.new_collision()
+	hud.update_obects(CollisionHandler.get_collision_counter())
 	sd_bump.play()
 
 # Called when the node enters the scene tree for the first time.
@@ -68,7 +67,8 @@ func _ready() -> void:
 	map_generator.generate_map(map_length)
 	Car.get_child(0).alcohol_collected.connect(_on_alcohol_collected)
 	Car.get_child(0).end_reached.connect(_on_end_reached)
-	Car.get_child(0).object_hit.connect(_on_object_hit)
+	
+	CollisionHandler.object_hit.connect(_on_object_hit)
 	Engine.time_scale = 1
 	game_state = GameStates.WAITING 
 	
@@ -101,6 +101,8 @@ func _on_end_reached() -> void:
 	var new_child = endScreenScene.instantiate()
 	add_child(new_child)
 	new_child.restart_game.connect(_on_restart_game)
+	
+	print(CollisionHandler.registered_collisions)
 	
 func cal_taux_alcool():
 	tauxalcool=0.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://d0rcie7hun16"]
+[gd_scene load_steps=26 format=3 uid="uid://d0rcie7hun16"]
 
 [ext_resource type="PackedScene" uid="uid://ciag4gvc86bnl" path="res://car.tscn" id="1_0m6t5"]
 [ext_resource type="Script" path="res://game.gd" id="1_ka53t"]
@@ -25,7 +25,6 @@
 [ext_resource type="AudioStream" uid="uid://boehi668eh17h" path="res://sound/Syth-Vibe.wav" id="24_g80vi"]
 [ext_resource type="AudioStream" uid="uid://dcw50kq2ye8fq" path="res://sound/victoryff.swf.mp3" id="25_f2s7y"]
 [ext_resource type="AudioStream" uid="uid://b5dnrlgfbwh8d" path="res://sound/brawl-stars-menu-start-sounds-sound-effect-brawl-stars-hd-sound-effects_01web.mp3" id="25_fmdfj"]
-[ext_resource type="Script" path="res://code/collision_handler.gd" id="26_as0jj"]
 
 [node name="Game" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 21.4664, 0)
@@ -70,9 +69,5 @@ stream = ExtResource("25_fmdfj")
 
 [node name="end_sound" type="AudioStreamPlayer" parent="sound"]
 stream = ExtResource("25_f2s7y")
-
-[node name="CollisionHandler" type="Node" parent="."]
-unique_name_in_owner = true
-script = ExtResource("26_as0jj")
 
 [connection signal="timeout" from="aclool_timer" to="." method="_on_aclool_timer_timeout"]
