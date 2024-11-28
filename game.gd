@@ -8,6 +8,7 @@ enum GameStates {
 }
 
 @onready var map_generator: MapGenerator = %MapGenerator
+@onready var collision_handler: CollisionHandler = %CollisionHandler
 @onready var Car: Node3D = $car
 @onready var hud: CanvasLayer = $Hud
 
@@ -58,8 +59,8 @@ func _on_alcohol_collected() -> void:
 	sd_drink.play()
 
 func _on_object_hit() -> void:
-	objects_hit+=1
-	hud.update_obects(objects_hit)
+	collision_handler.new_collision()
+	hud.update_obects(collision_handler.get_collision_counter())
 	sd_bump.play()
 
 # Called when the node enters the scene tree for the first time.

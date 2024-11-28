@@ -15,7 +15,7 @@
 [ext_resource type="ArrayMesh" uid="uid://c75kj8x1mgo1u" path="res://models/Forest/PUSHILIN_forest.obj" id="16_6g6tn"]
 [ext_resource type="PackedScene" uid="uid://c4b2b247121t0" path="res://map/Road_Gridmap/RoadStraightCrosswalk.tscn" id="17_doaok"]
 [ext_resource type="PackedScene" uid="uid://cggalvt8r3aoy" path="res://map/Road_Gridmap/Tile_Base.tscn" id="17_yykr2"]
-[ext_resource type="PackedScene" uid="uid://c66tvpbfxp318" path="res://map/Road_Gridmap/Fence.tscn" id="18_714sl"]
+[ext_resource type="PackedScene" uid="uid://c66tvpbfxp318" path="res://Props/Fence.tscn" id="18_714sl"]
 [ext_resource type="PackedScene" uid="uid://bjpvataopch70" path="res://Props/Pickup.tscn" id="18_nqmes"]
 [ext_resource type="PackedScene" uid="uid://cbstps4ewcmxf" path="res://Props/Wind Tubine.tscn" id="18_v5dts"]
 

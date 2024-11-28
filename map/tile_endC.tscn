@@ -7,7 +7,7 @@
 [ext_resource type="ArrayMesh" uid="uid://be4f871pdqnf3" path="res://models/kenney_city-kit-roads/Models/OBJ format/road_drivewaySingle.obj" id="5_c3xcj"]
 [ext_resource type="PackedScene" uid="uid://tr7stq5c0sgo" path="res://map/Road_Gridmap/RoadStraight.tscn" id="5_h5v3w"]
 [ext_resource type="PackedScene" uid="uid://bw3bepaapgq23" path="res://Train.tscn" id="5_q23t5"]
-[ext_resource type="PackedScene" uid="uid://dmqwngcxc6b3i" path="res://map/Road_Gridmap/Light.tscn" id="6_7u7kj"]
+[ext_resource type="PackedScene" uid="uid://dmqwngcxc6b3i" path="res://Props/Light.tscn" id="6_7u7kj"]
 [ext_resource type="ArrayMesh" uid="uid://b8boyhvyo8vyn" path="res://models/kenney_city-kit-roads/Models/OBJ format/road_drivewayDouble.obj" id="8_jxiuo"]
 [ext_resource type="ArrayMesh" uid="uid://btr3cuimtou64" path="res://models/kenney_city-kit-suburban/Models/OBJ format/driveway_long.obj" id="8_lv4no"]
 [ext_resource type="ArrayMesh" uid="uid://dfp3y3enble7h" path="res://models/kenney_city-kit-suburban/Models/OBJ format/path_tilesLong.obj" id="8_ons3s"]
@@ -22,7 +22,7 @@
 [ext_resource type="ArrayMesh" uid="uid://cvox4fofse5pk" path="res://models/kenney_train-kit/Models/OBJ format/train-carriage-flatbed.obj" id="19_bg6w2"]
 [ext_resource type="ArrayMesh" uid="uid://bngsepjw2jlsu" path="res://models/kenney_city-kit-roads/Models/OBJ format/construction_barrier.obj" id="20_6ad4q"]
 [ext_resource type="ArrayMesh" uid="uid://c75kj8x1mgo1u" path="res://models/Forest/PUSHILIN_forest.obj" id="21_82eln"]
-[ext_resource type="PackedScene" uid="uid://c66tvpbfxp318" path="res://map/Road_Gridmap/Fence.tscn" id="23_870j2"]
+[ext_resource type="PackedScene" uid="uid://c66tvpbfxp318" path="res://Props/Fence.tscn" id="23_870j2"]
 
 [sub_resource type="MeshTexture" id="MeshTexture_gbh50"]
 

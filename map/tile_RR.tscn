@@ -11,7 +11,7 @@
 [ext_resource type="ArrayMesh" uid="uid://bnw5n15k211xi" path="res://models/kenney_city-kit-suburban/Models/OBJ format/house_type07.obj" id="9_rcse3"]
 [ext_resource type="ArrayMesh" uid="uid://bl11qeeypyalu" path="res://models/Tree/model.obj" id="10_trt33"]
 [ext_resource type="ArrayMesh" uid="uid://dfp3y3enble7h" path="res://models/kenney_city-kit-suburban/Models/OBJ format/path_tilesLong.obj" id="11_uarni"]
-[ext_resource type="PackedScene" uid="uid://c66tvpbfxp318" path="res://map/Road_Gridmap/Fence.tscn" id="12_p3r75"]
+[ext_resource type="PackedScene" uid="uid://c66tvpbfxp318" path="res://Props/Fence.tscn" id="12_p3r75"]
 [ext_resource type="Texture2D" uid="uid://b0ahsnh0h5gai" path="res://models/vehicules/GLB format/Textures/colormap.png" id="13_01dbd"]
 [ext_resource type="PackedScene" uid="uid://cbstps4ewcmxf" path="res://Props/Wind Tubine.tscn" id="14_hn117"]
 [ext_resource type="Texture2D" uid="uid://fi0or4h05jyr" path="res://models/City/building_E_0.png" id="14_p074s"]
@@ -19,7 +19,7 @@
 [ext_resource type="ArrayMesh" uid="uid://dpwni2fgw7vws" path="res://models/kenney_fantasy-town-kit/Models/OBJ format/tree.obj" id="16_mybvi"]
 [ext_resource type="ArrayMesh" uid="uid://c75kj8x1mgo1u" path="res://models/Forest/PUSHILIN_forest.obj" id="16_rin0d"]
 [ext_resource type="PackedScene" uid="uid://coqmehllxsk3q" path="res://models/Forest/Rocks.glb" id="17_qmf5m"]
-[ext_resource type="PackedScene" uid="uid://bdqm5ha5ygn1l" path="res://models/Forest/Stump.tscn" id="18_pokan"]
+[ext_resource type="PackedScene" uid="uid://bdqm5ha5ygn1l" path="res://Props/Stump.tscn" id="18_pokan"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_rht1c"]
 points = PackedVector3Array(0.18, 0, 0.2, 0.129961, 0.01, 0.2, -0.18, 0, 0.2, 0.18, 0, -0.2, 0.129961, 0.01, -0.2, -0.130031, 0.01, 0.2, -0.18, 0, -0.2, -0.130031, 0.01, -0.2)

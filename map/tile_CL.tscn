@@ -11,7 +11,7 @@
 [ext_resource type="ArrayMesh" uid="uid://cddxdu8loysvc" path="res://models/kenney_city-kit-suburban/Models/OBJ format/house_type02.obj" id="9_n1dm3"]
 [ext_resource type="ArrayMesh" uid="uid://dfp3y3enble7h" path="res://models/kenney_city-kit-suburban/Models/OBJ format/path_tilesLong.obj" id="10_rvrpg"]
 [ext_resource type="ArrayMesh" uid="uid://bl11qeeypyalu" path="res://models/Tree/model.obj" id="11_3y4p1"]
-[ext_resource type="PackedScene" uid="uid://c66tvpbfxp318" path="res://map/Road_Gridmap/Fence.tscn" id="11_hs4hm"]
+[ext_resource type="PackedScene" uid="uid://c66tvpbfxp318" path="res://Props/Fence.tscn" id="11_hs4hm"]
 [ext_resource type="ArrayMesh" uid="uid://b52cg7y6s1el6" path="res://models/kenney_city-kit-commercial/Models/OBJ format/small_buildingE.obj" id="12_1fytd"]
 [ext_resource type="ArrayMesh" uid="uid://c75kj8x1mgo1u" path="res://models/Forest/PUSHILIN_forest.obj" id="12_4ohqf"]
 [ext_resource type="ArrayMesh" uid="uid://dqpgfbajpuv34" path="res://models/kenney_city-kit-commercial/Models/OBJ format/small_buildingA.obj" id="13_fi1aw"]

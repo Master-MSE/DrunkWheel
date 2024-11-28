@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://p4ku3y2odn56"]
+[gd_scene load_steps=5 format=3 uid="uid://p4ku3y2odn56"]
 
 [ext_resource type="ArrayMesh" uid="uid://cchlxycbjrrr4" path="res://models/City/Bench.obj" id="1_kjmrq"]
+[ext_resource type="Script" path="res://code/collision_data.gd" id="1_qpyl7"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_5onmh"]
 
@@ -13,6 +14,9 @@ collision_layer = 2
 collision_mask = 3
 sleeping = true
 freeze = true
+script = ExtResource("1_qpyl7")
+object_name = "Bench"
+object_price = 100.0
 
 [node name="Bench" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.885349, -0.0852601, -0.457042, 0.0475299, 0.994489, -0.093448, 0.46249, 0.061011, 0.884523, 0, 0.299732, 0)

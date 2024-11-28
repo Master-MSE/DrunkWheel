@@ -1,7 +1,7 @@
 [gd_scene load_steps=46 format=3 uid="uid://brw3kmpqke41s"]
 
 [ext_resource type="ArrayMesh" uid="uid://b7h7m6coubn7j" path="res://models/kenney_city-kit-roads/Models/OBJ format/road_crossing.obj" id="2_helhd"]
-[ext_resource type="PackedScene" uid="uid://dmqwngcxc6b3i" path="res://map/Road_Gridmap/Light.tscn" id="3_g4efv"]
+[ext_resource type="PackedScene" uid="uid://dmqwngcxc6b3i" path="res://Props/Light.tscn" id="3_g4efv"]
 [ext_resource type="PackedScene" uid="uid://tr7stq5c0sgo" path="res://map/Road_Gridmap/RoadStraight.tscn" id="3_xoj22"]
 [ext_resource type="PackedScene" uid="uid://cggalvt8r3aoy" path="res://map/Road_Gridmap/Tile_Base.tscn" id="4_m5ebw"]
 [ext_resource type="PackedScene" uid="uid://iqmllwfdp4xd" path="res://map/Road_Gridmap/RoadCurvedWide.tscn" id="5_0tj71"]

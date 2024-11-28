@@ -13,7 +13,7 @@
 [ext_resource type="ArrayMesh" uid="uid://cnk3a7al3k2ft" path="res://models/kenney_city-kit-commercial/Models/OBJ format/large_buildingF.obj" id="11_k6l1a"]
 [ext_resource type="ArrayMesh" uid="uid://bngsepjw2jlsu" path="res://models/kenney_city-kit-roads/Models/OBJ format/construction_barrier.obj" id="12_yykb6"]
 [ext_resource type="ArrayMesh" uid="uid://con6xp7vt1yi5" path="res://models/kenney_city-kit-commercial/Models/OBJ format/large_buildingD.obj" id="13_v2wln"]
-[ext_resource type="PackedScene" uid="uid://bavr3vwsbabao" path="res://models/Forest/Bridge.tscn" id="14_jlrp4"]
+[ext_resource type="PackedScene" uid="uid://bavr3vwsbabao" path="res://Props/Bridge.tscn" id="14_jlrp4"]
 [ext_resource type="ArrayMesh" uid="uid://cvaprf6sd2fim" path="res://models/kenney_city-kit-roads/Models/OBJ format/road_straight.obj" id="15_56sfo"]
 [ext_resource type="ArrayMesh" uid="uid://gojt1qfjjj44" path="res://models/kenney_city-kit-roads/Models/OBJ format/bridge_pillarWide.obj" id="16_elnvw"]
 [ext_resource type="ArrayMesh" uid="uid://ulcu3yupl5yc" path="res://models/kenney_city-kit-roads/Models/OBJ format/road_straightBarrier.obj" id="17_fukt7"]

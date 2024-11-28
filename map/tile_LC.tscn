@@ -13,8 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://dfg8cp6cb1mdf" path="res://map/Road_Gridmap/RoadStraight3WayJunction.tscn" id="11_gymbv"]
 [ext_resource type="PackedScene" uid="uid://dcipht7gx3w4o" path="res://models/Forest/Mushroom.glb" id="11_say1x"]
 [ext_resource type="PackedScene" uid="uid://coqmehllxsk3q" path="res://models/Forest/Rocks.glb" id="12_xe6td"]
-[ext_resource type="PackedScene" uid="uid://bdqm5ha5ygn1l" path="res://models/Forest/Stump.tscn" id="14_xiksy"]
-[ext_resource type="PackedScene" uid="uid://b74q8wfhnuveb" path="res://models/Forest/Log.tscn" id="15_uogph"]
+[ext_resource type="PackedScene" uid="uid://bdqm5ha5ygn1l" path="res://Props/Stump.tscn" id="14_xiksy"]
+[ext_resource type="PackedScene" uid="uid://b74q8wfhnuveb" path="res://Props/Log.tscn" id="15_uogph"]
 [ext_resource type="ArrayMesh" uid="uid://s6yhcwb6qr2b" path="res://models/Forest/TreeBranch_429.obj" id="16_q4dvx"]
 [ext_resource type="ArrayMesh" uid="uid://cb4ch271um6s7" path="res://models/Forest/lodge.obj" id="16_uej6b"]
 [ext_resource type="Texture2D" uid="uid://dfflu8cpjsmtd" path="res://models/Forest/Cabin Shed_Diffuse_palette_2.jpg" id="17_pdh68"]
@@ -82,7 +82,6 @@ data = PackedVector3Array(-0.0873, -0.0316, 0.2544, -0.0906, -0.0441, 0.2544, -0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i4jxl"]
 resource_name = "Diffuse_color"
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("17_pdh68")
 metallic = 0.4
 roughness = 0.272166
