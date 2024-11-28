@@ -15,7 +15,7 @@
 [ext_resource type="ArrayMesh" uid="uid://mabetntcyayl" path="res://models/kenney_city-kit-suburban/Models/OBJ format/tree_small.obj" id="11_mbtc0"]
 [ext_resource type="ArrayMesh" uid="uid://dko5ijw711naj" path="res://models/kenney_train-kit/Models/OBJ format/tunnel.obj" id="11_nffv5"]
 [ext_resource type="Material" uid="uid://co5up3xnsi777" path="res://resources/Game Data/Misc/light_material.tres" id="12_1wh6c"]
-[ext_resource type="Script" path="res://map/mesh_instance_3d_2.gd" id="13_6neo2"]
+[ext_resource type="Script" path="res://code/EndTriggerShape.gd" id="13_2fere"]
 [ext_resource type="ArrayMesh" uid="uid://dfb24wvxvkd1n" path="res://models/kenney_city-kit-suburban/Models/OBJ format/house_type04.obj" id="14_8us6b"]
 [ext_resource type="Texture2D" uid="uid://b0ahsnh0h5gai" path="res://models/vehicules/GLB format/Textures/colormap.png" id="15_lj2sr"]
 [ext_resource type="ArrayMesh" uid="uid://8qt1gy5w40qy" path="res://models/kenney_city-kit-suburban/Models/OBJ format/house_type16.obj" id="16_4gkvt"]
@@ -5387,15 +5387,15 @@ skeleton = NodePath("../..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.97964, 0, -8.94444)
 collision_layer = 8
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="EndTrigger"]
+[node name="EndTriggerShpae" type="CollisionShape3D" parent="EndTrigger"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0426073, 0.351257)
 shape = SubResource("BoxShape3D_h2kvk")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="EndTrigger"]
+[node name="EndTriggerShapeMesh" type="MeshInstance3D" parent="EndTrigger"]
 transform = Transform3D(8, 0, 0, 0, 4, 0, 0, 0, 32, 0.00820541, 0.273571, 0.30119)
 mesh = SubResource("BoxMesh_4at82")
 skeleton = NodePath("../../light-front-left")
-script = ExtResource("13_6neo2")
+script = ExtResource("13_2fere")
 
 [node name="Decorative" type="StaticBody3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -9.24518, 2.98023e-07, -0.285673)
@@ -6043,5 +6043,5 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 
 mesh = SubResource("ArrayMesh_i6fp8")
 skeleton = NodePath("")
 
-[connection signal="timeout" from="Timer" to="EndTrigger/MeshInstance3D2" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="EndTrigger/EndTriggerShapeMesh" method="_on_timer_timeout"]
 [connection signal="body_entered" from="van/van" to="van/van" method="_on_body_entered"]

@@ -21,7 +21,7 @@
 [ext_resource type="ArrayMesh" uid="uid://bl11qeeypyalu" path="res://models/Tree/model.obj" id="17_478eg"]
 [ext_resource type="ArrayMesh" uid="uid://dpwni2fgw7vws" path="res://models/kenney_fantasy-town-kit/Models/OBJ format/tree.obj" id="18_7o8ch"]
 [ext_resource type="Material" uid="uid://co5up3xnsi777" path="res://resources/Game Data/Misc/light_material.tres" id="21_n5ak3"]
-[ext_resource type="Script" path="res://map/mesh_instance_3d_2.gd" id="22_qxdi8"]
+[ext_resource type="Script" path="res://code/EndTriggerShape.gd" id="22_bd0hq"]
 
 [sub_resource type="MeshTexture" id="MeshTexture_gbh50"]
 
@@ -5778,19 +5778,19 @@ shape = SubResource("ConcavePolygonShape3D_e0xci")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.97964, 0, 14.1168)
 collision_layer = 8
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="EndTrigger"]
+[node name="EndTriggerShape" type="CollisionShape3D" parent="EndTrigger"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0426073, 0.351257)
 shape = SubResource("BoxShape3D_d6xgi")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="EndTrigger"]
+[node name="EndTriggerShapeMesh" type="MeshInstance3D" parent="EndTrigger"]
 transform = Transform3D(8, 0, 0, 0, 4, 0, 0, 0, 32, 0.00820541, 0.273571, 0.30119)
 mesh = SubResource("BoxMesh_k1wxa")
 skeleton = NodePath("../../light-front-left")
-script = ExtResource("22_qxdi8")
+script = ExtResource("22_bd0hq")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
 autostart = true
 
 [connection signal="body_entered" from="Decorative/tractor/tractor" to="Decorative/tractor/tractor" method="_on_body_entered"]
-[connection signal="timeout" from="Timer" to="EndTrigger/MeshInstance3D2" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="EndTrigger/EndTriggerShapeMesh" method="_on_timer_timeout"]
