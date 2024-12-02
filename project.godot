@@ -62,9 +62,11 @@ left={
 [layer_names]
 
 3d_physics/layer_1="Car"
+3d_navigation/layer_1="PNJ"
 3d_physics/layer_2="MovableObstacle"
 3d_physics/layer_3="Pickup"
 3d_physics/layer_4="End"
+3d_physics/layer_5="PNJ"
 
 [rendering]
 
