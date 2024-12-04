@@ -14,7 +14,9 @@ const MAX_ENGINE_FORCE = 2000.0
 const MAX_BRAKE_FORCE = 35.0
 const MAX_STEERING_ANGLE = 0.7
 const STEERING_SPEED = 0.04
-const DELAY_FACTOR = 1
+const DELAY_DELAY_START = 3.0
+const DELAY_MAX = 0.5
+const DELAY_FACTOR = DELAY_MAX/(10.0-DELAY_DELAY_START)
 
 var steering_angle = 0.0
 var delay_duration =0.0
@@ -22,7 +24,8 @@ var parent
 var input_queue = []
 var time = 0.0
 var max_delay=2.0
-var crash_scene = preload("res://animation_crash.tscn")
+var crash_animation = preload("res://animation_crash.tscn")
+var dink_animation = preload("res://animation_drink.tscn")
 
 func steering(steering_input):
 	# If there's steering input, adjust the steering angle
@@ -30,7 +33,7 @@ func steering(steering_input):
 		steering_angle += (STEERING_SPEED * steering_input)
 		
 		# Clamp the steering angle within the max limits using clampf
-		steering_angle = clampf(steering_angle, -MAX_STEERING_ANGLE, MAX_STEERING_ANGLE)
+		steering_angle = clampf(steering_angle, - MAX_STEERING_ANGLE, MAX_STEERING_ANGLE)
 
 		# Apply the clamped steering angle to the wheels
 		$"wheel-front-left".steering = steering_angle
@@ -87,7 +90,7 @@ func engine(action):
 
 func _physics_process(delta):
 	time+=delta
-	delay_duration=parent.tauxalcool*DELAY_FACTOR
+	delay_duration=clamp((parent.tauxalcool-DELAY_DELAY_START)*DELAY_FACTOR, 0.0, DELAY_MAX)
 	colect_input(time)
 	if Game.game_state != Game.GameStates.PLAYING:
 		brake = MAX_BRAKE_FORCE
@@ -112,6 +115,7 @@ func _on_body_entered(body: Node) -> void:
 	elif body.collision_layer == 4:
 		body.queue_free()
 		alcohol_collected.emit()
+		spawn_drink_effect()
 	
 	elif body.collision_layer == 8:
 		end_reached.emit()
@@ -127,6 +131,8 @@ func colect_input(time)->void:
 		action.append("forward")
 	if Input.is_action_pressed("reverse"):
 		action.append("reverse")
+	if Input.is_action_just_pressed("alcool_drink"):
+		alcohol_collected.emit()
 	input_queue.append([action,time])
 		
 func applie_input()->void:
@@ -139,11 +145,9 @@ func applie_input()->void:
 			action=inpute[0]
 			if inpute[1]<time-max_delay:
 				delete+=1;
-				
 	for i in range(delete):
 		input_queue.remove_at(0)
 				
-	
 	var steering_input = 0.0
 
 	if action.has("right"):
@@ -164,8 +168,8 @@ func applie_input()->void:
 			
 func spawn_crash_effect():
 	# add effect
-	var effect = crash_scene.instantiate()
-	get_parent().add_child(effect)  
+	var effect = crash_animation.instantiate()
+	add_child(effect)  
 
 	# Calcule rotation
 	var direction_avant = transform.basis.x  
@@ -174,5 +178,17 @@ func spawn_crash_effect():
 	avant_position.y+=2.0
 	effect.global_transform.origin = avant_position  
 	effect.rotation_degrees = Vector3(-20.0,180.0+rotation_degrees.y,0.0)
+	
+func spawn_drink_effect():
+	# add effect
+	var effect = dink_animation.instantiate()
+	add_child(effect)  
 
+	# Calcule rotation
+	var direction_avant = transform.basis.x  
+
+	var avant_position = global_transform.origin + direction_avant * 2.5
+	avant_position.y+=2.0
+	effect.global_transform.origin = avant_position  
+	effect.rotation_degrees = Vector3(-20.0,180.0+rotation_degrees.y,0.0)
 	 

@@ -20,3 +20,10 @@ offset_right = 211.0
 offset_bottom = 59.0
 text = "Objects hit = 0"
 metadata/_edit_use_anchors_ = true
+
+[node name="Taux" type="Label" parent="."]
+offset_left = 99.0
+offset_top = 62.0
+offset_right = 163.0
+offset_bottom = 85.0
+text = "Taux = 0"

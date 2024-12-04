@@ -20,23 +20,28 @@ enum GameStates {
 
 @export var endScreenScene: PackedScene
 
-var current_tile_ends = Vector2(1,1)
-var current_tile_pos = Vector3(0,0,0)
+const pik_time_alcool=10.0
+const alcool_absorbtion :=0.025
+const fac_time =1
+const tile_length = 30
+const map_length = 2
+
+static var game_state: GameStates = GameStates.WAITING
 static var alcohol_collected := 0
 static var objects_hit := 0
+
+var current_tile_ends = Vector2(1,1)
+var current_tile_pos = Vector3(0,0,0)
 var drinks = []
 class drink:
 	var alcool=0.0
 	var time_cons=0.0
-var alcool_absorbtion :=0.4
+	var abs_actuel=0.0
 var tauxalcool := 0.0
-var pik_time_alcool=5.0
 var time :=0.0
-static var game_state: GameStates = GameStates.WAITING
 
-const fac_time =1
-const tile_length = 30
-const map_length = 2
+
+
 
 func choose_next_tile(current: Vector2) -> Vector2:
 	var next_end = randi()%3
@@ -54,6 +59,7 @@ func _on_alcohol_collected() -> void:
 	var drink_o = drink.new()
 	drink_o.alcool=1.0
 	drink_o.time_cons=time
+	drink_o.abs_actuel=0.0
 	drinks.append(drink_o)
 	hud.update_alcohol(alcohol_collected)
 	sd_drink.play()
@@ -70,6 +76,8 @@ func _ready() -> void:
 	Car.get_child(0).end_reached.connect(_on_end_reached)
 	Car.get_child(0).object_hit.connect(_on_object_hit)
 	Engine.time_scale = 1
+	update_shader_screen_size()
+	get_tree().connect("screen_resized",Callable(self, "_on_screen_resized"))
 	game_state = GameStates.WAITING 
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -82,8 +90,9 @@ func _process(delta: float) -> void:
 				sd_end1.stop()
 				sd_end2.stop()
 		GameStates.PLAYING:
+			hud.update_taux(tauxalcool)
 			time+=delta
-			cal_taux_alcool()
+			cal_taux_alcool(delta)
 			if !sd_game.playing:
 				sd_menu.stop()
 				sd_game.play()
@@ -106,20 +115,22 @@ func _on_end_reached() -> void:
 	new_child.restart_game.connect(_on_restart_game)
 	sd_end1.play()
 	
-func cal_taux_alcool():
+func cal_taux_alcool(delta:float):
 	tauxalcool=0.0
 	var new_drinks=[]
 	for drink_o in drinks:
 		var one_drink_taux=0.0
 		var time_diff=time-drink_o.time_cons
 		if (time_diff<pik_time_alcool):
-			one_drink_taux=drink_o.alcool * (time_diff / pik_time_alcool)
-			tauxalcool+=one_drink_taux
+			drink_o.abs_actuel=drink_o.alcool * (time_diff / pik_time_alcool)
+			#one_drink_taux=drink_o.alcool * (time_diff / pik_time_alcool)
+			tauxalcool+=drink_o.abs_actuel
 			new_drinks.append(drink_o)
 		else:
-			one_drink_taux=drink_o.alcool -alcool_absorbtion*((time_diff / pik_time_alcool)-1.0)
-			if (one_drink_taux>0):
-				tauxalcool+=one_drink_taux
+			drink_o.abs_actuel= drink_o.abs_actuel -alcool_absorbtion*delta/drinks.size()
+			#one_drink_taux=drink_o.alcool -alcool_absorbtion*((time_diff / pik_time_alcool)-1.0)/drinks.size()
+			if (drink_o.abs_actuel>0):
+				tauxalcool+=drink_o.abs_actuel
 				new_drinks.append(drink_o)
 	drinks=new_drinks		
 	RenderingServer.global_shader_parameter_set("tauxalcool",tauxalcool);
@@ -128,7 +139,7 @@ func cal_taux_alcool():
 func update_game_sound(tauxalcool):
 	var audio_game=AudioServer.get_bus_index("game_sound")
 	var phaser_effect  =AudioServer.get_bus_effect(audio_game,0)
-	var feedback_val=clamp(tauxalcool*2.0, 0.0, 0.9);
+	var feedback_val=clamp(tauxalcool*0.09, 0.0, 0.9);
 	if feedback_val <= 0.1 :
 		AudioServer.set_bus_effect_enabled(audio_game,0,false)
 	else :
@@ -142,8 +153,15 @@ func _on_restart_game() -> void:
 	game_state = GameStates.WAITING
 	alcohol_collected = 0
 	objects_hit = 0
-	alcool_absorbtion =0.05
 	tauxalcool = 0.0
 	time =0.0
 	Car.get_child(0).hitted_objects.clear()
 	get_tree().reload_current_scene()
+	
+func _on_screen_resized():
+	# Met à jour la taille de l'écran lorsque la fenêtre est redimensionnée
+	update_shader_screen_size()
+	
+func update_shader_screen_size():
+	var screen_size = get_viewport().get_size()
+	RenderingServer.global_shader_parameter_set("screen_size",screen_size);

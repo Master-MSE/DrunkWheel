@@ -13,7 +13,7 @@ func _ready() -> void:
 		sprite1.visible=false
 		sprite2.visible=true
 		
-	$AnimationPlayer_crash.play("crash")
+	$AnimationPlayer_drink.play("crash")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -21,5 +21,5 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_animation_player_crash_animation_finished(anim_name: StringName) -> void:
+func _on_animation_player_drink_animation_finished(anim_name: StringName) -> void:
 	queue_free()
