@@ -177,7 +177,7 @@ func spawn_crash_effect():
 	var avant_position = global_transform.origin + direction_avant * 2.5
 	avant_position.y+=2.0
 	effect.global_transform.origin = avant_position  
-	effect.rotation_degrees = Vector3(-20.0,180.0+rotation_degrees.y,0.0)
+	effect.rotation_degrees = Vector3(-20.0,180.0,0.0)
 	
 func spawn_drink_effect():
 	# add effect
@@ -190,5 +190,5 @@ func spawn_drink_effect():
 	var avant_position = global_transform.origin + direction_avant * 2.5
 	avant_position.y+=2.0
 	effect.global_transform.origin = avant_position  
-	effect.rotation_degrees = Vector3(-20.0,180.0+rotation_degrees.y,0.0)
+	effect.rotation_degrees = Vector3(-20.0,180,0.0)
 	 

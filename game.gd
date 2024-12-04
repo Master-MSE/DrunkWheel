@@ -10,6 +10,8 @@ enum GameStates {
 @onready var map_generator: MapGenerator = %MapGenerator
 @onready var Car: Node3D = $car
 @onready var hud: CanvasLayer = $Hud
+@onready var timer: Timer = $aclool_timer
+@onready var control: Control = $StartMenu
 
 @onready var sd_game:AudioStreamPlayer = $sound/game_sound
 @onready var sd_drink:AudioStreamPlayer = $sound/drink_sound
@@ -17,6 +19,26 @@ enum GameStates {
 @onready var sd_menu:AudioStreamPlayer = $sound/menu_sound
 @onready var sd_end1:AudioStreamPlayer = $sound/end1_sound
 @onready var sd_end2:AudioStreamPlayer = $sound/end2_sound
+
+@onready var sd_loozer1:AudioStreamPlayer = $sound/lozzer1_sound
+@onready var sd_loozer2:AudioStreamPlayer = $sound/lozzer2_sound
+@onready var sd_man1:AudioStreamPlayer = $sound/man1_sound
+@onready var sd_man2:AudioStreamPlayer = $sound/man2_sound
+@onready var sd_coolman1:AudioStreamPlayer = $sound/coolman1_sound
+@onready var sd_coolman2:AudioStreamPlayer = $sound/coolman2_sound
+@onready var sd_superman1:AudioStreamPlayer = $sound/superman1_sound
+@onready var sd_superman2:AudioStreamPlayer = $sound/superman2_sound
+@onready var sd_god1:AudioStreamPlayer = $sound/god1_sound
+@onready var sd_god2:AudioStreamPlayer = $sound/god2_sound
+
+
+
+
+
+
+
+
+
 
 @export var endScreenScene: PackedScene
 
@@ -72,6 +94,7 @@ func _on_object_hit() -> void:
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	map_generator.generate_map(map_length)
+	control.start.connect(sound_finished)
 	Car.get_child(0).alcohol_collected.connect(_on_alcohol_collected)
 	Car.get_child(0).end_reached.connect(_on_end_reached)
 	Car.get_child(0).object_hit.connect(_on_object_hit)
@@ -84,12 +107,14 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	match (game_state):
 		GameStates.WAITING:
+			hud.visible=false
 			if !sd_menu.playing:
 				sd_menu.play()
 				sd_game.stop()
 				sd_end1.stop()
 				sd_end2.stop()
 		GameStates.PLAYING:
+			hud.visible=true
 			hud.update_taux(tauxalcool)
 			time+=delta
 			cal_taux_alcool(delta)
@@ -99,6 +124,7 @@ func _process(delta: float) -> void:
 				sd_end1.stop()
 				sd_end2.stop()
 		GameStates.FINISHED:
+			hud.visible=false
 			sd_menu.stop()
 			sd_game.stop()
 			if !sd_end1.playing:
@@ -139,7 +165,9 @@ func cal_taux_alcool(delta:float):
 func update_game_sound(tauxalcool):
 	var audio_game=AudioServer.get_bus_index("game_sound")
 	var phaser_effect  =AudioServer.get_bus_effect(audio_game,0)
+	var panner_effect  =AudioServer.get_bus_effect(audio_game,1)
 	var feedback_val=clamp(tauxalcool*0.09, 0.0, 0.9);
+	panner_effect.pan = 	feedback_val*sin(time*2.0/5.0*PI)
 	if feedback_val <= 0.1 :
 		AudioServer.set_bus_effect_enabled(audio_game,0,false)
 	else :
@@ -165,3 +193,45 @@ func _on_screen_resized():
 func update_shader_screen_size():
 	var screen_size = get_viewport().get_size()
 	RenderingServer.global_shader_parameter_set("screen_size",screen_size);
+	
+	
+func play_taux_alcool_sound():
+	if tauxalcool<2.0:
+		if randi()%2==1:
+			sd_loozer1.play()
+		else:
+			sd_loozer2.play()
+	elif  tauxalcool<4.0:
+		if randi()%2==1:
+			sd_man1.play()
+		else:
+			sd_man2.play()
+	elif tauxalcool<7.0:
+		if randi()%2==1:
+			sd_coolman1.play()
+		else:
+			sd_coolman2.play()
+	elif tauxalcool<10.0:
+		if randi()%2==1:
+			sd_superman1.play()
+		else:
+			sd_superman2.play()
+	else:
+		if randi()%2==1:
+			sd_god1.play()
+		else:
+			sd_god2.play()
+
+
+func _on_aclool_timer_timeout() -> void:
+	if game_state == GameStates.PLAYING:
+		play_taux_alcool_sound()
+
+
+
+
+
+func sound_finished() -> void:
+	var wait_time=randf()*10.0+5.0
+	timer.wait_time=wait_time
+	timer.start()
