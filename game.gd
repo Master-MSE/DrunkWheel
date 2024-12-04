@@ -33,20 +33,13 @@ enum GameStates {
 
 
 
-
-
-
-
-
-
-
 @export var endScreenScene: PackedScene
 
 const pik_time_alcool=10.0
 const alcool_absorbtion :=0.025
 const fac_time =1
 const tile_length = 30
-const map_length = 2
+const map_length = 10
 
 static var game_state: GameStates = GameStates.WAITING
 static var alcohol_collected := 0
@@ -186,8 +179,8 @@ func _on_restart_game() -> void:
 	Car.get_child(0).hitted_objects.clear()
 	get_tree().reload_current_scene()
 	
+		
 func _on_screen_resized():
-	# Met à jour la taille de l'écran lorsque la fenêtre est redimensionnée
 	update_shader_screen_size()
 	
 func update_shader_screen_size():

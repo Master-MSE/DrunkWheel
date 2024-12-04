@@ -269,6 +269,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="car/Camera3D/CanvasLayer/ColorRect"]
+visible = false
 material = SubResource("ShaderMaterial_eqaav")
 layout_mode = 1
 anchors_preset = 15
@@ -287,6 +288,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ColorRect2" type="ColorRect" parent="car/Camera3D/CanvasLayer/ColorRect"]
+visible = false
 material = SubResource("ShaderMaterial_it6w3")
 layout_mode = 1
 anchors_preset = 15
