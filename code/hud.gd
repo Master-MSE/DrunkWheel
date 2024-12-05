@@ -1,6 +1,13 @@
 extends CanvasLayer
 
 @onready var alcoolbar: ColorRect = $ColorRect
+@onready var alcoolbar_bot: Sprite2D = $Sprite2D
+@onready var alcoolbar_top: Sprite2D = $Sprite2D2
+
+
+var base_screen_size = Vector2(1152,642)
+var base_position_color
+var base_size_color
 
 func update_alcohol(alcohol: int) -> void:
 	var alcohol_label = "Alcohol collected = {alcohol}"
@@ -11,6 +18,12 @@ func update_taux(taux: float) -> void:
 	$Taux.text = alcohol_label.format({"taux": str(taux)})
 	alcoolbar.update_alcol_bar(taux)
 	
+func updadte_affichage(new_screen_size:Vector2)->void:
+	var scaling= new_screen_size/base_screen_size
+	alcoolbar_bot.scale=scaling*0.3
+	alcoolbar_top.scale=scaling*0.3
+	alcoolbar.scale=scaling
+	alcoolbar.position=base_position_color*scaling
 
 func update_obects(objects: int) -> void:
 	var objects_label = "Objects hit = {objects}"
@@ -18,4 +31,5 @@ func update_obects(objects: int) -> void:
 	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	base_position_color = alcoolbar.position
+	base_size_color = alcoolbar.size

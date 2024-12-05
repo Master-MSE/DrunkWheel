@@ -93,7 +93,7 @@ func _ready() -> void:
 	Car.get_child(0).object_hit.connect(_on_object_hit)
 	Engine.time_scale = 1
 	update_shader_screen_size()
-	get_tree().connect("screen_resized",Callable(self, "_on_screen_resized"))
+	get_tree().get_root().size_changed.connect(update_shader_screen_size)
 	game_state = GameStates.WAITING 
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -179,12 +179,9 @@ func _on_restart_game() -> void:
 	Car.get_child(0).hitted_objects.clear()
 	get_tree().reload_current_scene()
 	
-		
-func _on_screen_resized():
-	update_shader_screen_size()
-	
 func update_shader_screen_size():
 	var screen_size = get_viewport().get_size()
+	hud.updadte_affichage(screen_size)
 	RenderingServer.global_shader_parameter_set("screen_size",screen_size);
 	
 	

@@ -8,25 +8,22 @@ void vertex() {
 }
 
 void fragment() {
-	
-    float screen_ratio = screen_size.x / screen_size.y; 
-    vec2 normalized_uv = vec2(SCREEN_UV.x * screen_ratio, SCREEN_UV.y);
-	
+
 	float time_s = (TIME*2.0);
 	float delay_taux_vague=tauxalcool-1.0;
-	float amp_vague=clamp(delay_taux_vague*0.002,0.0,0.01);
+	float amp_vague=clamp(delay_taux_vague*0.004,0.0,0.02);
 	float fre_vague=10.0;
 	float vague = sin(SCREEN_UV.y*fre_vague+time_s+PI/2.0)*amp_vague;
-	
+
 	float delay_taux_diffraction=tauxalcool-4.0;
 	float amp_diffraction=clamp(delay_taux_diffraction*0.015,0.0,0.08);
 	float diffraction=amp_diffraction*sin(time_s/2.0);
-	
+
 	vec2 car_position = vec2(0.5,0.8);
 	float delay_shado = clamp((tauxalcool-74.0/11.0)*11.0/6.0,-20.0,6.0);//t4->-5 tt10 ->6
 	float attenuation_shado =  0.09;
 	float fade_radius =delay_shado*attenuation_shado;
-	
+
 	switch (index){
 		case 1:
 			vec4 first_chanel = texture(SCREEN_TEXTURE,vec2(SCREEN_UV.x+vague+diffraction,SCREEN_UV.y));
@@ -44,8 +41,15 @@ void fragment() {
 			float alpha = clamp(pow(distance_to_point,2.0)+fade_radius, 0.0, 1.0);
 			COLOR = vec4(0,0,0,alpha);
 			break;
-		default:
+		case 4:
 			vec4 first_chanel = texture(SCREEN_TEXTURE,vec2(SCREEN_UV.x+vague,SCREEN_UV.y));
+			COLOR = vec4(first_chanel.r,first_chanel.g,first_chanel.b,1);
+			break;
+		case 5:
+			COLOR = vec4(SCREEN_UV.x-0.0,0,0,1);
+			break;
+		default:
+			vec4 first_chanel = texture(SCREEN_TEXTURE,vec2(SCREEN_UV.x,SCREEN_UV.y));
 			COLOR = vec4(first_chanel.r,first_chanel.g,first_chanel.b,1);
 			break;
 	}

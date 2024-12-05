@@ -31,7 +31,7 @@ void fragment() {
 	vec3 target_color = hsv_to_rgb(hue, 1.0, 1.0);
     // Appliquer la transition
     COLOR = vec4(target_color * base_color, COLOR.a);
-	
+
 }
 
 

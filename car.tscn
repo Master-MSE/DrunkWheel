@@ -126,19 +126,19 @@ size = Vector3(0.275, 0, 0.145)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bg0hp"]
 shader = ExtResource("4_m1pfr")
-shader_parameter/index = null
+shader_parameter/index = 4
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_eqaav"]
 shader = ExtResource("4_m1pfr")
 shader_parameter/index = 1
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_gdevn"]
-shader = ExtResource("4_m1pfr")
-shader_parameter/index = 3
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_it6w3"]
 shader = ExtResource("4_m1pfr")
 shader_parameter/index = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gdevn"]
+shader = ExtResource("4_m1pfr")
+shader_parameter/index = 3
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_60mtu"]
 albedo_color = Color(1, 0.121569, 0, 1)
@@ -268,38 +268,24 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="car/Camera3D/CanvasLayer/ColorRect"]
-visible = false
+[node name="ColorRect2" type="ColorRect" parent="car/Camera3D/CanvasLayer"]
 material = SubResource("ShaderMaterial_eqaav")
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect3" type="ColorRect" parent="car/Camera3D/CanvasLayer/ColorRect/ColorRect"]
-material = SubResource("ShaderMaterial_gdevn")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect2" type="ColorRect" parent="car/Camera3D/CanvasLayer/ColorRect"]
-visible = false
+[node name="ColorRect3" type="ColorRect" parent="car/Camera3D/CanvasLayer"]
 material = SubResource("ShaderMaterial_it6w3")
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect3" type="ColorRect" parent="car/Camera3D/CanvasLayer/ColorRect/ColorRect2"]
+[node name="ColorRect4" type="ColorRect" parent="car/Camera3D/CanvasLayer"]
 material = SubResource("ShaderMaterial_gdevn")
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

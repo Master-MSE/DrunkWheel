@@ -36,10 +36,18 @@ offset_bottom = 85.0
 text = "Taux = 0"
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = 1090.0
-offset_top = 443.0
-offset_right = 1110.0
-offset_bottom = 443.0
+layout_direction = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 513.0
+offset_top = 118.5
+offset_right = 531.0
+offset_bottom = 118.5
+grow_horizontal = 2
+grow_vertical = 2
 rotation = 3.14159
 color = Color(0, 0, 1, 1)
 script = ExtResource("2_is3hs")
@@ -47,12 +55,10 @@ script = ExtResource("2_is3hs")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_ctc0y")
-centered = false
-offset = Vector2(3200, 400)
+offset = Vector2(3450, 1020)
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_fmgt3")
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("3_d5u02")
-centered = false
-offset = Vector2(3200, 400)
+offset = Vector2(3450, 1020)
