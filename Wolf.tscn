@@ -9788,7 +9788,7 @@ size = Vector3(0.5, 0.8, 1.6)
 
 [node name="Wolf" type="CharacterBody3D" groups=["agents"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.110101, 0)
-collision_layer = 16
+collision_layer = 2
 script = ExtResource("1_7jdjq")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]

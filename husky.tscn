@@ -9467,7 +9467,7 @@ size = Vector3(0.5, 0.6, 1)
 
 [node name="Husky" type="CharacterBody3D" groups=["agents"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.110101, 0)
-collision_layer = 16
+collision_layer = 2
 script = ExtResource("1_y318j")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
