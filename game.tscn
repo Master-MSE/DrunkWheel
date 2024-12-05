@@ -88,11 +88,11 @@ bus = &"menu_sound"
 stream = ExtResource("26_p0gd3")
 bus = &"menu_sound"
 
-[node name="lozzer1_sound" type="AudioStreamPlayer" parent="sound"]
+[node name="loser1_sound" type="AudioStreamPlayer" parent="sound"]
 stream = ExtResource("27_jn2p1")
 bus = &"voix_sound"
 
-[node name="lozzer2_sound" type="AudioStreamPlayer" parent="sound"]
+[node name="loser2_sound" type="AudioStreamPlayer" parent="sound"]
 stream = ExtResource("28_y6ydc")
 bus = &"voix_sound"
 
@@ -129,8 +129,8 @@ stream = ExtResource("36_bha3k")
 bus = &"voix_sound"
 
 [connection signal="timeout" from="aclool_timer" to="." method="_on_aclool_timer_timeout"]
-[connection signal="finished" from="sound/lozzer1_sound" to="." method="sound_finished"]
-[connection signal="finished" from="sound/lozzer2_sound" to="." method="sound_finished"]
+[connection signal="finished" from="sound/loser1_sound" to="." method="sound_finished"]
+[connection signal="finished" from="sound/loser2_sound" to="." method="sound_finished"]
 [connection signal="finished" from="sound/man1_sound" to="." method="sound_finished"]
 [connection signal="finished" from="sound/man2_sound" to="." method="sound_finished"]
 [connection signal="finished" from="sound/coolman1_sound" to="." method="sound_finished"]

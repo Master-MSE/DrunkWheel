@@ -20,8 +20,8 @@ enum GameStates {
 @onready var sd_end1:AudioStreamPlayer = $sound/end1_sound
 @onready var sd_end2:AudioStreamPlayer = $sound/end2_sound
 
-@onready var sd_loozer1:AudioStreamPlayer = $sound/lozzer1_sound
-@onready var sd_loozer2:AudioStreamPlayer = $sound/lozzer2_sound
+@onready var sd_loser1:AudioStreamPlayer = $sound/loser1_sound
+@onready var sd_loser2:AudioStreamPlayer = $sound/loser2_sound
 @onready var sd_man1:AudioStreamPlayer = $sound/man1_sound
 @onready var sd_man2:AudioStreamPlayer = $sound/man2_sound
 @onready var sd_coolman1:AudioStreamPlayer = $sound/coolman1_sound
@@ -39,7 +39,7 @@ const pik_time_alcool=10.0
 const alcool_absorbtion :=0.025
 const fac_time =1
 const tile_length = 30
-const map_length = 10
+const map_length = 1
 
 static var game_state: GameStates = GameStates.WAITING
 static var alcohol_collected := 0
@@ -188,9 +188,9 @@ func update_shader_screen_size():
 func play_taux_alcool_sound():
 	if tauxalcool<2.0:
 		if randi()%2==1:
-			sd_loozer1.play()
+			sd_loser1.play()
 		else:
-			sd_loozer2.play()
+			sd_loser2.play()
 	elif  tauxalcool<4.0:
 		if randi()%2==1:
 			sd_man1.play()
