@@ -3066,7 +3066,7 @@ _data = {
 "HumanArmature|Man_Walk": SubResource("Animation_52xhw")
 }
 
-[node name="Man_1" type="CharacterBody3D" groups=["agents"]]
+[node name="Man1" type="CharacterBody3D" groups=["agents"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.110101, 0)
 collision_layer = 16
 script = ExtResource("1_1fmun")
