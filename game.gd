@@ -103,6 +103,7 @@ func _on_end_reached() -> void:
 	new_child.restart_game.connect(_on_restart_game)
 	
 	print(CollisionHandler.registered_collisions)
+	print(CollisionHandler.get_total_price())
 	
 func cal_taux_alcool():
 	tauxalcool=0.0
