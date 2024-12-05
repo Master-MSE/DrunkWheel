@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://43xbepwvlpm5"]
+[gd_scene load_steps=26 format=4 uid="uid://43xbepwvlpm5"]
 
 [ext_resource type="Script" path="res://code/man_2.gd" id="1_wj1he"]
 
@@ -3131,6 +3131,9 @@ _data = {
 "HumanArmature|Man_Walk": SubResource("Animation_kp2ix")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ba8dx"]
+size = Vector3(0.3, 1.3, 0.3)
+
 [node name="Man2" type="CharacterBody3D" groups=["agents"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.110101, 0)
 collision_layer = 16
@@ -3454,3 +3457,7 @@ libraries = {
 "": SubResource("AnimationLibrary_dkpgi")
 }
 speed_scale = 1.2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+shape = SubResource("BoxShape3D_ba8dx")

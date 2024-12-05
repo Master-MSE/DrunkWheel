@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=4 uid="uid://b8ns22ejk6ham"]
+[gd_scene load_steps=44 format=4 uid="uid://b8ns22ejk6ham"]
 
 [ext_resource type="Script" path="res://code/worker.gd" id="1_epjem"]
 
@@ -11368,6 +11368,9 @@ _data = {
 "CharacterArmature|Wave": SubResource("Animation_8057t")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_juxuo"]
+size = Vector3(0.3, 1.3, 0.3)
+
 [node name="Worker" type="CharacterBody3D" groups=["agents"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.110101, 0)
 collision_layer = 16
@@ -11962,3 +11965,7 @@ libraries = {
 "": SubResource("AnimationLibrary_1rigw")
 }
 speed_scale = 1.3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+shape = SubResource("BoxShape3D_juxuo")
