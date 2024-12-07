@@ -6,12 +6,9 @@ extends CharacterBody3D
 var max_speed = 4.0
 var min_speed = 2.0
 
-# Max position
-var min_z = -50.0
-var max_z = 50.0
-var min_x = -75.0
-var max_x = 75.0
-
+# Range
+var range_z = 50.0
+var range_x = 60.0
 var random_x = 0
 var random_z = 0
 
@@ -57,14 +54,11 @@ func update_target_location(target_location):
 	
 # Random target
 func get_random_direction() -> void:
-	# Generate a random direction
-	# Always go to the opposite on axis z so it cross the road
-	if random_x <= 0 :
-		random_x = randf_range(min_x, max_x + random_x)
-	else:
-		random_x = randf_range(min_x + random_x, max_x)
-		
-	random_z = min_z if toggle else max_z
+	var base_position = global_transform.origin
+	
+	random_x = base_position.x + range_x * randf_range(-1,1)
+	
+	random_z = base_position.z + (-range_z if toggle else range_z)
 	toggle = !toggle
-
-	agent.target_position = Vector3(random_x, 0, random_z)
+	
+	agent.target_position = Vector3(random_x, base_position.y, random_z)
