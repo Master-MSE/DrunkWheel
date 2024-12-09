@@ -54,6 +54,7 @@ class drink:
 	var abs_actuel=0.0
 var tauxalcool := 0.0
 var time :=0.0
+var end_scene
 
 
 
@@ -129,9 +130,9 @@ func _on_end_reached() -> void:
 	RenderingServer.global_shader_parameter_set("tauxalcool",0);
 	Engine.time_scale = 0
 	hud.visible = false
-	var new_child = endScreenScene.instantiate()
-	add_child(new_child)
-	new_child.restart_game.connect(_on_restart_game)
+	end_scene = endScreenScene.instantiate()
+	add_child(end_scene)
+	end_scene.restart_game.connect(_on_restart_game)
 	sd_end1.play()
 	
 func cal_taux_alcool(delta:float):
@@ -176,12 +177,18 @@ func _on_restart_game() -> void:
 	objects_hit = 0
 	tauxalcool = 0.0
 	time =0.0
+	if is_instance_valid(end_scene):
+		end_scene.queue_free()
+		end_scene=null
 	Car.get_child(0).hitted_objects.clear()
 	get_tree().reload_current_scene()
 	
 func update_shader_screen_size():
 	var screen_size = get_viewport().get_size()
 	hud.updadte_affichage(screen_size)
+	control.updadte_affichage(screen_size)
+	if is_instance_valid(end_scene):
+		end_scene.updadte_affichage(screen_size)
 	RenderingServer.global_shader_parameter_set("screen_size",screen_size);
 	
 	
@@ -191,12 +198,12 @@ func play_taux_alcool_sound():
 			sd_loser1.play()
 		else:
 			sd_loser2.play()
-	elif  tauxalcool<4.0:
+	elif  tauxalcool<3.333:
 		if randi()%2==1:
 			sd_man1.play()
 		else:
 			sd_man2.play()
-	elif tauxalcool<7.0:
+	elif tauxalcool<6.666:
 		if randi()%2==1:
 			sd_coolman1.play()
 		else:

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ciag4gvc86bnl" path="res://car.tscn" id="1_0m6t5"]
 [ext_resource type="Script" path="res://game.gd" id="1_ka53t"]
-[ext_resource type="PackedScene" path="res://start_menu.tscn" id="3_1y03o"]
+[ext_resource type="PackedScene" uid="uid://vk2y4sbul4g7" path="res://start_menu.tscn" id="3_1y03o"]
 [ext_resource type="Script" path="res://code/map_generator.gd" id="3_xpbjs"]
 [ext_resource type="Script" path="res://code/maptiledata.gd" id="4_602tr"]
 [ext_resource type="Resource" uid="uid://cmju8ysmarlgv" path="res://resources/Game Data/Map Tile Data/tile_LL01.tres" id="5_hgli0"]

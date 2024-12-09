@@ -5,9 +5,9 @@ extends CanvasLayer
 @onready var alcoolbar_top: Sprite2D = $Sprite2D2
 
 
-var base_screen_size = Vector2(1152,642)
-var base_position_color
-var base_size_color
+const base_screen_size = Vector2(1152,642)
+var base_position_color=Vector2(1089,442.5)
+var base_size_color=Vector2(18,0)
 
 func update_alcohol(alcohol: int) -> void:
 	var alcohol_label = "Alcohol collected = {alcohol}"
@@ -30,6 +30,3 @@ func update_obects(objects: int) -> void:
 	$Object.text = objects_label.format({"objects": str(objects)})
 	
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	base_position_color = alcoolbar.position
-	base_size_color = alcoolbar.size
