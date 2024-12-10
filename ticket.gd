@@ -1,20 +1,19 @@
 extends Control
 
-@onready var space = $VBoxContainer2/Header2
+
 @onready var titre = $VBoxContainer2/Header
 @onready var container = $VBoxContainer2
 @onready var container_text = $VBoxContainer2/HBoxContainer/Text_container
-var scaling 
+var scaling=Vector2(1.0,1.0)
 
 func _ready() -> void:
-	scaling=Vector2(1.0,1.0)
+	pass
 	
 func scal_draw(scal)-> void:
 	scaling=scal
 	_draw()
 func _draw() -> void:
 	var padding = 20
-	space.add_theme_font_size_override("font_size", padding)
 	var size_y=container_text.get_minimum_size().y+titre.get_minimum_size().y
 
 	# Add padding to the rectangle bounds

@@ -9,6 +9,7 @@ extends CanvasLayer
 @onready var container_score = $Ticket/VBoxContainer2
 @onready var label_creator = $Creator
 @onready var label_context = $Context
+@onready var ticket = $Ticket
 
 
 signal restart_game
@@ -17,7 +18,7 @@ const base_screen_size = Vector2(1152,642)
 const base_position_label_creator= Vector2(691,608)
 const base_position_label_context= Vector2(13,613)
 const base_position_container_text= Vector2(290,0)
-const base_position_container_score= Vector2(382.5,170)
+const base_position_container_score= Vector2(382,170)
 var scaling=Vector2(1.0,1.0)
 var damage_values = {
 	"Light": -100, 
@@ -76,7 +77,7 @@ func _on_end_reached():
 	
 	best_score_label.text = "%d" % best_score
 	
-	$Ticket.scal_draw(scaling)
+	ticket.scal_draw(scaling)
 	self.visible = true
 
 func _on_start_pressed() -> void:
@@ -90,9 +91,9 @@ func updadte_affichage(new_screen_size:Vector2)->void:
 	label_context.scale=scaling
 	label_creator.scale=scaling
 	container_text.scale=scaling
-	container_score.scale=scaling
+	#container_score.scale=scaling
 	label_context.position=base_position_label_context*scaling
 	label_creator.position=base_position_label_creator*scaling
 	container_text.position=base_position_container_text*scaling
-	$Ticket.position=base_position_container_score*scaling
-	$Ticket.scal_draw(scaling)
+	ticket.position=base_position_container_score*scaling
+	ticket.scal_draw(scaling)

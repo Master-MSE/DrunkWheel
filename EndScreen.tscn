@@ -57,14 +57,10 @@ events = [SubResource("InputEventKey_5ugo4")]
 script = ExtResource("1_jryw4")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -286.0
-offset_right = 286.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = 290.0
+offset_top = 1.0
+offset_right = 862.0
+offset_bottom = 157.0
 
 [node name="Title" type="Label" parent="VBoxContainer"]
 layout_mode = 2
@@ -110,10 +106,10 @@ text = "MSE -  MA_GT 2024/2025"
 [node name="Ticket" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 382.5
+offset_left = 382.0
 offset_top = 170.0
-offset_right = 382.5
-offset_bottom = 170.0
+offset_right = 383.0
+offset_bottom = 171.0
 script = ExtResource("2_i7y6o")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Ticket"]
@@ -255,7 +251,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("FontFile_h4wid")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 20
 text = " "
 
 [node name="VBoxContainer2" type="HBoxContainer" parent="Ticket/VBoxContainer2"]
