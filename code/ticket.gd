@@ -11,7 +11,7 @@ func _ready() -> void:
 	
 func scal_draw(scal)-> void:
 	scaling=scal
-	_draw()
+	self.queue_redraw()
 func _draw() -> void:
 	var padding = 20
 	var size_y=container_text.get_minimum_size().y+titre.get_minimum_size().y

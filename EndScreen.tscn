@@ -1,7 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://bcfw5sy5t2e63"]
+[gd_scene load_steps=11 format=3 uid="uid://bcfw5sy5t2e63"]
 
-[ext_resource type="Script" path="res://end_screen.gd" id="1_jryw4"]
-[ext_resource type="Script" path="res://ticket.gd" id="2_i7y6o"]
+[ext_resource type="Script" path="res://code/end_screen.gd" id="1_jryw4"]
+[ext_resource type="Shader" path="res://shader/background.gdshader" id="2_45ivh"]
+[ext_resource type="Script" path="res://code/ticket.gd" id="2_i7y6o"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_31ev0"]
+shader = ExtResource("2_45ivh")
+shader_parameter/blur_type = 0
+shader_parameter/blur_amount = 16
+shader_parameter/blur_radius = 1.0
+shader_parameter/blur_direction = Vector2(1, 1)
 
 [sub_resource type="FontFile" id="FontFile_h4wid"]
 subpixel_positioning = 0
@@ -55,6 +63,14 @@ events = [SubResource("InputEventKey_5ugo4")]
 
 [node name="EndScreen" type="CanvasLayer"]
 script = ExtResource("1_jryw4")
+
+[node name="background" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_31ev0")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 offset_left = 290.0

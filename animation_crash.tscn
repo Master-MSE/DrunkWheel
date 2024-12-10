@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://u6a0ti3icg3i"]
 
-[ext_resource type="Script" path="res://animation_crash.gd" id="1_iv1mb"]
+[ext_resource type="Script" path="res://code/animation_crash.gd" id="1_iv1mb"]
 [ext_resource type="Texture2D" uid="uid://b6ave562p3l3c" path="res://animation/comic-2340467_640.png" id="1_yrd8g"]
 [ext_resource type="Texture2D" uid="uid://bo0c571kr8ayh" path="res://animation/kapow-1601675_640-3883185039.png" id="2_cs3bp"]
 

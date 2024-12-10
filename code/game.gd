@@ -154,9 +154,9 @@ func cal_taux_alcool(delta:float):
 				new_drinks.append(drink_o)
 	drinks=new_drinks		
 	RenderingServer.global_shader_parameter_set("tauxalcool",tauxalcool);
-	update_game_sound(tauxalcool)
+	update_game_sound()
 	
-func update_game_sound(tauxalcool):
+func update_game_sound():
 	var audio_game=AudioServer.get_bus_index("game_sound")
 	var phaser_effect  =AudioServer.get_bus_effect(audio_game,0)
 	var panner_effect  =AudioServer.get_bus_effect(audio_game,1)
@@ -193,17 +193,17 @@ func update_shader_screen_size():
 	
 	
 func play_taux_alcool_sound():
-	if tauxalcool<2.0:
+	if tauxalcool<2.5:
 		if randi()%2==1:
 			sd_loser1.play()
 		else:
 			sd_loser2.play()
-	elif  tauxalcool<3.333:
+	elif  tauxalcool<5.0:
 		if randi()%2==1:
 			sd_man1.play()
 		else:
 			sd_man2.play()
-	elif tauxalcool<6.666:
+	elif tauxalcool<7.5:
 		if randi()%2==1:
 			sd_coolman1.play()
 		else:
