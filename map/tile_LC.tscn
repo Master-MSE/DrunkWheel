@@ -1,6 +1,5 @@
-[gd_scene load_steps=40 format=4 uid="uid://3snwj65taleu"]
+[gd_scene load_steps=39 format=4 uid="uid://3snwj65taleu"]
 
-[ext_resource type="Script" path="res://code/tile_lc.gd" id="1_q6vbr"]
 [ext_resource type="ArrayMesh" uid="uid://rlb0f12letl0" path="res://models/kenney_city-kit-roads/Models/OBJ format/road_endRound.obj" id="6_dgp0j"]
 [ext_resource type="PackedScene" uid="uid://tr7stq5c0sgo" path="res://map/Road_Gridmap/RoadStraight.tscn" id="8_4y18q"]
 [ext_resource type="PackedScene" uid="uid://cggalvt8r3aoy" path="res://map/Road_Gridmap/Tile_Base.tscn" id="8_7npal"]
@@ -135,7 +134,6 @@ data = PackedVector3Array(-0.0022, 0.0013, -0.0005, -0.0022, 0.0013, 0.0001, -0.
 
 [node name="Tile01" type="Node3D"]
 transform = Transform3D(-1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, -1, 0, 0, 0)
-script = ExtResource("1_q6vbr")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 41.4896, 0)

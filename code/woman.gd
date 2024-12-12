@@ -41,7 +41,8 @@ func _physics_process(delta: float) -> void:
 		$Woman/AnimationPlayer.play("CharacterArmature|Walk")
 		
 		velocity = new_velocity
-		look_at(agent.get_next_path_position())
+		if(agent.get_next_path_position() != global_transform.origin):
+			look_at(agent.get_next_path_position())
 		move_and_slide()
 	elif dead_animation_played == false:
 		$Woman/AnimationPlayer.queue("CharacterArmature|Death")

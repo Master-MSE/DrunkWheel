@@ -5785,7 +5785,7 @@ shape = SubResource("BoxShape3D_d6xgi")
 [node name="EndTriggerShapeMesh" type="MeshInstance3D" parent="EndTrigger"]
 transform = Transform3D(8, 0, 0, 0, 4, 0, 0, 0, 32, 0.00820541, 0.273571, 0.30119)
 mesh = SubResource("BoxMesh_k1wxa")
-skeleton = NodePath("../../light-front-left")
+skeleton = NodePath("")
 script = ExtResource("22_bd0hq")
 
 [node name="Timer" type="Timer" parent="."]

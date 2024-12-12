@@ -42,7 +42,8 @@ func _physics_process(delta: float) -> void:
 		$Wolf/AnimationPlayer.play("Gallop")
 		
 		velocity = new_velocity
-		look_at(agent.get_next_path_position())
+		if(agent.get_next_path_position() != global_transform.origin):
+			look_at(agent.get_next_path_position())
 		move_and_slide()
 	elif dead_animation_played == false:
 		$Wolf/AnimationPlayer.queue("Death")
