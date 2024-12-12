@@ -14,8 +14,18 @@ const MAX_ENGINE_FORCE = 2000.0
 const MAX_BRAKE_FORCE = 35.0
 const MAX_STEERING_ANGLE = 0.7
 const STEERING_SPEED = 0.04
+const DELAY_DELAY_START = 3.0
+const DELAY_MAX = 0.5
+const DELAY_FACTOR = DELAY_MAX/(10.0-DELAY_DELAY_START)
 
 var steering_angle = 0.0
+var delay_duration =0.0
+var parent
+var input_queue = []
+var time = 0.0
+var max_delay=2.0
+var crash_animation = preload("res://animation_crash.tscn")
+var dink_animation = preload("res://animation_drink.tscn")
 
 func steering(steering_input):
 	# If there's steering input, adjust the steering angle
@@ -23,7 +33,7 @@ func steering(steering_input):
 		steering_angle += (STEERING_SPEED * steering_input)
 		
 		# Clamp the steering angle within the max limits using clampf
-		steering_angle = clampf(steering_angle, -MAX_STEERING_ANGLE, MAX_STEERING_ANGLE)
+		steering_angle = clampf(steering_angle, - MAX_STEERING_ANGLE, MAX_STEERING_ANGLE)
 
 		# Apply the clamped steering angle to the wheels
 		$"wheel-front-left".steering = steering_angle
@@ -34,8 +44,8 @@ func steering(steering_input):
 		steering_angle = 0
 		$"wheel-front-left".steering = steering_angle
 		$"wheel-front-right".steering = steering_angle
-
-func engine():
+		
+func engine(action):
 	# Calculate the vehicle's local speed along each axis
 	var b = transform.basis
 	var v_len = linear_velocity.length()
@@ -47,21 +57,21 @@ func engine():
 	speed.z = b.z.dot(v_nor) * v_len
 
 	# Forward input
-	if Input.is_action_pressed("forward"):
+	if  action.has("forward"):
 		if speed.x < 0:
 			brake = MAX_BRAKE_FORCE  # Apply brake if moving backward
 		else:
 			brake = 0
 			# Apply proportional engine force based on speed
-			if speed.x >= (MAX_SPEED / 5) and speed.x < MAX_SPEED:
+			if speed.x >= (MAX_SPEED / 4) and speed.x < MAX_SPEED:
 				engine_force = clampf((speed.x / MAX_SPEED) * 2 * MAX_ENGINE_FORCE, 0.0, MAX_ENGINE_FORCE)
-			elif speed.x < (MAX_SPEED / 5):
-				engine_force = MAX_ENGINE_FORCE * 2
+			elif speed.x < (MAX_SPEED / 4):
+				engine_force = MAX_ENGINE_FORCE * 3
 			else:
 				engine_force = 0  # No extra force if at max speed
 
 	# Reverse input
-	elif Input.is_action_pressed("reverse"):
+	elif  action.has("reverse"):
 		if speed.x > 0:
 			brake = MAX_BRAKE_FORCE  # Apply brake if moving forward
 		else:
@@ -79,30 +89,19 @@ func engine():
 		engine_force = 0
 
 func _physics_process(delta):
+	time+=delta
+	delay_duration=clamp((parent.tauxalcool-DELAY_DELAY_START)*DELAY_FACTOR, 0.0, DELAY_MAX)
+	colect_input(time)
 	if Game.game_state != Game.GameStates.PLAYING:
 		brake = MAX_BRAKE_FORCE
 		return
-	var steering_input = 0.0
+	applie_input()
 	
-	if Input.is_action_pressed("right"):
-		steering_input -= 1
-	if Input.is_action_pressed("left"):
-		steering_input += 1
-		
-	# Set on the rear light when braking
-	if Input.is_action_pressed("reverse"):
-		$"light-back-left".visible = true
-		$"light-back-right".visible = true
-	else:
-		$"light-back-left".visible = false
-		$"light-back-right".visible = false
-	
-	steering(steering_input)
-	engine()
 
 func _ready() -> void:
 	contact_monitor = true
 	set_max_contacts_reported(9999999)
+	parent=get_parent().get_parent()
 
 func _on_body_entered(body: Node) -> void:
 	if body.collision_layer == 2:
@@ -111,11 +110,85 @@ func _on_body_entered(body: Node) -> void:
 			object_hit.emit()
 			body.freeze = false
 			body.apply_impulse((linear_velocity*relative_obstacle_collision_impulse_strength) + (Vector3.UP * vertical_obstacle_collision_impulse_strength))
+			spawn_crash_effect()
 	
-	if body.collision_layer == 4:
+	elif body.collision_layer == 4:
 		body.queue_free()
 		alcohol_collected.emit()
+		spawn_drink_effect()
 	
-	if body.collision_layer == 8:
+	elif body.collision_layer == 8:
 		end_reached.emit()
 		print("The End !")
+			
+func colect_input(time)->void:
+	var action=[]
+	if Input.is_action_pressed("left"):
+		action.append("left")
+	if Input.is_action_pressed("right"):
+		action.append("right")
+	if Input.is_action_pressed("forward"):
+		action.append("forward")
+	if Input.is_action_pressed("reverse"):
+		action.append("reverse")
+	if Input.is_action_just_pressed("alcool_drink"):
+		alcohol_collected.emit()
+	input_queue.append([action,time])
+		
+func applie_input()->void:
+	var action = ["null"]
+	var delete = 0
+	for inpute in input_queue:
+		if inpute[1]+delay_duration>time:
+			break
+		else:
+			action=inpute[0]
+			if inpute[1]<time-max_delay:
+				delete+=1;
+	for i in range(delete):
+		input_queue.remove_at(0)
+				
+	var steering_input = 0.0
+
+	if action.has("right"):
+		steering_input -= 1
+	if  action.has("left"):
+		steering_input += 1
+		
+	# Set on the rear light when braking
+	if  action.has("reverse"):
+		$"light-back-left".visible = true
+		$"light-back-right".visible = true
+	else:
+		$"light-back-left".visible = false
+		$"light-back-right".visible = false
+	
+	steering(steering_input)
+	engine(action)
+			
+func spawn_crash_effect():
+	# add effect
+	var effect = crash_animation.instantiate()
+	add_child(effect)  
+
+	# Calcule rotation
+	var direction_avant = transform.basis.x  
+
+	var avant_position = global_transform.origin + direction_avant * 2.5
+	avant_position.y+=2.0
+	effect.global_transform.origin = avant_position  
+	effect.rotation_degrees = Vector3(-20.0,180.0,0.0)
+	
+func spawn_drink_effect():
+	# add effect
+	var effect = dink_animation.instantiate()
+	add_child(effect)  
+
+	# Calcule rotation
+	var direction_avant = transform.basis.x  
+
+	var avant_position = global_transform.origin + direction_avant * 2.5
+	avant_position.y+=2.0
+	effect.global_transform.origin = avant_position  
+	effect.rotation_degrees = Vector3(-20.0,180,0.0)
+	 

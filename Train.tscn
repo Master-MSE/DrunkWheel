@@ -1,6 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://bw3bepaapgq23"]
+[gd_scene load_steps=14 format=3 uid="uid://bw3bepaapgq23"]
 
-[ext_resource type="Script" path="res://train.gd" id="1_foqc5"]
+[ext_resource type="Script" path="res://code/train.gd" id="1_foqc5"]
 [ext_resource type="ArrayMesh" uid="uid://bijassx6xhi58" path="res://models/kenney_train-kit/Models/OBJ format/train-diesel-a.obj" id="1_uauc5"]
 [ext_resource type="ArrayMesh" uid="uid://cn4ccqraa36tt" path="res://models/kenney_train-kit/Models/OBJ format/train-carriage-lumber.obj" id="3_wrcw2"]
 [ext_resource type="ArrayMesh" uid="uid://bmnv64bksbin2" path="res://models/kenney_train-kit/Models/OBJ format/train-carriage-container-red.obj" id="4_oyakm"]
@@ -9,12 +9,17 @@
 [ext_resource type="ArrayMesh" uid="uid://duwdkajp7ngxx" path="res://models/kenney_train-kit/Models/OBJ format/train-carriage-tank-large.obj" id="7_g2dso"]
 [ext_resource type="ArrayMesh" uid="uid://cnby1m8r750n2" path="res://models/kenney_train-kit/Models/OBJ format/train-carriage-box.obj" id="8_2a4o2"]
 [ext_resource type="Material" uid="uid://co5up3xnsi777" path="res://resources/Game Data/Misc/light_material.tres" id="9_nrxi8"]
+[ext_resource type="AudioStream" uid="uid://dpebi3i71odeq" path="res://sound/train_steam_6.mp3" id="10_1cnr0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6vjj1"]
 size = Vector3(1, 1, 8.91895)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_18dar"]
 material = ExtResource("9_nrxi8")
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_fukmh"]
+stream_count = 1
+stream_0 = ExtResource("10_1cnr0")
 
 [node name="Train" type="CharacterBody3D"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
@@ -86,5 +91,12 @@ spot_angle = 25.0
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Lights/light-front-right"]
 transform = Transform3D(0.399327, -0.00053422, -0.00904317, 0.0159562, 0.00349262, 0.37447, -0.0168465, -0.00935501, 0.140322, 0.00307202, -0.00776434, 0.0223434)
 mesh = SubResource("CylinderMesh_18dar")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = SubResource("AudioStreamPlaylist_fukmh")
+attenuation_model = 1
+unit_size = 40.0
+autoplay = true
+bus = &"object_sound"
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_exited"]

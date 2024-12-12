@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cbstps4ewcmxf"]
+[gd_scene load_steps=6 format=3 uid="uid://1htx76n4yk7b"]
 
 [ext_resource type="ArrayMesh" uid="uid://hlxpwixgmuag" path="res://models/Wind Turbine/turbine_pole.obj" id="1_sd8vv"]
 [ext_resource type="Script" path="res://code/wind_turbine_blades.gd" id="2_0w0on"]
