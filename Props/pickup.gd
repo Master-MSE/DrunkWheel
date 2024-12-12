@@ -30,4 +30,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if Game.game_state != Game.GameStates.PLAYING:
+		return
+	
 	rotate_y(0.1)

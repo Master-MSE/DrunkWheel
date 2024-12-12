@@ -128,7 +128,7 @@ func _process(delta: float) -> void:
 func _on_end_reached() -> void:
 	game_state = GameStates.FINISHED
 	RenderingServer.global_shader_parameter_set("tauxalcool",0);
-	Engine.time_scale = 0
+	#Engine.time_scale = 0
 	hud.visible = false
 	end_scene = endScreenScene.instantiate()
 	add_child(end_scene)
@@ -190,8 +190,7 @@ func update_shader_screen_size():
 	if is_instance_valid(end_scene):
 		end_scene.updadte_affichage(screen_size)
 	RenderingServer.global_shader_parameter_set("screen_size",screen_size);
-	
-	
+
 func play_taux_alcool_sound():
 	if tauxalcool<2.5:
 		if randi()%2==1:
@@ -219,14 +218,9 @@ func play_taux_alcool_sound():
 		else:
 			sd_god2.play()
 
-
 func _on_aclool_timer_timeout() -> void:
 	if game_state == GameStates.PLAYING:
 		play_taux_alcool_sound()
-
-
-
-
 
 func sound_finished() -> void:
 	var wait_time=randf()*10.0+5.0
