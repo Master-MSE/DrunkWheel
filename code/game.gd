@@ -135,6 +135,9 @@ func _on_end_reached() -> void:
 	end_scene.restart_game.connect(_on_restart_game)
 	sd_end1.play()
 	
+	print(CollisionHandler.get_registered_collisions())
+	print(CollisionHandler.get_collision_prices())
+	
 func cal_taux_alcool(delta:float):
 	tauxalcool=0.0
 	var new_drinks=[]
