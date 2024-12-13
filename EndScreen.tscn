@@ -1,7 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://bcfw5sy5t2e63"]
+[gd_scene load_steps=11 format=3 uid="uid://bcfw5sy5t2e63"]
 
-[ext_resource type="Script" path="res://end_screen.gd" id="1_jryw4"]
-[ext_resource type="Script" path="res://ticket.gd" id="2_i7y6o"]
+[ext_resource type="Script" path="res://code/end_screen.gd" id="1_jryw4"]
+[ext_resource type="Shader" path="res://shader/background.gdshader" id="2_45ivh"]
+[ext_resource type="Script" path="res://code/ticket.gd" id="2_i7y6o"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_31ev0"]
+shader = ExtResource("2_45ivh")
+shader_parameter/blur_type = 0
+shader_parameter/blur_amount = 16
+shader_parameter/blur_radius = 1.0
+shader_parameter/blur_direction = Vector2(1, 1)
 
 [sub_resource type="FontFile" id="FontFile_h4wid"]
 subpixel_positioning = 0
@@ -53,25 +61,22 @@ unicode = 113
 [sub_resource type="Shortcut" id="Shortcut_kh60b"]
 events = [SubResource("InputEventKey_5ugo4")]
 
-[node name="EndScreen" type="Control"]
-layout_mode = 3
+[node name="EndScreen" type="CanvasLayer"]
+script = ExtResource("1_jryw4")
+
+[node name="background" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_31ev0")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_jryw4")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -286.0
-offset_right = 286.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = 290.0
+offset_top = 1.0
+offset_right = 862.0
+offset_bottom = 157.0
 
 [node name="Title" type="Label" parent="VBoxContainer"]
 layout_mode = 2
@@ -87,7 +92,6 @@ theme_override_font_sizes/font_size = 30
 text = "You made it home..."
 
 [node name="Creator" type="Label" parent="."]
-layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -99,13 +103,11 @@ offset_right = -15.0
 offset_bottom = -12.0
 grow_horizontal = 0
 grow_vertical = 0
-pivot_offset = Vector2(-84, -335)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Adrien Rey, Alec Schmidt, Mathieu Schupbach "
 
 [node name="Context" type="Label" parent="."]
-layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -118,29 +120,18 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "MSE -  MA_GT 2024/2025"
 
 [node name="Ticket" type="Control" parent="."]
-layout_mode = 1
-anchor_left = 0.839
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -205.528
-grow_horizontal = 0
-grow_vertical = 2
-pivot_offset = Vector2(503, -29)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 382.0
+offset_top = 170.0
+offset_right = 383.0
+offset_bottom = 171.0
 script = ExtResource("2_i7y6o")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Ticket"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -150.0
-offset_top = -158.5
-offset_right = 150.0
-offset_bottom = 158.5
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 0
+offset_right = 387.0
+offset_bottom = 326.0
 
 [node name="Header" type="Label" parent="Ticket/VBoxContainer2"]
 layout_mode = 2
@@ -214,12 +205,13 @@ text = "--------------------------------"
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
+alignment = 1
 
 [node name="Line2" type="Label" parent="Ticket/VBoxContainer2/HBoxContainer/Score_container"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("FontFile_h4wid")
-text = "--------------
+text = "---------------------------
 "
 
 [node name="Total_points" type="Label" parent="Ticket/VBoxContainer2/HBoxContainer/Score_container"]
@@ -239,7 +231,7 @@ text = "
 
 [node name="Damage_costs" type="Label" parent="Ticket/VBoxContainer2/HBoxContainer/Score_container"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = SubResource("FontFile_h4wid")
 theme_override_font_sizes/font_size = 20
 
@@ -247,7 +239,7 @@ theme_override_font_sizes/font_size = 20
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("FontFile_h4wid")
-text = "--------------"
+text = "---------------------------"
 
 [node name="Final_score" type="Label" parent="Ticket/VBoxContainer2/HBoxContainer/Score_container"]
 layout_mode = 2
@@ -268,43 +260,33 @@ text = " "
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("FontFile_h4wid")
-text = "--------------"
+text = "---------------------------"
 
-[node name="Header" type="Label" parent="Ticket/VBoxContainer2/HBoxContainer/Score_container"]
+[node name="Header2" type="Label" parent="Ticket/VBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("FontFile_h4wid")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 20
 text = " "
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -176.5
-offset_top = -65.0
-offset_right = 176.5
-offset_bottom = 65.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="VBoxContainer2" type="HBoxContainer" parent="Ticket/VBoxContainer2"]
+layout_mode = 2
+alignment = 1
 
-[node name="Start" type="Button" parent="VBoxContainer2"]
+[node name="Start" type="Button" parent="Ticket/VBoxContainer2/VBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 20
 shortcut = SubResource("Shortcut_u07c5")
 text = " Press W to restart "
 
-[node name="Quit" type="Button" parent="VBoxContainer2"]
+[node name="Quit" type="Button" parent="Ticket/VBoxContainer2/VBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 20
 shortcut = SubResource("Shortcut_kh60b")
 text = "    Press Q to quit    "
 
-[connection signal="pressed" from="VBoxContainer2/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer2/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Ticket/VBoxContainer2/VBoxContainer2/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Ticket/VBoxContainer2/VBoxContainer2/Quit" to="." method="_on_quit_pressed"]

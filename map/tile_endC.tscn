@@ -1,4 +1,4 @@
-[gd_scene load_steps=103 format=4 uid="uid://b5y4ymgygscii"]
+[gd_scene load_steps=104 format=4 uid="uid://b5y4ymgygscii"]
 
 [ext_resource type="Script" path="res://code/train_start.gd" id="1_31w7t"]
 [ext_resource type="ArrayMesh" uid="uid://rlb0f12letl0" path="res://models/kenney_city-kit-roads/Models/OBJ format/road_endRound.obj" id="2_k5shs"]
@@ -15,14 +15,15 @@
 [ext_resource type="ArrayMesh" uid="uid://mabetntcyayl" path="res://models/kenney_city-kit-suburban/Models/OBJ format/tree_small.obj" id="11_mbtc0"]
 [ext_resource type="ArrayMesh" uid="uid://dko5ijw711naj" path="res://models/kenney_train-kit/Models/OBJ format/tunnel.obj" id="11_nffv5"]
 [ext_resource type="Material" uid="uid://co5up3xnsi777" path="res://resources/Game Data/Misc/light_material.tres" id="12_1wh6c"]
-[ext_resource type="Script" path="res://map/mesh_instance_3d_2.gd" id="13_6neo2"]
+[ext_resource type="Script" path="res://code/EndTriggerShape.gd" id="13_2fere"]
 [ext_resource type="ArrayMesh" uid="uid://dfb24wvxvkd1n" path="res://models/kenney_city-kit-suburban/Models/OBJ format/house_type04.obj" id="14_8us6b"]
 [ext_resource type="Texture2D" uid="uid://b0ahsnh0h5gai" path="res://models/vehicules/GLB format/Textures/colormap.png" id="15_lj2sr"]
 [ext_resource type="ArrayMesh" uid="uid://8qt1gy5w40qy" path="res://models/kenney_city-kit-suburban/Models/OBJ format/house_type16.obj" id="16_4gkvt"]
 [ext_resource type="ArrayMesh" uid="uid://cvox4fofse5pk" path="res://models/kenney_train-kit/Models/OBJ format/train-carriage-flatbed.obj" id="19_bg6w2"]
 [ext_resource type="ArrayMesh" uid="uid://bngsepjw2jlsu" path="res://models/kenney_city-kit-roads/Models/OBJ format/construction_barrier.obj" id="20_6ad4q"]
 [ext_resource type="ArrayMesh" uid="uid://c75kj8x1mgo1u" path="res://models/Forest/PUSHILIN_forest.obj" id="21_82eln"]
-[ext_resource type="PackedScene" uid="uid://c66tvpbfxp318" path="res://Props/Fence.tscn" id="23_870j2"]
+[ext_resource type="PackedScene" uid="uid://c66tvpbfxp318" path="res://map/Road_Gridmap/Fence.tscn" id="23_870j2"]
+[ext_resource type="ArrayOccluder3D" uid="uid://0h8yu4ta8da" path="res://map/occluders/tile_endC.occ" id="24_f3xwa"]
 
 [sub_resource type="MeshTexture" id="MeshTexture_gbh50"]
 
@@ -5387,15 +5388,15 @@ skeleton = NodePath("../..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.97964, 0, -8.94444)
 collision_layer = 8
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="EndTrigger"]
+[node name="EndTriggerShpae" type="CollisionShape3D" parent="EndTrigger"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0426073, 0.351257)
 shape = SubResource("BoxShape3D_h2kvk")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="EndTrigger"]
+[node name="EndTriggerShapeMesh" type="MeshInstance3D" parent="EndTrigger"]
 transform = Transform3D(8, 0, 0, 0, 4, 0, 0, 0, 32, 0.00820541, 0.273571, 0.30119)
 mesh = SubResource("BoxMesh_4at82")
-skeleton = NodePath("../../light-front-left")
-script = ExtResource("13_6neo2")
+skeleton = NodePath("")
+script = ExtResource("13_2fere")
 
 [node name="Decorative" type="StaticBody3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -9.24518, 2.98023e-07, -0.285673)
@@ -6043,5 +6044,8 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 
 mesh = SubResource("ArrayMesh_i6fp8")
 skeleton = NodePath("")
 
-[connection signal="timeout" from="Timer" to="EndTrigger/MeshInstance3D2" method="_on_timer_timeout"]
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+occluder = ExtResource("24_f3xwa")
+
+[connection signal="timeout" from="Timer" to="EndTrigger/EndTriggerShapeMesh" method="_on_timer_timeout"]
 [connection signal="body_entered" from="van/van" to="van/van" method="_on_body_entered"]

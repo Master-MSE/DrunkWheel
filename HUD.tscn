@@ -1,6 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://2tuxb3m61ix7"]
+[gd_scene load_steps=10 format=3 uid="uid://2tuxb3m61ix7"]
 
 [ext_resource type="Script" path="res://code/hud.gd" id="1_moym4"]
+[ext_resource type="Texture2D" uid="uid://dfk3sdopey482" path="res://animation/alcoolbar/AlcoolBar-vide.png" id="2_ctc0y"]
+[ext_resource type="Script" path="res://code/color_rect.gd" id="2_is3hs"]
+[ext_resource type="Shader" path="res://shader/HUD.gdshader" id="3_5qegy"]
+[ext_resource type="Texture2D" uid="uid://chyb2457d8are" path="res://animation/alcoolbar/AlcoolBar-bot.png" id="3_d5u02"]
+[ext_resource type="Shader" path="res://shader/volcano.gdshader" id="6_bug31"]
+[ext_resource type="Script" path="res://code/particule.gd" id="7_j5kam"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fmgt3"]
+shader = ExtResource("3_5qegy")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ckxhd"]
+shader = ExtResource("6_bug31")
+shader_parameter/end = true
+shader_parameter/time = 0.0
+shader_parameter/starttime = null
+shader_parameter/endtime = -10.0
 
 [node name="Hud" type="CanvasLayer"]
 script = ExtResource("1_moym4")
@@ -20,3 +36,46 @@ offset_right = 211.0
 offset_bottom = 59.0
 text = "Objects hit = 0"
 metadata/_edit_use_anchors_ = true
+
+[node name="Taux" type="Label" parent="."]
+offset_left = 99.0
+offset_top = 62.0
+offset_right = 163.0
+offset_bottom = 85.0
+text = "Taux = 0"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_direction = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 513.0
+offset_top = 118.5
+offset_right = 531.0
+offset_bottom = 118.5
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 3.14159
+color = Color(0, 0, 1, 1)
+script = ExtResource("2_is3hs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_ctc0y")
+offset = Vector2(3450, 1020)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_fmgt3")
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_d5u02")
+offset = Vector2(3450, 1020)
+
+[node name="Particule" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_ckxhd")
+offset_left = 1030.0
+offset_top = 39.0
+offset_right = 1130.0
+offset_bottom = 239.0
+script = ExtResource("7_j5kam")

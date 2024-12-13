@@ -1,19 +1,31 @@
-[gd_scene load_steps=4 format=3 uid="uid://bjpvataopch70"]
+[gd_scene load_steps=7 format=3 uid="uid://bjpvataopch70"]
 
 [ext_resource type="PackedScene" uid="uid://dsaukf8g3or6r" path="res://models/alcohol/beer_bottle/beer_bottle.glb" id="1_in6h5"]
-[ext_resource type="Script" path="res://code/beer_bottle.gd" id="2_l3pjx"]
+[ext_resource type="Script" path="res://Props/pickup.gd" id="1_uayhq"]
+[ext_resource type="PackedScene" uid="uid://dr41dhje5rhlb" path="res://models/alcohol/beer_glass/beer_glass.glb" id="4_8wkvx"]
+[ext_resource type="PackedScene" uid="uid://v2gwjchfd1ud" path="res://models/alcohol/shot_glass/shot_glass.glb" id="5_th1n2"]
+[ext_resource type="PackedScene" uid="uid://c08dytn221b55" path="res://models/alcohol/wine_glass/wine_glass.glb" id="6_eq7e2"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_47rww"]
-size = Vector3(1, 0.839844, 1)
+[sub_resource type="BoxShape3D" id="BoxShape3D_gecrk"]
+size = Vector3(1, 2.93378, 1)
 
 [node name="Pickup" type="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04027, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 collision_layer = 4
+script = ExtResource("1_uayhq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.648834, 0)
+shape = SubResource("BoxShape3D_gecrk")
 
 [node name="beer_bottle" parent="." instance=ExtResource("1_in6h5")]
 transform = Transform3D(0.488237, -0.107819, 0, 0.107819, 0.488237, 0, 0, 0, 0.5, 0, 0, 0)
-script = ExtResource("2_l3pjx")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.78905, 0, 0, 0, 1.93791, 0, 0, 0, 0.699098, 0, -0.196672, 0)
-shape = SubResource("BoxShape3D_47rww")
+[node name="beer_glass" parent="." instance=ExtResource("4_8wkvx")]
+transform = Transform3D(0.397387, -0.045642, 0, 0.045642, 0.397387, 0, 0, 0, 0.4, 0, 0, 0)
+
+[node name="shot_glass" parent="." instance=ExtResource("5_th1n2")]
+transform = Transform3D(0.294475, -0.0573095, 0, 0.0573095, 0.294475, 0, 0, 0, 0.3, 0, 0, 0)
+
+[node name="wine_glass" parent="." instance=ExtResource("6_eq7e2")]
+transform = Transform3D(0.292909, -0.0648399, 0, 0.0648399, 0.292909, 0, 0, 0, 0.3, 0, 0, 0)

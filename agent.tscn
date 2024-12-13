@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://b6sml3ie6ofhr"]
+
+[ext_resource type="Script" path="res://agent.gd" id="1_p8ial"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_6ejmo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_41ec8"]
+albedo_color = Color(1, 0.254902, 1, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_k4wi5"]
+material = SubResource("StandardMaterial3D_41ec8")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g0527"]
+
+[node name="Agent" type="CharacterBody3D" groups=["agents"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.110101, 0)
+script = ExtResource("1_p8ial")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, -6.5567e-08, -4.37113e-08, 2.18557e-08, 2.18557e-08, 0.999999, -6.5567e-08, -0.5, 4.37113e-08, -0.00281984, 0.970518, -0.670444)
+mesh = SubResource("PrismMesh_6ejmo")
+skeleton = NodePath("../RayCast3D")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, -0.00680643, 0.42404, -0.343211)
+collision_mask = 23
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.912955, 0)
+mesh = SubResource("CapsuleMesh_k4wi5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D"]
+shape = SubResource("CapsuleShape3D_g0527")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." groups=["agents"]]
+debug_enabled = true
+debug_path_custom_color = Color(1, 0.4, 1, 1)

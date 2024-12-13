@@ -59,16 +59,30 @@ left={
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194319,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }
+alcool_drink={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":true,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":80,"key_label":0,"unicode":80,"location":0,"echo":false,"script":null)
+]
+}
+toggle_particles={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":77,"key_label":0,"unicode":109,"location":0,"echo":false,"script":null)
+]
+}
 
 [layer_names]
 
+3d_render/layer_1="StaticEnvironment"
+3d_render/layer_2="DynamicObjects"
 3d_physics/layer_1="Car"
+3d_navigation/layer_1="PNJ"
 3d_physics/layer_2="MovableObstacle"
 3d_physics/layer_3="Pickup"
 3d_physics/layer_4="End"
 
 [rendering]
 
+occlusion_culling/use_occlusion_culling=true
 environment/defaults/default_environment="res://resources/envrionment.tres"
 
 [shader_globals]
@@ -80,4 +94,8 @@ tauxalcool={
 time={
 "type": "float",
 "value": 0.0
+}
+screen_size={
+"type": "vec2",
+"value": Vector2(0, 0)
 }
