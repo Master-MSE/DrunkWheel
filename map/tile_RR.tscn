@@ -125,7 +125,6 @@ shadow_mesh = SubResource("ArrayMesh_lp57k")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ud7x"]
 resource_name = "citybits_texture"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("14_p074s")
 emission_enabled = true
 

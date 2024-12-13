@@ -35,7 +35,7 @@ static var game_state: GameStates = GameStates.WAITING
 
 const fac_time =1
 const tile_length = 30
-const map_length = 5
+const map_length = 2
 
 func choose_next_tile(current: Vector2) -> Vector2:
 	var next_end = randi()%3
@@ -95,15 +95,15 @@ func _process(delta: float) -> void:
 
 func _on_end_reached() -> void:
 	game_state = GameStates.FINISHED
-	RenderingServer.global_shader_parameter_set("tauxalcool",0);
+	#RenderingServer.global_shader_parameter_set("tauxalcool",0);
 	Engine.time_scale = 0
 	hud.visible = false
 	var new_child = endScreenScene.instantiate()
 	add_child(new_child)
 	new_child.restart_game.connect(_on_restart_game)
 	
-	print(CollisionHandler.registered_collisions)
-	print(CollisionHandler.get_total_price())
+	print(CollisionHandler.get_registered_collisions())
+	print(CollisionHandler.get_collision_prices())
 	
 func cal_taux_alcool():
 	tauxalcool=0.0
