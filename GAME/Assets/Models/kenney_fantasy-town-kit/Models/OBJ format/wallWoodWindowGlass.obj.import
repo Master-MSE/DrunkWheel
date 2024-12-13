@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bv1kaul2mgmw1"
+path="res://.godot/imported/wallWoodWindowGlass.obj-24c49460d3af1ad9e188849c988ab687.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wallWoodWindowGlass.obj-24c49460d3af1ad9e188849c988ab687.mesh"]
+
+source_file="res://GAME/Assets/Models/kenney_fantasy-town-kit/Models/OBJ format/wallWoodWindowGlass.obj"
+dest_files=["res://.godot/imported/wallWoodWindowGlass.obj-24c49460d3af1ad9e188849c988ab687.mesh", "res://.godot/imported/wallWoodWindowGlass.obj-24c49460d3af1ad9e188849c988ab687.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

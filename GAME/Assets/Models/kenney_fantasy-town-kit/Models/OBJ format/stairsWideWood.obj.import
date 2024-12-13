@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://de183j12iqxg1"
+path="res://.godot/imported/stairsWideWood.obj-9a7eb0eed4bbb0856ecc122cffe8a63f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/stairsWideWood.obj-9a7eb0eed4bbb0856ecc122cffe8a63f.mesh"]
+
+source_file="res://GAME/Assets/Models/kenney_fantasy-town-kit/Models/OBJ format/stairsWideWood.obj"
+dest_files=["res://.godot/imported/stairsWideWood.obj-9a7eb0eed4bbb0856ecc122cffe8a63f.mesh", "res://.godot/imported/stairsWideWood.obj-9a7eb0eed4bbb0856ecc122cffe8a63f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://515hfvf5ug7g"
+path="res://.godot/imported/railroad-straight-hill-beginning.obj-d0a941a9d7359f1cdf1020d41752ff0a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/railroad-straight-hill-beginning.obj-d0a941a9d7359f1cdf1020d41752ff0a.mesh"]
+
+source_file="res://GAME/Assets/Models/kenney_train-kit/Models/OBJ format/railroad-straight-hill-beginning.obj"
+dest_files=["res://.godot/imported/railroad-straight-hill-beginning.obj-d0a941a9d7359f1cdf1020d41752ff0a.mesh", "res://.godot/imported/railroad-straight-hill-beginning.obj-d0a941a9d7359f1cdf1020d41752ff0a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

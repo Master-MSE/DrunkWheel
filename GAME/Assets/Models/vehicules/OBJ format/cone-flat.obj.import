@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://417u8q4d4p8c"
+path="res://.godot/imported/cone-flat.obj-92cb0e05581b3b97f3cea12e8c389faf.mesh"
+
+[deps]
+
+files=["res://.godot/imported/cone-flat.obj-92cb0e05581b3b97f3cea12e8c389faf.mesh"]
+
+source_file="res://GAME/Assets/Models/vehicules/OBJ format/cone-flat.obj"
+dest_files=["res://.godot/imported/cone-flat.obj-92cb0e05581b3b97f3cea12e8c389faf.mesh", "res://.godot/imported/cone-flat.obj-92cb0e05581b3b97f3cea12e8c389faf.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

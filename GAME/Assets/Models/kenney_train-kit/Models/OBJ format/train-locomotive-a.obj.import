@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cxbhom8ha8px3"
+path="res://.godot/imported/train-locomotive-a.obj-5e6f2fda330d78bb918b137c2d85f0f4.mesh"
+
+[deps]
+
+files=["res://.godot/imported/train-locomotive-a.obj-5e6f2fda330d78bb918b137c2d85f0f4.mesh"]
+
+source_file="res://GAME/Assets/Models/kenney_train-kit/Models/OBJ format/train-locomotive-a.obj"
+dest_files=["res://.godot/imported/train-locomotive-a.obj-5e6f2fda330d78bb918b137c2d85f0f4.mesh", "res://.godot/imported/train-locomotive-a.obj-5e6f2fda330d78bb918b137c2d85f0f4.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://xjng2dylww2w"
+path="res://.godot/imported/balconyWall.obj-aca652b25819e8391f0b80d5c39a940f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/balconyWall.obj-aca652b25819e8391f0b80d5c39a940f.mesh"]
+
+source_file="res://GAME/Assets/Models/kenney_fantasy-town-kit/Models/OBJ format/balconyWall.obj"
+dest_files=["res://.godot/imported/balconyWall.obj-aca652b25819e8391f0b80d5c39a940f.mesh", "res://.godot/imported/balconyWall.obj-aca652b25819e8391f0b80d5c39a940f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

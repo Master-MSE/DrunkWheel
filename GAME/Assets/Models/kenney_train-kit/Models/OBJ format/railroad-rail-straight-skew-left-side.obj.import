@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d3baxi00skuhw"
+path="res://.godot/imported/railroad-rail-straight-skew-left-side.obj-907b17b230194923419248fa1538b6cb.mesh"
+
+[deps]
+
+files=["res://.godot/imported/railroad-rail-straight-skew-left-side.obj-907b17b230194923419248fa1538b6cb.mesh"]
+
+source_file="res://GAME/Assets/Models/kenney_train-kit/Models/OBJ format/railroad-rail-straight-skew-left-side.obj"
+dest_files=["res://.godot/imported/railroad-rail-straight-skew-left-side.obj-907b17b230194923419248fa1538b6cb.mesh", "res://.godot/imported/railroad-rail-straight-skew-left-side.obj-907b17b230194923419248fa1538b6cb.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

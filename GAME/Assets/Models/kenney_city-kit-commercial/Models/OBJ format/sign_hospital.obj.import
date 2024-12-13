@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cx231w78mm6er"
+path="res://.godot/imported/sign_hospital.obj-7c48d102faf879912ca01ab5c0b5eb8d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/sign_hospital.obj-7c48d102faf879912ca01ab5c0b5eb8d.mesh"]
+
+source_file="res://GAME/Assets/Models/kenney_city-kit-commercial/Models/OBJ format/sign_hospital.obj"
+dest_files=["res://.godot/imported/sign_hospital.obj-7c48d102faf879912ca01ab5c0b5eb8d.mesh", "res://.godot/imported/sign_hospital.obj-7c48d102faf879912ca01ab5c0b5eb8d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

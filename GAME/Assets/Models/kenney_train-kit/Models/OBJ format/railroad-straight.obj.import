@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cqox0ojrnm2ue"
+path="res://.godot/imported/railroad-straight.obj-68b97c49823f3d4f8aa803ecc83ae74b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/railroad-straight.obj-68b97c49823f3d4f8aa803ecc83ae74b.mesh"]
+
+source_file="res://GAME/Assets/Models/kenney_train-kit/Models/OBJ format/railroad-straight.obj"
+dest_files=["res://.godot/imported/railroad-straight.obj-68b97c49823f3d4f8aa803ecc83ae74b.mesh", "res://.godot/imported/railroad-straight.obj-68b97c49823f3d4f8aa803ecc83ae74b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

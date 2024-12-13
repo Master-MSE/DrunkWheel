@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c50jvy5d7s720"
+path="res://.godot/imported/wallWindowGlass.obj-5d8c8a1b6b5f4596c0792f166366dc81.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wallWindowGlass.obj-5d8c8a1b6b5f4596c0792f166366dc81.mesh"]
+
+source_file="res://GAME/Assets/Models/kenney_fantasy-town-kit/Models/OBJ format/wallWindowGlass.obj"
+dest_files=["res://.godot/imported/wallWindowGlass.obj-5d8c8a1b6b5f4596c0792f166366dc81.mesh", "res://.godot/imported/wallWindowGlass.obj-5d8c8a1b6b5f4596c0792f166366dc81.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

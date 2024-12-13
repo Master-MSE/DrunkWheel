@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bapew1fb2ht40"
+path="res://.godot/imported/debris-bolt.obj-f2e96fa0a73aaa1c2f25fb8c0c6fc146.mesh"
+
+[deps]
+
+files=["res://.godot/imported/debris-bolt.obj-f2e96fa0a73aaa1c2f25fb8c0c6fc146.mesh"]
+
+source_file="res://GAME/Assets/Models/vehicules/OBJ format/debris-bolt.obj"
+dest_files=["res://.godot/imported/debris-bolt.obj-f2e96fa0a73aaa1c2f25fb8c0c6fc146.mesh", "res://.godot/imported/debris-bolt.obj-f2e96fa0a73aaa1c2f25fb8c0c6fc146.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

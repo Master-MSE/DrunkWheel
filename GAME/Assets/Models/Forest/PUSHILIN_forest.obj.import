@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c75kj8x1mgo1u"
+path="res://.godot/imported/PUSHILIN_forest.obj-28c6e79b9984257709ea74420fa94d1e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/PUSHILIN_forest.obj-28c6e79b9984257709ea74420fa94d1e.mesh"]
+
+source_file="res://GAME/Assets/Models/Forest/PUSHILIN_forest.obj"
+dest_files=["res://.godot/imported/PUSHILIN_forest.obj-28c6e79b9984257709ea74420fa94d1e.mesh", "res://.godot/imported/PUSHILIN_forest.obj-28c6e79b9984257709ea74420fa94d1e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

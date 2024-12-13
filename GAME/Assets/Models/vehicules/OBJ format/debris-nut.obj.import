@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://blkn6c6u048fd"
+path="res://.godot/imported/debris-nut.obj-be0a7ae09904c082a7d9241bfae0aecc.mesh"
+
+[deps]
+
+files=["res://.godot/imported/debris-nut.obj-be0a7ae09904c082a7d9241bfae0aecc.mesh"]
+
+source_file="res://GAME/Assets/Models/vehicules/OBJ format/debris-nut.obj"
+dest_files=["res://.godot/imported/debris-nut.obj-be0a7ae09904c082a7d9241bfae0aecc.mesh", "res://.godot/imported/debris-nut.obj-be0a7ae09904c082a7d9241bfae0aecc.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

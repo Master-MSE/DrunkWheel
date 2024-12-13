@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dh3u0vi1o2inx"
+path="res://.godot/imported/watermillWide.obj-6b8807d278310477bf3006dea87a080e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/watermillWide.obj-6b8807d278310477bf3006dea87a080e.mesh"]
+
+source_file="res://GAME/Assets/Models/kenney_fantasy-town-kit/Models/OBJ format/watermillWide.obj"
+dest_files=["res://.godot/imported/watermillWide.obj-6b8807d278310477bf3006dea87a080e.mesh", "res://.godot/imported/watermillWide.obj-6b8807d278310477bf3006dea87a080e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://brpploerng6mi"
+path="res://.godot/imported/tractor-police.obj-94ca6b6577443ad4ee57caddceab7b6f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tractor-police.obj-94ca6b6577443ad4ee57caddceab7b6f.mesh"]
+
+source_file="res://GAME/Assets/Models/vehicules/OBJ format/tractor-police.obj"
+dest_files=["res://.godot/imported/tractor-police.obj-94ca6b6577443ad4ee57caddceab7b6f.mesh", "res://.godot/imported/tractor-police.obj-94ca6b6577443ad4ee57caddceab7b6f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

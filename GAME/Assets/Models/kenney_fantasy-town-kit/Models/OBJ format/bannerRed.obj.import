@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bmgi08jetde0h"
+path="res://.godot/imported/bannerRed.obj-df703e83c6d921b0d355f916446cd300.mesh"
+
+[deps]
+
+files=["res://.godot/imported/bannerRed.obj-df703e83c6d921b0d355f916446cd300.mesh"]
+
+source_file="res://GAME/Assets/Models/kenney_fantasy-town-kit/Models/OBJ format/bannerRed.obj"
+dest_files=["res://.godot/imported/bannerRed.obj-df703e83c6d921b0d355f916446cd300.mesh", "res://.godot/imported/bannerRed.obj-df703e83c6d921b0d355f916446cd300.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

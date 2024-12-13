@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dutkr6a7jtd0j"
+path="res://.godot/imported/railroad-damaged-curve.obj-9a730333cd7dac3a0e48464517c07d01.mesh"
+
+[deps]
+
+files=["res://.godot/imported/railroad-damaged-curve.obj-9a730333cd7dac3a0e48464517c07d01.mesh"]
+
+source_file="res://GAME/Assets/Models/kenney_train-kit/Models/OBJ format/railroad-damaged-curve.obj"
+dest_files=["res://.godot/imported/railroad-damaged-curve.obj-9a730333cd7dac3a0e48464517c07d01.mesh", "res://.godot/imported/railroad-damaged-curve.obj-9a730333cd7dac3a0e48464517c07d01.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

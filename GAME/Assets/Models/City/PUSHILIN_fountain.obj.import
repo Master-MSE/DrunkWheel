@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://qmh1ym1rrm36"
+path="res://.godot/imported/PUSHILIN_fountain.obj-2a00e2d290d5b19eb823bb70c1bb5075.mesh"
+
+[deps]
+
+files=["res://.godot/imported/PUSHILIN_fountain.obj-2a00e2d290d5b19eb823bb70c1bb5075.mesh"]
+
+source_file="res://GAME/Assets/Models/City/PUSHILIN_fountain.obj"
+dest_files=["res://.godot/imported/PUSHILIN_fountain.obj-2a00e2d290d5b19eb823bb70c1bb5075.mesh", "res://.godot/imported/PUSHILIN_fountain.obj-2a00e2d290d5b19eb823bb70c1bb5075.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

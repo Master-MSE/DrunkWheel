@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b7wducvxdrfrj"
+path="res://.godot/imported/fountainSquareDetail.obj-984c44ab57c113b228ae0d5245e95b2c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/fountainSquareDetail.obj-984c44ab57c113b228ae0d5245e95b2c.mesh"]
+
+source_file="res://GAME/Assets/Models/kenney_fantasy-town-kit/Models/OBJ format/fountainSquareDetail.obj"
+dest_files=["res://.godot/imported/fountainSquareDetail.obj-984c44ab57c113b228ae0d5245e95b2c.mesh", "res://.godot/imported/fountainSquareDetail.obj-984c44ab57c113b228ae0d5245e95b2c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

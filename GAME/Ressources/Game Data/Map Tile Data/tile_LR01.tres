@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MapTileData" load_steps=3 format=3 uid="uid://kxxs6mafqkbu"]
+
+[ext_resource type="Script" path="res://GAME/Scripts/Utility/maptiledata.gd" id="1_o2stt"]
+[ext_resource type="PackedScene" uid="uid://brw3kmpqke41s" path="res://GAME/Scenes/Map/tile_LR.tscn" id="2_g3cnp"]
+
+[resource]
+script = ExtResource("1_o2stt")
+entrance_type = 0
+exit_type = 2
+tile_scene = ExtResource("2_g3cnp")
+tile_start = 1

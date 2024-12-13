@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bt3pj202e4pfb"
+path="res://.godot/imported/van.obj-71b400a29b34e56b1135148b5559719b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/van.obj-71b400a29b34e56b1135148b5559719b.mesh"]
+
+source_file="res://GAME/Assets/Models/vehicules/OBJ format/van.obj"
+dest_files=["res://.godot/imported/van.obj-71b400a29b34e56b1135148b5559719b.mesh", "res://.godot/imported/van.obj-71b400a29b34e56b1135148b5559719b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

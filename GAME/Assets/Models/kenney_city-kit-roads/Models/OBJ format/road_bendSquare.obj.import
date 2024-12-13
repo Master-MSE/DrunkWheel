@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bh8t7jfkthowg"
+path="res://.godot/imported/road_bendSquare.obj-a4e7ade72177c180f49f9833751325ae.mesh"
+
+[deps]
+
+files=["res://.godot/imported/road_bendSquare.obj-a4e7ade72177c180f49f9833751325ae.mesh"]
+
+source_file="res://GAME/Assets/Models/kenney_city-kit-roads/Models/OBJ format/road_bendSquare.obj"
+dest_files=["res://.godot/imported/road_bendSquare.obj-a4e7ade72177c180f49f9833751325ae.mesh", "res://.godot/imported/road_bendSquare.obj-a4e7ade72177c180f49f9833751325ae.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

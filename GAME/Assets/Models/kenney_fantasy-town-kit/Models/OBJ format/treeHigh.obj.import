@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d1y1sgt4c5638"
+path="res://.godot/imported/treeHigh.obj-ce36eab47b473f70d14f8d54e64d5762.mesh"
+
+[deps]
+
+files=["res://.godot/imported/treeHigh.obj-ce36eab47b473f70d14f8d54e64d5762.mesh"]
+
+source_file="res://GAME/Assets/Models/kenney_fantasy-town-kit/Models/OBJ format/treeHigh.obj"
+dest_files=["res://.godot/imported/treeHigh.obj-ce36eab47b473f70d14f8d54e64d5762.mesh", "res://.godot/imported/treeHigh.obj-ce36eab47b473f70d14f8d54e64d5762.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

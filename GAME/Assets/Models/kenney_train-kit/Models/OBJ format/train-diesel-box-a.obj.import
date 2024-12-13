@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dpnie66vu0ph8"
+path="res://.godot/imported/train-diesel-box-a.obj-4589ff94ce9d6ccf2892f71ad384831e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/train-diesel-box-a.obj-4589ff94ce9d6ccf2892f71ad384831e.mesh"]
+
+source_file="res://GAME/Assets/Models/kenney_train-kit/Models/OBJ format/train-diesel-box-a.obj"
+dest_files=["res://.godot/imported/train-diesel-box-a.obj-4589ff94ce9d6ccf2892f71ad384831e.mesh", "res://.godot/imported/train-diesel-box-a.obj-4589ff94ce9d6ccf2892f71ad384831e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://2tjelxmrvwmq"
+path="res://.godot/imported/track-detailed.obj-ef9a03027d4cf98d0b9df73096ca37fd.mesh"
+
+[deps]
+
+files=["res://.godot/imported/track-detailed.obj-ef9a03027d4cf98d0b9df73096ca37fd.mesh"]
+
+source_file="res://GAME/Assets/Models/kenney_train-kit/Models/OBJ format/track-detailed.obj"
+dest_files=["res://.godot/imported/track-detailed.obj-ef9a03027d4cf98d0b9df73096ca37fd.mesh", "res://.godot/imported/track-detailed.obj-ef9a03027d4cf98d0b9df73096ca37fd.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

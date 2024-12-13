@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cfv40shffkypl"
+path="res://.godot/imported/railroad-damaged-corner-large-ramp.obj-5ca11d8cc7298c65a79b5560badba68c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/railroad-damaged-corner-large-ramp.obj-5ca11d8cc7298c65a79b5560badba68c.mesh"]
+
+source_file="res://GAME/Assets/Models/kenney_train-kit/Models/OBJ format/railroad-damaged-corner-large-ramp.obj"
+dest_files=["res://.godot/imported/railroad-damaged-corner-large-ramp.obj-5ca11d8cc7298c65a79b5560badba68c.mesh", "res://.godot/imported/railroad-damaged-corner-large-ramp.obj-5ca11d8cc7298c65a79b5560badba68c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

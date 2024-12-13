@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://kgyr2j3fiwd7"
+path="res://.godot/imported/railroad-rail-corner-small-ramp.obj-edb9b6d02ab68f05add4e9d1c66e90a1.mesh"
+
+[deps]
+
+files=["res://.godot/imported/railroad-rail-corner-small-ramp.obj-edb9b6d02ab68f05add4e9d1c66e90a1.mesh"]
+
+source_file="res://GAME/Assets/Models/kenney_train-kit/Models/OBJ format/railroad-rail-corner-small-ramp.obj"
+dest_files=["res://.godot/imported/railroad-rail-corner-small-ramp.obj-edb9b6d02ab68f05add4e9d1c66e90a1.mesh", "res://.godot/imported/railroad-rail-corner-small-ramp.obj-edb9b6d02ab68f05add4e9d1c66e90a1.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

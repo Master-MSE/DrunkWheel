@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dko5ijw711naj"
+path="res://.godot/imported/tunnel.obj-20007d8952b12ee436b03fce572aa23c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tunnel.obj-20007d8952b12ee436b03fce572aa23c.mesh"]
+
+source_file="res://GAME/Assets/Models/kenney_train-kit/Models/OBJ format/tunnel.obj"
+dest_files=["res://.godot/imported/tunnel.obj-20007d8952b12ee436b03fce572aa23c.mesh", "res://.godot/imported/tunnel.obj-20007d8952b12ee436b03fce572aa23c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

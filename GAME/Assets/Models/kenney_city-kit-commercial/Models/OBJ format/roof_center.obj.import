@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bjw8a7ws2n4cp"
+path="res://.godot/imported/roof_center.obj-fe9fcd32ea106e93da9da13f7ed5644a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/roof_center.obj-fe9fcd32ea106e93da9da13f7ed5644a.mesh"]
+
+source_file="res://GAME/Assets/Models/kenney_city-kit-commercial/Models/OBJ format/roof_center.obj"
+dest_files=["res://.godot/imported/roof_center.obj-fe9fcd32ea106e93da9da13f7ed5644a.mesh", "res://.godot/imported/roof_center.obj-fe9fcd32ea106e93da9da13f7ed5644a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

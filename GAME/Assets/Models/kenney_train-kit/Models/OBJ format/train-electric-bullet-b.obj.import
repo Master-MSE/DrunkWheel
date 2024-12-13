@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dh3cflw8tbr4t"
+path="res://.godot/imported/train-electric-bullet-b.obj-1f36f6a4cc8126433d2b19c1be3a744a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/train-electric-bullet-b.obj-1f36f6a4cc8126433d2b19c1be3a744a.mesh"]
+
+source_file="res://GAME/Assets/Models/kenney_train-kit/Models/OBJ format/train-electric-bullet-b.obj"
+dest_files=["res://.godot/imported/train-electric-bullet-b.obj-1f36f6a4cc8126433d2b19c1be3a744a.mesh", "res://.godot/imported/train-electric-bullet-b.obj-1f36f6a4cc8126433d2b19c1be3a744a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

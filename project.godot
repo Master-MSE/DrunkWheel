@@ -11,14 +11,13 @@ config_version=5
 [application]
 
 config/name="DrunkWheel"
-run/main_scene="res://game.tscn"
+run/main_scene="res://GAME/Scenes/Main/game.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
 
 [autoload]
 
 DebugMenu="*res://addons/debug_menu/debug_menu.tscn"
-CollisionHandler="*res://code/collision_handler.gd"
+CollisionHandler="*res://GAME/Scripts/Utility/collision_handler.gd"
 
 [editor]
 
@@ -28,6 +27,15 @@ version_control/autoload_on_startup=true
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/debug_menu/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://GAME/Assets/": "blue",
+"res://GAME/Ressources/": "yellow",
+"res://GAME/Scenes/": "pink",
+"res://GAME/Scripts/": "green"
+}
 
 [filesystem]
 
@@ -83,7 +91,7 @@ toggle_particles={
 [rendering]
 
 occlusion_culling/use_occlusion_culling=true
-environment/defaults/default_environment="res://resources/envrionment.tres"
+environment/defaults/default_environment="res://GAME/Ressources/Game Data/Misc/envrionment.tres"
 
 [shader_globals]
 

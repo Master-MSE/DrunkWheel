@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d3t058lkfifac"
+path="res://.godot/imported/wallWoodSlope.obj-023747c9ec2eeb512426fc33d7683bbe.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wallWoodSlope.obj-023747c9ec2eeb512426fc33d7683bbe.mesh"]
+
+source_file="res://GAME/Assets/Models/kenney_fantasy-town-kit/Models/OBJ format/wallWoodSlope.obj"
+dest_files=["res://.godot/imported/wallWoodSlope.obj-023747c9ec2eeb512426fc33d7683bbe.mesh", "res://.godot/imported/wallWoodSlope.obj-023747c9ec2eeb512426fc33d7683bbe.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

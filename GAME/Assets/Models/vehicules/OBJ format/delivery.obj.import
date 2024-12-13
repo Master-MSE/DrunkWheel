@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dosyfiowf26oa"
+path="res://.godot/imported/delivery.obj-a9ea2da9c569f911410befe1174babec.mesh"
+
+[deps]
+
+files=["res://.godot/imported/delivery.obj-a9ea2da9c569f911410befe1174babec.mesh"]
+
+source_file="res://GAME/Assets/Models/vehicules/OBJ format/delivery.obj"
+dest_files=["res://.godot/imported/delivery.obj-a9ea2da9c569f911410befe1174babec.mesh", "res://.godot/imported/delivery.obj-a9ea2da9c569f911410befe1174babec.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

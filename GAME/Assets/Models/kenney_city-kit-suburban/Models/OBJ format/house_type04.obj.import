@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dfb24wvxvkd1n"
+path="res://.godot/imported/house_type04.obj-b28a4ac68008dd74d2177e2d8ca0fe97.mesh"
+
+[deps]
+
+files=["res://.godot/imported/house_type04.obj-b28a4ac68008dd74d2177e2d8ca0fe97.mesh"]
+
+source_file="res://GAME/Assets/Models/kenney_city-kit-suburban/Models/OBJ format/house_type04.obj"
+dest_files=["res://.godot/imported/house_type04.obj-b28a4ac68008dd74d2177e2d8ca0fe97.mesh", "res://.godot/imported/house_type04.obj-b28a4ac68008dd74d2177e2d8ca0fe97.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

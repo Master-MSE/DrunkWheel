@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://03ocad41rrkd"
+path="res://.godot/imported/wallDetailHorizontal.obj-ebc1f1a217f1fd70171592ca81a21fe6.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wallDetailHorizontal.obj-ebc1f1a217f1fd70171592ca81a21fe6.mesh"]
+
+source_file="res://GAME/Assets/Models/kenney_fantasy-town-kit/Models/OBJ format/wallDetailHorizontal.obj"
+dest_files=["res://.godot/imported/wallDetailHorizontal.obj-ebc1f1a217f1fd70171592ca81a21fe6.mesh", "res://.godot/imported/wallDetailHorizontal.obj-ebc1f1a217f1fd70171592ca81a21fe6.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

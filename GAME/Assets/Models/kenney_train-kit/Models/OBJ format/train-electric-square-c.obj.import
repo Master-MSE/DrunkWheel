@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cd0os1axk1g1m"
+path="res://.godot/imported/train-electric-square-c.obj-29e82f8538148c2d6776c9d041b04f78.mesh"
+
+[deps]
+
+files=["res://.godot/imported/train-electric-square-c.obj-29e82f8538148c2d6776c9d041b04f78.mesh"]
+
+source_file="res://GAME/Assets/Models/kenney_train-kit/Models/OBJ format/train-electric-square-c.obj"
+dest_files=["res://.godot/imported/train-electric-square-c.obj-29e82f8538148c2d6776c9d041b04f78.mesh", "res://.godot/imported/train-electric-square-c.obj-29e82f8538148c2d6776c9d041b04f78.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

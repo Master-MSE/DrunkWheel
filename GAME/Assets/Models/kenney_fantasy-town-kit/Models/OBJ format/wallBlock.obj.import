@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://nv4uiq45t4qk"
+path="res://.godot/imported/wallBlock.obj-53e0f71d8c7abaae28fbb7a73198c89f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wallBlock.obj-53e0f71d8c7abaae28fbb7a73198c89f.mesh"]
+
+source_file="res://GAME/Assets/Models/kenney_fantasy-town-kit/Models/OBJ format/wallBlock.obj"
+dest_files=["res://.godot/imported/wallBlock.obj-53e0f71d8c7abaae28fbb7a73198c89f.mesh", "res://.godot/imported/wallBlock.obj-53e0f71d8c7abaae28fbb7a73198c89f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

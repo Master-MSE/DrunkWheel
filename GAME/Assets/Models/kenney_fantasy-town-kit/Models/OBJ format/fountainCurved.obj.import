@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://nei1w64pxhnw"
+path="res://.godot/imported/fountainCurved.obj-0bc8d9241beb1dfbe25baca04c8c0b0a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/fountainCurved.obj-0bc8d9241beb1dfbe25baca04c8c0b0a.mesh"]
+
+source_file="res://GAME/Assets/Models/kenney_fantasy-town-kit/Models/OBJ format/fountainCurved.obj"
+dest_files=["res://.godot/imported/fountainCurved.obj-0bc8d9241beb1dfbe25baca04c8c0b0a.mesh", "res://.godot/imported/fountainCurved.obj-0bc8d9241beb1dfbe25baca04c8c0b0a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

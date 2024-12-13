@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://celn37qeirm03"
+path="res://.godot/imported/light_curvedCross.obj-cf60a8f2856058c988d44fed36b3f360.mesh"
+
+[deps]
+
+files=["res://.godot/imported/light_curvedCross.obj-cf60a8f2856058c988d44fed36b3f360.mesh"]
+
+source_file="res://GAME/Assets/Models/kenney_city-kit-roads/Models/OBJ format/light_curvedCross.obj"
+dest_files=["res://.godot/imported/light_curvedCross.obj-cf60a8f2856058c988d44fed36b3f360.mesh", "res://.godot/imported/light_curvedCross.obj-cf60a8f2856058c988d44fed36b3f360.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

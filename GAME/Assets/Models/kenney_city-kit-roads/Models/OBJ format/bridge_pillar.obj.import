@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cyhqrtjvqxm36"
+path="res://.godot/imported/bridge_pillar.obj-dc7a615a1e6abe214a10da45f0226f09.mesh"
+
+[deps]
+
+files=["res://.godot/imported/bridge_pillar.obj-dc7a615a1e6abe214a10da45f0226f09.mesh"]
+
+source_file="res://GAME/Assets/Models/kenney_city-kit-roads/Models/OBJ format/bridge_pillar.obj"
+dest_files=["res://.godot/imported/bridge_pillar.obj-dc7a615a1e6abe214a10da45f0226f09.mesh", "res://.godot/imported/bridge_pillar.obj-dc7a615a1e6abe214a10da45f0226f09.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

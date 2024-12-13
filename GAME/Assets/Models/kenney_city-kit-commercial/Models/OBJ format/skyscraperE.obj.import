@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d2hyw1o08um62"
+path="res://.godot/imported/skyscraperE.obj-cc1e3c7a26dd298608b01a9312dc839b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/skyscraperE.obj-cc1e3c7a26dd298608b01a9312dc839b.mesh"]
+
+source_file="res://GAME/Assets/Models/kenney_city-kit-commercial/Models/OBJ format/skyscraperE.obj"
+dest_files=["res://.godot/imported/skyscraperE.obj-cc1e3c7a26dd298608b01a9312dc839b.mesh", "res://.godot/imported/skyscraperE.obj-cc1e3c7a26dd298608b01a9312dc839b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

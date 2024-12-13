@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://khwxttoyw4dg"
+path="res://.godot/imported/road_curveIntersection.obj-aac1b8f7c1ae762f1e1570c6550d6247.mesh"
+
+[deps]
+
+files=["res://.godot/imported/road_curveIntersection.obj-aac1b8f7c1ae762f1e1570c6550d6247.mesh"]
+
+source_file="res://GAME/Assets/Models/kenney_city-kit-roads/Models/OBJ format/road_curveIntersection.obj"
+dest_files=["res://.godot/imported/road_curveIntersection.obj-aac1b8f7c1ae762f1e1570c6550d6247.mesh", "res://.godot/imported/road_curveIntersection.obj-aac1b8f7c1ae762f1e1570c6550d6247.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b5g7akgi5i0u1"
+path="res://.godot/imported/road_slantFlatHigh.obj-ab249f1203dd2f7f770711a5ba2070fc.mesh"
+
+[deps]
+
+files=["res://.godot/imported/road_slantFlatHigh.obj-ab249f1203dd2f7f770711a5ba2070fc.mesh"]
+
+source_file="res://GAME/Assets/Models/kenney_city-kit-roads/Models/OBJ format/road_slantFlatHigh.obj"
+dest_files=["res://.godot/imported/road_slantFlatHigh.obj-ab249f1203dd2f7f770711a5ba2070fc.mesh", "res://.godot/imported/road_slantFlatHigh.obj-ab249f1203dd2f7f770711a5ba2070fc.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

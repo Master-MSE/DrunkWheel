@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ds7c2xg1y7rtk"
+path="res://.godot/imported/PUSHILIN_pine_tree.obj-d97670852cf7597116c59b339e5bfcb8.mesh"
+
+[deps]
+
+files=["res://.godot/imported/PUSHILIN_pine_tree.obj-d97670852cf7597116c59b339e5bfcb8.mesh"]
+
+source_file="res://GAME/Assets/Models/Forest/PUSHILIN_pine_tree.obj"
+dest_files=["res://.godot/imported/PUSHILIN_pine_tree.obj-d97670852cf7597116c59b339e5bfcb8.mesh", "res://.godot/imported/PUSHILIN_pine_tree.obj-d97670852cf7597116c59b339e5bfcb8.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

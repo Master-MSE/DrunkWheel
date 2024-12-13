@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://umcgupco6v38"
+path="res://.godot/imported/wallWoodWindowRound.obj-2229e61a6107c4dcebc4a772bb4980da.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wallWoodWindowRound.obj-2229e61a6107c4dcebc4a772bb4980da.mesh"]
+
+source_file="res://GAME/Assets/Models/kenney_fantasy-town-kit/Models/OBJ format/wallWoodWindowRound.obj"
+dest_files=["res://.godot/imported/wallWoodWindowRound.obj-2229e61a6107c4dcebc4a772bb4980da.mesh", "res://.godot/imported/wallWoodWindowRound.obj-2229e61a6107c4dcebc4a772bb4980da.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
