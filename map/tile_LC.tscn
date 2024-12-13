@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://3snwj65taleu"]
+[gd_scene load_steps=40 format=4 uid="uid://3snwj65taleu"]
 
 [ext_resource type="ArrayMesh" uid="uid://rlb0f12letl0" path="res://models/kenney_city-kit-roads/Models/OBJ format/road_endRound.obj" id="6_dgp0j"]
 [ext_resource type="PackedScene" uid="uid://tr7stq5c0sgo" path="res://map/Road_Gridmap/RoadStraight.tscn" id="8_4y18q"]
@@ -19,6 +19,7 @@
 [ext_resource type="ArrayMesh" uid="uid://cb4ch271um6s7" path="res://models/Forest/lodge.obj" id="16_uej6b"]
 [ext_resource type="Texture2D" uid="uid://dfflu8cpjsmtd" path="res://models/Forest/Cabin Shed_Diffuse_palette_2.jpg" id="17_pdh68"]
 [ext_resource type="PackedScene" uid="uid://cyx46mjtfme8s" path="res://models/Forest/Bonfire.glb" id="18_w2lei"]
+[ext_resource type="ArrayOccluder3D" uid="uid://c1fjnd13khse8" path="res://map/occluders/tile_LC.occ" id="21_6an5b"]
 [ext_resource type="PackedScene" uid="uid://cw8yqrk27pnpk" path="res://Wolf.tscn" id="23_rhbxm"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_1eqyj"]
@@ -1107,3 +1108,6 @@ transform = Transform3D(-1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, 40.6146,
 
 [node name="Wolf3" parent="." instance=ExtResource("23_rhbxm")]
 transform = Transform3D(-1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, -59.9456, 0.110101, -5.35955e-06)
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+occluder = ExtResource("21_6an5b")

@@ -9941,6 +9941,7 @@ bones/64/rotation = Quaternion(0, 0, 0, 1)
 bones/64/scale = Vector3(1, 1, 1)
 
 [node name="Cube" type="MeshInstance3D" parent="Husky/AnimalArmature/Skeleton3D"]
+layers = 2
 mesh = SubResource("ArrayMesh_oepr0")
 skin = SubResource("Skin_miw1x")
 

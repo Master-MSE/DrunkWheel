@@ -71,6 +71,8 @@ toggle_particles={
 
 [layer_names]
 
+3d_render/layer_1="StaticEnvironment"
+3d_render/layer_2="DynamicObjects"
 3d_physics/layer_1="Car"
 3d_navigation/layer_1="PNJ"
 3d_physics/layer_2="MovableObstacle"
@@ -79,6 +81,7 @@ toggle_particles={
 
 [rendering]
 
+occlusion_culling/use_occlusion_culling=true
 environment/defaults/default_environment="res://resources/envrionment.tres"
 
 [shader_globals]

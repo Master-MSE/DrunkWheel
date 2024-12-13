@@ -11945,18 +11945,22 @@ bones/78/rotation = Quaternion(0, 0, 0, 1)
 bones/78/scale = Vector3(1, 1, 1)
 
 [node name="Worker_Feet" type="MeshInstance3D" parent="Worker/CharacterArmature/Skeleton3D"]
+layers = 2
 mesh = SubResource("ArrayMesh_ipp6p")
 skin = SubResource("Skin_ftuna")
 
 [node name="Worker_Legs" type="MeshInstance3D" parent="Worker/CharacterArmature/Skeleton3D"]
+layers = 2
 mesh = SubResource("ArrayMesh_7tlv4")
 skin = SubResource("Skin_ftuna")
 
 [node name="Worker_Body" type="MeshInstance3D" parent="Worker/CharacterArmature/Skeleton3D"]
+layers = 2
 mesh = SubResource("ArrayMesh_ijj08")
 skin = SubResource("Skin_ftuna")
 
 [node name="Worker_Head" type="MeshInstance3D" parent="Worker/CharacterArmature/Skeleton3D"]
+layers = 2
 mesh = SubResource("ArrayMesh_dutt0")
 skin = SubResource("Skin_ftuna")
 

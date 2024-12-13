@@ -1,4 +1,4 @@
-[gd_scene load_steps=109 format=3 uid="uid://gsvq0r815nk6"]
+[gd_scene load_steps=110 format=3 uid="uid://gsvq0r815nk6"]
 
 [ext_resource type="Script" path="res://code/train_start.gd" id="1_m281f"]
 [ext_resource type="ArrayMesh" uid="uid://rlb0f12letl0" path="res://models/kenney_city-kit-roads/Models/OBJ format/road_endRound.obj" id="2_ydhv7"]
@@ -20,6 +20,7 @@
 [ext_resource type="ArrayMesh" uid="uid://dpwni2fgw7vws" path="res://models/kenney_fantasy-town-kit/Models/OBJ format/tree.obj" id="18_rkfhn"]
 [ext_resource type="PackedScene" uid="uid://c66tvpbfxp318" path="res://map/Road_Gridmap/Fence.tscn" id="19_62is3"]
 [ext_resource type="Script" path="res://code/EndTriggerShape.gd" id="19_e7nqb"]
+[ext_resource type="ArrayOccluder3D" uid="uid://cp0v0v60y7g3w" path="res://map/occluders/tile_endR.occ" id="21_kuklu"]
 
 [sub_resource type="MeshTexture" id="MeshTexture_gbh50"]
 
@@ -5622,5 +5623,8 @@ transform = Transform3D(-1, 0, -0.000732966, 0, 1, 0, 0.000732966, 0, -1, -3.659
 
 [node name="Fence18" parent="." instance=ExtResource("19_62is3")]
 transform = Transform3D(-1, 0, -0.000732966, 0, 1, 0, 0.000732966, 0, -1, -33.0273, 0, 17.8503)
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+occluder = ExtResource("21_kuklu")
 
 [connection signal="timeout" from="Timer" to="EndTrigger/EndTriggerShapeMesh" method="_on_timer_timeout"]

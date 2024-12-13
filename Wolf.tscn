@@ -10276,6 +10276,7 @@ bones/66/rotation = Quaternion(0, 0, 0, 1)
 bones/66/scale = Vector3(1, 1, 1)
 
 [node name="Wolf" type="MeshInstance3D" parent="Wolf/AnimalArmature/Skeleton3D"]
+layers = 2
 mesh = SubResource("ArrayMesh_1bv2r")
 skin = SubResource("Skin_mct0w")
 

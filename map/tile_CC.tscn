@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=4 uid="uid://dk3f8q44ca06d"]
+[gd_scene load_steps=46 format=4 uid="uid://dk3f8q44ca06d"]
 
 [ext_resource type="PackedScene" uid="uid://tr7stq5c0sgo" path="res://map/Road_Gridmap/RoadStraight.tscn" id="2_j35vp"]
 [ext_resource type="ArrayMesh" uid="uid://btr3cuimtou64" path="res://models/kenney_city-kit-suburban/Models/OBJ format/driveway_long.obj" id="2_r7rem"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://hu1tx5dfnp07" path="res://models/City/BasketBallCourt_BaseColor.png" id="10_cevvh"]
 [ext_resource type="PackedScene" uid="uid://c66tvpbfxp318" path="res://map/Road_Gridmap/Fence.tscn" id="10_draah"]
 [ext_resource type="ArrayMesh" uid="uid://ddvhpetw2wpo5" path="res://models/City/BasketBallCourt.obj" id="11_onk8x"]
+[ext_resource type="ArrayOccluder3D" uid="uid://dggc1gq7v6a7u" path="res://map/occluders/tile_CC.occ" id="12_g0i4d"]
 [ext_resource type="PackedScene" uid="uid://dmqwngcxc6b3i" path="res://map/Road_Gridmap/Light.tscn" id="15_3cfju"]
 [ext_resource type="PackedScene" uid="uid://d4hduuvbqgwlx" path="res://Woman.tscn" id="15_f5dy5"]
 [ext_resource type="PackedScene" uid="uid://bbm3nisk3qaj1" path="res://Man1.tscn" id="16_n4s5h"]
@@ -555,3 +556,6 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -2.518
 
 [node name="Husky" parent="." instance=ExtResource("18_jiwcp")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -2.52424, 0.110103, 13.5738)
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+occluder = ExtResource("12_g0i4d")

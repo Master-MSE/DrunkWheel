@@ -11501,18 +11501,22 @@ bones/78/rotation = Quaternion(0, 0, 0, 1)
 bones/78/scale = Vector3(1, 1, 1)
 
 [node name="Casual_Body" type="MeshInstance3D" parent="Woman/CharacterArmature/Skeleton3D"]
+layers = 2
 mesh = SubResource("ArrayMesh_1tr72")
 skin = SubResource("Skin_ra8mr")
 
 [node name="Casual_Feet" type="MeshInstance3D" parent="Woman/CharacterArmature/Skeleton3D"]
+layers = 2
 mesh = SubResource("ArrayMesh_umxt7")
 skin = SubResource("Skin_ra8mr")
 
 [node name="Casual_Head" type="MeshInstance3D" parent="Woman/CharacterArmature/Skeleton3D"]
+layers = 2
 mesh = SubResource("ArrayMesh_af0sq")
 skin = SubResource("Skin_ra8mr")
 
 [node name="Casual_Legs" type="MeshInstance3D" parent="Woman/CharacterArmature/Skeleton3D"]
+layers = 2
 mesh = SubResource("ArrayMesh_iixxg")
 skin = SubResource("Skin_ra8mr")
 

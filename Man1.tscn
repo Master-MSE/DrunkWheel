@@ -3384,6 +3384,7 @@ bones/41/rotation = Quaternion(0, 0, 0, 1)
 bones/41/scale = Vector3(1, 1, 1)
 
 [node name="BaseHuman" type="MeshInstance3D" parent="Male_Casual/HumanArmature/Skeleton3D"]
+layers = 2
 mesh = SubResource("ArrayMesh_hjb6v")
 skin = SubResource("Skin_008vl")
 
