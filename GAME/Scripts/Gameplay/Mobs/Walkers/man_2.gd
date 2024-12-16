@@ -31,6 +31,7 @@ func _physics_process(delta: float) -> void:
 		if raycast.is_colliding():
 			if raycast.get_collider() is VehicleBody3D:
 				dead = true
+				GlobalSignal.emite_shoot(0)
 			else:
 				get_random_direction()
 			

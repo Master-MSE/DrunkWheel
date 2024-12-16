@@ -26,6 +26,7 @@ var time = 0.0
 var max_delay=2.0
 var crash_animation = preload("res://GAME/Scenes/Animations/animation_crash.tscn")
 var dink_animation = preload("res://GAME/Scenes/Animations/animation_drink.tscn")
+var shoot_animation = preload("res://GAME/Scenes/Animations/animation_shoot_man.tscn")
 
 func steering(steering_input):
 	# If there's steering input, adjust the steering angle
@@ -102,6 +103,7 @@ func _ready() -> void:
 	contact_monitor = true
 	set_max_contacts_reported(9999999)
 	parent=get_parent().get_parent()
+	GlobalSignal.shoot.connect(spawn_shoot_effect)
 
 func _on_body_entered(body: Node) -> void:
 	if body.collision_layer == 2:
@@ -176,7 +178,7 @@ func spawn_crash_effect():
 	var avant_position = global_transform.origin + direction_avant * 2.5
 	avant_position.y+=2.0
 	effect.global_transform.origin = avant_position  
-	effect.rotation_degrees = Vector3(-20.0,180.0,0.0)
+	effect.rotation_degrees = Vector3(-30.0,180.0,0.0)
 	
 func spawn_drink_effect():
 	# add effect
@@ -189,5 +191,18 @@ func spawn_drink_effect():
 	var avant_position = global_transform.origin + direction_avant * 2.5
 	avant_position.y+=2.0
 	effect.global_transform.origin = avant_position  
-	effect.rotation_degrees = Vector3(-20.0,180,0.0)
+	effect.rotation_degrees = Vector3(-30.0,180,0.0)
+	
+func spawn_shoot_effect(type):
+	# add effect
+	var effect = shoot_animation.instantiate()
+	add_child(effect)  
+
+	# Calcule rotation
+	var direction_avant = transform.basis.x  
+
+	var avant_position = global_transform.origin + direction_avant * 2.5
+	avant_position.y+=2.0
+	effect.global_transform.origin = avant_position  
+	effect.rotation_degrees = Vector3(-30.0,180,0.0)
 	 

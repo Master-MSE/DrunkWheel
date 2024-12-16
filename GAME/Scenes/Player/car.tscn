@@ -256,7 +256,7 @@ transform = Transform3D(0.996195, 0.0174551, -0.0853899, -3.45242e-08, 0.97974, 
 mesh = SubResource("BoxMesh_72tb6")
 
 [node name="Camera3D" type="Camera3D" parent="car"]
-transform = Transform3D(-1, 2.73465e-08, -1.17988e-07, -8.48199e-08, 0.53727, 0.84341, 8.64558e-08, 0.84341, -0.53727, 0, 11.3051, -1.30264)
+transform = Transform3D(-1, -6.69697e-08, 5.61943e-08, 0, 0.642787, 0.766044, -8.74228e-08, 0.766044, -0.642787, 0, 11, -2)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="car/Camera3D"]
 

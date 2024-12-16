@@ -13,7 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://hu1tx5dfnp07" path="res://GAME/Assets/Models/City/BasketBallCourt_BaseColor.png" id="10_cevvh"]
 [ext_resource type="PackedScene" uid="uid://c66tvpbfxp318" path="res://GAME/Scenes/Props/Fence.tscn" id="10_draah"]
 [ext_resource type="ArrayMesh" uid="uid://ddvhpetw2wpo5" path="res://GAME/Assets/Models/City/BasketBallCourt.obj" id="11_onk8x"]
-[ext_resource type="PackedScene" uid="uid://dmqwngcxc6b3i" path="res://GAME/Scenes/Props/Light.tscn" id="15_3cfju"]
 [ext_resource type="ArrayOccluder3D" uid="uid://dggc1gq7v6a7u" path="res://GAME/Scenes/Map/occluders/tile_CC.occ" id="12_g0i4d"]
 [ext_resource type="PackedScene" uid="uid://dmqwngcxc6b3i" path="res://GAME/Scenes/Props/Light.tscn" id="15_3cfju"]
 [ext_resource type="PackedScene" uid="uid://d4hduuvbqgwlx" path="res://GAME/Scenes/Mobs/Walkers/Woman.tscn" id="15_f5dy5"]

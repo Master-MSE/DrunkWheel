@@ -18,6 +18,7 @@ config/features=PackedStringArray("4.3", "Forward Plus")
 
 DebugMenu="*res://addons/debug_menu/debug_menu.tscn"
 CollisionHandler="*res://GAME/Scripts/Utility/collision_handler.gd"
+GlobalSignal="*res://GAME/Scripts/Utility/global_signal.gd"
 
 [editor]
 
