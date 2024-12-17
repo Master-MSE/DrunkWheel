@@ -1,0 +1,77 @@
+[gd_scene load_steps=6 format=3 uid="uid://dua04q0h0fieq"]
+
+[ext_resource type="ArrayMesh" uid="uid://b7wiwdsxmfy5o" path="res://GAME/Assets/Models/City/Lantern.obj" id="1_cv53j"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_85ea3"]
+albedo_color = Color(0.0646965, 0.0646965, 0.0646965, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ogbkd"]
+material = SubResource("StandardMaterial3D_85ea3")
+top_radius = 0.03
+bottom_radius = 0.03
+height = 15.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2w7uc"]
+albedo_color = Color(0.455328, 0.062789, 0.0690916, 1)
+emission_enabled = true
+emission = Color(0.937255, 0.219608, 0.215686, 1)
+emission_energy_multiplier = 5.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_ipwux"]
+material = SubResource("StandardMaterial3D_2w7uc")
+radius = 1.05
+height = 2.1
+
+[node name="Garland" type="Node3D"]
+
+[node name="Rope" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("CylinderMesh_ogbkd")
+
+[node name="Lantern" type="MeshInstance3D" parent="Rope"]
+transform = Transform3D(0.19965, -0.0118229, 0, -5.16797e-10, -8.72699e-09, 0.2, -0.0118229, -0.19965, -8.74228e-09, 0.0116451, 7, 0.346069)
+mesh = ExtResource("1_cv53j")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rope/Lantern"]
+mesh = SubResource("SphereMesh_ipwux")
+
+[node name="Lantern2" type="MeshInstance3D" parent="Rope"]
+transform = Transform3D(0.199882, -0.00687524, 0, -3.00526e-10, -8.73711e-09, 0.2, -0.00687524, -0.199882, -8.74228e-09, 0.00416426, 4.81845, 0.346069)
+mesh = ExtResource("1_cv53j")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rope/Lantern2"]
+mesh = SubResource("SphereMesh_ipwux")
+
+[node name="Lantern3" type="MeshInstance3D" parent="Rope"]
+transform = Transform3D(0.19965, -0.0118229, 0, -5.16797e-10, -8.72699e-09, 0.2, -0.0118229, -0.19965, -8.74228e-09, 0.0116451, -3.00214, 0.34607)
+mesh = ExtResource("1_cv53j")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rope/Lantern3"]
+mesh = SubResource("SphereMesh_ipwux")
+
+[node name="Lantern4" type="MeshInstance3D" parent="Rope"]
+transform = Transform3D(0.199332, -0.0163355, 0, -7.14048e-10, -8.71307e-09, 0.2, -0.0163355, -0.199332, -8.74228e-09, 0.0183099, 0.159998, 0.346069)
+mesh = ExtResource("1_cv53j")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rope/Lantern4"]
+mesh = SubResource("SphereMesh_ipwux")
+
+[node name="Lantern5" type="MeshInstance3D" parent="Rope"]
+transform = Transform3D(0.199998, 0.000785395, 0, 3.43307e-11, -8.74221e-09, 0.2, 0.000785395, -0.199998, -8.74228e-09, 0.0116451, 2.36478, 0.346069)
+mesh = ExtResource("1_cv53j")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rope/Lantern5"]
+mesh = SubResource("SphereMesh_ipwux")
+
+[node name="Lantern6" type="MeshInstance3D" parent="Rope"]
+transform = Transform3D(0.199882, -0.00687524, 0, -3.00526e-10, -8.73711e-09, 0.2, -0.00687524, -0.199882, -8.74228e-09, 0.00416426, -5.51642, 0.34607)
+mesh = ExtResource("1_cv53j")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rope/Lantern6"]
+mesh = SubResource("SphereMesh_ipwux")
