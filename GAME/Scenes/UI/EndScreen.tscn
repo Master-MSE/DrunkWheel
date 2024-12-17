@@ -1,8 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://bcfw5sy5t2e63"]
+[gd_scene load_steps=12 format=3 uid="uid://bcfw5sy5t2e63"]
 
 [ext_resource type="Script" path="res://GAME/Scripts/Gameplay/Mobs/Walkers/end_screen.gd" id="1_jryw4"]
 [ext_resource type="Shader" path="res://GAME/Scripts/Shaders/background.gdshader" id="2_45ivh"]
 [ext_resource type="Script" path="res://GAME/Scripts/UI/ticket.gd" id="2_i7y6o"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_b3ied"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_31ev0"]
 shader = ExtResource("2_45ivh")
@@ -64,8 +66,17 @@ events = [SubResource("InputEventKey_5ugo4")]
 [node name="EndScreen" type="CanvasLayer"]
 script = ExtResource("1_jryw4")
 
-[node name="background" type="ColorRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("ImageTexture_b3ied")
+
+[node name="background" type="ColorRect" parent="TextureRect"]
 material = SubResource("ShaderMaterial_31ev0")
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

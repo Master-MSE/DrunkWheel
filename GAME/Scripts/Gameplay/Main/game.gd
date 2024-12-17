@@ -50,8 +50,6 @@ var time :=0.0
 var end_scene
 
 
-
-
 func choose_next_tile(current: Vector2) -> Vector2:
 	var next_end = randi()%3
 	return Vector2(current.y, next_end)
@@ -90,6 +88,7 @@ func _on_object_hit() -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var viewport = Viewport
 	map_generator.generate_map(map_length)
 	control.start.connect(sound_finished)
 	Car.get_child(0).alcohol_collected.connect(_on_alcohol_collected)
@@ -134,13 +133,15 @@ func _on_end_reached() -> void:
 	RenderingServer.global_shader_parameter_set("tauxalcool",0);
 	#Engine.time_scale = 0
 	hud.visible = false
+	$timer_screan.start()
+	print(CollisionHandler.get_registered_collisions())
+	print(CollisionHandler.get_collision_prices())
+	
+func _on_timer_screan_timeout() -> void:
 	end_scene = endScreenScene.instantiate()
 	add_child(end_scene)
 	end_scene.restart_game.connect(_on_restart_game)
 	sd_end1.play()
-	
-	print(CollisionHandler.get_registered_collisions())
-	print(CollisionHandler.get_collision_prices())
 	
 func cal_taux_alcool(delta:float):
 	tauxalcool=0.0

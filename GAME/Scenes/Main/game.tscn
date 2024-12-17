@@ -27,7 +27,7 @@
 [ext_resource type="AudioStream" uid="uid://b5dnrlgfbwh8d" path="res://GAME/Assets/Audio/brawl-stars-menu-start-sounds-sound-effect-brawl-stars-hd-sound-effects_01web.mp3" id="24_fal8l"]
 [ext_resource type="AudioStream" uid="uid://bl2xmptklnba1" path="res://GAME/Assets/Audio/victory_p1.mp3" id="25_ssfm1"]
 [ext_resource type="AudioStream" uid="uid://d3lsapm62ugdl" path="res://GAME/Assets/Audio/victory_p2.mp3" id="26_7phfo"]
-[ext_resource type="AudioStream" uid="uid://dtlogiq1xj40l" path="res://GAME/Assets/Audio/man1.mp3" id="29_dower"]
+[ext_resource type="AudioStream" uid="uid://ij6hc11mrt5" path="res://GAME/Assets/Audio/Level0_1.wav" id="28_np60t"]
 
 [node name="Game" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 21.4664, 0)
@@ -51,6 +51,11 @@ tile_end_datas = Array[ExtResource("5_2no4k")]([ExtResource("16_q0ubc"), ExtReso
 [node name="Hud" parent="." instance=ExtResource("19_hp342")]
 
 [node name="aclool_timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="timer_screan" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
 
 [node name="StartMenu" parent="." instance=ExtResource("20_nonmd")]
 
@@ -86,7 +91,7 @@ stream = ExtResource("26_7phfo")
 bus = &"menu_sound"
 
 [node name="level_sound" type="AudioStreamPlayer" parent="sound"]
-stream = ExtResource("29_dower")
+stream = ExtResource("28_np60t")
 bus = &"voix_sound"
 
 [node name="shoot_sound" type="AudioStreamPlayer" parent="sound"]
@@ -94,5 +99,6 @@ max_polyphony = 3
 bus = &"voix_sound"
 
 [connection signal="timeout" from="aclool_timer" to="." method="_on_aclool_timer_timeout"]
+[connection signal="timeout" from="timer_screan" to="." method="_on_timer_screan_timeout"]
 [connection signal="finished" from="sound/drink_sound" to="." method="_on_drink_sound_finished"]
 [connection signal="finished" from="sound/level_sound" to="." method="sound_finished"]

@@ -10,6 +10,7 @@ extends CanvasLayer
 @onready var label_creator = $Creator
 @onready var label_context = $Context
 @onready var container_text = $VBoxContainer
+@onready var textureRec = $TextureRect
 
 
 
@@ -28,6 +29,7 @@ var damage_values = {
 }
 
 func _ready() -> void:
+	update_background()
 	_on_end_reached()
 	var screen_size = get_viewport().get_size()
 	updadte_affichage(screen_size)
@@ -100,3 +102,8 @@ func updadte_affichage(new_screen_size:Vector2)->void:
 	container_text.position=base_position_container_text*scaling
 	ticket.position=base_position_container_score*scaling
 	ticket.scal_draw(scaling)
+	
+func update_background()->void:
+	var img = get_viewport().get_texture().get_image()
+	var tex = ImageTexture.create_from_image(img)
+	textureRec.texture=tex
