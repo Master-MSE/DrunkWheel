@@ -15,21 +15,14 @@ enum GameStates {
 
 @onready var sd_game:AudioStreamPlayer = $sound/game_sound
 @onready var sd_drink:AudioStreamPlayer = $sound/drink_sound
+@onready var sd_drink2:AudioStreamPlayer = $sound/drink_sound2
 @onready var sd_bump:AudioStreamPlayer = $sound/bump_sound
+@onready var sd_shoot:AudioStreamPlayer = $sound/shoot_sound
 @onready var sd_menu:AudioStreamPlayer = $sound/menu_sound
 @onready var sd_end1:AudioStreamPlayer = $sound/end1_sound
 @onready var sd_end2:AudioStreamPlayer = $sound/end2_sound
+@onready var sd_level:AudioStreamPlayer = $sound/level_sound
 
-@onready var sd_loser1:AudioStreamPlayer = $sound/loser1_sound
-@onready var sd_loser2:AudioStreamPlayer = $sound/loser2_sound
-@onready var sd_man1:AudioStreamPlayer = $sound/man1_sound
-@onready var sd_man2:AudioStreamPlayer = $sound/man2_sound
-@onready var sd_coolman1:AudioStreamPlayer = $sound/coolman1_sound
-@onready var sd_coolman2:AudioStreamPlayer = $sound/coolman2_sound
-@onready var sd_superman1:AudioStreamPlayer = $sound/superman1_sound
-@onready var sd_superman2:AudioStreamPlayer = $sound/superman2_sound
-@onready var sd_god1:AudioStreamPlayer = $sound/god1_sound
-@onready var sd_god2:AudioStreamPlayer = $sound/god2_sound
 
 
 
@@ -78,11 +71,21 @@ func _on_alcohol_collected() -> void:
 	drink_o.abs_actuel=0.0
 	drinks.append(drink_o)
 	hud.update_alcohol(alcohol_collected)
-	sd_drink.play()
+	if not sd_drink.playing and not sd_drink2.playing and not sd_level.playing:
+		var rand=randi()%4
+		var audio_stream
+		if rand==0:
+			audio_stream = load("res://GAME/Assets/Audio/GetDrink1.wav")
+		elif rand==1:
+			audio_stream = load("res://GAME/Assets/Audio/GetDrink2.wav")
+		elif rand==2:
+			audio_stream = load("res://GAME/Assets/Audio/GetDrink3.wav")
+		else:
+			audio_stream = load("res://GAME/Assets/Audio/GetDrink4.wav")
+		sd_drink.stream=audio_stream
+		sd_drink.play()
 
 func _on_object_hit() -> void:
-	objects_hit+=1
-	hud.update_obects(objects_hit)
 	sd_bump.play()
 
 # Called when the node enters the scene tree for the first time.
@@ -92,6 +95,7 @@ func _ready() -> void:
 	Car.get_child(0).alcohol_collected.connect(_on_alcohol_collected)
 	Car.get_child(0).end_reached.connect(_on_end_reached)
 	Car.get_child(0).object_hit.connect(_on_object_hit)
+	GlobalSignal.shoot.connect(sound_shoot_effect)
 	Engine.time_scale = 1
 	update_shader_screen_size()
 	get_tree().get_root().size_changed.connect(update_shader_screen_size)
@@ -195,32 +199,54 @@ func update_shader_screen_size():
 	RenderingServer.global_shader_parameter_set("screen_size",screen_size);
 
 func play_taux_alcool_sound():
-	if tauxalcool<2.5:
-		if randi()%2==1:
-			sd_loser1.play()
+	if sd_level.playing:
+		pass
+	elif sd_drink.playing or sd_drink2.playing :
+		timer.wait_time=1
+		timer.start()
+	else :
+		var rand=randi()%3
+		var rand2=randi()%4
+		var audio_stream
+		if tauxalcool<2.5:
+			if rand==1:
+				audio_stream = load("res://GAME/Assets/Audio/Level0_1.wav")
+			elif rand==2:
+				audio_stream = load("res://GAME/Assets/Audio/Level0_2.wav")
+			else:
+				audio_stream = load("res://GAME/Assets/Audio/Level0_3.wav")
+		elif  tauxalcool<5.0:
+			if rand==1:
+				audio_stream = load("res://GAME/Assets/Audio/Level1_1.wav")
+			elif rand==2:
+				audio_stream = load("res://GAME/Assets/Audio/Level1_2.wav")
+			else:
+				audio_stream = load("res://GAME/Assets/Audio/Level1_3.wav")
+		elif tauxalcool<7.5:
+			if rand==1:
+				audio_stream = load("res://GAME/Assets/Audio/Level2_1.wav")
+			elif rand==2:
+				audio_stream = load("res://GAME/Assets/Audio/Level2_2.wav")
+			else:
+				audio_stream = load("res://GAME/Assets/Audio/Level2_3.wav")
+		elif tauxalcool<10.0:
+			if rand==1:
+				audio_stream = load("res://GAME/Assets/Audio/Level3_1.wav")
+			elif rand==2:
+				audio_stream = load("res://GAME/Assets/Audio/Level3_2.wav")
+			else:
+				audio_stream = load("res://GAME/Assets/Audio/Level3_3.wav")
 		else:
-			sd_loser2.play()
-	elif  tauxalcool<5.0:
-		if randi()%2==1:
-			sd_man1.play()
-		else:
-			sd_man2.play()
-	elif tauxalcool<7.5:
-		if randi()%2==1:
-			sd_coolman1.play()
-		else:
-			sd_coolman2.play()
-	elif tauxalcool<10.0:
-		if randi()%2==1:
-			sd_superman1.play()
-		else:
-			sd_superman2.play()
-	else:
-		if randi()%2==1:
-			sd_god1.play()
-		else:
-			sd_god2.play()
-
+			if rand2==1:
+				audio_stream = load("res://GAME/Assets/Audio/Level4_1.wav")
+			elif rand2==2:
+				audio_stream = load("res://GAME/Assets/Audio/Level4_2.wav")
+			elif rand2==3:
+				audio_stream = load("res://GAME/Assets/Audio/Level4_3.wav")
+			else:
+				audio_stream = load("res://GAME/Assets/Audio/Level4_4.wav")
+		sd_level.stream = audio_stream
+		sd_level.play()
 func _on_aclool_timer_timeout() -> void:
 	if game_state == GameStates.PLAYING:
 		play_taux_alcool_sound()
@@ -229,3 +255,29 @@ func sound_finished() -> void:
 	var wait_time=randf()*10.0+5.0
 	timer.wait_time=wait_time
 	timer.start()
+
+
+func _on_drink_sound_finished() -> void:
+	var rand=randi()%4
+	var audio_stream
+	if rand==0:
+		audio_stream = load("res://GAME/Assets/Audio/BeerOpening/beer-can-open-sound-230903.mp3")
+	elif rand==1:
+		audio_stream = load("res://GAME/Assets/Audio/BeerOpening/beer-can-opening-140383.mp3")
+	elif rand==2:
+		audio_stream = load("res://GAME/Assets/Audio/BeerOpening/beer-can-opening-hq-wav-268272.mp3")
+	else:
+		audio_stream = load("res://GAME/Assets/Audio/BeerOpening/can-opening-fizzy-drink-soda-pop-high-quality-96655.mp3")
+	sd_drink2.stream=audio_stream
+	sd_drink2.play()
+	
+func sound_shoot_effect(type)-> void:
+	var audio_stream
+	if type==0:
+		audio_stream = load("res://GAME/Assets/Audio/man-scream.wav")
+	elif type==1:
+		audio_stream = load("res://GAME/Assets/Audio/dog.wav")
+	else:
+		audio_stream = load("res://GAME/Assets/Audio/woman-scream.wav")
+	sd_shoot.stream=audio_stream
+	sd_shoot.play()

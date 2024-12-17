@@ -35,10 +35,6 @@ func updadte_affichage(new_screen_size:Vector2)->void:
 	alcoolbar.position=base_position_color*scaling
 	particles.position=base_position_particles*scaling
 	
-
-func update_obects(objects: int) -> void:
-	var objects_label = "Objects hit = {objects}"
-	$Object.text = objects_label.format({"objects": str(objects)})
 	
 func set_change_particles(state:bool)->void:
 	if state!=actuly_state:

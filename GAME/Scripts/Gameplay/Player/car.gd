@@ -112,7 +112,10 @@ func _on_body_entered(body: Node) -> void:
 			body.freeze = false
 			body.apply_impulse((linear_velocity*relative_obstacle_collision_impulse_strength) + (Vector3.UP * vertical_obstacle_collision_impulse_strength))
 			spawn_crash_effect()
-	
+			object_hit.emit()
+			
+	elif body.collision_layer == 1:
+		object_hit.emit()
 	elif body.collision_layer == 4:
 		body.queue_free()
 		alcohol_collected.emit()
