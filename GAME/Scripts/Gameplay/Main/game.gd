@@ -68,7 +68,6 @@ func _on_alcohol_collected() -> void:
 	drink_o.time_cons=time
 	drink_o.abs_actuel=0.0
 	drinks.append(drink_o)
-	hud.update_alcohol(alcohol_collected)
 	if not sd_drink.playing and not sd_drink2.playing and not sd_level.playing:
 		var rand=randi()%4
 		var audio_stream
@@ -136,12 +135,13 @@ func _on_end_reached() -> void:
 	$timer_screan.start()
 	print(CollisionHandler.get_registered_collisions())
 	print(CollisionHandler.get_collision_prices())
+	sd_end1.play()
 	
 func _on_timer_screan_timeout() -> void:
 	end_scene = endScreenScene.instantiate()
 	add_child(end_scene)
 	end_scene.restart_game.connect(_on_restart_game)
-	sd_end1.play()
+	
 	
 func cal_taux_alcool(delta:float):
 	tauxalcool=0.0

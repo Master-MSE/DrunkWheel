@@ -12,14 +12,9 @@ var base_position_particles=Vector2(1030,39)
 var base_size_color=Vector2(18,0)
 var actuly_state=false
 
-func update_alcohol(alcohol: int) -> void:
-	var alcohol_label = "Alcohol collected = {alcohol}"
-	$Alcool.text = alcohol_label.format({"alcohol": str(alcohol)})
-	
 	
 func update_taux(taux: float) -> void:
 	var alcohol_label = "Taux = {taux}"
-	$Taux.text = alcohol_label.format({"taux": str(taux)})
 	alcoolbar.update_alcol_bar(taux)
 	if taux >10:
 		set_change_particles(true)

@@ -21,21 +21,6 @@ shader_parameter/endtime = -10.0
 [node name="Hud" type="CanvasLayer"]
 script = ExtResource("1_moym4")
 
-[node name="Alcool" type="Label" parent="."]
-offset_left = 5.0
-offset_top = 4.0
-offset_right = 163.0
-offset_bottom = 27.0
-text = "Alcohol collected = 0"
-metadata/_edit_use_anchors_ = true
-
-[node name="Taux" type="Label" parent="."]
-offset_left = 99.0
-offset_top = 62.0
-offset_right = 163.0
-offset_bottom = 85.0
-text = "Taux = 0"
-
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_direction = 1
 anchors_preset = 8
