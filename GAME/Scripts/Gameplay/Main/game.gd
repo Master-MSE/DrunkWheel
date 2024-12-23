@@ -181,6 +181,7 @@ func free() -> void:
 
 func _on_restart_game() -> void:
 	game_state = GameStates.WAITING
+	CollisionHandler.reset()
 	alcohol_collected = 0
 	objects_hit = 0
 	tauxalcool = 0.0

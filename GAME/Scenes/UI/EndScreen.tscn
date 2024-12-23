@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://bcfw5sy5t2e63"]
+[gd_scene load_steps=15 format=3 uid="uid://bcfw5sy5t2e63"]
 
 [ext_resource type="Script" path="res://GAME/Scripts/Gameplay/Mobs/Walkers/end_screen.gd" id="1_jryw4"]
 [ext_resource type="Shader" path="res://GAME/Scripts/Shaders/background.gdshader" id="2_45ivh"]
 [ext_resource type="Script" path="res://GAME/Scripts/UI/ticket.gd" id="2_i7y6o"]
+[ext_resource type="Script" path="res://GAME/Scripts/UI/name.gd" id="4_vscu7"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_b3ied"]
 
@@ -56,12 +57,30 @@ keycode = 4194320
 events = [SubResource("InputEventKey_x4x38"), SubResource("InputEventKey_ym0l5")]
 
 [sub_resource type="InputEventKey" id="InputEventKey_5ugo4"]
-device = -1
-keycode = 81
-unicode = 113
+keycode = 83
 
 [sub_resource type="Shortcut" id="Shortcut_kh60b"]
 events = [SubResource("InputEventKey_5ugo4")]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_phy1a"]
+bg_color = Color(1, 1, 1, 0.823529)
+border_width_left = 3
+border_width_top = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_bottom_left = 15
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u4tdr"]
+bg_color = Color(1, 1, 1, 0.823529)
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+anti_aliasing = false
 
 [node name="EndScreen" type="CanvasLayer"]
 script = ExtResource("1_jryw4")
@@ -286,18 +305,62 @@ layout_mode = 2
 alignment = 1
 
 [node name="Start" type="Button" parent="Ticket/VBoxContainer2/VBoxContainer2"]
+visible = false
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 20
+disabled = true
 shortcut = SubResource("Shortcut_u07c5")
 text = " Press W to restart "
 
 [node name="Quit" type="Button" parent="Ticket/VBoxContainer2/VBoxContainer2"]
+visible = false
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
+disabled = true
+shortcut = SubResource("Shortcut_kh60b")
+text = "    Press Q to quit    "
+
+[node name="VBoxContainer3" type="HBoxContainer" parent="Ticket/VBoxContainer2"]
+layout_mode = 2
+alignment = 1
+
+[node name="Name" type="TextEdit" parent="Ticket/VBoxContainer2/VBoxContainer3"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+script = ExtResource("4_vscu7")
+
+[node name="Sign" type="Button" parent="Ticket/VBoxContainer2/VBoxContainer3"]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 20
 shortcut = SubResource("Shortcut_kh60b")
-text = "    Press Q to quit    "
+text = "Sign (S)"
+
+[node name="Scores_name" type="Label" parent="."]
+offset_left = 850.0
+offset_top = 150.0
+offset_right = 990.0
+offset_bottom = 550.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_phy1a")
+horizontal_alignment = 2
+
+[node name="Scores_value" type="Label" parent="."]
+offset_left = 990.0
+offset_top = 150.0
+offset_right = 1130.0
+offset_bottom = 550.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_u4tdr")
 
 [connection signal="pressed" from="Ticket/VBoxContainer2/VBoxContainer2/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Ticket/VBoxContainer2/VBoxContainer2/Quit" to="." method="_on_quit_pressed"]
+[connection signal="text_changed" from="Ticket/VBoxContainer2/VBoxContainer3/Name" to="Ticket/VBoxContainer2/VBoxContainer3/Name" method="_on_text_changed"]
+[connection signal="pressed" from="Ticket/VBoxContainer2/VBoxContainer3/Sign" to="." method="_on_sign_pressed"]

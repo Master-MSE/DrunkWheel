@@ -27,7 +27,11 @@ func get_collision_prices() -> Dictionary:
 	return collisions_prices
 func get_collision_prices_total() -> float:
 	var sum = 0
-	for price in collisions_prices.values():
-		sum += price
+	for key in collisions_prices.keys():
+		sum += collisions_prices[key]*registered_collisions[key]
 	return sum
+func reset()->void:
+	collision_counter = 0
+	registered_collisions ={}
+	collisions_prices ={}
 	

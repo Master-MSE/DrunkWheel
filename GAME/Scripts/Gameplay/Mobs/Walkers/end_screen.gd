@@ -10,8 +10,12 @@ extends CanvasLayer
 @onready var label_creator = $Creator
 @onready var label_context = $Context
 @onready var container_text = $VBoxContainer
+@onready var name_score = $Ticket/VBoxContainer2/VBoxContainer3/Name
 @onready var textureRec = $TextureRect
+@onready var scores_name = $Scores_name
+@onready var scores_value = $Scores_value
 
+	
 
 
 signal restart_game
@@ -21,12 +25,12 @@ const base_position_label_creator= Vector2(691,608)
 const base_position_label_context= Vector2(13,613)
 const base_position_container_text= Vector2(290,0)
 const base_position_container_score= Vector2(382,170)
+const base_position_scores_name= Vector2(850,150)
+const base_position_scores_value= Vector2(990,150)
+
 var scaling=Vector2(1.0,1.0)
-var damage_values = {
-	"Light": -100, 
-	"Light2": -100, 
-	"Light3": -100, 
-}
+var final_score
+
 
 func _ready() -> void:
 	update_background()
@@ -34,31 +38,15 @@ func _ready() -> void:
 	var screen_size = get_viewport().get_size()
 	updadte_affichage(screen_size)
 
-# Calcul total damages according to damage values
-func calculate_total_damage() -> Dictionary:
-	var total_damage = 0
-	var damage_breakdown = {}  # Dictionary to store the breakdown
-	
-	for obj in Car.hitted_objects:
-		if damage_values.has(obj):
-			if not damage_breakdown.has(obj):
-				damage_breakdown[obj] = 0
-			damage_breakdown[obj] += 1
-			total_damage += damage_values[obj]
-		else:
-			print("Unknown object type: %s" % obj)
-	
-	return {"total_damage": total_damage, "damage_breakdown": damage_breakdown}
-	
+
 # Print the results
 func _on_end_reached():
-	var results = calculate_total_damage()
 	var damage_costs = -CollisionHandler.get_collision_prices_total()
 	var damages_values =CollisionHandler.get_collision_prices()
 	var damage_breakdown =CollisionHandler.get_registered_collisions()
 	
 	var total_points = Game.alcohol_collected * 100
-	var final_score = total_points + damage_costs
+	final_score = total_points + damage_costs
 	total_points_label.text = " %d" % total_points
 
 	# Prepare detailed damage costs
@@ -82,7 +70,7 @@ func _on_end_reached():
 		best_score = final_score
 	
 	best_score_label.text = "%d" % best_score
-	
+	update_scores()
 	ticket.scal_draw(scaling)
 	self.visible = true
 
@@ -98,13 +86,44 @@ func updadte_affichage(new_screen_size:Vector2)->void:
 	label_creator.scale=scaling
 	container_text.scale=scaling
 	container_score.scale=scaling
+	scores_name.scale=scaling
+	scores_value.scale=scaling
 	label_context.position=base_position_label_context*scaling
 	label_creator.position=base_position_label_creator*scaling
 	container_text.position=base_position_container_text*scaling
 	ticket.position=base_position_container_score*scaling
+	scores_name.position=base_position_scores_name*scaling
+	scores_value.position=base_position_scores_value*scaling
 	ticket.scal_draw(scaling)
+	
+	
 	
 func update_background()->void:
 	var img = get_viewport().get_texture().get_image()
 	var tex = ImageTexture.create_from_image(img)
 	textureRec.texture=tex
+
+
+func _on_sign_pressed() -> void:
+	$Ticket/VBoxContainer2/VBoxContainer2/Quit.visible=true
+	$Ticket/VBoxContainer2/VBoxContainer2/Start.visible=true
+	$Ticket/VBoxContainer2/VBoxContainer2/Quit.disabled=false
+	$Ticket/VBoxContainer2/VBoxContainer2/Start.disabled=false
+	$Ticket/VBoxContainer2/VBoxContainer3/Name.visible=false
+	$Ticket/VBoxContainer2/VBoxContainer3/Sign.visible=false
+	var name_score=name_score.text
+	SaveScore.add_score(name_score,final_score)
+	SaveScore.save_score()
+	update_scores()
+	
+func update_scores()-> void:
+	var scores_sort=SaveScore.get_score()
+	var scores_text = ""
+	var scores_values = ""
+	for score in scores_sort:
+		var name=score["name"]
+		var value=score["score"]
+		scores_text += "%s\n" % name
+		scores_values += ": %s\n" % value
+	scores_name.text = scores_text
+	scores_value.text = scores_values
