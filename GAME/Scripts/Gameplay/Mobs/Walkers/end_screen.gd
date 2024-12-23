@@ -45,7 +45,7 @@ func _on_end_reached():
 	var damages_values =CollisionHandler.get_collision_prices()
 	var damage_breakdown =CollisionHandler.get_registered_collisions()
 	
-	var total_points = Game.alcohol_collected * 100
+	var total_points = AlcoolScore.get_score()
 	final_score = total_points + damage_costs
 	total_points_label.text = " %d" % total_points
 

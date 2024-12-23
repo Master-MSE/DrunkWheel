@@ -20,6 +20,7 @@ DebugMenu="*res://addons/debug_menu/debug_menu.tscn"
 CollisionHandler="*res://GAME/Scripts/Utility/collision_handler.gd"
 GlobalSignal="*res://GAME/Scripts/Utility/global_signal.gd"
 SaveScore="*res://GAME/Scripts/Utility/save_score.gd"
+AlcoolScore="*res://GAME/Scripts/Utility/alcool_score.gd"
 
 [editor]
 

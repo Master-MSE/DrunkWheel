@@ -35,8 +35,6 @@ const tile_length = 30
 const map_length = 1
 
 static var game_state: GameStates = GameStates.WAITING
-static var alcohol_collected := 0
-static var objects_hit := 0
 
 var current_tile_ends = Vector2(1,1)
 var current_tile_pos = Vector3(0,0,0)
@@ -61,8 +59,7 @@ func _create_tile(tile: PackedScene) -> void:
 	add_child(new_tile)
 
 func _on_alcohol_collected() -> void:
-	alcohol_collected+=1
-	#cons_alcool[0]+=1
+	AlcoolScore.add_score(100*(1+tauxalcool))
 	var drink_o = drink.new()
 	drink_o.alcool=1.0
 	drink_o.time_cons=time
@@ -133,8 +130,6 @@ func _on_end_reached() -> void:
 	#Engine.time_scale = 0
 	hud.visible = false
 	$timer_screan.start()
-	print(CollisionHandler.get_registered_collisions())
-	print(CollisionHandler.get_collision_prices())
 	sd_end1.play()
 	
 func _on_timer_screan_timeout() -> void:
@@ -182,8 +177,7 @@ func free() -> void:
 func _on_restart_game() -> void:
 	game_state = GameStates.WAITING
 	CollisionHandler.reset()
-	alcohol_collected = 0
-	objects_hit = 0
+	AlcoolScore.reset()
 	tauxalcool = 0.0
 	time =0.0
 	if is_instance_valid(end_scene):
