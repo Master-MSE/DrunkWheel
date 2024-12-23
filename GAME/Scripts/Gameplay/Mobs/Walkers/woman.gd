@@ -3,6 +3,9 @@ extends CharacterBody3D
 @onready var agent = $NavigationAgent3D
 @onready var raycast = $RayCast3D
 
+@export var object_name : String = "People"
+@export var object_value : float = 1000
+
 var max_speed = 4.0
 var min_speed = 2.0
 
@@ -31,6 +34,7 @@ func _physics_process(delta: float) -> void:
 			if raycast.get_collider() is VehicleBody3D:
 				dead = true
 				GlobalSignal.emite_shoot(2)
+				CollisionHandler.new_collision(object_name, object_value)
 			else:
 				get_random_direction()
 			

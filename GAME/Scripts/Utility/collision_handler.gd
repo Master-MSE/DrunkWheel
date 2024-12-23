@@ -10,7 +10,6 @@ func new_collision(name: String, value: float) -> void:
 	
 	if registered_collisions.has(name):
 		registered_collisions[name] += 1
-		collisions_prices[name] += value
 	else:
 		registered_collisions[name] = 1
 		collisions_prices[name] = value
@@ -26,3 +25,9 @@ func get_registered_collisions() -> Dictionary:
 	
 func get_collision_prices() -> Dictionary:
 	return collisions_prices
+func get_collision_prices_total() -> float:
+	var sum = 0
+	for price in collisions_prices.values():
+		sum += price
+	return sum
+	

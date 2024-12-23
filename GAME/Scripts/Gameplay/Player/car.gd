@@ -15,7 +15,7 @@ const MAX_BRAKE_FORCE = 35.0
 const MAX_STEERING_ANGLE = 0.7
 const STEERING_SPEED = 0.04
 const DELAY_DELAY_START = 3.0
-const DELAY_MAX = 0.5
+const DELAY_MAX = 0.3
 const DELAY_FACTOR = DELAY_MAX/(10.0-DELAY_DELAY_START)
 
 var steering_angle = 0.0
@@ -109,6 +109,7 @@ func _on_body_entered(body: Node) -> void:
 	if body.collision_layer == 2:
 		if body is RigidBody3D and body.freeze == true:
 			hitted_objects.append(body.name)
+			prints(body)
 			body.freeze = false
 			body.apply_impulse((linear_velocity*relative_obstacle_collision_impulse_strength) + (Vector3.UP * vertical_obstacle_collision_impulse_strength))
 			spawn_crash_effect()

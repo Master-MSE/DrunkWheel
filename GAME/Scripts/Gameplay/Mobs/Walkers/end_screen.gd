@@ -53,9 +53,10 @@ func calculate_total_damage() -> Dictionary:
 # Print the results
 func _on_end_reached():
 	var results = calculate_total_damage()
-	var damage_costs = results["total_damage"]
-	var damage_breakdown = results["damage_breakdown"]
-
+	var damage_costs = -CollisionHandler.get_collision_prices_total()
+	var damages_values =CollisionHandler.get_collision_prices()
+	var damage_breakdown =CollisionHandler.get_registered_collisions()
+	
 	var total_points = Game.alcohol_collected * 100
 	var final_score = total_points + damage_costs
 	total_points_label.text = " %d" % total_points
@@ -66,8 +67,8 @@ func _on_end_reached():
 	
 	for key in damage_breakdown.keys():
 		var count = damage_breakdown[key]
-		var cost_per_item = damage_values[key]
-		var total_for_item = count * cost_per_item
+		var cost_per_item = damages_values[key]
+		var total_for_item = count*cost_per_item
 		damage_costs_text += "- %s : %d x %d\n" % [key, count, cost_per_item]
 		damage_costs_value += "%d\n" % total_for_item
 

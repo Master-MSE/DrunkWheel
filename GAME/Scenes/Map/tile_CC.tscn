@@ -496,12 +496,15 @@ shape = SubResource("ConcavePolygonShape3D_hhk6m")
 
 [node name="Bench" parent="NavigationRegion3D" instance=ExtResource("8_nvaks")]
 transform = Transform3D(-0.811523, 0, 0.584321, 0, 1, 0, -0.584321, 0, -0.811523, -18.0634, -0.0307291, -12.8754)
+object_value = 10.0
 
 [node name="Bench2" parent="NavigationRegion3D" instance=ExtResource("8_nvaks")]
 transform = Transform3D(0.527001, 0, 0.849865, 0, 1, 0, -0.849865, 0, 0.527001, -28.4528, -0.0307291, -9.0928)
+object_value = 10.0
 
 [node name="Bench3" parent="NavigationRegion3D" instance=ExtResource("8_nvaks")]
 transform = Transform3D(-0.912485, 0, -0.409111, 0, 1, 0, 0.409111, 0, -0.912485, -25.9994, -0.0307291, -18.0028)
+object_value = 10.0
 
 [node name="Fence" parent="NavigationRegion3D" instance=ExtResource("10_draah")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -31.0553, 0, -8.16429)
@@ -523,12 +526,15 @@ transform = Transform3D(-0.986578, 0, -0.163291, 0, 1, 0, 0.163291, 0, -0.986578
 
 [node name="Bench7" parent="NavigationRegion3D" instance=ExtResource("8_nvaks")]
 transform = Transform3D(-0.578741, 0, -0.815512, 0, 1, 0, 0.815512, 0, -0.578741, 8.59614, 0.374661, 36.9324)
+object_value = 10.0
 
 [node name="Bench8" parent="NavigationRegion3D" instance=ExtResource("8_nvaks")]
 transform = Transform3D(-0.578741, 0, -0.815512, 0, 1, 0, 0.815512, 0, -0.578741, -3.32507, 0.374661, 36.9324)
+object_value = 10.0
 
 [node name="Bench9" parent="NavigationRegion3D" instance=ExtResource("8_nvaks")]
 transform = Transform3D(-0.578741, 0, -0.815512, 0, 1, 0, 0.815512, 0, -0.578741, -15.4004, 0.374661, 36.9324)
+object_value = 10.0
 
 [node name="Light3" parent="NavigationRegion3D" instance=ExtResource("15_3cfju")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -19.2009, 0, 35.9299)
