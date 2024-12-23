@@ -1,4 +1,4 @@
-[gd_scene load_steps=110 format=3 uid="uid://gsvq0r815nk6"]
+[gd_scene load_steps=111 format=3 uid="uid://gsvq0r815nk6"]
 
 [ext_resource type="Script" path="res://GAME/Scripts/Gameplay/Map/train_start.gd" id="1_m281f"]
 [ext_resource type="ArrayMesh" uid="uid://rlb0f12letl0" path="res://GAME/Assets/Models/kenney_city-kit-roads/Models/OBJ format/road_endRound.obj" id="2_ydhv7"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://c66tvpbfxp318" path="res://GAME/Scenes/Props/Fence.tscn" id="19_62is3"]
 [ext_resource type="Script" path="res://GAME/Scripts/Animations/EndTriggerShape.gd" id="19_e7nqb"]
 [ext_resource type="ArrayOccluder3D" uid="uid://cp0v0v60y7g3w" path="res://GAME/Scenes/Map/occluders/tile_endR.occ" id="21_kuklu"]
+[ext_resource type="PackedScene" uid="uid://bjpvataopch70" path="res://GAME/Scenes/Props/Pickup.tscn" id="22_awt85"]
 
 [sub_resource type="MeshTexture" id="MeshTexture_gbh50"]
 
@@ -5626,5 +5627,20 @@ transform = Transform3D(-1, 0, -0.000732966, 0, 1, 0, 0.000732966, 0, -1, -33.02
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
 occluder = ExtResource("21_kuklu")
+
+[node name="Pickup1" parent="." instance=ExtResource("22_awt85")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 48.4391, 1, -21.983)
+
+[node name="Pickup2" parent="." instance=ExtResource("22_awt85")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -12.6713, 1, -24.9961)
+
+[node name="Pickup3" parent="." instance=ExtResource("22_awt85")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -44.5865, 1, -24.611)
+
+[node name="Pickup4" parent="." instance=ExtResource("22_awt85")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -16.1418, 1, 23.8756)
+
+[node name="Pickup5" parent="." instance=ExtResource("22_awt85")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -59.1487, 1, 32.9935)
 
 [connection signal="timeout" from="Timer" to="EndTrigger/EndTriggerShapeMesh" method="_on_timer_timeout"]

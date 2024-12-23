@@ -32,7 +32,8 @@ const pik_time_alcool=10.0
 const alcool_absorbtion :=0.025
 const fac_time =1
 const tile_length = 30
-const map_length = 1
+const map_length = 5
+const ALCOOL_VALUE = 300
 
 static var game_state: GameStates = GameStates.WAITING
 
@@ -59,7 +60,7 @@ func _create_tile(tile: PackedScene) -> void:
 	add_child(new_tile)
 
 func _on_alcohol_collected() -> void:
-	AlcoolScore.add_score(100*(1+tauxalcool))
+	AlcoolScore.add_score(ALCOOL_VALUE*(1+min(tauxalcool,10.0)))
 	var drink_o = drink.new()
 	drink_o.alcool=1.0
 	drink_o.time_cons=time

@@ -123,7 +123,7 @@ func update_scores()-> void:
 	for score in scores_sort:
 		var name=score["name"]
 		var value=score["score"]
-		scores_text += "%s\n" % name
-		scores_values += ": %s\n" % value
+		scores_text += "%s :\n" % name
+		scores_values += ": %d\n" % value
 	scores_name.text = scores_text
 	scores_value.text = scores_values

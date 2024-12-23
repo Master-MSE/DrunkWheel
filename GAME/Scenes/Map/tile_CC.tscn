@@ -137,13 +137,25 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 
 [node name="TileBase" parent="." instance=ExtResource("3_p40bd")]
 
 [node name="Pickup" parent="." instance=ExtResource("3_m8e6x")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 50, 1.04027, -2)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 50, 1, -2)
 
 [node name="Pickup2" parent="." instance=ExtResource("3_m8e6x")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 23, 1.04027, 1)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 23, 1, 1)
 
 [node name="Pickup3" parent="." instance=ExtResource("3_m8e6x")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -29, 1.04027, -2)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -29, 1, -2)
+
+[node name="Pickup4" parent="." instance=ExtResource("3_m8e6x")]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 8.02815, 1, 22.9533)
+
+[node name="Pickup5" parent="." instance=ExtResource("3_m8e6x")]
+transform = Transform3D(1, 0, -3.49691e-07, 0, 1, 0, 3.49691e-07, 0, 1, -13.5386, 1, 22.9993)
+
+[node name="Pickup6" parent="." instance=ExtResource("3_m8e6x")]
+transform = Transform3D(1, 0, -6.99382e-07, 0, 1, 0, 6.99382e-07, 0, 1, -2.23389, 1, 0.418457)
+
+[node name="Pickup7" parent="." instance=ExtResource("3_m8e6x")]
+transform = Transform3D(1, 0, -6.99382e-07, 0, 1, 0, 6.99382e-07, 0, 1, -63.9773, 1, 1.45647)
 
 [node name="Road" type="Node3D" parent="."]
 

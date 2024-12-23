@@ -433,18 +433,6 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 
 
 [node name="TileBase" parent="." instance=ExtResource("7_qj0ma")]
 
-[node name="Pickup" parent="." instance=ExtResource("8_7s5et")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 44, 1.04027, -21)
-
-[node name="Pickup2" parent="." instance=ExtResource("8_7s5et")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 22, 1.04027, 24)
-
-[node name="Pickup3" parent="." instance=ExtResource("8_7s5et")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -4, 1.04027, -22)
-
-[node name="Pickup4" parent="." instance=ExtResource("8_7s5et")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -49, 1.04027, 7)
-
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.4382, 4.501, -28.7759)
 navigation_mesh = SubResource("NavigationMesh_8yidj")
@@ -1023,3 +1011,21 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -65.63
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
 occluder = ExtResource("25_ytrho")
+
+[node name="Pickup" parent="." instance=ExtResource("8_7s5et")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 44, 1.04027, -21)
+
+[node name="Pickup2" parent="." instance=ExtResource("8_7s5et")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 22, 1.04027, 24)
+
+[node name="Pickup3" parent="." instance=ExtResource("8_7s5et")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -4, 1.04027, -22)
+
+[node name="Pickup4" parent="." instance=ExtResource("8_7s5et")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -40.6627, 1.04027, 17.8747)
+
+[node name="Pickup5" parent="." instance=ExtResource("8_7s5et")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.372707, 1, 7.01925)
+
+[node name="Pickup6" parent="." instance=ExtResource("8_7s5et")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -58.3519, 1, 0.580405)

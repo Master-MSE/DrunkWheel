@@ -83,13 +83,19 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 
 [node name="TileBase" parent="." instance=ExtResource("5_llm7r")]
 
 [node name="Pickup" parent="." instance=ExtResource("5_2kgf7")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 60, 1.04027, -1.99999)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 60, 1, -2)
 
 [node name="Pickup2" parent="." instance=ExtResource("5_2kgf7")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 33, 1.04027, 3)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 33, 1, 3)
 
 [node name="Pickup3" parent="." instance=ExtResource("5_2kgf7")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -1, 1.04027, 12)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -1, 1, 12)
+
+[node name="Pickup4" parent="." instance=ExtResource("5_2kgf7")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -26.9614, 1, 22.2666)
+
+[node name="Pickup5" parent="." instance=ExtResource("5_2kgf7")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -61.5741, 1, 25.2143)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_62ufd")

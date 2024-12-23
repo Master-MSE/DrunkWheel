@@ -158,15 +158,6 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 
 
 [node name="TileBase" parent="." instance=ExtResource("4_aqhmb")]
 
-[node name="Pickup" parent="." instance=ExtResource("5_t0du0")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -58, 1.04027, 26)
-
-[node name="Pickup2" parent="." instance=ExtResource("5_t0du0")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -6, 1.04027, -18)
-
-[node name="Pickup3" parent="." instance=ExtResource("5_t0du0")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 30, 1.04027, 3)
-
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.4382, 4.501, -28.7759)
 navigation_mesh = SubResource("NavigationMesh_rijw1")
@@ -740,3 +731,18 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 2.6204
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
 occluder = ExtResource("24_ea7d5")
+
+[node name="Pickup" parent="." instance=ExtResource("5_t0du0")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -58, 1.04027, 26)
+
+[node name="Pickup2" parent="." instance=ExtResource("5_t0du0")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -6, 1.04027, -18)
+
+[node name="Pickup3" parent="." instance=ExtResource("5_t0du0")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 30, 1.04027, 3)
+
+[node name="Pickup4" parent="." instance=ExtResource("5_t0du0")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 4.92386, 1, -7.43619)
+
+[node name="Pickup5" parent="." instance=ExtResource("5_t0du0")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 56.6131, 1, -18.5804)

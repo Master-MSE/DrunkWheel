@@ -102,15 +102,6 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 
 
 [node name="TileBase" parent="." instance=ExtResource("4_m5ebw")]
 
-[node name="Pickup" parent="." instance=ExtResource("5_vfnjn")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -43, 1.04027, -22)
-
-[node name="Pickup2" parent="." instance=ExtResource("5_vfnjn")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 58, 1.04027, 25)
-
-[node name="Pickup3" parent="." instance=ExtResource("5_vfnjn")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2, 1.04027, -1)
-
 [node name="Decorative" type="StaticBody3D" parent="."]
 transform = Transform3D(-10, 0, -1.50996e-06, 0, 10, 0, 1.50996e-06, 0, -10, -64.7658, -1.49012e-07, -35.0092)
 
@@ -459,3 +450,12 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 69.468
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
 occluder = ExtResource("29_0c7i0")
+
+[node name="Pickup" parent="." instance=ExtResource("5_vfnjn")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -43, 1.04027, -22)
+
+[node name="Pickup2" parent="." instance=ExtResource("5_vfnjn")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 58, 1.04027, 25)
+
+[node name="Pickup3" parent="." instance=ExtResource("5_vfnjn")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2, 1.04027, -1)

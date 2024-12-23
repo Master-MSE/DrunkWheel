@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://3snwj65taleu"]
+[gd_scene load_steps=41 format=4 uid="uid://3snwj65taleu"]
 
 [ext_resource type="ArrayMesh" uid="uid://rlb0f12letl0" path="res://GAME/Assets/Models/kenney_city-kit-roads/Models/OBJ format/road_endRound.obj" id="6_dgp0j"]
 [ext_resource type="PackedScene" uid="uid://tr7stq5c0sgo" path="res://GAME/Scenes/Map/Road_Gridmap/RoadStraight.tscn" id="8_4y18q"]
@@ -18,6 +18,7 @@
 [ext_resource type="ArrayMesh" uid="uid://s6yhcwb6qr2b" path="res://GAME/Assets/Models/Forest/TreeBranch_429.obj" id="16_q4dvx"]
 [ext_resource type="ArrayMesh" uid="uid://cb4ch271um6s7" path="res://GAME/Assets/Models/Forest/lodge.obj" id="16_uej6b"]
 [ext_resource type="Texture2D" uid="uid://dfflu8cpjsmtd" path="res://GAME/Assets/Models/Forest/Cabin Shed_Diffuse_palette_2.jpg" id="17_pdh68"]
+[ext_resource type="Script" path="res://GAME/Scripts/Utility/collision_data.gd" id="18_qoa3s"]
 [ext_resource type="PackedScene" uid="uid://cyx46mjtfme8s" path="res://GAME/Assets/Models/Forest/Bonfire.glb" id="18_w2lei"]
 [ext_resource type="ArrayOccluder3D" uid="uid://c1fjnd13khse8" path="res://GAME/Scenes/Map/occluders/tile_LC.occ" id="21_6an5b"]
 [ext_resource type="PackedScene" uid="uid://cw8yqrk27pnpk" path="res://GAME/Scenes/Mobs/Walkers/Wolf.tscn" id="23_rhbxm"]
@@ -249,15 +250,6 @@ mesh = ExtResource("8_gk2xv")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="NavigationRegion3D/Decoration"]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 41, 0.0967567, 3.54648e-06)
 shape = SubResource("ConcavePolygonShape3D_rra1f")
-
-[node name="Pickup" parent="NavigationRegion3D" instance=ExtResource("9_dhv6w")]
-transform = Transform3D(-1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, 62, 1.04027, 22)
-
-[node name="Pickup2" parent="NavigationRegion3D" instance=ExtResource("9_dhv6w")]
-transform = Transform3D(-1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, 18, 1.04027, -0.999998)
-
-[node name="Pickup3" parent="NavigationRegion3D" instance=ExtResource("9_dhv6w")]
-transform = Transform3D(-1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, -24, 1.04027, 0.999998)
 
 [node name="Forest" type="StaticBody3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8762, 0, -1.61982)
@@ -1030,21 +1022,39 @@ omni_range = 4.0
 
 [node name="Stump" parent="NavigationRegion3D" instance=ExtResource("14_xiksy")]
 transform = Transform3D(-1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, 38.6135, 0.138069, -8.83104)
+script = ExtResource("18_qoa3s")
+object_name = "Stump"
+object_value = 1.0
 
 [node name="Stump2" parent="NavigationRegion3D" instance=ExtResource("14_xiksy")]
 transform = Transform3D(-1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, 19.8897, 0.138069, -10.4098)
+script = ExtResource("18_qoa3s")
+object_name = "Stump"
+object_value = 1.0
 
 [node name="Stump3" parent="NavigationRegion3D" instance=ExtResource("14_xiksy")]
 transform = Transform3D(-1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, -15.5527, 0.138069, -5.7467)
+script = ExtResource("18_qoa3s")
+object_name = "Stump"
+object_value = 1.0
 
 [node name="Stump4" parent="NavigationRegion3D" instance=ExtResource("14_xiksy")]
 transform = Transform3D(-1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, -32.088, 0.138069, -12.3141)
+script = ExtResource("18_qoa3s")
+object_name = "Stump"
+object_value = 1.0
 
 [node name="Stump5" parent="NavigationRegion3D" instance=ExtResource("14_xiksy")]
 transform = Transform3D(-1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, -50.1182, 0.138069, -7.22295)
+script = ExtResource("18_qoa3s")
+object_name = "Stump"
+object_value = 1.0
 
 [node name="Stump6" parent="NavigationRegion3D" instance=ExtResource("14_xiksy")]
 transform = Transform3D(-1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, -69.1354, 0.138069, -10.8545)
+script = ExtResource("18_qoa3s")
+object_name = "Stump"
+object_value = 1.0
 
 [node name="Log" parent="NavigationRegion3D" instance=ExtResource("15_uogph")]
 transform = Transform3D(-0.719121, 0, 0.694884, 0, 1, 0, -0.694884, 0, -0.719121, 59.3866, 0, 5.30958e-06)
@@ -1071,6 +1081,9 @@ mass = 1.0
 
 [node name="Stump7" parent="NavigationRegion3D" instance=ExtResource("14_xiksy")]
 transform = Transform3D(-1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, 68.2118, 0.138069, 13.0544)
+script = ExtResource("18_qoa3s")
+object_name = "Stump"
+object_value = 1.0
 
 [node name="Log7" parent="NavigationRegion3D" instance=ExtResource("15_uogph")]
 transform = Transform3D(-0.587785, 0, -0.809017, 0, 1, 0, 0.809017, 0, -0.587785, -68.8166, 0, 7.67144)
@@ -1090,15 +1103,27 @@ mass = 1.0
 
 [node name="Stump8" parent="NavigationRegion3D" instance=ExtResource("14_xiksy")]
 transform = Transform3D(-1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, 21.249, 0.138069, 8.60933)
+script = ExtResource("18_qoa3s")
+object_name = "Stump"
+object_value = 1.0
 
 [node name="Stump9" parent="NavigationRegion3D" instance=ExtResource("14_xiksy")]
 transform = Transform3D(-1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, -0.782968, 0.138069, 18.659)
+script = ExtResource("18_qoa3s")
+object_name = "Stump"
+object_value = 1.0
 
 [node name="Stump10" parent="NavigationRegion3D" instance=ExtResource("14_xiksy")]
 transform = Transform3D(-1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, -35.9568, 0.138069, 9.96216)
+script = ExtResource("18_qoa3s")
+object_name = "Stump"
+object_value = 1.0
 
 [node name="Stump11" parent="NavigationRegion3D" instance=ExtResource("14_xiksy")]
 transform = Transform3D(-1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, -69.3913, 0.138069, 17.6927)
+script = ExtResource("18_qoa3s")
+object_name = "Stump"
+object_value = 1.0
 
 [node name="Wolf" parent="." instance=ExtResource("23_rhbxm")]
 transform = Transform3D(-1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, -7, 0.110101, -6.25849e-07)
@@ -1111,3 +1136,18 @@ transform = Transform3D(-1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, -59.9456
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
 occluder = ExtResource("21_6an5b")
+
+[node name="Pickup" parent="." instance=ExtResource("9_dhv6w")]
+transform = Transform3D(-1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, 62, 1.04027, 22)
+
+[node name="Pickup2" parent="." instance=ExtResource("9_dhv6w")]
+transform = Transform3D(-1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, 18, 1.04027, -0.999998)
+
+[node name="Pickup3" parent="." instance=ExtResource("9_dhv6w")]
+transform = Transform3D(-1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, -24, 1.04027, 0.999998)
+
+[node name="Pickup4" parent="." instance=ExtResource("9_dhv6w")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -58.2894, 1, -1.574)
+
+[node name="Pickup5" parent="." instance=ExtResource("9_dhv6w")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 49.1239, 1, -27.2709)

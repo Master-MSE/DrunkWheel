@@ -86,13 +86,16 @@ transform = Transform3D(-1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.7422
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -50, 0, -17)
 
 [node name="Pickup" parent="." instance=ExtResource("5_pbqlm")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -54, 1.04027, -22)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -54, 1, -22)
 
 [node name="Pickup2" parent="." instance=ExtResource("5_pbqlm")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -19, 1.04027, 19)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -19, 1, 19)
 
 [node name="Pickup3" parent="." instance=ExtResource("5_pbqlm")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 11, 5.04027, -3)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 11, 1, -0.658147)
+
+[node name="Pickup4" parent="." instance=ExtResource("5_pbqlm")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 59.2035, 1, 1.65169)
 
 [node name="Decorative" type="StaticBody3D" parent="."]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=4 uid="uid://b5y4ymgygscii"]
+[gd_scene load_steps=105 format=4 uid="uid://b5y4ymgygscii"]
 
 [ext_resource type="Script" path="res://GAME/Scripts/Gameplay/Map/train_start.gd" id="1_31w7t"]
 [ext_resource type="ArrayMesh" uid="uid://rlb0f12letl0" path="res://GAME/Assets/Models/kenney_city-kit-roads/Models/OBJ format/road_endRound.obj" id="2_k5shs"]
@@ -24,6 +24,7 @@
 [ext_resource type="ArrayMesh" uid="uid://c75kj8x1mgo1u" path="res://GAME/Assets/Models/Forest/PUSHILIN_forest.obj" id="21_82eln"]
 [ext_resource type="PackedScene" uid="uid://c66tvpbfxp318" path="res://GAME/Scenes/Props/Fence.tscn" id="23_870j2"]
 [ext_resource type="ArrayOccluder3D" uid="uid://0h8yu4ta8da" path="res://GAME/Scenes/Map/occluders/tile_endC.occ" id="24_f3xwa"]
+[ext_resource type="PackedScene" uid="uid://bjpvataopch70" path="res://GAME/Scenes/Props/Pickup.tscn" id="25_pxecw"]
 
 [sub_resource type="MeshTexture" id="MeshTexture_gbh50"]
 
@@ -6046,6 +6047,15 @@ skeleton = NodePath("")
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
 occluder = ExtResource("24_f3xwa")
+
+[node name="Pickup1" parent="." instance=ExtResource("25_pxecw")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -12.6713, 1, -10.2657)
+
+[node name="Pickup2" parent="." instance=ExtResource("25_pxecw")]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 39.7446, 1, 14.6572)
+
+[node name="Pickup3" parent="." instance=ExtResource("25_pxecw")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 21.9637, 1, -1.25931)
 
 [connection signal="timeout" from="Timer" to="EndTrigger/EndTriggerShapeMesh" method="_on_timer_timeout"]
 [connection signal="body_entered" from="van/van" to="van/van" method="_on_body_entered"]

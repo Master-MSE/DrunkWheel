@@ -99,7 +99,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70, 1.04027, -22)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 1.04027, -22)
 
 [node name="Pickup2" parent="Alcohol" instance=ExtResource("18_nqmes")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 1.04027, -26)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.03738, 1.04027, -26)
+
+[node name="Pickup4" parent="Alcohol" instance=ExtResource("18_nqmes")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 53.5038, 1, -22.8104)
+
+[node name="Pickup5" parent="Alcohol" instance=ExtResource("18_nqmes")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -36.5175, 1, 11.5104)
 
 [node name="TileBase" parent="." instance=ExtResource("17_yykr2")]
 

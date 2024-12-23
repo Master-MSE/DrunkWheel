@@ -1,4 +1,4 @@
-[gd_scene load_steps=120 format=4 uid="uid://r30ww36lcv0m"]
+[gd_scene load_steps=121 format=4 uid="uid://r30ww36lcv0m"]
 
 [ext_resource type="Script" path="res://GAME/Scripts/Gameplay/Map/train_start.gd" id="1_bwrrx"]
 [ext_resource type="ArrayMesh" uid="uid://rlb0f12letl0" path="res://GAME/Assets/Models/kenney_city-kit-roads/Models/OBJ format/road_endRound.obj" id="2_7tj6x"]
@@ -23,6 +23,7 @@
 [ext_resource type="Material" uid="uid://co5up3xnsi777" path="res://GAME/Ressources/Game Data/Misc/light_material.tres" id="21_n5ak3"]
 [ext_resource type="Script" path="res://GAME/Scripts/Animations/EndTriggerShape.gd" id="22_bd0hq"]
 [ext_resource type="ArrayOccluder3D" uid="uid://dwrfci6s5p2fk" path="res://GAME/Scenes/Map/occluders/tile_endL.occ" id="23_bwc7w"]
+[ext_resource type="PackedScene" uid="uid://bjpvataopch70" path="res://GAME/Scenes/Props/Pickup.tscn" id="24_6xuph"]
 
 [sub_resource type="MeshTexture" id="MeshTexture_gbh50"]
 
@@ -5795,6 +5796,21 @@ autostart = true
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
 occluder = ExtResource("23_bwc7w")
+
+[node name="Pickup1" parent="." instance=ExtResource("24_6xuph")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 36.106, 1, 24.9564)
+
+[node name="Pickup2" parent="." instance=ExtResource("24_6xuph")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -54.5314, 1, -18.8019)
+
+[node name="Pickup3" parent="." instance=ExtResource("24_6xuph")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 4.51891, 1, -6.99342)
+
+[node name="Pickup4" parent="." instance=ExtResource("24_6xuph")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -40.8917, 1, -1.46424)
+
+[node name="Pickup5" parent="." instance=ExtResource("24_6xuph")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -48.3557, 1, 30.106)
 
 [connection signal="body_entered" from="Decorative/tractor/tractor" to="Decorative/tractor/tractor" method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="EndTrigger/EndTriggerShapeMesh" method="_on_timer_timeout"]
