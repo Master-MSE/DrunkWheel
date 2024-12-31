@@ -21,7 +21,7 @@ void fragment() {
 
 	vec2 car_position = vec2(0.5,0.8);
 	float delay_shado = clamp((tauxalcool-74.0/11.0)*11.0/6.0,-20.0,6.0);//t4->-5 tt10 ->6
-	float attenuation_shado =  0.09;
+	float attenuation_shado =  0.08;
 	float fade_radius =delay_shado*attenuation_shado;
 	float slope=3.0;
 
@@ -39,7 +39,7 @@ void fragment() {
 			vec2 point_position = car_position * aspect_ratio ; //* vec2(SCREEN_PIXEL_SIZE.y, SCREEN_PIXEL_SIZE.x);
 			vec2 current_position = SCREEN_UV * aspect_ratio; //* vec2(SCREEN_PIXEL_SIZE.y, SCREEN_PIXEL_SIZE.x);
 			float distance_to_point = distance(current_position, point_position);
-			float alpha = clamp(pow(distance_to_point+fade_radius,slope), 0.0, 0.99);
+			float alpha = clamp(pow(distance_to_point+fade_radius,slope), 0.0, 0.97);
 			COLOR = vec4(0,0,0,alpha);
 			break;
 		case 4:

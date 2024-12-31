@@ -38,4 +38,6 @@ func set_change_particles(state:bool)->void:
 	if state!=actuly_state:
 		actuly_state=state
 		particles.set_particles(state)
+func reset()->void:
+	particles.reset()
 	

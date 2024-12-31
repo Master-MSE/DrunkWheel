@@ -11,8 +11,9 @@ func add_score(name: String, value: float)->void:
 		for i in range(scores.size()):
 			if comp_list(scores[i],dic)==1:
 				scores.insert(i,dic)
+				scores=scores.slice(0, 10)
 				return
-		if scores.size()<12:
+		if scores.size()<10:
 			scores.append(dic)
 func get_score()->Array:
 	return scores

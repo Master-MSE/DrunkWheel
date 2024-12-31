@@ -32,7 +32,7 @@ const pik_time_alcool=10.0
 const alcool_absorbtion :=0.025
 const fac_time =1
 const tile_length = 30
-const map_length = 5
+const map_length = 1
 const ALCOOL_VALUE = 300
 
 static var game_state: GameStates = GameStates.WAITING
@@ -129,6 +129,7 @@ func _on_end_reached() -> void:
 	game_state = GameStates.FINISHED
 	RenderingServer.global_shader_parameter_set("tauxalcool",0);
 	#Engine.time_scale = 0
+	hud.reset()
 	hud.visible = false
 	$timer_screan.start()
 	sd_end1.play()

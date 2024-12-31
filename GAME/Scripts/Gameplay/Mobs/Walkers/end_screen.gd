@@ -14,6 +14,7 @@ extends CanvasLayer
 @onready var textureRec = $TextureRect
 @onready var scores_name = $Scores_name
 @onready var scores_value = $Scores_value
+@onready var scores_title = $Scores_title
 
 	
 
@@ -25,8 +26,9 @@ const base_position_label_creator= Vector2(691,608)
 const base_position_label_context= Vector2(13,613)
 const base_position_container_text= Vector2(290,0)
 const base_position_container_score= Vector2(382,170)
-const base_position_scores_name= Vector2(850,150)
-const base_position_scores_value= Vector2(990,150)
+const base_position_scores_name= Vector2(850,170)
+const base_position_scores_value= Vector2(990,170)
+const base_position_scores_title= Vector2(850,118)
 
 var scaling=Vector2(1.0,1.0)
 var final_score
@@ -88,12 +90,14 @@ func updadte_affichage(new_screen_size:Vector2)->void:
 	container_score.scale=scaling
 	scores_name.scale=scaling
 	scores_value.scale=scaling
+	scores_title.scale=scaling
 	label_context.position=base_position_label_context*scaling
 	label_creator.position=base_position_label_creator*scaling
 	container_text.position=base_position_container_text*scaling
 	ticket.position=base_position_container_score*scaling
 	scores_name.position=base_position_scores_name*scaling
 	scores_value.position=base_position_scores_value*scaling
+	scores_title.position=base_position_scores_title*scaling
 	ticket.scal_draw(scaling)
 	
 	
@@ -105,17 +109,8 @@ func update_background()->void:
 
 
 func _on_sign_pressed() -> void:
-	$Ticket/VBoxContainer2/VBoxContainer2/Quit.visible=true
-	$Ticket/VBoxContainer2/VBoxContainer2/Start.visible=true
-	$Ticket/VBoxContainer2/VBoxContainer2/Quit.disabled=false
-	$Ticket/VBoxContainer2/VBoxContainer2/Start.disabled=false
-	$Ticket/VBoxContainer2/VBoxContainer3/Name.visible=false
-	$Ticket/VBoxContainer2/VBoxContainer3/Sign.visible=false
 	var name_score=name_score.text
-	SaveScore.add_score(name_score,final_score)
-	SaveScore.save_score()
-	update_scores()
-	
+	_on_name_text_submitted(name_score)
 func update_scores()-> void:
 	var scores_sort=SaveScore.get_score()
 	var scores_text = ""
@@ -127,3 +122,15 @@ func update_scores()-> void:
 		scores_values += ": %d\n" % value
 	scores_name.text = scores_text
 	scores_value.text = scores_values
+
+
+func _on_name_text_submitted(name_score: String) -> void:
+	$Ticket/VBoxContainer2/VBoxContainer2/Quit.visible=true
+	$Ticket/VBoxContainer2/VBoxContainer2/Start.visible=true
+	$Ticket/VBoxContainer2/VBoxContainer2/Quit.disabled=false
+	$Ticket/VBoxContainer2/VBoxContainer2/Start.disabled=false
+	$Ticket/VBoxContainer2/VBoxContainer3/Name.visible=false
+	$Ticket/VBoxContainer2/VBoxContainer3/Sign.visible=false
+	SaveScore.add_score(name_score,final_score)
+	SaveScore.save_score()
+	update_scores()
