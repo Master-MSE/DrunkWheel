@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b63eunt2i7pbk"
+path="res://.godot/imported/path_short.obj-1253c282d3858b034723beec6091dc7b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/path_short.obj-1253c282d3858b034723beec6091dc7b.mesh"]
+
+source_file="res://models/kenney_city-kit-suburban/Models/OBJ format/path_short.obj"
+dest_files=["res://.godot/imported/path_short.obj-1253c282d3858b034723beec6091dc7b.mesh", "res://.godot/imported/path_short.obj-1253c282d3858b034723beec6091dc7b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

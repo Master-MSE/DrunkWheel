@@ -44,7 +44,7 @@ func _physics_process(delta: float) -> void:
 		var next_location = agent.get_next_path_position()
 		var new_velocity = (next_location - current_location).normalized() * randf_range(min_speed, max_speed)
 		
-		$Male_Casual/AnimationPlayer.play("HumanArmature|Man_Run")
+		$Male_Casual/AnimationPlayer.play("HumanArmature|Man_Walk")
 		
 		velocity = new_velocity
 		if(agent.get_next_path_position() != global_transform.origin):

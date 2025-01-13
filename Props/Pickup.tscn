@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjpvataopch70"]
+
+[ext_resource type="PackedScene" uid="uid://dsaukf8g3or6r" path="res://models/alcohol/beer_bottle/beer_bottle.glb" id="1_in6h5"]
+[ext_resource type="Script" path="res://code/beer_bottle.gd" id="2_l3pjx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_47rww"]
+size = Vector3(1, 0.839844, 1)
+
+[node name="Pickup" type="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04027, 0)
+collision_layer = 4
+
+[node name="beer_bottle" parent="." instance=ExtResource("1_in6h5")]
+transform = Transform3D(0.488237, -0.107819, 0, 0.107819, 0.488237, 0, 0, 0, 0.5, 0, 0, 0)
+script = ExtResource("2_l3pjx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.78905, 0, 0, 0, 1.93791, 0, 0, 0, 0.699098, 0, -0.196672, 0)
+shape = SubResource("BoxShape3D_47rww")

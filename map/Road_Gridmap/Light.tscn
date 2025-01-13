@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmqwngcxc6b3i"]
+
+[ext_resource type="Script" path="res://code/light.gd" id="1_p60n0"]
+[ext_resource type="ArrayMesh" uid="uid://cdyj5363xl03u" path="res://models/kenney_city-kit-roads/Models/OBJ format/light_curved.obj" id="1_r1n74"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mn1oe"]
+size = Vector3(0.303955, 3.83599, 0.299255)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2rblx"]
+size = Vector3(0.323608, 0.16684, 1.05)
+
+[node name="Light" type="RigidBody3D"]
+collision_layer = 2
+collision_mask = 3
+mass = 10.0
+sleeping = true
+freeze = true
+script = ExtResource("1_p60n0")
+
+[node name="LightCurved2" type="MeshInstance3D" parent="."]
+transform = Transform3D(6, 0, -3.81438e-07, 0, 6, 0, 3.81438e-07, 0, 6, 0, 0, 0)
+mesh = ExtResource("1_r1n74")
+skeleton = NodePath("../../../..")
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 8.74228e-08, 8.74228e-08, -1.09723e-07, 0.301671, 0.953412, 5.6977e-08, -0.953412, 0.301671, 0, 3.8879, -1.00862)
+light_color = Color(1, 1, 0.392157, 1)
+light_energy = 8.947
+light_indirect_energy = 1.318
+light_volumetric_fog_energy = 1.212
+light_size = 0.212
+shadow_enabled = true
+spot_range = 6.10552
+spot_angle = 31.9252
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00280762, 1.92001, 0.000579834)
+shape = SubResource("BoxShape3D_mn1oe")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00884223, 3.98436, -0.679605)
+shape = SubResource("BoxShape3D_2rblx")
+
+[connection signal="sleeping_state_changed" from="." to="." method="_on_sleeping_state_changed"]

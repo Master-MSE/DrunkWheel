@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://brntotaobtidd"
+path="res://.godot/imported/train-connector.obj-c870f4e8f64e60e2f101bb5ddd090cde.mesh"
+
+[deps]
+
+files=["res://.godot/imported/train-connector.obj-c870f4e8f64e60e2f101bb5ddd090cde.mesh"]
+
+source_file="res://models/kenney_train-kit/Models/OBJ format/train-connector.obj"
+dest_files=["res://.godot/imported/train-connector.obj-c870f4e8f64e60e2f101bb5ddd090cde.mesh", "res://.godot/imported/train-connector.obj-c870f4e8f64e60e2f101bb5ddd090cde.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
