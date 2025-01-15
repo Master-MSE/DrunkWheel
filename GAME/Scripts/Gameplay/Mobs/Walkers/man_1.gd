@@ -6,8 +6,8 @@ extends CharacterBody3D
 @export var object_name : String = "People"
 @export var object_value : float = 1000
 
-var max_speed = 8.0
-var min_speed = 6.0
+var max_speed = 2.0
+var min_speed = 2.0
 
 # Range
 var range_z = 50.0
@@ -16,9 +16,9 @@ var range_x = 60.0
 var random_x = 0
 var random_z = 0
 
-var change_interval = 6.0
+var change_interval = 20.0
 var time_since_change = 0.0
-var random_movement_range = 5.0
+var random_movement_range = 10.0
 var toggle = true
 var dead = false
 var dead_animation_played = false
@@ -51,7 +51,7 @@ func _physics_process(delta: float) -> void:
 			look_at(agent.get_next_path_position())
 		move_and_slide()
 	elif dead_animation_played == false:
-		$Male_Casual/AnimationPlayer.queue("HumanArmature|Man_Death")
+		$Male_Casual/AnimationPlayer.queue("HumanArmature|Man_Idle")
 		dead_animation_played  = true
 		
 

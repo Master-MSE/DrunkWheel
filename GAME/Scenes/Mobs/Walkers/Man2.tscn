@@ -3457,6 +3457,7 @@ skin = SubResource("Skin_sa8gm")
 libraries = {
 "": SubResource("AnimationLibrary_dkpgi")
 }
+speed_scale = 0.8
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
