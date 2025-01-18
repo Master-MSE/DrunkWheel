@@ -349,28 +349,28 @@ transform = Transform3D(-4.37114e-07, 0, 13, 0, 10, 0, -10, 0, -5.68248e-07, 1.9
 shape = SubResource("ConvexPolygonShape3D_kymf3")
 
 [node name="firetruck" parent="Decorative" instance=ExtResource("18_mefj7")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -62.4375, 5.07249, -17.8114)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -62.437, 5.08, -17.811)
 
 [node name="garbage-truck" parent="Decorative" instance=ExtResource("19_djpwy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.354, 5.04988, 23.4551)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.354, 5.08, 23.455)
 
 [node name="sedan" parent="Decorative" instance=ExtResource("20_n0jk2")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -62.1863, 5.05213, -37.7054)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -62.186, 5.08, -37.705)
 
 [node name="sedan2" parent="Decorative" instance=ExtResource("20_n0jk2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.4958, 5.05213, -10.3189)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.496, 5.08, -10.319)
 
 [node name="van" parent="Decorative" instance=ExtResource("21_dxf28")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -62.0428, 5.08163, 11.2123)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -62.043, 5.08, 11.212)
 
 [node name="suv-luxury" parent="Decorative" instance=ExtResource("22_r667p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.9412, 5.05376, -28.9409)
 
 [node name="hatchback-sports" parent="Decorative" instance=ExtResource("23_f1goj")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -62.4616, 5.04851, 43.2991)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -62.462, 5.08, 43.299)
 
 [node name="suv-luxury2" parent="Decorative" instance=ExtResource("22_r667p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.5858, 5.03943, 36.8363)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.586, 5.08, 36.836)
 
 [node name="SkyscraperA2" type="MeshInstance3D" parent="Decorative"]
 transform = Transform3D(7.06502, 0, 7.07711, 0, 10, 0, -7.07711, 0, 7.06502, 16.703, 0.00903638, 26.6382)

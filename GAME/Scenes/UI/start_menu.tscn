@@ -170,6 +170,7 @@ home is just a few drinks away!"
 horizontal_alignment = 1
 
 [node name="Scores_title" type="Label" parent="."]
+layout_mode = 0
 offset_left = 850.0
 offset_top = 118.0
 offset_right = 1130.0

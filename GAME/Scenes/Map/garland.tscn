@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dua04q0h0fieq"]
 
-[ext_resource type="ArrayMesh" uid="uid://b7wiwdsxmfy5o" path="res://GAME/Assets/Models/City/Lantern.obj" id="1_cv53j"]
+[ext_resource type="ArrayMesh" uid="uid://yy1fk5skc4st" path="res://GAME/Assets/Models/City/Lantern.obj" id="1_cv53j"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_85ea3"]
 albedo_color = Color(0.0646965, 0.0646965, 0.0646965, 1)

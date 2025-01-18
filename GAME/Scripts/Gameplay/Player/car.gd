@@ -94,7 +94,8 @@ func _physics_process(delta):
 	delay_duration=clamp((parent.tauxalcool-DELAY_DELAY_START)*DELAY_FACTOR, 0.0, DELAY_MAX)
 	colect_input(time)
 	if Game.game_state != Game.GameStates.PLAYING:
-		brake = MAX_BRAKE_FORCE
+		brake = 99999
+		engine_force = 0
 		return
 	applie_input()
 	

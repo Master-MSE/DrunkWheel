@@ -31,7 +31,10 @@ func load_score() -> void:
 		var json_string = save_file.get_line()
 		var json = JSON.new()
 		json.parse(json_string)
-		scores = json.data
+		if json.data == null:
+			scores = []
+		else:
+			scores = json.data
 		
 func _ready() -> void:
 	load_score()

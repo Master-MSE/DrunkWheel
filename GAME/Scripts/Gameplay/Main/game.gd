@@ -32,8 +32,8 @@ const pik_time_alcool=10.0
 const alcool_absorbtion :=0.025
 const fac_time =1
 const tile_length = 30
-const map_length = 1
-const ALCOOL_VALUE = 300
+const map_length = 5
+const ALCOOL_VALUE = 100
 
 static var game_state: GameStates = GameStates.WAITING
 

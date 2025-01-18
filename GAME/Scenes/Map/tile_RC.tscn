@@ -948,51 +948,83 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.2302, 5.03943, 36.8363)
 
 [node name="Construction panel2" parent="NavigationRegion3D" instance=ExtResource("12_d8o0d")]
 transform = Transform3D(-0.368125, 0, -0.929776, 0, 1, 0, 0.929776, 0, -0.368125, -21.2719, -4.401, 54.8091)
+freeze = true
+object_value = 20.0
 
 [node name="Construction panel3" parent="NavigationRegion3D" instance=ExtResource("12_d8o0d")]
 transform = Transform3D(-0.24869, 0, -0.968583, 0, 1, 0, 0.968583, 0, -0.24869, -21.3592, -4.401, 56.2234)
+freeze = true
+object_value = 20.0
 
 [node name="Construction panel4" parent="NavigationRegion3D" instance=ExtResource("12_d8o0d")]
 transform = Transform3D(-0.368125, 0, -0.929776, 0, 1, 0, 0.929776, 0, -0.368125, -21.303, -4.401, 53.3346)
+freeze = true
+object_value = 20.0
 
 [node name="Construction panel5" parent="NavigationRegion3D" instance=ExtResource("12_d8o0d")]
 transform = Transform3D(-0.24869, 0, -0.968583, 0, 1, 0, 0.968583, 0, -0.24869, -21.2885, -4.401, 57.5926)
+freeze = true
+object_value = 20.0
 
 [node name="Construction panel6" parent="NavigationRegion3D" instance=ExtResource("12_d8o0d")]
 transform = Transform3D(-0.243615, 0, -0.969872, 0, 1, 0, 0.969872, 0, -0.243615, -21.2563, -4.401, 51.6919)
+freeze = true
+object_value = 20.0
 
 [node name="Construction panel7" parent="NavigationRegion3D" instance=ExtResource("12_d8o0d")]
 transform = Transform3D(-0.24869, 0, -0.968583, 0, 1, 0, 0.968583, 0, -0.24869, -47.1214, -4.401, 54.8091)
+freeze = true
+object_value = 20.0
 
 [node name="Construction panel8" parent="NavigationRegion3D" instance=ExtResource("12_d8o0d")]
 transform = Transform3D(-0.24869, 0, -0.968583, 0, 1, 0, 0.968583, 0, -0.24869, -47.2088, -4.401, 56.2234)
+freeze = true
+object_value = 20.0
 
 [node name="Construction panel9" parent="NavigationRegion3D" instance=ExtResource("12_d8o0d")]
 transform = Transform3D(-0.24869, 0, -0.968583, 0, 1, 0, 0.968583, 0, -0.24869, -47.1526, -4.401, 53.3346)
+freeze = true
+object_value = 20.0
 
 [node name="Construction panel10" parent="NavigationRegion3D" instance=ExtResource("12_d8o0d")]
 transform = Transform3D(-0.24869, 0, -0.968583, 0, 1, 0, 0.968583, 0, -0.24869, -47.1381, -4.401, 57.5926)
+freeze = true
+object_value = 20.0
 
 [node name="Construction panel11" parent="NavigationRegion3D" instance=ExtResource("12_d8o0d")]
 transform = Transform3D(-0.24869, 0, -0.968583, 0, 1, 0, 0.968583, 0, -0.24869, -47.1059, -4.401, 51.6919)
+freeze = true
+object_value = 20.0
 
 [node name="Construction panel12" parent="NavigationRegion3D" instance=ExtResource("12_d8o0d")]
 transform = Transform3D(-0.24869, 0, -0.968583, 0, 1, 0, 0.968583, 0, -0.24869, -34.6757, -4.401, 2.39842)
+freeze = true
+object_value = 20.0
 
 [node name="Construction panel13" parent="NavigationRegion3D" instance=ExtResource("12_d8o0d")]
 transform = Transform3D(-0.24869, 0, -0.968583, 0, 1, 0, 0.968583, 0, -0.24869, -65.2059, -4.401, 21.184)
+freeze = true
+object_value = 20.0
 
 [node name="Construction panel14" parent="NavigationRegion3D" instance=ExtResource("12_d8o0d")]
 transform = Transform3D(-0.368124, 0, -0.929776, 0, 1, 0, 0.929776, 0, -0.368124, -82.5774, -4.401, 25.2377)
+freeze = true
+object_value = 20.0
 
 [node name="Construction panel15" parent="NavigationRegion3D" instance=ExtResource("12_d8o0d")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -79.2372, -4.401, 27.1811)
+freeze = true
+object_value = 20.0
 
 [node name="Construction panel16" parent="NavigationRegion3D" instance=ExtResource("12_d8o0d")]
 transform = Transform3D(-0.368125, 0, -0.929776, 0, 1, 0, 0.929776, 0, -0.368125, -86.7504, -4.401, 33.5436)
+freeze = true
+object_value = 20.0
 
 [node name="Construction panel17" parent="NavigationRegion3D" instance=ExtResource("12_d8o0d")]
 transform = Transform3D(-0.587785, 0, -0.809017, 0, 1, 0, 0.809017, 0, -0.587785, -84.4125, -4.401, 32.4239)
+freeze = true
+object_value = 20.0
 
 [node name="Worker" parent="." instance=ExtResource("24_np3x5")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 29.0163, 0.210101, -25.3391)
